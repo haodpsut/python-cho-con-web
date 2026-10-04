@@ -169,14 +169,24 @@ function bang(noi, ngu) {
   const hang = sach.split(/\\\\/).map((h) => h.trim()).filter((h) => h && !/^[\s&]*$/.test(h));
   if (!hang.length) return "";
   const o = hang.map((h) => h.split(/(?<!\\)&/).map((c) => vanHtml(c, ngu).trim()));
+  // longtable khai dong tieu de HAI lan, mot cho \endfirsthead mot cho
+  // \endhead. Tren web bang khong ngat trang nen phai bo ban lap, neu khong
+  // chau se thay "Từ | Để làm gì | Bài" hien ra hai lan lien nhau.
+  const khoaDau = o[0].join("\u0001");
+  const than = o.slice(1).filter((r) => r.join("\u0001") !== khoaDau);
   const dau = o[0].map((c) => `<th>${c}</th>`).join("");
-  const than = o.slice(1).map((r) => `<tr>${r.map((c) => `<td>${c}</td>`).join("")}</tr>`).join("\n");
-  return `<div class="bang-cuon"><table><thead><tr>${dau}</tr></thead><tbody>\n${than}\n</tbody></table></div>`;
+  const thanHtml = than.map((r) => `<tr>${r.map((c) => `<td>${c}</td>`).join("")}</tr>`).join("\n");
+  return `<div class="bang-cuon"><table><thead><tr>${dau}</tr></thead><tbody>\n${thanHtml}\n</tbody></table></div>`;
 }
 
 // Dung van xuoi co khoi: danh sach, bang, center, \mucno, cong thuc.
 function doan(tex, ngu, opt = {}) {
   let t = tex;
+
+  // Phai lam TRUOC khi go cac macro doi kieu chu, neu khong thi khi chung bien
+  // mat se con tro lai "{ chu }" tro ngoac.
+  t = t.replace(/\{\s*(?:\\(?:color|bfseries|large|Large|itshape|ttfamily|small|footnotesize|normalsize|mdseries|sffamily|rmfamily)\b(?:\{[^{}]*\})?\s*)+([^{}]*?)\s*\}/g,
+    (m, c) => c);
 
   // bo macro dan trang co doi so
   for (const m of BO_CO_DOISO) {
@@ -192,6 +202,13 @@ function doan(tex, ngu, opt = {}) {
   }
   t = t.replace(/\{\\color\{[^}]*\}([^{}]*)\}/g, "$1");
   t = t.replace(BO_HAN, "");
+  // (luat nhom ngoac da chay o dau ham)
+  // CHU Y: khong duoc bo ngoac mot cach chung chung. Ngoac trong LaTeX la doi
+  // so cua macro, bo bua se cat mat noi dung: \textbf{không} tung bi bien
+  // thanh "ông" vi kieu sua ay.
+  // Chi xu ly dung mot the: nhom MO DAU bang cac macro doi kieu chu, nhu
+  // {\color{\maubai}\bfseries\large Bảng thứ hai}.
+
 
   const phan = [];
   const giuCho = (html) => { phan.push(html); return `\u0000${phan.length - 1}\u0000`; };
@@ -717,8 +734,12 @@ function bocPhuLuc(ngu) {
     const mo = /\\mophuluc\{[^}]*\}\{/.exec(tex);
     const tenA = mo ? doiSo(tex, mo.index + mo[0].length - 1) : null;
     const ten = tenA ? vanTho(tenA.noi, ngu) : tep;
+    // \mophuluc co BA doi so: chu cai, ten, va mau chang. Bo het ca ba, neu
+    // chi bo hai thi "{changSau}" se lot vao van ban.
+    let sauMo = tenA ? tenA.het : 0;
+    if (tenA) { const c = doiSo(tex, skipWs(tex, tenA.het)); if (c) sauMo = c.het; }
     const khoi = [];
-    quetThan(tex.slice(tenA ? tenA.het : 0), khoi, ngu, "pl" + id, true);
+    quetThan(tex.slice(sauMo), khoi, ngu, "pl" + id, true);
     const o = { schemaVersion: "1.0", id, ten, khoi };
     if (id === "a") o.muc = bocTuDienLoi(tex, ngu);
     ra.push(o);

@@ -75,7 +75,7 @@ const R = {
   ${dauBaiTap(c.so, "Điền vào chỗ trống")}
   <p>${esc(k.deBai)}</p>
   ${nganHang(k.bank)}
-  <ol>${k.items.map((it) => `<li>${oTrong(it)}</li>`).join("\n")}</ol>
+  <ol>${k.items.map((it) => `<li>${oTrong(it, k.blanks)}</li>`).join("\n")}</ol>
   <p><button class="nut" data-nop>Kiểm tra</button></p>
   <div data-giai></div>
 </section>`,
@@ -84,7 +84,7 @@ const R = {
   ${dauBaiTap(c.so, "Điền vào chỗ trống")}
   <p>${esc(k.deBai)}</p>
   ${nganHang(k.bank)}
-  <div class="code-khoi"><pre><code>${oTrongCode(k.template)}</code></pre></div>
+  <div class="code-khoi"><pre><code>${oTrongCode(k.template, k.blanks)}</code></pre></div>
   ${k.expectOut ? `<p class="kq-ten">Máy phải in ra đúng thế này</p><div class="kq">${esc(k.expectOut.replace(/\n$/, ""))}</div>` : ""}
   <p><button class="nut" data-nop>${k.chayDuoc ? "Chạy và kiểm tra" : "Kiểm tra"}</button></p>
   <div data-giai></div>
@@ -117,19 +117,28 @@ function nganHang(bank) {
   }</div>`;
 }
 
+// O nhap rong DUNG BANG BE RONG DAP AN, giong het cach sach giay ve o trong
+// (macro \oo trong preamble.tex: "o trong rong dung bang be rong dap an").
+// Khong lam vay thi o mot ky tu nhu "+" van phinh ra gan tram diem anh, de
+// len phan sau cua dong code va lam trang tran ngang o kho dien thoai.
+function oNhap(n, blanks) {
+  const dap = (blanks && blanks[n - 1] && blanks[n - 1].accept[0]) || "";
+  const soKyTu = Math.min(24, Math.max(3, dap.length));
+  return `<input type="text" class="o-dien" data-o="${n}" size="${soKyTu}"`
+    + ` style="width:calc(${soKyTu}ch + 1.1em)" autocomplete="off" spellcheck="false"`
+    + ` aria-label="ô trống số ${n}">`;
+}
+
 // {{n}} trong van xuoi -> o nhap
-function oTrong(html) {
-  return String(html).replace(/\{\{(\d+)\}\}/g,
-    (m, n) => `<input type="text" class="o-dien" data-o="${n}" autocomplete="off" spellcheck="false">`);
+function oTrong(html, blanks) {
+  return String(html).replace(/\{\{(\d+)\}\}/g, (m, n) => oNhap(+n, blanks));
 }
 
 // {{n}} trong khoi code -> o nhap, phan con lai PHAI thoat HTML
-function oTrongCode(tpl) {
+function oTrongCode(tpl, blanks) {
   return String(tpl).split(/(\{\{\d+\}\})/).map((p) => {
     const m = /^\{\{(\d+)\}\}$/.exec(p);
-    return m
-      ? `<input type="text" class="o-dien" data-o="${m[1]}" autocomplete="off" spellcheck="false">`
-      : esc(p);
+    return m ? oNhap(+m[1], blanks) : esc(p);
   }).join("");
 }
 

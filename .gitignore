@@ -1,8 +1,6 @@
-# thu muc tam cua cac cong, sinh lai duoc
-tools/.kiem-hinh/
-tools/.chrome-kiem/
-tools/.chrome-tt/
-tools/.chrome-dbg/
+# Ho so Chrome va thu muc tam cua cac cong. Sinh lai duoc, khong duoc commit.
+tools/.chrome-*/
+tools/.kiem-*/
 tools/.build/
 
 .DS_Store

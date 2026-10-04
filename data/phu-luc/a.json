@@ -6,7 +6,7 @@
   {
    "kind": "van",
    "heading": "",
-   "html": "<p>{changMot}</p>\n<p>Khi con gõ sai, máy in ra mấy dòng chữ đỏ. Chữ đỏ <b>không phải lời mắng</b>.\nĐó là máy đang chỉ cho con chỗ sai.</p>\n<p>Đọc chữ đỏ theo đúng ba bước:</p>"
+   "html": "<p>Khi con gõ sai, máy in ra mấy dòng chữ đỏ. Chữ đỏ <b>không phải lời mắng</b>.\nĐó là máy đang chỉ cho con chỗ sai.</p>\n<p>Đọc chữ đỏ theo đúng ba bước:</p>"
   },
   {
    "kind": "hinh",

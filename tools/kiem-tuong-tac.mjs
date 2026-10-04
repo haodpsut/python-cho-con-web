@@ -230,6 +230,62 @@ try {
        img.every(i => i.alt && i.alt.length > 10 && /[àáâãèéêìíòóôõùúăđĩũơư]/i.test(i.alt)),
        img.map(i => i.alt.slice(0,40)).join(" | "));
   }
+  await L(">>> muc 14");
+  // ------------------- 14. KHO DIEN THOAI: trang khong duoc tran ngang
+  // Cung goc nen doc duoc ben trong iframe. Do that chu khong nhin anh.
+  {
+    for (const [duong, w] of [["/bai/3",390],["/bai/9",390],["/bai/30",390],["/",390],["/phu-luc/d",360],["/bai/19",360]]) {
+      const f = document.createElement("iframe");
+      f.style.cssText = "width:"+w+"px;height:800px;border:0;position:absolute;left:-9999px";
+      f.src = duong; document.body.appendChild(f);
+      await new Promise(r => { f.onload = r; setTimeout(r, 15000); });
+      await nghi(1200);
+      let tran = true, chiTiet = "";
+      try {
+        const e = f.contentDocument.documentElement;
+        tran = e.scrollWidth > e.clientWidth + 1;
+        if (tran) {
+          const thua = [];
+          for (const el of f.contentDocument.querySelectorAll("body *")) {
+            const r = el.getBoundingClientRect();
+            if (r.right > w + 1.5 && r.width > 0)
+              thua.push(el.tagName + "." + String(el.className || "").slice(0, 24) + "@" + Math.round(r.right));
+          }
+          chiTiet = "scroll=" + e.scrollWidth + " client=" + e.clientWidth + "  vuot: " + [...new Set(thua)].slice(0, 4).join(", ");
+        }
+      } catch (err) { chiTiet = "khong doc duoc: " + err; }
+      ok("kho " + w + "px " + duong + ": khong tran ngang", !tran, chiTiet);
+      f.remove();
+    }
+  }
+
+  await L(">>> muc 15");
+  // --------------- 15. khoi code khong duoc ve vien theo tung dong
+  {
+    await moBai(3);
+    const c = $(".code-khoi pre code");
+    const st = getComputedStyle(c);
+    ok("khoi code: <code> ben trong khong co nen rieng",
+       st.backgroundColor === "rgba(0, 0, 0, 0)" || st.backgroundColor === "transparent", st.backgroundColor);
+    ok("khoi code: <code> ben trong khong co vien",
+       parseFloat(st.borderTopWidth) === 0, st.borderTopWidth);
+  }
+
+  await L(">>> muc 16");
+  // --------------- 16. o dien phai HEP theo do dai dap an
+  {
+    await moBai(3);
+    const d = await (await fetch("/data/bai/bai03.json")).json();
+    const k = d.khoi.filter(x => x.kind === "code_fill").find(x => x.blanks.length === 2);
+    const bt = $('[data-bt="' + k.id + '"]');
+    const o = $$("input.o-dien", bt);
+    const rong = o.map(x => Math.round(x.getBoundingClientRect().width));
+    // dap an la "+" va "2", moi cai mot ky tu, nen o phai nho
+    ok("o dien mot ky tu phai hep hon 70px", rong.every(r => r < 70), "rong = " + rong.join(", "));
+    const pre = $("pre", bt);
+    ok("dong code chua o dien khong tran khoi khoi",
+       pre.scrollWidth <= pre.clientWidth + 1, "scroll=" + pre.scrollWidth + " client=" + pre.clientWidth);
+  }
 } catch (e) {
   ra.push({ ten: "KICH BAN NEM LOI", dat: false, ghi: String(e && e.stack || e) });
 }

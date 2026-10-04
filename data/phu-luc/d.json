@@ -6,7 +6,7 @@
   {
    "kind": "van",
    "heading": "",
-   "html": "<p>{changSau}</p>\n<p>Bài 30 bảo con gạch số bằng bút chì trước khi viết chương trình. Đây là bảng\nđể con gạch. Có hai bảng, gạch hỏng bảng một thì còn bảng hai.</p>\n<p>Cách gạch: khoanh tròn số 2, rồi gạch mọi bội của 2. Khoanh tròn số còn lại\nnhỏ nhất chưa gạch, rồi gạch mọi bội của nó. Làm tiếp tới khi hết.</p>"
+   "html": "<p>Bài 30 bảo con gạch số bằng bút chì trước khi viết chương trình. Đây là bảng\nđể con gạch. Có hai bảng, gạch hỏng bảng một thì còn bảng hai.</p>\n<p>Cách gạch: khoanh tròn số 2, rồi gạch mọi bội của 2. Khoanh tròn số còn lại\nnhỏ nhất chưa gạch, rồi gạch mọi bội của nó. Làm tiếp tới khi hết.</p>"
   },
   {
    "kind": "hinh",
@@ -16,7 +16,7 @@
   {
    "kind": "van",
    "heading": "",
-   "html": "<p>{ Bảng thứ hai}</p>"
+   "html": "<p>Bảng thứ hai</p>"
   },
   {
    "kind": "hinh",
