@@ -1,0 +1,308 @@
+{
+ "schemaVersion": "1.0",
+ "so": 8,
+ "ten": "Ôn tập chặng đầu",
+ "chang": 2,
+ "khaiNiemMoi": [],
+ "khoi": [
+  {
+   "kind": "muc_tieu",
+   "items": [
+    "Nhớ lại bảy bài đã học, không có gì mới.",
+    "Tách được một số có ba chữ số rồi cộng ba chữ số ấy.",
+    "Đổi được một số giây ra giờ, phút và giây."
+   ]
+  },
+  {
+   "kind": "guess_text",
+   "id": "bai08-guess-01",
+   "html": "<p>Bé Bi có số 472. Bé muốn biết tổng ba chữ số của nó.</p>\n<p>Con tính nhẩm xem được bao nhiêu? Máy làm việc ấy bằng mấy dòng?</p>",
+   "reveal": "<p>Tổng ba chữ số của 472 là 13. Máy làm bằng bốn\ndòng: lấy hàng trăm, lấy hàng chục, lấy hàng đơn vị, rồi cộng lại.</p>"
+  },
+  {
+   "kind": "van",
+   "heading": "Cùng học",
+   "html": "<p>Chặng đầu đã đi hết. Con nhìn lại bản đồ bảy bài đã qua.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai08-bando.svg",
+   "alt": "Hình trong sách. Chữ trong hình: Bài 1print; Bài 2nhiều dòng; Bài 3cái hộp biến; Bài 4chia lấy dư; Bài 5ghép chữ; Bài 6input; Bài 7int và str; Bài 8ôn lại hết."
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p>Bài 1 và Bài 2 dạy <code>print</code>, máy chạy lần lượt từ trên xuống.\nBài 3 và Bài 4 dạy cái hộp biến và các phép tính.\nBài 5 dạy ghép chữ bằng <code>+</code>, chép chữ bằng <code>*</code>.\nBài 6 dạy <code>input</code>, thứ con gõ vào luôn là chữ.\nBài 7 dạy <code>int</code> và <code>str</code>, hai chiều đổi qua đổi lại.\nHôm nay không có gì mới. Chỉ ôn lại cho thật nhớ.</p>"
+  },
+  {
+   "kind": "vidu",
+   "code": "# Tách một số có ba chữ số rồi cộng ba chữ số ấy lại\nn = 472\ntram = n // 100\nchuc = n // 10 % 10\ndonvi = n % 10\nprint(f\"Số {n} gồm {tram}, {chuc} và {donvi}.\")\nprint(f\"Tổng ba chữ số là {tram + chuc + donvi}.\")",
+   "out": "Số 472 gồm 4, 7 và 2.\nTổng ba chữ số là 13.\n",
+   "stdin": null
+  },
+  {
+   "kind": "nhac",
+   "html": "<p>Hai lỗi cũ hay quay lại. Một là quên <code>int</code> sau <code>input</code>, máy kêu\n<code>TypeError</code>.</p>\n<p>Hai là nhầm <code>//</code> với <code>%</code>. Dấu <code>//</code> cho số phần chia được, dấu\n<code>%</code> cho số còn thừa.</p>"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>print(\"Bi\" * 3)</code> cho ra gì?",
+   "options": [
+    "<code>Bi3</code>",
+    "<code>BiBiBi</code>",
+    "<code>Bi Bi Bi</code>",
+    "Máy báo lỗi"
+   ],
+   "answerIndex": 1,
+   "explanation": "Dấu sao giữa một chuỗi và một số là chép lại chừng ấy lần, dán sát\nnhau không chen dấu cách.",
+   "id": "bai08-tn-02"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>17 // 5</code> cho ra gì?",
+   "options": [
+    "<code>2</code>",
+    "<code>3</code>",
+    "<code>85</code>",
+    "<code>12</code>"
+   ],
+   "answerIndex": 1,
+   "explanation": "Chia 17 cái kẹo cho 5 bạn thì mỗi bạn được 3 cái. Dấu <code>//</code> cho\nđúng con số ấy.",
+   "id": "bai08-tn-03"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>17 % 5</code> cho ra gì?",
+   "options": [
+    "<code>3</code>",
+    "<code>2</code>",
+    "<code>5</code>",
+    "<code>0</code>"
+   ],
+   "answerIndex": 1,
+   "explanation": "Chia xong mỗi bạn 3 cái thì hết 15 cái, còn thừa 2 cái. Dấu\n<code>%</code> cho số còn thừa.",
+   "id": "bai08-tn-04"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Thứ <code>input()</code> đưa về luôn thuộc loại nào?",
+   "options": [
+    "Số",
+    "Chữ",
+    "Lúc chữ lúc số",
+    "Không thuộc loại nào"
+   ],
+   "answerIndex": 1,
+   "explanation": "Máy nhận mọi phím con bấm như chữ cái. Muốn tính thì con phải bọc\nthêm <code>int</code> cho nó.",
+   "id": "bai08-tn-05"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>\"2\" + \"3\"</code> cho ra gì?",
+   "options": [
+    "<code>5</code>",
+    "<code>23</code>",
+    "<code>32</code>",
+    "Máy báo lỗi"
+   ],
+   "answerIndex": 1,
+   "explanation": "Hai bên đều nằm trong dấu nháy nên đều là chữ. Dấu cộng giữa hai\nchữ là ghép chứ không phải cộng.",
+   "id": "bai08-tn-06"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>len(str(100))</code> cho ra gì?",
+   "options": [
+    "<code>100</code>",
+    "<code>3</code>",
+    "<code>1</code>",
+    "<code>10</code>"
+   ],
+   "answerIndex": 1,
+   "explanation": "Đổi số sang chữ trước, được ba chữ số. Đếm ba chữ ấy thì ra 3.",
+   "id": "bai08-tn-07"
+  },
+  {
+   "kind": "van",
+   "heading": "Máy in ra gì",
+   "html": "<p>Đọc chương trình rồi đoán xem máy in ra gì. Đoán xong hãy bấm Chạy để so.</p>"
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai08-doan-08",
+   "code": "a = 7\nb = 3\nprint(a + b)\nprint(a * b)\nprint(a // b)\nprint(a % b)\nprint(\"Bi\" * 2)",
+   "expectOut": "10\n21\n2\n1\nBiBi\n",
+   "soDong": 5,
+   "stdin": null
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai08-doan-09",
+   "code": "s = \"25\"\nn = int(s)\nprint(n + 5)\nprint(s + \"5\")\nprint(len(str(n)))\nprint(f\"Bé Bi có {n} viên bi.\")",
+   "expectOut": "30\n255\n2\nBé Bi có 25 viên bi.\n",
+   "soDong": 4,
+   "stdin": null
+  },
+  {
+   "kind": "van",
+   "heading": "Điền vào chỗ trống",
+   "html": ""
+  },
+  {
+   "kind": "fill_blank",
+   "id": "bai08-dien-10",
+   "deBai": "Chọn từ trong ngân hàng điền vào ba câu sau.",
+   "bank": [
+    "//",
+    "%",
+    "len",
+    "int"
+   ],
+   "items": [
+    "Dấu cho biết chia được mấy phần là {{1}}.",
+    "Dấu cho biết chia xong còn thừa mấy là {{2}}.",
+    "Lệnh đếm xem một chuỗi có mấy chữ là {{3}}."
+   ],
+   "blanks": [
+    {
+     "accept": [
+      "//"
+     ]
+    },
+    {
+     "accept": [
+      "%"
+     ]
+    },
+    {
+     "accept": [
+      "len"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai08-dien-11",
+   "deBai": "Một buổi học dài 3725 giây. Điền hai ô để đổi ra giờ, phút và giây. Con nhớ một phút có mấy giây nhé.",
+   "bank": [
+    "//",
+    "%",
+    "len",
+    "int"
+   ],
+   "template": "giay = 3725\ngio = giay // 3600\nphut = giay % 3600 // {{1}}\ncon_lai = giay % {{2}}\nprint(f\"{gio} giờ {phut} phút {con_lai} giây\")",
+   "blanks": [
+    {
+     "accept": [
+      "60"
+     ]
+    },
+    {
+     "accept": [
+      "60"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"{gio} giờ {phut} phút {con_lai} giây\""
+   ],
+   "expectOut": "1 giờ 2 phút 5 giây\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai08-dien-12",
+   "deBai": "Điền hai ô để lấy ra từng chữ số rồi cộng lại.",
+   "bank": [
+    "//",
+    "%",
+    "len",
+    "int"
+   ],
+   "template": "n = 836\ntram = n // 100\nchuc = n % 100 // {{1}}\ndonvi = n % {{2}}\ntong = tram + chuc + donvi\nprint(f\"Tổng ba chữ số của {n} là {tong}.\")",
+   "blanks": [
+    {
+     "accept": [
+      "10"
+     ]
+    },
+    {
+     "accept": [
+      "10"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Tổng ba chữ số của {n} là {tong}.\""
+   ],
+   "expectOut": "Tổng ba chữ số của 836 là 17.\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai08-dien-13",
+   "deBai": "Điền hai ô. Con gõ số 9 rồi bấm Enter.",
+   "bank": [
+    "//",
+    "%",
+    "len",
+    "int"
+   ],
+   "template": "print(\"Con bao nhiêu tuổi?\")\ntuoi = {{1}}({{2}}())\nprint(f\"Mười năm nữa con {tuoi + 10} tuổi.\")",
+   "blanks": [
+    {
+     "accept": [
+      "int"
+     ]
+    },
+    {
+     "accept": [
+      "input"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Con bao nhiêu tuổi?\"",
+    "\"Mười năm nữa con {tuoi + 10} tuổi.\""
+   ],
+   "expectOut": "Con bao nhiêu tuổi?\nMười năm nữa con 19 tuổi.\n",
+   "chayDuoc": true,
+   "stdin": "9\n"
+  },
+  {
+   "kind": "free_code",
+   "id": "bai08-tuviet-14",
+   "deBai": "Một bộ phim dài <code>4830</code> giây. Viết chương trình in ra\nbộ phim ấy dài mấy giờ, mấy phút và mấy giây.",
+   "hoiTruoc": [
+    "Một giờ có bao nhiêu giây?",
+    "Lấy số giờ thì dùng dấu <code>//</code> hay dấu <code>%</code>?",
+    "Lấy số giây còn lẻ thì dùng dấu nào?"
+   ],
+   "checklist": [
+    "Con nhắc lại được bảy bài đã học mà không cần giở sách.",
+    "Con tách được một số có ba chữ số rồi cộng ba chữ số ấy.",
+    "Con đổi được một số giây ra giờ, phút và giây."
+   ],
+   "hints": [
+    {
+     "hoi": "Kim giây chạy hết một vòng thì được mấy phút?",
+     "dap": "một phút"
+    },
+    {
+     "hoi": "Vậy một phút có mấy giây?",
+     "dap": "60 giây"
+    },
+    {
+     "hoi": "Một giờ có 60 phút, mỗi phút 60 giây, vậy mấy giây?",
+     "dap": "3600 giây"
+    }
+   ],
+   "loiHayMac": "<p>Lấy hàng chục bằng <code>n % 10</code> thay vì\n<code>n // 10 % 10</code>. Cho cháu thử với số 836 để tự thấy ra 6 chứ không ra 3.</p>",
+   "loiGiai": "giay = 4830\ngio = giay // 3600\ncon_lai = giay % 60",
+   "goiY": "<p>Một giờ có <code>3600</code> giây. Lấy số giờ thì dùng\n<code>//</code>, lấy số giây còn lẻ thì dùng <code>%</code>.</p>\n<p>Kết quả đúng là 1 giờ 20 phút 30 giây.</p>"
+  }
+ ]
+}

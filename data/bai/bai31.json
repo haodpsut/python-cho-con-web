@@ -1,0 +1,297 @@
+{
+ "schemaVersion": "1.0",
+ "so": 31,
+ "ten": "Ôn tập tổng hợp",
+ "chang": 6,
+ "khaiNiemMoi": [],
+ "khoi": [
+  {
+   "kind": "muc_tieu",
+   "items": [
+    "Nhớ lại được cả sáu chặng con đã đi qua.",
+    "Nối được nhiều thứ đã học vào chung một chương trình.",
+    "Tự tìm ra chỗ nào mình còn quên."
+   ]
+  },
+  {
+   "kind": "guess_text",
+   "id": "bai31-guess-01",
+   "html": "<p>Bé Bi viết một chương trình dài. Trong đó có <code>print</code>, có <code>if</code>,\ncó <code>for</code> và có <code>def</code>.</p>\n<p>Con đoán xem máy đọc phần nào trước, phần nào sau?</p>",
+   "reveal": "<p>Máy đọc từ dòng trên xuống dòng dưới. Nó đọc\n<code>def</code> trước để biết có máy nhỏ, nhưng chỉ chạy máy nhỏ khi có người gọi.</p>"
+  },
+  {
+   "kind": "van",
+   "heading": "Cùng học",
+   "html": "<p>Con đã đi hết sáu chặng. Chương trình nào cũng chỉ làm bốn việc.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai31-bonviec.svg",
+   "alt": "Hình trong sách. Chữ trong hình: Nhận số vào input; Cất vào hộp so_keo = 17; Chọn rồi lặp if for; Nói ra print."
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p>Nhận số vào, cất vào hộp, chọn rồi lặp, cuối cùng nói ra.</p>\n<p>Bài hôm nay nối cả bốn việc ấy lại trong một chương trình.</p>"
+  },
+  {
+   "kind": "vidu",
+   "code": "# Ôn lại: máy nhỏ, điều kiện, vòng lặp, danh sách\ndef chan_hay_le(so):\n    if so % 2 == 0:\n        return \"chẵn\"\n    else:\n        return \"lẻ\"\n\nbang = [10, 7, 4]\nfor x in bang:\n    print(x, \"là số\", chan_hay_le(x))\nprint(\"Tổng cả dãy là\", sum(bang))",
+   "out": "10 là số chẵn\n7 là số lẻ\n4 là số chẵn\nTổng cả dãy là 21\n",
+   "stdin": null
+  },
+  {
+   "kind": "nhac",
+   "html": "<p>Quên thụt đầu dòng sau dấu hai chấm là lỗi hay gặp nhất. Máy kêu\n<code>IndentationError: expected an indented block</code>.</p>\n<p>Máy nhỏ dùng <code>return</code> thì bên ngoài phải có <code>print</code>. Không có thì\nmáy tính xong rồi giữ im.</p>"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Chặng 1. Ba lệnh <code>print</code> viết liền nhau thì máy in ra thế nào?",
+   "options": [
+    "Chỉ in dòng cuối",
+    "Ba dòng, theo thứ tự từ trên xuống",
+    "Ba dòng, thứ tự lộn xộn",
+    "Máy báo lỗi"
+   ],
+   "answerIndex": 1,
+   "explanation": "Máy đọc từ dòng đầu tới dòng cuối. Nó không bỏ dòng nào và không\nđảo thứ tự.",
+   "id": "bai31-tn-02"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Chặng 2. <code>17 % 5</code> cho ra số mấy?",
+   "options": [
+    "3",
+    "2",
+    "12",
+    "85"
+   ],
+   "answerIndex": 1,
+   "explanation": "17 cái kẹo chia cho 5 bạn thì mỗi bạn được 3 cái, còn thừa 2 cái.\nDấu phần trăm lấy đúng phần thừa ấy.",
+   "id": "bai31-tn-03"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Chặng 3. Máy gặp <code>if</code> đúng ở nhánh đầu thì làm gì tiếp?",
+   "options": [
+    "Vẫn xét hết các <code>elif</code> phía dưới",
+    "Bỏ qua hết các <code>elif</code> và <code>else</code> phía dưới",
+    "Chạy luôn nhánh <code>else</code>",
+    "Báo lỗi"
+   ],
+   "answerIndex": 1,
+   "explanation": "Cả dãy <code>if</code>, <code>elif</code>, <code>else</code> chỉ chạy đúng một nhánh. Gặp\nnhánh đúng đầu tiên là máy nhảy qua hết phần còn lại.",
+   "id": "bai31-tn-04"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Chặng 4. <code>range(1, 5)</code> cho ra những số nào?",
+   "options": [
+    "1 2 3 4 5",
+    "1 2 3 4",
+    "0 1 2 3 4",
+    "Chỉ số 1 và số 5"
+   ],
+   "answerIndex": 1,
+   "explanation": "<code>range</code> lấy số đầu nhưng không lấy số cuối. Nó dừng lại ngay\ntrước số 5.",
+   "id": "bai31-tn-05"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Chặng 5. <code>\"PYTHON\"[::-1]</code> cho ra chữ gì?",
+   "options": [
+    "<code>PYTHON</code>",
+    "<code>NOHTYP</code>",
+    "<code>NOHTY</code>",
+    "Máy báo lỗi"
+   ],
+   "answerIndex": 1,
+   "explanation": "Cách viết ấy đọc băng giấy từ cuối về đầu. Chữ vì thế bị lật\nngược lại.",
+   "id": "bai31-tn-06"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Chặng 6. Máy nhỏ có <code>return</code> mà bên ngoài không có <code>print</code>\nthì sao?",
+   "options": [
+    "Máy báo lỗi",
+    "Máy tính xong nhưng không in gì cả",
+    "Máy vẫn in kết quả ra màn hình",
+    "Máy chạy mãi không dừng"
+   ],
+   "answerIndex": 1,
+   "explanation": "<code>return</code> đưa kết quả ra cho người gọi dùng tiếp. Muốn thấy chữ\ntrên màn hình thì phải nhờ <code>print</code> nói hộ.",
+   "id": "bai31-tn-07"
+  },
+  {
+   "kind": "van",
+   "heading": "Máy in ra gì",
+   "html": "<p>Đọc chương trình rồi đoán xem máy in ra gì. Đoán xong hãy bấm Chạy để so.</p>"
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai31-doan-08",
+   "code": "# Cộng dồn và chia lấy dư\ntong = 0\nfor i in range(1, 11):\n    if i % 3 == 0:\n        tong = tong + i\n        print(\"cộng thêm\", i)\nprint(\"Tổng là\", tong)",
+   "expectOut": "cộng thêm 3\ncộng thêm 6\ncộng thêm 9\nTổng là 18\n",
+   "soDong": 4,
+   "stdin": null
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai31-doan-09",
+   "code": "# Chuỗi và danh sách\nten = \"PYTHON\"\nprint(ten[0:3])\nprint(ten[::-1])\nds = [4, 9, 2]\nprint(max(ds), min(ds), len(ds))",
+   "expectOut": "PYT\nNOHTYP\n9 2 3\n",
+   "soDong": 3,
+   "stdin": null
+  },
+  {
+   "kind": "van",
+   "heading": "Điền vào chỗ trống",
+   "html": ""
+  },
+  {
+   "kind": "fill_blank",
+   "id": "bai31-dien-10",
+   "deBai": "Chọn từ trong ngân hàng điền vào ba câu sau.",
+   "bank": [
+    "print",
+    "else",
+    "range",
+    "while",
+    "//",
+    "2"
+   ],
+   "items": [
+    "Từ bảo máy nói ra màn hình là {{1}}.",
+    "Từ chạy nhánh còn lại khi điều kiện sai là {{2}}.",
+    "Từ sinh ra một dãy số để đếm là {{3}}."
+   ],
+   "blanks": [
+    {
+     "accept": [
+      "print"
+     ]
+    },
+    {
+     "accept": [
+      "else"
+     ]
+    },
+    {
+     "accept": [
+      "range"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai31-dien-11",
+   "deBai": "Chặng 2. Chia 17 cái kẹo cho 5 bạn thì mỗi bạn được mấy cái?",
+   "bank": [
+    "print",
+    "else",
+    "range",
+    "while",
+    "//",
+    "2"
+   ],
+   "template": "so_keo = 17\nso_ban = 5\nprint(\"Mỗi bạn được\", so_keo {{1}} so_ban)\nprint(\"Còn thừa\", so_keo % so_ban)",
+   "blanks": [
+    {
+     "accept": [
+      "//"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Mỗi bạn được\"",
+    "\"Còn thừa\""
+   ],
+   "expectOut": "Mỗi bạn được 3\nCòn thừa 2\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai31-dien-12",
+   "deBai": "Chặng 5. Điền một ô để máy đếm ngược từ 5 về 1.",
+   "bank": [
+    "print",
+    "else",
+    "range",
+    "while",
+    "//",
+    "2"
+   ],
+   "template": "n = 5\n{{1}} n > 0:\n    print(n)\n    n = n - 1",
+   "blanks": [
+    {
+     "accept": [
+      "while"
+     ]
+    }
+   ],
+   "chuIn": [],
+   "expectOut": "5\n4\n3\n2\n1\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai31-dien-13",
+   "deBai": "Chặng 6. Điền một ô để máy nhỏ trả về gấp đôi số nhận vào.",
+   "bank": [
+    "print",
+    "else",
+    "range",
+    "while",
+    "//",
+    "2"
+   ],
+   "template": "def gap_doi(x):\n    return x * {{1}}\n\nprint(gap_doi(50))",
+   "blanks": [
+    {
+     "accept": [
+      "2"
+     ]
+    }
+   ],
+   "chuIn": [],
+   "expectOut": "100\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "free_code",
+   "id": "bai31-tuviet-14",
+   "deBai": "In ra mọi số từ 1 tới 50 mà chia hết cho 7. In xong thì\nin thêm tổng của những số ấy.",
+   "hoiTruoc": [
+    "Con cho <code>i</code> chạy từ số mấy tới số mấy?",
+    "Con hỏi máy câu gì để biết một số chia hết cho 7?",
+    "Hộp đựng tổng tên là gì, và lúc đầu hộp ấy đựng số mấy?"
+   ],
+   "checklist": [
+    "Con nhớ lại được cả sáu chặng đã học.",
+    "Con đọc một chương trình dài và đoán đúng kết quả.",
+    "Con tự viết được chương trình nối nhiều thứ lại với nhau."
+   ],
+   "hints": [
+    {
+     "hoi": "Bài này giống bài nào con đã làm rồi?",
+     "dap": "bài cộng dồn ở chặng 4"
+    },
+    {
+     "hoi": "Muốn biết chia hết thì con dùng dấu gì?",
+     "dap": "dấu lấy phần thừa"
+    },
+    {
+     "hoi": "Hộp đựng tổng phải có trước hay sau vòng lặp?",
+     "dap": "trước"
+    }
+   ],
+   "loiHayMac": "<p>Đặt hộp tổng bằng 0 ở trong vòng lặp. Mỗi vòng\nhộp lại bị đổ hết, nên cuối cùng chỉ còn mỗi số cuối. Bảo cháu chạy thử\nrồi tự tìm chỗ sai, đừng chỉ ngay.</p>",
+   "loiGiai": "",
+   "goiY": "<p>Cho <code>i</code> chạy từ 1 tới 50. Hỏi <code>i</code> chia cho 7\ncòn thừa 0 hay không. Số nào đúng thì in ra và cộng vào hộp <code>tong</code>.\nHộp <code>tong</code> lúc đầu bằng 0. Máy in ra 7, 14, 21, 28, 35, 42, 49 và\ntổng là 196.</p>"
+  }
+ ]
+}

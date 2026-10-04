@@ -1,0 +1,308 @@
+{
+ "schemaVersion": "1.0",
+ "so": 28,
+ "ten": "Ôn tập: while, chuỗi, hàm, đếm",
+ "chang": 6,
+ "khaiNiemMoi": [],
+ "khoi": [
+  {
+   "kind": "muc_tieu",
+   "items": [
+    "Nhắc lại <code>while</code>, chuỗi, máy nhỏ <code>def</code> và cách đếm nhanh.",
+    "Dùng được cả bốn thứ ấy trong cùng một chương trình.",
+    "Tự tìm ra lỗi của mình mà không cần ai nhắc."
+   ]
+  },
+  {
+   "kind": "guess_text",
+   "id": "bai28-guess-01",
+   "html": "<p>Mun nằm trên bàn phím. Năm bài vừa rồi dạy con năm việc khác nhau.</p>\n<p>Con nhớ được mấy việc? Hãy kể tên trước khi lật xuống xem hình.</p>",
+   "reveal": "<p>Năm việc là: <code>while</code>, xử lí chuỗi, nút bấm có sẵn,\nmáy nhỏ <code>def</code>, và đếm nhanh bằng phép chia.</p>"
+  },
+  {
+   "kind": "van",
+   "heading": "Cùng học",
+   "html": "<p>Bài này không có gì mới. Con chỉ ôn lại năm bài vừa học.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai28-bando.svg",
+   "alt": "Hình trong sách. Chữ trong hình: while lặp tới khi điều kiện sai; chuỗi cắt chữ, đếm chữ; nút bấm có sẵn min max; def đặt tên cho một việc; đếm nhanh bằng phép chia; Bài 23; Bài 24; Bài 25; Bài 26; Bài 27."
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p>Ví dụ dưới đây gom bốn việc vào một chương trình. Con đọc kĩ rồi chạy thử.</p>"
+  },
+  {
+   "kind": "vidu",
+   "code": "# Ôn lại bốn thứ: hàm, chuỗi, while, đếm.\ndef dem_chu_a(s):\n    dem = 0\n    for chu in s:\n        if chu == \"a\":\n            dem = dem + 1\n    return dem\n\ntu = \"banana\"\nprint(\"Chữ hoa:\", tu.upper())\nprint(\"Số chữ a:\", dem_chu_a(tu))\n\ni = 3\nwhile i > 0:\n    print(i, end=\" \")\n    i = i - 1\nprint()\n\nprint(\"Từ 1 tới 50 chia hết cho 6:\", 50 // 6)",
+   "out": "Chữ hoa: BANANA\nSố chữ a: 3\n3 2 1 \nTừ 1 tới 50 chia hết cho 6: 8\n",
+   "stdin": null
+  },
+  {
+   "kind": "nhac",
+   "html": "<p>Ba lỗi hay gặp nhất trong năm bài vừa rồi.</p>\n<p>Quên tăng biến trong <code>while</code> thì máy chạy mãi, con phải bấm Ctrl và C.</p>\n<p>Viết <code>print</code> thay cho <code>return</code> thì máy nhỏ không trả ra gì cả. Máy\nbáo <code>TypeError</code> khi con đem kết quả đi cộng.</p>"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Vòng lặp <code>while</code> dừng lại khi nào?",
+   "options": [
+    "Khi chạy đủ 10 lần",
+    "Khi điều kiện không còn đúng nữa",
+    "Khi gặp dấu chấm",
+    "Khi con tắt máy"
+   ],
+   "answerIndex": 1,
+   "explanation": "<code>while</code> kiểm tra điều kiện trước mỗi lượt. Điều kiện sai thì vòng\nlặp dừng ngay.",
+   "id": "bai28-tn-02"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Chuỗi <code>\"PYTHON\"</code> có <code>len</code> bằng mấy?",
+   "options": [
+    "5",
+    "6",
+    "7",
+    "8"
+   ],
+   "answerIndex": 1,
+   "explanation": "Đếm từng chữ cái: P, Y, T, H, O, N. Vừa đúng 6 chữ.",
+   "id": "bai28-tn-03"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Lệnh <code>tu[0:3]</code> với <code>tu</code> là <code>\"con mèo\"</code> cho ra gì?",
+   "options": [
+    "<code>co</code>",
+    "<code>con</code>",
+    "<code>con </code>",
+    "<code>mèo</code>"
+   ],
+   "answerIndex": 1,
+   "explanation": "Cắt từ chỗ 0 tới trước chỗ 3, tức ba chữ đầu. Chữ ở chỗ 3 là dấu\ncách, không lấy.",
+   "id": "bai28-tn-04"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Máy nhỏ muốn đưa kết quả ra ngoài thì dùng từ nào?",
+   "options": [
+    "<code>print</code>",
+    "<code>return</code>",
+    "<code>def</code>",
+    "<code>while</code>"
+   ],
+   "answerIndex": 1,
+   "explanation": "<code>print</code> chỉ kêu to cho người nghe. <code>return</code> mới nhả ra thứ dùng\ntiếp được.",
+   "id": "bai28-tn-05"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Từ 1 tới 60 có mấy số chia hết cho 9?",
+   "options": [
+    "5",
+    "6",
+    "7",
+    "9"
+   ],
+   "answerIndex": 1,
+   "explanation": "Lấy <code>60 // 9</code> được 6. Đó là 9, 18, 27, 36, 45, 54.",
+   "id": "bai28-tn-06"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Dòng <code>for chu in tu:</code> làm gì?",
+   "options": [
+    "Chạy đúng một lần",
+    "Lấy lần lượt từng chữ cái của chuỗi",
+    "Đếm số chữ cái",
+    "Đổi chuỗi thành chữ hoa"
+   ],
+   "answerIndex": 1,
+   "explanation": "Mỗi lượt, biến <code>chu</code> nhận một chữ cái. Hết chữ thì vòng lặp dừng.",
+   "id": "bai28-tn-07"
+  },
+  {
+   "kind": "van",
+   "heading": "Máy in ra gì",
+   "html": "<p>Đọc chương trình rồi đoán xem máy in ra gì. Đoán xong hãy bấm Chạy để so.</p>"
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai28-doan-08",
+   "code": "tu = \"PYTHON\"\ni = 0\nwhile i < len(tu):\n    print(tu[i], i)\n    i = i + 2",
+   "expectOut": "P 0\nT 2\nO 4\n",
+   "soDong": 3,
+   "stdin": null
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai28-doan-09",
+   "code": "def gap_doi(x):\n    return x + x\n\nn = 24\nprint(gap_doi(5))\nprint(n // 5)\nprint(n % 5)\nprint(gap_doi(n // 8))",
+   "expectOut": "10\n4\n4\n6\n",
+   "soDong": 4,
+   "stdin": null
+  },
+  {
+   "kind": "van",
+   "heading": "Điền vào chỗ trống",
+   "html": ""
+  },
+  {
+   "kind": "fill_blank",
+   "id": "bai28-dien-10",
+   "deBai": "Chọn từ trong ngân hàng điền vào ba câu sau.",
+   "bank": [
+    "while",
+    "return",
+    "//",
+    "upper"
+   ],
+   "items": [
+    "Từ bảo máy lặp tới khi điều kiện sai là {{1}}.",
+    "Từ để máy nhỏ nhả kết quả ra ngoài là {{2}}.",
+    "Phép lấy phần nguyên của phép chia viết là {{3}}."
+   ],
+   "blanks": [
+    {
+     "accept": [
+      "while"
+     ]
+    },
+    {
+     "accept": [
+      "return"
+     ]
+    },
+    {
+     "accept": [
+      "//"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai28-dien-11",
+   "deBai": "Điền hai ô cho phần chuỗi chạy đúng.",
+   "bank": [
+    "while",
+    "return",
+    "//",
+    "upper"
+   ],
+   "template": "tu = \"con mèo\"\nprint({{1}}(tu))\nprint(tu[0:3])\nprint(tu.{{2}}())",
+   "blanks": [
+    {
+     "accept": [
+      "len"
+     ]
+    },
+    {
+     "accept": [
+      "upper"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"con mèo\""
+   ],
+   "expectOut": "7\ncon\nCON MÈO\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai28-dien-12",
+   "deBai": "Điền hai ô cho vòng lặp cộng dồn chạy đúng.",
+   "bank": [
+    "while",
+    "return",
+    "//",
+    "upper"
+   ],
+   "template": "tong = {{1}}\ni = 1\n{{2}} i <= 10:\n    tong = tong + i\n    i = i + 1\nprint(\"Tổng từ 1 tới 10 là\", tong)",
+   "blanks": [
+    {
+     "accept": [
+      "0"
+     ]
+    },
+    {
+     "accept": [
+      "while"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Tổng từ 1 tới 10 là\""
+   ],
+   "expectOut": "Tổng từ 1 tới 10 là 55\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai28-dien-13",
+   "deBai": "Điền hai ô cho máy nhỏ chạy đúng.",
+   "bank": [
+    "while",
+    "return",
+    "//",
+    "upper"
+   ],
+   "template": "{{1}} dem_boi_cua_bay(n):\n    {{2}} n // 7\n\nprint(\"Từ 1 tới 100:\", dem_boi_cua_bay(100))\nprint(\"Từ 1 tới 50:\", dem_boi_cua_bay(50))",
+   "blanks": [
+    {
+     "accept": [
+      "def"
+     ]
+    },
+    {
+     "accept": [
+      "return"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Từ 1 tới 100:\"",
+    "\"Từ 1 tới 50:\""
+   ],
+   "expectOut": "Từ 1 tới 100: 14\nTừ 1 tới 50: 7\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "free_code",
+   "id": "bai28-tuviet-14",
+   "deBai": "Viết một chương trình làm ba việc. Dùng <code>while</code> đếm\nngược từ 5 về 1. Viết máy nhỏ <code>dem_boi_bon(n)</code> trả về số chia hết cho 4\ntừ 1 tới <code>n</code>. Cuối cùng in tên con bằng chữ hoa.",
+   "hoiTruoc": [
+    "Biến đếm ngược bắt đầu từ mấy, và mỗi lượt giảm đi bao nhiêu?",
+    "Máy nhỏ của con dùng <code>print</code> hay <code>return</code>?",
+    "Đổi chữ thường thành chữ hoa thì gọi lệnh nào?"
+   ],
+   "checklist": [
+    "Con viết được vòng <code>while</code> có lối thoát, không chạy mãi.",
+    "Con viết được máy nhỏ có <code>return</code> và gọi nó được.",
+    "Con cắt được chuỗi và đếm nhanh bằng phép chia."
+   ],
+   "hints": [
+    {
+     "hoi": "Đếm ngược thì biến đi lên hay đi xuống?",
+     "dap": "đi xuống, nên là trừ"
+    },
+    {
+     "hoi": "Máy nhỏ chỉ kêu to hay nhả ra đồ dùng được?",
+     "dap": "nhả ra, nên <code>return</code>"
+    },
+    {
+     "hoi": "Chữ hoa có sẵn một nút bấm, con nhớ tên nó không? (<code>.upper()</code>)",
+     "dap": ""
+    }
+   ],
+   "loiHayMac": "<p>Quên dòng giảm biến trong <code>while</code>. Máy\nchạy mãi không dừng. Bảo cháu bấm Ctrl và C, rồi hỏi: trong vòng lặp, dòng\nnào làm điều kiện tiến dần tới chỗ sai?</p>",
+   "loiGiai": "",
+   "goiY": "<p>Đặt <code>i = 5</code> rồi lặp <code>while i &gt; 0</code> và giảm dần.\nMáy nhỏ chỉ có một dòng <code>return n // 4</code>. Dòng cuối gọi <code>.upper()</code>.</p>"
+  }
+ ]
+}

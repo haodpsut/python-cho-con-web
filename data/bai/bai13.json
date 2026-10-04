@@ -1,0 +1,304 @@
+{
+ "schemaVersion": "1.0",
+ "so": 13,
+ "ten": "Tổng hợp điều kiện",
+ "chang": 3,
+ "khaiNiemMoi": [],
+ "khoi": [
+  {
+   "kind": "muc_tieu",
+   "items": [
+    "Ghép được <code>if</code>, <code>elif</code>, <code>else</code> thành một bậc thang xếp loại.",
+    "Nối được hai điều kiện bằng <code>and</code> hoặc <code>or</code>.",
+    "Dùng lại dấu <code>%</code> để xem một số có chia hết hay không."
+   ]
+  },
+  {
+   "kind": "guess_text",
+   "id": "bai13-guess-01",
+   "html": "<p>Hôm nay không có từ mới nào cả. Toàn đồ cũ con đã biết.</p>\n<p>Bé Bi đi bộ tới trường hết 740 bước. Thầy khen từ 600 bước trở lên.</p>\n<p>Con đoán xem máy xếp Bi vào loại nào?</p>",
+   "reveal": "<p>Máy in <code>Giỏi lắm.</code> vì 740 đã qua bậc 600 nhưng\nchưa tới bậc 1000.</p>"
+  },
+  {
+   "kind": "van",
+   "heading": "Cùng học",
+   "html": "<p>Hôm nay con dùng lại đồ cũ. Không có từ mới nào.</p>\n<p>Máy xét <code>if</code> rồi <code>elif</code> lần lượt từ trên xuống.\nGặp bậc đầu tiên khớp thì máy dừng, không xét tiếp nữa.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai13-bacthang.svg",
+   "alt": "Hình trong sách. Chữ trong hình: dưới 300 bước; từ 300 bước; từ 600 bước; từ 1000 bước; Con đi hơi ít.; Khá rồi.; Giỏi lắm.; Tuyệt vời!; Máy xét từ bậc cao nhất xuống. Gặp bậc đầu tiên khớp thì dừng.; Xếp loại số bước con đi bộ."
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p><code>and</code> đòi cả hai điều cùng đúng, còn <code>or</code> chỉ cần một.\nDấu <code>%</code> cho số dư, nên <code>so % 2 == 0</code> nghĩa là số chẵn.</p>"
+  },
+  {
+   "kind": "vidu",
+   "code": "# Xếp loại số bước con đi bộ từ nhà tới trường.\nso_buoc = 740\n\nif so_buoc >= 1000:\n    print(\"Tuyệt vời!\")\nelif so_buoc >= 600:\n    print(\"Giỏi lắm.\")\nelif so_buoc >= 300:\n    print(\"Khá rồi.\")\nelse:\n    print(\"Hôm nay con đi hơi ít.\")",
+   "out": "Giỏi lắm.\n",
+   "stdin": null
+  },
+  {
+   "kind": "nhac",
+   "html": "<p>Bậc thang phải xếp từ cao xuống thấp. Nếu con để <code>elif so_buoc &gt;= 300</code>\nlên trước thì ai đi 740 bước cũng rơi vào bậc ấy.</p>\n<p>Chỉ <code>if</code> đầu tiên mới dùng từ <code>if</code>. Các bậc sau dùng <code>elif</code>, viết\nlại <code>if</code> là thành bậc thang mới.</p>"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>so_buoc = 740</code>. Bậc thang là 1000, rồi 600, rồi 300. Máy in\nloại nào?",
+   "options": [
+    "Tuyệt vời",
+    "Giỏi lắm",
+    "Khá rồi",
+    "Cả ba loại"
+   ],
+   "answerIndex": 1,
+   "explanation": "740 chưa tới 1000 nên bậc đầu trượt. Tới bậc 600 thì khớp, máy in\nrồi dừng luôn.",
+   "id": "bai13-tn-02"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Vì sao máy không in luôn cả loại Khá rồi?",
+   "options": [
+    "Vì 740 nhỏ hơn 300",
+    "Vì gặp bậc khớp đầu tiên là máy dừng",
+    "Vì <code>elif</code> chỉ chạy một lần trong đời",
+    "Vì máy in thiếu"
+   ],
+   "answerIndex": 1,
+   "explanation": "Cả dây <code>if</code> và <code>elif</code> là một bậc thang. Máy rơi xuống bậc\nđầu tiên khớp rồi thôi.",
+   "id": "bai13-tn-03"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>so = 24</code>. Máy xét <code>so % 2 == 0 and so % 3 == 0</code> ra gì?",
+   "options": [
+    "Đúng",
+    "Sai",
+    "<code>24</code>",
+    "Máy báo lỗi"
+   ],
+   "answerIndex": 0,
+   "explanation": "24 chia 2 dư 0, mà 24 chia 3 cũng dư 0. Cả hai vế đều đúng nên\n<code>and</code> cho đúng.",
+   "id": "bai13-tn-04"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>so = 15</code>. Máy xét <code>so % 3 == 0 or so % 5 == 0</code> ra gì?",
+   "options": [
+    "Đúng",
+    "Sai",
+    "<code>15</code>",
+    "Máy báo lỗi"
+   ],
+   "answerIndex": 0,
+   "explanation": "15 chia hết cho cả 3 lẫn 5. <code>or</code> chỉ cần một vế đúng là đủ,\nđây được cả hai.",
+   "id": "bai13-tn-05"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Bạn Na đọc 85 trang trong 6 ngày. Điều kiện khen là từ 50 trang và\ntừ 5 ngày. Na có được khen không?",
+   "options": [
+    "Có",
+    "Không",
+    "Chỉ được nửa lời khen",
+    "Máy báo lỗi"
+   ],
+   "answerIndex": 0,
+   "explanation": "85 lớn hơn 50, và 6 lớn hơn 5. Hai vế của <code>and</code> đều đúng nên Na\nđược khen.",
+   "id": "bai13-tn-06"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Nhánh <code>else</code> chạy lúc nào?",
+   "options": [
+    "Lúc nào cũng chạy",
+    "Khi bậc đầu tiên khớp",
+    "Khi không bậc nào ở trên khớp cả",
+    "Khi có <code>and</code> trong câu"
+   ],
+   "answerIndex": 2,
+   "explanation": "<code>else</code> là cái lưới hứng ở cuối bậc thang. Mọi trường hợp còn sót\nđều rơi vào đó.",
+   "id": "bai13-tn-07"
+  },
+  {
+   "kind": "van",
+   "heading": "Máy in ra gì",
+   "html": "<p>Đọc chương trình rồi đoán xem máy in ra gì. Đoán xong hãy bấm Chạy để so.</p>"
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai13-doan-08",
+   "code": "so_trang = 85\nso_ngay = 6\n\nif so_trang >= 100:\n    print(\"Con đọc rất nhiều.\")\nelif so_trang >= 50:\n    print(\"Con đọc khá đều.\")\nelse:\n    print(\"Tuần sau đọc thêm nhé.\")\n\nif so_trang >= 50 and so_ngay >= 5:\n    print(\"Vừa đọc nhiều vừa đọc đều.\")",
+   "expectOut": "Con đọc khá đều.\nVừa đọc nhiều vừa đọc đều.\n",
+   "soDong": 2,
+   "stdin": null
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai13-doan-09",
+   "code": "so = 24\n\nif so % 2 == 0 and so % 3 == 0:\n    print(\"Chia hết cho cả 2 và 3.\")\n\nif so % 5 == 0 or so % 4 == 0:\n    print(\"Chia hết cho 5 hoặc cho 4.\")\n\nten = \"Nam\"\nif \"a\" in ten and not (\"z\" in ten):\n    print(\"Có chữ a và không có chữ z.\")",
+   "expectOut": "Chia hết cho cả 2 và 3.\nChia hết cho 5 hoặc cho 4.\nCó chữ a và không có chữ z.\n",
+   "soDong": 3,
+   "stdin": null
+  },
+  {
+   "kind": "van",
+   "heading": "Điền vào chỗ trống",
+   "html": ""
+  },
+  {
+   "kind": "fill_blank",
+   "id": "bai13-dien-10",
+   "deBai": "Chọn từ trong ngân hàng điền vào ba câu sau.",
+   "bank": [
+    "elif",
+    "and",
+    "or",
+    "%"
+   ],
+   "items": [
+    "Bậc thứ hai của bậc thang xếp loại viết bằng {{1}}.",
+    "Muốn cả hai điều cùng đúng thì nối bằng {{2}}.",
+    "Muốn biết một số chia hết hay không thì dùng dấu {{3}}."
+   ],
+   "blanks": [
+    {
+     "accept": [
+      "elif"
+     ]
+    },
+    {
+     "accept": [
+      "and"
+     ]
+    },
+    {
+     "accept": [
+      "%"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai13-dien-11",
+   "deBai": "Điền hai ô cho bậc thang xếp loại chạy đúng.",
+   "bank": [
+    "elif",
+    "and",
+    "or",
+    "%"
+   ],
+   "template": "so_buoc = 450\nif so_buoc >= 600:\n    print(\"Giỏi lắm.\")\n{{1}} so_buoc >= {{2}}:\n    print(\"Khá rồi.\")\nelse:\n    print(\"Con đi hơi ít.\")",
+   "blanks": [
+    {
+     "accept": [
+      "elif"
+     ]
+    },
+    {
+     "accept": [
+      "300"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Giỏi lắm.\"",
+    "\"Khá rồi.\"",
+    "\"Con đi hơi ít.\""
+   ],
+   "expectOut": "Khá rồi.\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai13-dien-12",
+   "deBai": "Điền một ô để máy đòi cả hai điều cùng đúng.",
+   "bank": [
+    "elif",
+    "and",
+    "or",
+    "%"
+   ],
+   "template": "so_trang = 80\nso_ngay = 6\nif so_trang >= 50 {{1}} so_ngay >= 5:\n    print(\"Con đọc đều và đọc nhiều.\")",
+   "blanks": [
+    {
+     "accept": [
+      "and"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Con đọc đều và đọc nhiều.\""
+   ],
+   "expectOut": "Con đọc đều và đọc nhiều.\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai13-dien-13",
+   "deBai": "Điền hai ô để máy hỏi số này có chia hết cho 3 hoặc cho 5 hay không.",
+   "bank": [
+    "elif",
+    "and",
+    "or",
+    "%"
+   ],
+   "template": "so = 15\nif so {{1}} 3 == 0 {{2}} so % 5 == 0:\n    print(\"Số này chia hết cho 3 hoặc cho 5.\")",
+   "blanks": [
+    {
+     "accept": [
+      "%"
+     ]
+    },
+    {
+     "accept": [
+      "or"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Số này chia hết cho 3 hoặc cho 5.\""
+   ],
+   "expectOut": "Số này chia hết cho 3 hoặc cho 5.\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "free_code",
+   "id": "bai13-tuviet-14",
+   "deBai": "Viết chương trình xếp loại số trang sách con đọc trong\ntuần. Từ 100 trang trở lên thì khen <code>\"Đọc khoẻ quá!\"</code>. Từ 50 trang thì\n<code>\"Đọc khá đều.\"</code>. Từ 20 trang thì <code>\"Tạm được.\"</code>. Ít hơn nữa thì\n<code>\"Tuần sau đọc thêm nhé.\"</code>.",
+   "hoiTruoc": [
+    "Bậc thang này có mấy bậc?",
+    "Bậc nào phải viết trước, bậc cao hay bậc thấp?",
+    "Bậc cuối cùng dùng <code>elif</code> hay dùng <code>else</code>?"
+   ],
+   "checklist": [
+    "Con xếp bậc thang từ cao xuống thấp cho đúng.",
+    "Con nối được hai điều kiện bằng <code>and</code>.",
+    "Con đoán đúng kết quả trước khi chạy."
+   ],
+   "hints": [
+    {
+     "hoi": "Con đọc 70 trang thì rơi vào bậc nào?",
+     "dap": "bậc 50"
+    },
+    {
+     "hoi": "Nếu đảo bậc 20 lên trên cùng thì sao?",
+     "dap": "ai cũng rơi vào bậc 20"
+    },
+    {
+     "hoi": "Vậy bậc nào phải đứng trước?",
+     "dap": "bậc cao nhất"
+    }
+   ],
+   "loiHayMac": "<p>Cháu hay viết <code>if</code> cho cả bốn bậc. Lúc ấy\nmáy in ba dòng một lúc, vì bốn câu <code>if</code> rời nhau đều được xét. Cho cháu\nchạy thử bản sai để tự thấy, rồi mới sửa thành <code>elif</code>.</p>",
+   "loiGiai": "",
+   "goiY": "<p>Bốn bậc. Viết bậc cao trước:\n<code>if so_trang &gt;= 100:</code> rồi <code>elif so_trang &gt;= 50:</code> rồi\n<code>elif so_trang &gt;= 20:</code> và cuối cùng là <code>else:</code>. Bậc cuối dùng\n<code>else</code> vì nó hứng mọi trường hợp còn lại.</p>"
+  }
+ ]
+}

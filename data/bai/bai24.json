@@ -1,0 +1,310 @@
+{
+ "schemaVersion": "1.0",
+ "so": 24,
+ "ten": "Xử lý chuỗi",
+ "chang": 5,
+ "khaiNiemMoi": [],
+ "khoi": [
+  {
+   "kind": "muc_tieu",
+   "items": [
+    "Đo được một chuỗi dài bao nhiêu chữ.",
+    "Cắt được chuỗi ra thành từng mảnh và lật ngược chuỗi.",
+    "Đếm được số nguyên âm trong một chuỗi."
+   ]
+  },
+  {
+   "kind": "guess_text",
+   "id": "bai24-guess-01",
+   "html": "<p>Bé Bi viết chữ <code>\"PYTHON\"</code> lên một băng giấy, mỗi chữ một ô.</p>\n<p>Bi lấy kéo cắt giữa chữ T và chữ H. Con đoán xem hai mảnh ghi chữ gì?</p>",
+   "reveal": "<p>Hai mảnh là <code>PYT</code> và <code>HON</code>. Nhát cắt nằm ngay\ntrước ô số 3.</p>"
+  },
+  {
+   "kind": "van",
+   "heading": "Cùng học",
+   "html": "<p>Chuỗi giống một băng giấy. Mỗi chữ nằm gọn trong một ô.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai24-bangiay.svg",
+   "alt": "Hình trong sách. Chữ trong hình: s; số thứ tự của từng ô; cắt ở ba chỗ này; s[0:3]; ba ô đầu; s[3:]; từ ô 3 tới hết; s[::-1]; cả băng giấy lật ngược lại, đọc từ phải sang trái."
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p><code>len(s)</code> cho biết băng giấy dài mấy ô. Ô đầu tiên mang số <code>0</code>.\n<code>s[0:3]</code> là cắt lấy ba ô đầu. <code>s[3:]</code> là lấy từ ô 3 cho tới hết.\n<code>s[::-1]</code> là lật ngược cả băng giấy.\n<code>s.upper()</code> đổi hết sang chữ hoa. <code>s.lower()</code> đổi hết sang chữ thường.\n<code>for c in s</code> cho con xem từng chữ một, từ trái sang phải.\nNguyên âm ở bài này chỉ gồm <code>a</code>, <code>e</code>, <code>i</code>, <code>o</code>, <code>u</code> không dấu.\nChữ tiếng Việt có dấu thì khó hơn nhiều. Việc ấy để dành sau.</p>"
+  },
+  {
+   "kind": "vidu",
+   "code": "# Băng giấy ghi PYTHON: đo, lấy một chữ, cắt ba kiểu\ns = \"PYTHON\"\nprint(len(s))\nprint(s[0], s[0:3], s[3:], s[::-1])\nprint(s.lower(), \"mun\".upper())\n\n# Đếm nguyên âm a, e, i, o, u không dấu\nten = \"con meo\"\ndem = 0\nfor c in ten:\n    if c in \"aeiou\":\n        dem = dem + 1\nprint(\"số nguyên âm:\", dem)",
+   "out": "6\nP PYT HON NOHTYP\npython MUN\nsố nguyên âm: 3\n",
+   "stdin": null
+  },
+  {
+   "kind": "nhac",
+   "html": "<p>Máy đếm ô từ <code>0</code> chứ không từ <code>1</code>. Chuỗi <code>\"PYTHON\"</code> có 6 ô, nên ô\ncuối là <code>s[5]</code>.</p>\n<p>Viết <code>s[6]</code> là với ra ngoài băng giấy. Máy kêu <code>IndexError</code> và dừng.</p>"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Chuỗi <code>s = \"PYTHON\"</code>. <code>len(s)</code> cho ra gì?",
+   "options": [
+    "<code>5</code>",
+    "<code>6</code>",
+    "<code>7</code>",
+    "<code>\"PYTHON\"</code>"
+   ],
+   "answerIndex": 1,
+   "explanation": "<code>len</code> đếm số ô của băng giấy, được 6. Nó đếm ô chứ không đọc số\nthứ tự của ô cuối.",
+   "id": "bai24-tn-02"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>s[0]</code> cho ra chữ nào?",
+   "options": [
+    "<code>P</code>",
+    "<code>Y</code>",
+    "<code>N</code>",
+    "Máy báo lỗi"
+   ],
+   "answerIndex": 0,
+   "explanation": "Ô đầu tiên mang số 0, không mang số 1. Đây là chỗ các bạn hay nhầm\nnhất.",
+   "id": "bai24-tn-03"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>s[0:3]</code> cho ra gì?",
+   "options": [
+    "<code>PYTH</code>",
+    "<code>PYT</code>",
+    "<code>YTH</code>",
+    "<code>HON</code>"
+   ],
+   "answerIndex": 1,
+   "explanation": "Lấy từ ô 0 và dừng lại ngay trước ô 3. Ô số 3 là chữ H, nó không\nđược lấy.",
+   "id": "bai24-tn-04"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>s[3:]</code> cho ra gì?",
+   "options": [
+    "<code>PYT</code>",
+    "<code>H</code>",
+    "<code>HON</code>",
+    "<code>NOH</code>"
+   ],
+   "answerIndex": 2,
+   "explanation": "Thiếu số sau dấu hai chấm nghĩa là lấy cho tới hết băng giấy. Bắt\nđầu từ ô 3 là chữ H.",
+   "id": "bai24-tn-05"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>s[::-1]</code> cho ra gì?",
+   "options": [
+    "<code>PYTHON</code>",
+    "<code>NOHTYP</code>",
+    "<code>python</code>",
+    "<code>NOHT</code>"
+   ],
+   "answerIndex": 1,
+   "explanation": "Đây là cả băng giấy lật ngược lại. Con đọc chữ từ phải sang trái thì\nra đúng như vậy.",
+   "id": "bai24-tn-06"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Trong chuỗi <code>\"con meo\"</code> có mấy nguyên âm không dấu?",
+   "options": [
+    "<code>2</code>",
+    "<code>3</code>",
+    "<code>4</code>",
+    "<code>7</code>"
+   ],
+   "answerIndex": 1,
+   "explanation": "Ba nguyên âm là o của chữ con, rồi e và o của chữ meo. Dấu cách và\ncác chữ khác không tính.",
+   "id": "bai24-tn-07"
+  },
+  {
+   "kind": "van",
+   "heading": "Máy in ra gì",
+   "html": "<p>Đọc chương trình rồi đoán xem máy in ra gì. Đoán xong hãy bấm Chạy để so.</p>"
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai24-doan-08",
+   "code": "s = \"meo\"\nfor c in s:\n    print(c, c.upper())",
+   "expectOut": "m M\ne E\no O\n",
+   "soDong": 3,
+   "stdin": null
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai24-doan-09",
+   "code": "s = \"lop ba\"\nprint(len(s))\nprint(s[0:3])\nprint(s[4:])\nprint(s[::-1])",
+   "expectOut": "6\nlop\nba\nab pol\n",
+   "soDong": 4,
+   "stdin": null
+  },
+  {
+   "kind": "van",
+   "heading": "Điền vào chỗ trống",
+   "html": ""
+  },
+  {
+   "kind": "fill_blank",
+   "id": "bai24-dien-10",
+   "deBai": "Chọn từ trong ngân hàng điền vào ba câu sau.",
+   "bank": [
+    "len",
+    "0",
+    "upper",
+    "lower"
+   ],
+   "items": [
+    "Muốn biết chuỗi dài mấy chữ thì dùng {{1}}.",
+    "Ô đầu tiên của chuỗi mang số thứ tự {{2}}.",
+    "Nút đổi hết sang chữ hoa là {{3}}."
+   ],
+   "blanks": [
+    {
+     "accept": [
+      "len"
+     ]
+    },
+    {
+     "accept": [
+      "0"
+     ]
+    },
+    {
+     "accept": [
+      "upper"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai24-dien-11",
+   "deBai": "Điền hai ô để máy in chữ đầu và chữ cuối của băng giấy.",
+   "bank": [
+    "len",
+    "0",
+    "upper",
+    "lower"
+   ],
+   "template": "s = \"PYTHON\"\nprint(s[{{1}}])\nprint(s[{{2}}])",
+   "blanks": [
+    {
+     "accept": [
+      "0"
+     ]
+    },
+    {
+     "accept": [
+      "5"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"PYTHON\""
+   ],
+   "expectOut": "P\nN\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai24-dien-12",
+   "deBai": "Điền hai ô để cắt ra chữ đầu và chữ cuối của câu.",
+   "bank": [
+    "len",
+    "0",
+    "upper",
+    "lower"
+   ],
+   "template": "s = \"con meo mun\"\nprint(s[0:{{1}}])\nprint(s[{{2}}:])",
+   "blanks": [
+    {
+     "accept": [
+      "3"
+     ]
+    },
+    {
+     "accept": [
+      "8"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"con meo mun\""
+   ],
+   "expectOut": "con\nmun\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai24-dien-13",
+   "deBai": "Điền hai ô cho máy đếm nguyên âm.",
+   "bank": [
+    "len",
+    "0",
+    "upper",
+    "lower"
+   ],
+   "template": "s = \"hoc python\"\ndem = 0\nfor c in s:\n    if c in \"{{1}}\":\n        dem = dem + {{2}}\nprint(\"đếm được\", dem, \"nguyên âm\")",
+   "blanks": [
+    {
+     "accept": [
+      "aeiou"
+     ]
+    },
+    {
+     "accept": [
+      "1"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"hoc python\"",
+    "\"{{1}}\"",
+    "\"đếm được\"",
+    "\"nguyên âm\""
+   ],
+   "expectOut": "đếm được 2 nguyên âm\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "free_code",
+   "id": "bai24-tuviet-14",
+   "deBai": "Cất tên con vào một hộp chữ. In tên ấy ba lần: một lần\nngược, một lần bằng chữ hoa, một lần là số nguyên âm không dấu đếm được.",
+   "hoiTruoc": [
+    "Lật ngược một chuỗi thì viết thế nào?",
+    "Đổi sang chữ hoa thì gọi nút nào?",
+    "Con cần một cái hộp đếm. Lúc đầu hộp ấy chứa số mấy?"
+   ],
+   "checklist": [
+    "Con đo được chuỗi dài mấy chữ.",
+    "Con cắt được ba kiểu và lật ngược được chuỗi.",
+    "Con đếm được nguyên âm bằng vòng lặp."
+   ],
+   "hints": [
+    {
+     "hoi": "Ô đầu tiên con đánh số mấy?",
+     "dap": "số 0"
+    },
+    {
+     "hoi": "Muốn ba ô đầu thì kéo cắt ngay trước ô nào?",
+     "dap": "ô số 3"
+    },
+    {
+     "hoi": "Lật cả băng giấy lại thì đọc ra chữ gì?",
+     "dap": "chính là <code>s[::-1]</code>"
+    }
+   ],
+   "loiHayMac": "",
+   "loiGiai": "",
+   "goiY": "<p>Với tên <code>\"Bi\"</code>: <code>ten[::-1]</code> ra <code>iB</code>,\n<code>ten.upper()</code> ra <code>BI</code>, và đếm được 1 nguyên âm.</p>"
+  }
+ ]
+}

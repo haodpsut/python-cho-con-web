@@ -1,0 +1,305 @@
+{
+ "schemaVersion": "1.0",
+ "so": 21,
+ "ten": "Dãy số đếm cách đều",
+ "chang": 5,
+ "khaiNiemMoi": [],
+ "khoi": [
+  {
+   "kind": "muc_tieu",
+   "items": [
+    "Biết thế nào là một dãy số đếm cách đều.",
+    "Sinh được dãy ấy bằng vòng lặp và phép cộng.",
+    "Tính được tổng cả dãy bằng một biến cộng dồn."
+   ]
+  },
+  {
+   "kind": "guess_text",
+   "id": "bai21-guess-01",
+   "html": "<p>Bé Bi xây cầu thang và ghi số lên từng bậc: 3, 6, 9, 12.</p>\n<p>Con đoán xem bậc tiếp theo ghi số mấy? Vì sao con biết?</p>",
+   "reveal": "<p>Bậc tiếp theo ghi 15. Dãy này đếm thêm 3 mỗi bậc,\nnên lấy 12 cộng thêm 3.</p>"
+  },
+  {
+   "kind": "van",
+   "heading": "Cùng học",
+   "html": "<p>Dãy số mà hai số liền nhau cách nhau đúng một khoảng gọi là\n<b>dãy đếm cách đều</b>.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai21-bacthang.svg",
+   "alt": "Hình trong sách. Chữ trong hình: thêm 2; Bậc nào cũng cao hơn bậc trước đúng một khoảng như nhau.."
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p>Muốn sinh dãy ấy, con lấy số đầu rồi cứ cộng thêm đúng khoảng đó.\nĐếm thêm 2, thêm 5 hay thêm 100 đều làm y một kiểu.\nMuốn biết tổng cả dãy, con để sẵn một biến bằng 0 rồi cộng dồn từng số vào.</p>"
+  },
+  {
+   "kind": "vidu",
+   "code": "# Đếm thêm 2, bắt đầu từ 3\nso = 3\nfor i in range(5):\n    print(so, end=\" \")\n    so = so + 2\nprint()\n\n# Đếm thêm 5 từ 10, cộng dồn luôn\nso = 10\ntong = 0\nfor i in range(4):\n    print(so, end=\" \")\n    tong = tong + so\n    so = so + 5\nprint()\nprint(\"Tổng bốn số vừa in là\", tong)",
+   "out": "3 5 7 9 11 \n10 15 20 25 \nTổng bốn số vừa in là 70\n",
+   "stdin": null
+  },
+  {
+   "kind": "nhac",
+   "html": "<p><code>range(3, 30, 3)</code> dừng ở 27, trong dãy không có 30. Lệnh <code>range</code> luôn\ndừng trước số cuối. Muốn lấy cả 30 thì con viết <code>range(3, 31, 3)</code>.</p>\n<p>Quên dấu hai chấm ở cuối dòng <code>for</code> thì máy kêu <code>SyntaxError</code>.\nNghĩa là con viết sai phép, máy chưa chạy dòng nào cả.</p>"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Dãy 4, 7, 10, 13 đếm thêm mấy mỗi lần?",
+   "options": [
+    "2",
+    "3",
+    "4",
+    "7"
+   ],
+   "answerIndex": 1,
+   "explanation": "Lấy 7 bớt đi 4 còn 3. Cặp nào trong dãy cũng cách nhau đúng 3, nên\nđây là dãy đếm cách đều.",
+   "id": "bai21-tn-02"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Số tiếp theo của dãy 5, 10, 15, 20 là số mấy?",
+   "options": [
+    "21",
+    "24",
+    "25",
+    "30"
+   ],
+   "answerIndex": 2,
+   "explanation": "Dãy này đếm thêm 5. Lấy số cuối là 20 rồi cộng thêm 5 thì được 25.",
+   "id": "bai21-tn-03"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>range(2, 11, 2)</code> cho ra những số nào?",
+   "options": [
+    "2, 4, 6, 8, 10",
+    "2, 4, 6, 8, 10, 11",
+    "2, 3, 4, 5, 6",
+    "2, 11"
+   ],
+   "answerIndex": 0,
+   "explanation": "Số đầu là 2, bước nhảy là 2, và dãy dừng trước 11. Số 10 còn nhỏ hơn\n11 nên được lấy, số 12 thì vượt rồi.",
+   "id": "bai21-tn-04"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Muốn in 100, 200, 300 bằng cách cộng dồn thì mỗi bước cộng thêm mấy?",
+   "options": [
+    "1",
+    "10",
+    "100",
+    "300"
+   ],
+   "answerIndex": 2,
+   "explanation": "Hai số liền nhau cách nhau 100, nên mỗi bước con viết\n<code>so = so + 100</code>.",
+   "id": "bai21-tn-05"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Biến cộng dồn phải đặt bằng mấy trước khi vào vòng lặp?",
+   "options": [
+    "0",
+    "1",
+    "số đầu của dãy",
+    "số cuối của dãy"
+   ],
+   "answerIndex": 0,
+   "explanation": "Lúc chưa cộng gì vào thì tổng đang là 0. Đặt bằng 1 là tự thêm thừa\nmột đơn vị vào kết quả.",
+   "id": "bai21-tn-06"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Dãy nào dưới đây không phải dãy đếm cách đều?",
+   "options": [
+    "3, 6, 9, 12",
+    "10, 20, 30, 40",
+    "1, 2, 4, 8",
+    "7, 14, 21, 28"
+   ],
+   "answerIndex": 2,
+   "explanation": "Dãy 1, 2, 4, 8 cách nhau 1 rồi 2 rồi 4. Khoảng cách thay đổi nên nó\nkhông đều.",
+   "id": "bai21-tn-07"
+  },
+  {
+   "kind": "van",
+   "heading": "Máy in ra gì",
+   "html": "<p>Đọc chương trình rồi đoán xem máy in ra gì. Đoán xong hãy bấm Chạy để so.</p>"
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai21-doan-08",
+   "code": "# Đếm thêm 100, in mỗi số một dòng\nso = 100\nfor i in range(5):\n    print(so)\n    so = so + 100",
+   "expectOut": "100\n200\n300\n400\n500\n",
+   "soDong": 5,
+   "stdin": null
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai21-doan-09",
+   "code": "# Ba dãy cách đều, dùng bước nhảy của range\nfor x in range(2, 11, 2):\n    print(x, end=\" \")\nprint()\nfor x in range(5, 26, 5):\n    print(x, end=\" \")\nprint()\ntong = 0\nfor x in range(1, 18, 4):\n    tong = tong + x\nprint(\"Tổng dãy thứ ba là\", tong)",
+   "expectOut": "2 4 6 8 10 \n5 10 15 20 25 \nTổng dãy thứ ba là 45\n",
+   "soDong": 3,
+   "stdin": null
+  },
+  {
+   "kind": "van",
+   "heading": "Điền vào chỗ trống",
+   "html": ""
+  },
+  {
+   "kind": "fill_blank",
+   "id": "bai21-dien-10",
+   "deBai": "Chọn từ trong ngân hàng điền vào ba câu sau.",
+   "bank": [
+    "cách đều",
+    "2",
+    "cộng dồn",
+    "range"
+   ],
+   "items": [
+    "Dãy mà hai số liền nhau cách nhau đúng một khoảng gọi là dãy\n        {{1}}.",
+    "Đếm thêm 2 nghĩa là mỗi bước cộng thêm {{2}}.",
+    "Biến gom dần tổng của cả dãy gọi là biến {{3}}."
+   ],
+   "blanks": [
+    {
+     "accept": [
+      "cách đều"
+     ]
+    },
+    {
+     "accept": [
+      "2"
+     ]
+    },
+    {
+     "accept": [
+      "cộng dồn"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai21-dien-11",
+   "deBai": "Điền hai ô để máy in ra đúng bốn số bên dưới.",
+   "bank": [
+    "cách đều",
+    "2",
+    "cộng dồn",
+    "range"
+   ],
+   "template": "so = 3\nfor i in {{1}}(4):\n    print(so)\n    so = so + {{2}}",
+   "blanks": [
+    {
+     "accept": [
+      "range"
+     ]
+    },
+    {
+     "accept": [
+      "2"
+     ]
+    }
+   ],
+   "chuIn": [],
+   "expectOut": "3\n5\n7\n9\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai21-dien-12",
+   "deBai": "Điền hai ô để máy cộng dồn dãy 10, 15, 20, 25.",
+   "bank": [
+    "cách đều",
+    "2",
+    "cộng dồn",
+    "range"
+   ],
+   "template": "so = 10\ntong = {{1}}\nfor i in range(4):\n    tong = tong + so\n    so = so + {{2}}\nprint(\"Tổng là\", tong)",
+   "blanks": [
+    {
+     "accept": [
+      "0"
+     ]
+    },
+    {
+     "accept": [
+      "5"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Tổng là\""
+   ],
+   "expectOut": "Tổng là 70\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai21-dien-13",
+   "deBai": "Điền hai ô để dãy đếm thêm 3 dừng đúng ở 30.",
+   "bank": [
+    "cách đều",
+    "2",
+    "cộng dồn",
+    "range"
+   ],
+   "template": "for x in range(3, {{1}}, 3):\n    print(x, {{2}}=\" \")\nprint()",
+   "blanks": [
+    {
+     "accept": [
+      "31"
+     ]
+    },
+    {
+     "accept": [
+      "end"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\" \""
+   ],
+   "expectOut": "3 6 9 12 15 18 21 24 27 30 \n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "free_code",
+   "id": "bai21-tuviet-14",
+   "deBai": "In ra dãy đếm thêm 7, bắt đầu từ 7, in đúng mười số.\nRồi in thêm một dòng cho biết tổng của cả dãy ấy.",
+   "hoiTruoc": [
+    "Số đầu tiên của dãy là số mấy?",
+    "Mỗi bước con cộng thêm mấy?",
+    "Biến cộng dồn bằng mấy lúc chưa vào vòng lặp?"
+   ],
+   "checklist": [
+    "Con nhìn một dãy và nói được nó đếm thêm mấy.",
+    "Con sinh được dãy cách đều bằng vòng lặp.",
+    "Con tính được tổng cả dãy bằng biến cộng dồn."
+   ],
+   "hints": [
+    {
+     "hoi": "Bậc sau cao hơn bậc trước mấy ô?",
+     "dap": "đúng một khoảng như nhau"
+    },
+    {
+     "hoi": "Vậy số sau hơn số trước mấy?",
+     "dap": "cùng con số ấy"
+    },
+    {
+     "hoi": "Muốn máy làm việc đó thì mỗi lượt con viết dòng gì?",
+     "dap": "<code>so = so + 7</code>"
+    }
+   ],
+   "loiHayMac": "<p>Quên dòng tăng <code>so</code>, thế là máy in mười lần\ncùng một số. Bảo cháu đọc to từng dòng trong vòng lặp, cháu sẽ tự thấy\nthiếu việc tăng.</p>",
+   "loiGiai": "",
+   "goiY": "<p>Dãy là 7, 14, 21, 28, 35, 42, 49, 56, 63, 70.\nTổng bằng 385. Chương trình: đặt <code>so = 7</code> và <code>tong = 0</code>, cho vòng lặp\nchạy <code>range(10)</code>, mỗi lượt in <code>so</code>, cộng <code>so</code> vào <code>tong</code>, rồi\ntăng <code>so</code> thêm 7. In <code>tong</code> sau khi vòng lặp xong.</p>"
+  }
+ ]
+}

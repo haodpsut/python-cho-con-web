@@ -1,0 +1,330 @@
+{
+ "schemaVersion": "1.0",
+ "version": "2026.10.04-1",
+ "title": "Python cho con",
+ "tenbe": "Bi",
+ "chang": [
+  {
+   "id": 1,
+   "ten": "Chào máy tính",
+   "mau": "#0E7490",
+   "bai": [
+    1,
+    2
+   ]
+  },
+  {
+   "id": 2,
+   "ten": "Cái hộp đựng số",
+   "mau": "#B45309",
+   "bai": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  {
+   "id": 3,
+   "ten": "Máy biết chọn",
+   "mau": "#7C3AED",
+   "bai": [
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+   ]
+  },
+  {
+   "id": 4,
+   "ten": "Máy biết lặp",
+   "mau": "#15803D",
+   "bai": [
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+   ]
+  },
+  {
+   "id": 5,
+   "ten": "Dãy số và vòng lặp while",
+   "mau": "#BE185D",
+   "bai": [
+    21,
+    22,
+    23,
+    24
+   ]
+  },
+  {
+   "id": 6,
+   "ten": "Hàm, đếm và số nguyên tố",
+   "mau": "#1D4ED8",
+   "bai": [
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32
+   ]
+  }
+ ],
+ "bai": [
+  {
+   "so": 1,
+   "ten": "Làm quen với Python và IDLE",
+   "chang": 1,
+   "file": "bai/bai01.json",
+   "soViec": 14
+  },
+  {
+   "so": 2,
+   "ten": "In nhiều dòng cho đúng",
+   "chang": 1,
+   "file": "bai/bai02.json",
+   "soViec": 14
+  },
+  {
+   "so": 3,
+   "ten": "Tính toán và biến",
+   "chang": 2,
+   "file": "bai/bai03.json",
+   "soViec": 14
+  },
+  {
+   "so": 4,
+   "ten": "Chia kẹo: lấy phần và lấy dư",
+   "chang": 2,
+   "file": "bai/bai04.json",
+   "soViec": 14
+  },
+  {
+   "so": 5,
+   "ten": "Chuỗi: ghép chữ và nhân chữ",
+   "chang": 2,
+   "file": "bai/bai05.json",
+   "soViec": 14
+  },
+  {
+   "so": 6,
+   "ten": "Nhập dữ liệu và ba loại dữ liệu",
+   "chang": 2,
+   "file": "bai/bai06.json",
+   "soViec": 14
+  },
+  {
+   "so": 7,
+   "ten": "Đổi chữ thành số, số thành chữ",
+   "chang": 2,
+   "file": "bai/bai07.json",
+   "soViec": 14
+  },
+  {
+   "so": 8,
+   "ten": "Ôn tập chặng đầu",
+   "chang": 2,
+   "file": "bai/bai08.json",
+   "soViec": 14
+  },
+  {
+   "so": 9,
+   "ten": "Lệnh if và phép chia lấy dư",
+   "chang": 3,
+   "file": "bai/bai09.json",
+   "soViec": 14
+  },
+  {
+   "so": 10,
+   "ten": "Lệnh if ... else",
+   "chang": 3,
+   "file": "bai/bai10.json",
+   "soViec": 14
+  },
+  {
+   "so": 11,
+   "ten": "Lệnh if ... elif",
+   "chang": 3,
+   "file": "bai/bai11.json",
+   "soViec": 14
+  },
+  {
+   "so": 12,
+   "ten": "Toán tử and, or, not, và in",
+   "chang": 3,
+   "file": "bai/bai12.json",
+   "soViec": 14
+  },
+  {
+   "so": 13,
+   "ten": "Tổng hợp điều kiện",
+   "chang": 3,
+   "file": "bai/bai13.json",
+   "soViec": 14
+  },
+  {
+   "so": 14,
+   "ten": "Ngày thử sức lần một",
+   "chang": 3,
+   "file": "bai/bai14.json",
+   "soViec": 14
+  },
+  {
+   "so": 15,
+   "ten": "Vòng lặp for và range",
+   "chang": 4,
+   "file": "bai/bai15.json",
+   "soViec": 14
+  },
+  {
+   "so": 16,
+   "ten": "Luyện vòng lặp for",
+   "chang": 4,
+   "file": "bai/bai16.json",
+   "soViec": 14
+  },
+  {
+   "so": 17,
+   "ten": "Danh sách và cách duyệt",
+   "chang": 4,
+   "file": "bai/bai17.json",
+   "soViec": 14
+  },
+  {
+   "so": 18,
+   "ten": "Ôn tập: điều kiện và vòng lặp và danh sách",
+   "chang": 4,
+   "file": "bai/bai18.json",
+   "soViec": 14
+  },
+  {
+   "so": 19,
+   "ten": "Sửa bài: đọc lời máy báo",
+   "chang": 4,
+   "file": "bai/bai19.json",
+   "soViec": 14
+  },
+  {
+   "so": 20,
+   "ten": "Vòng lặp lồng nhau, break và continue",
+   "chang": 4,
+   "file": "bai/bai20.json",
+   "soViec": 14
+  },
+  {
+   "so": 21,
+   "ten": "Dãy số đếm cách đều",
+   "chang": 5,
+   "file": "bai/bai21.json",
+   "soViec": 14
+  },
+  {
+   "so": 22,
+   "ten": "Mẹo tính tổng thật nhanh",
+   "chang": 5,
+   "file": "bai/bai22.json",
+   "soViec": 14
+  },
+  {
+   "so": 23,
+   "ten": "Vòng lặp while",
+   "chang": 5,
+   "file": "bai/bai23.json",
+   "soViec": 14
+  },
+  {
+   "so": 24,
+   "ten": "Xử lý chuỗi",
+   "chang": 5,
+   "file": "bai/bai24.json",
+   "soViec": 14
+  },
+  {
+   "so": 25,
+   "ten": "Những nút bấm có sẵn",
+   "chang": 6,
+   "file": "bai/bai25.json",
+   "soViec": 14
+  },
+  {
+   "so": 26,
+   "ten": "Tự đặt tên cho một việc: def",
+   "chang": 6,
+   "file": "bai/bai26.json",
+   "soViec": 14
+  },
+  {
+   "so": 27,
+   "ten": "Đếm cho nhanh",
+   "chang": 6,
+   "file": "bai/bai27.json",
+   "soViec": 14
+  },
+  {
+   "so": 28,
+   "ten": "Ôn tập: while, chuỗi, hàm, đếm",
+   "chang": 6,
+   "file": "bai/bai28.json",
+   "soViec": 14
+  },
+  {
+   "so": 29,
+   "ten": "Số nguyên tố",
+   "chang": 6,
+   "file": "bai/bai29.json",
+   "soViec": 14
+  },
+  {
+   "so": 30,
+   "ten": "Sàng số nguyên tố",
+   "chang": 6,
+   "file": "bai/bai30.json",
+   "soViec": 14
+  },
+  {
+   "so": 31,
+   "ten": "Ôn tập tổng hợp",
+   "chang": 6,
+   "file": "bai/bai31.json",
+   "soViec": 14
+  },
+  {
+   "so": 32,
+   "ten": "Ngày thử sức lần hai",
+   "chang": 6,
+   "file": "bai/bai32.json",
+   "soViec": 14
+  }
+ ],
+ "phuLuc": [
+  {
+   "id": "a",
+   "ten": "Từ điển lỗi: máy đang nói gì",
+   "file": "phu-luc/a.json"
+  },
+  {
+   "id": "b",
+   "ten": "Bảng tra từ khóa",
+   "file": "phu-luc/b.json"
+  },
+  {
+   "id": "c",
+   "ten": "Để dành lớp sau",
+   "file": "phu-luc/c.json"
+  },
+  {
+   "id": "d",
+   "ten": "Bảng một trăm ô để gạch sàng",
+   "file": "phu-luc/d.json"
+  }
+ ]
+}

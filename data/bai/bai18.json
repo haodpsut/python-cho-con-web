@@ -1,0 +1,317 @@
+{
+ "schemaVersion": "1.0",
+ "so": 18,
+ "ten": "Ôn tập: điều kiện và vòng lặp và danh sách",
+ "chang": 4,
+ "khaiNiemMoi": [],
+ "khoi": [
+  {
+   "kind": "muc_tieu",
+   "items": [
+    "Nhớ lại ba thứ đã học: điều kiện, vòng lặp, danh sách.",
+    "Ghép cả ba thứ ấy vào chung một chương trình.",
+    "Đếm xem trong một dãy có mấy số hợp điều kiện."
+   ]
+  },
+  {
+   "kind": "guess_text",
+   "id": "bai18-guess-01",
+   "html": "<p>Bé Bi có danh sách điểm <code>[7, 9, 5, 10, 8]</code>.</p>\n<p>Con đếm giúp bé xem có mấy điểm từ 8 trở lên nhé.</p>",
+   "reveal": "<p>Có ba điểm từ 8 trở lên, là <code>9</code>, <code>10</code> và <code>8</code>.</p>"
+  },
+  {
+   "kind": "van",
+   "heading": "Cùng học",
+   "html": "<p>Hôm nay không có từ mới. Con chỉ ghép ba thứ cũ lại với nhau.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai18-batthu.svg",
+   "alt": "Hình trong sách. Chữ trong hình: Điều kiện; if; đúng; sai; rẽ một trong hai lối; Vòng lặp; for; 5 lần; làm đi làm lại; Danh sách; đoàn tàu có toađánh số từ 0."
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p>Muốn đếm thì con làm ba bước. Một là đặt <code>dem = 0</code> trước vòng lặp.\nHai là cho vòng lặp đi qua từng phần tử. Ba là gặp cái nào hợp điều kiện\nthì cộng thêm một vào <code>dem</code>.</p>"
+  },
+  {
+   "kind": "vidu",
+   "code": "# Ôn lại ba thứ cùng một lúc\ndiem = [7, 9, 5, 10, 8]\nprint(\"Số bài kiểm tra:\", len(diem))\nprint(\"Điểm cao nhất:\", max(diem))\ndem = 0\nfor d in diem:\n    if d >= 8:\n        dem = dem + 1\nprint(\"Số bài được 8 trở lên:\", dem)",
+   "out": "Số bài kiểm tra: 5\nĐiểm cao nhất: 10\nSố bài được 8 trở lên: 3\n",
+   "stdin": null
+  },
+  {
+   "kind": "nhac",
+   "html": "<p>Dòng nào thuộc về vòng lặp thì phải thụt vào. Nếu con đặt <code>dem = 0</code> ở\nbên trong vòng lặp thì mỗi lượt nó lại về 0. Cuối cùng máy in ra 1 hoặc 0,\nkhông bao giờ đúng. Máy không kêu lỗi gì cả, nên con phải tự soi.</p>"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>range(1, 5)</code> cho ra mấy số?",
+   "options": [
+    "3 số",
+    "4 số",
+    "5 số",
+    "6 số"
+   ],
+   "answerIndex": 1,
+   "explanation": "<code>range</code> lấy từ số đầu nhưng bỏ số cuối, nên chỉ có <code>1 2 3 4</code>.",
+   "id": "bai18-tn-02"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Có <code>ds = [4, 7, 2]</code>. Vậy <code>ds[0]</code> là số nào?",
+   "options": [
+    "<code>4</code>",
+    "<code>7</code>",
+    "<code>2</code>",
+    "Máy kêu lỗi"
+   ],
+   "answerIndex": 0,
+   "explanation": "Toa tàu đánh số từ 0, nên toa số 0 chính là toa đầu tiên.",
+   "id": "bai18-tn-03"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Muốn đếm, con đặt <code>dem = 0</code> ở chỗ nào?",
+   "options": [
+    "Bên trong vòng lặp",
+    "Trước vòng lặp",
+    "Sau lệnh <code>print</code>",
+    "Chỗ nào cũng được"
+   ],
+   "answerIndex": 1,
+   "explanation": "Đặt bên trong thì mỗi lượt nó lại về 0, nên cuối cùng đếm sai.",
+   "id": "bai18-tn-04"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>len([3, 6, 9])</code> cho ra gì?",
+   "options": [
+    "<code>18</code>",
+    "<code>3</code>",
+    "<code>9</code>",
+    "<code>[3, 6, 9]</code>"
+   ],
+   "answerIndex": 1,
+   "explanation": "<code>len</code> đếm xem có mấy toa, chứ không cộng các số trong toa lại.",
+   "id": "bai18-tn-05"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Trong vòng lặp, muốn chỉ làm với số chẵn thì viết gì?",
+   "options": [
+    "<code>if i == 2:</code>",
+    "<code>if i / 2:</code>",
+    "<code>if i % 2 == 0:</code>",
+    "<code>if i * 2 == 0:</code>"
+   ],
+   "answerIndex": 2,
+   "explanation": "Số chẵn là số chia 2 còn dư 0, mà lấy dư thì dùng dấu phần trăm.",
+   "id": "bai18-tn-06"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>max([5, 9, 2])</code> cho ra gì?",
+   "options": [
+    "<code>2</code>",
+    "<code>5</code>",
+    "<code>9</code>",
+    "<code>16</code>"
+   ],
+   "answerIndex": 2,
+   "explanation": "<code>max</code> đi tìm số lớn nhất trong cả đoàn tàu, ở đây là <code>9</code>.",
+   "id": "bai18-tn-07"
+  },
+  {
+   "kind": "van",
+   "heading": "Máy in ra gì",
+   "html": "<p>Đọc chương trình rồi đoán xem máy in ra gì. Đoán xong hãy bấm Chạy để so.</p>"
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai18-doan-08",
+   "code": "for i in range(1, 7):\n    if i % 2 == 0:\n        print(i, \"chẵn\")\n    else:\n        print(i, \"lẻ\")",
+   "expectOut": "1 lẻ\n2 chẵn\n3 lẻ\n4 chẵn\n5 lẻ\n6 chẵn\n",
+   "soDong": 6,
+   "stdin": null
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai18-doan-09",
+   "code": "keo = [4, 6, 3, 7]\ntong = 0\nfor k in keo:\n    tong = tong + k\n    print(\"Cộng thêm\", k, \"được\", tong)\nprint(\"Tất cả có\", sum(keo), \"cái kẹo\")",
+   "expectOut": "Cộng thêm 4 được 4\nCộng thêm 6 được 10\nCộng thêm 3 được 13\nCộng thêm 7 được 20\nTất cả có 20 cái kẹo\n",
+   "soDong": 5,
+   "stdin": null
+  },
+  {
+   "kind": "van",
+   "heading": "Điền vào chỗ trống",
+   "html": ""
+  },
+  {
+   "kind": "fill_blank",
+   "id": "bai18-dien-10",
+   "deBai": "Chọn từ trong ngân hàng điền vào ba câu sau.",
+   "bank": [
+    "for",
+    "if",
+    "len",
+    "max"
+   ],
+   "items": [
+    "Muốn làm đi làm lại nhiều lần thì dùng {{1}}.",
+    "Muốn chỉ làm khi hợp điều kiện thì dùng {{2}}.",
+    "Muốn biết danh sách có mấy toa thì dùng {{3}}."
+   ],
+   "blanks": [
+    {
+     "accept": [
+      "for"
+     ]
+    },
+    {
+     "accept": [
+      "if"
+     ]
+    },
+    {
+     "accept": [
+      "len"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai18-dien-11",
+   "deBai": "Số vuông là số hột xếp vừa khít thành hình vuông, như 1, 4, 9, 16. Điền hai ô để máy đếm từ 1 đến 50 có mấy số vuông.",
+   "bank": [
+    "for",
+    "if",
+    "len",
+    "max"
+   ],
+   "template": "n = 50\ndem = 0\nfor i in range(1, n + 1):\n    if {{1}} <= n:\n        dem = {{2}}\nprint(\"Từ 1 đến\", n, \"có\", dem, \"số vuông\")",
+   "blanks": [
+    {
+     "accept": [
+      "i * i"
+     ]
+    },
+    {
+     "accept": [
+      "dem + 1"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Từ 1 đến\"",
+    "\"có\"",
+    "\"số vuông\""
+   ],
+   "expectOut": "Từ 1 đến 50 có 7 số vuông\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai18-dien-12",
+   "deBai": "Điền hai ô để máy nói bạn nào còn nhỏ, bạn nào lớn rồi.",
+   "bank": [
+    "for",
+    "if",
+    "len",
+    "max"
+   ],
+   "template": "tuoi = [8, 12, 7, 15, 9]\nfor t in tuoi:\n    if t {{1}} 10:\n        print(t, \"tuổi, còn nhỏ\")\n    {{2}}:\n        print(t, \"tuổi, lớn rồi\")",
+   "blanks": [
+    {
+     "accept": [
+      "<"
+     ]
+    },
+    {
+     "accept": [
+      "else"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"tuổi, còn nhỏ\"",
+    "\"tuổi, lớn rồi\""
+   ],
+   "expectOut": "8 tuổi, còn nhỏ\n12 tuổi, lớn rồi\n7 tuổi, còn nhỏ\n15 tuổi, lớn rồi\n9 tuổi, còn nhỏ\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai18-dien-13",
+   "deBai": "Điền ba ô để máy đọc bảng chiều cao của bốn bạn.",
+   "bank": [
+    "for",
+    "if",
+    "len",
+    "max"
+   ],
+   "template": "cao = [120, 135, 128, 141]\nprint(\"Thấp nhất:\", {{1}}(cao))\nprint(\"Cao nhất:\", {{2}}(cao))\nprint(\"Số bạn đo chiều cao:\", {{3}}(cao))",
+   "blanks": [
+    {
+     "accept": [
+      "min"
+     ]
+    },
+    {
+     "accept": [
+      "max"
+     ]
+    },
+    {
+     "accept": [
+      "len"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Thấp nhất:\"",
+    "\"Cao nhất:\"",
+    "\"Số bạn đo chiều cao:\""
+   ],
+   "expectOut": "Thấp nhất: 120\nCao nhất: 141\nSố bạn đo chiều cao: 4\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "free_code",
+   "id": "bai18-tuviet-14",
+   "deBai": "Bạn Na có danh sách điểm <code>[6, 10, 8, 9, 7, 10]</code>. Con viết\nchương trình in ra điểm cao nhất, rồi in ra số lần Na được 10.",
+   "hoiTruoc": [
+    "Tìm điểm cao nhất thì dùng từ nào?",
+    "Biến đếm phải đặt ở trước hay ở trong vòng lặp?",
+    "Điều kiện để cộng thêm một vào biến đếm là gì?"
+   ],
+   "checklist": [
+    "Con đọc được một danh sách từ đầu đến cuối bằng vòng lặp.",
+    "Con đặt được biến đếm đúng chỗ.",
+    "Con ghép được điều kiện vào trong vòng lặp."
+   ],
+   "hints": [
+    {
+     "hoi": "Con lật từng tấm lên, đó là cái gì trong chương trình?",
+     "dap": "vòng lặp"
+    },
+    {
+     "hoi": "Lật tới tấm ghi 10 thì con làm gì?",
+     "dap": "gạch một vạch ra giấy"
+    },
+    {
+     "hoi": "Tờ giấy đếm vạch ấy phải có từ lúc nào?",
+     "dap": "từ trước khi lật tấm đầu"
+    }
+   ],
+   "loiHayMac": "<p>Đặt <code>dem = 0</code> vào trong vòng lặp. Máy không kêu\nlỗi, chỉ ra kết quả sai. Cho cháu in thử <code>dem</code> ở mỗi lượt để tự thấy nó bị\nxoá về 0.</p>",
+   "loiGiai": "",
+   "goiY": "<p>Năm dòng:\n<code>diem = [6, 10, 8, 9, 7, 10]</code>, rồi <code>print(\"Cao nhất:\", max(diem))</code>,\nrồi <code>dem = 0</code>, rồi <code>for d in diem:</code> với thân là\n<code>if d == 10:</code> và <code>dem = dem + 1</code>, cuối cùng <code>print(\"Số lần được 10:\", dem)</code>.\nKết quả là <code>10</code> và <code>2</code>.</p>"
+  }
+ ]
+}

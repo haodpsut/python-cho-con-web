@@ -1,0 +1,310 @@
+{
+ "schemaVersion": "1.0",
+ "so": 32,
+ "ten": "Ngày thử sức lần hai",
+ "chang": 6,
+ "khaiNiemMoi": [],
+ "khoi": [
+  {
+   "kind": "muc_tieu",
+   "items": [
+    "Tự làm được một bài thi dài mà không cần ai nhắc.",
+    "Tự chấm được bài của mình bằng khung máy in ra.",
+    "Nhìn lại được cả sáu chặng của quyển sách."
+   ]
+  },
+  {
+   "kind": "guess_text",
+   "id": "bai32-guess-01",
+   "html": "<p>Hôm nay là ngày thử sức lần hai. Bé Bi đã học xong ba mươi mốt bài.</p>\n<p>Con đoán xem: muốn biết một số có chia hết cho 5 không thì dùng dấu nào?</p>",
+   "reveal": "<p>Dùng dấu lấy phần thừa. Một số chia hết cho 5 khi\nphần thừa bằng 0.</p>"
+  },
+  {
+   "kind": "van",
+   "heading": "Cùng học",
+   "html": "<p>Hôm nay con thi. Đề nằm ngay trong sách, con không cần mạng.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai32-tucham.svg",
+   "alt": "Hình trong sách. Chữ trong hình: Đọc đề viết kết quả vào khung bằng bút chì; Gõ chương trình vào máy rồi bấm F5; So hai bên giống nhau là con làm đúng; 1; 2; 3."
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p>Luật thi của nhà mình có ba điều.</p>\n<p>Một, con đọc đề rồi viết kết quả vào khung bằng bút chì.</p>\n<p>Hai, con gõ chương trình vào máy và bấm F5.</p>\n<p>Ba, con so hai bên. Giống nhau là con làm đúng.</p>\n<p>Dưới đây là một đề mẫu đã giải sẵn.</p>"
+  },
+  {
+   "kind": "vidu",
+   "code": "# Đề mẫu đã giải sẵn: in bảng nhân 3\nfor i in range(1, 6):\n    print(3, \"nhân\", i, \"bằng\", 3 * i)",
+   "out": "3 nhân 1 bằng 3\n3 nhân 2 bằng 6\n3 nhân 3 bằng 9\n3 nhân 4 bằng 12\n3 nhân 5 bằng 15\n",
+   "stdin": null
+  },
+  {
+   "kind": "nhac",
+   "html": "<p>Đi thi mà gõ vội thì hay quên hộp. Máy kêu <code>NameError</code> và chỉ đúng tên\ncái hộp con chưa đặt.</p>\n<p>Viết kết quả vào khung bằng bút chì trước, rồi mới chạy máy. Chạy trước\nrồi chép xuống thì con không biết mình có hiểu hay không.</p>"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Chặng 1. Mở dấu nháy mà quên đóng thì máy báo lỗi gì?",
+   "options": [
+    "<code>NameError</code>",
+    "<code>SyntaxError</code>",
+    "<code>TypeError</code>",
+    "Không báo gì cả"
+   ],
+   "answerIndex": 1,
+   "explanation": "Thiếu nháy đóng là câu lệnh viết sai phép. Máy kêu\n<code>SyntaxError</code> và chỉ vào đúng dòng ấy.",
+   "id": "bai32-tn-02"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Chặng 2. <code>str(7) + str(5)</code> cho ra gì?",
+   "options": [
+    "<code>12</code>",
+    "<code>75</code>",
+    "<code>35</code>",
+    "Máy báo lỗi"
+   ],
+   "answerIndex": 1,
+   "explanation": "<code>str</code> đổi số thành chữ. Hai đoạn chữ gặp dấu cộng thì dán sát\nvào nhau chứ không cộng với nhau.",
+   "id": "bai32-tn-03"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Chặng 3. Bi được đi chơi nếu xong bài tập <b>và</b> trời\nkhông mưa. Xong bài tập nhưng trời mưa thì sao?",
+   "options": [
+    "Được đi chơi",
+    "Không được đi chơi",
+    "Máy báo lỗi",
+    "Lúc được lúc không"
+   ],
+   "answerIndex": 1,
+   "explanation": "<code>and</code> đòi cả hai điều cùng đúng. Chỉ cần một điều sai là cả câu\nthành sai.",
+   "id": "bai32-tn-04"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Chặng 4. <code>break</code> làm gì khi máy đang chạy vòng lặp?",
+   "options": [
+    "Bỏ qua lượt này rồi chạy tiếp",
+    "Nhảy hẳn ra khỏi vòng lặp",
+    "Quay lại từ đầu vòng",
+    "Dừng cả chương trình"
+   ],
+   "answerIndex": 1,
+   "explanation": "<code>break</code> ra khỏi vòng lặp, còn <code>continue</code> chỉ bỏ qua một lượt.\nHai từ này hay bị nhầm với nhau.",
+   "id": "bai32-tn-05"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Chặng 5. Vòng <code>while</code> có điều kiện không bao giờ sai thì sao?",
+   "options": [
+    "Máy chạy một lần rồi thôi",
+    "Máy chạy mãi, con phải bấm <code>Ctrl + C</code>",
+    "Máy báo lỗi ngay",
+    "Máy tự dừng sau 10 vòng"
+   ],
+   "answerIndex": 1,
+   "explanation": "Đó là vòng lặp vô hạn. Trong vòng phải có một dòng làm cho điều\nkiện sớm muộn cũng thành sai.",
+   "id": "bai32-tn-06"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Chặng 6. <code>math.gcd(12, 18)</code> cho ra số mấy?",
+   "options": [
+    "2",
+    "6",
+    "36",
+    "30"
+   ],
+   "answerIndex": 1,
+   "explanation": "<code>gcd</code> tìm số lớn nhất chia hết cả hai số. Cả 12 và 18 đều chia\nhết cho 6, và không số nào lớn hơn làm được thế.",
+   "id": "bai32-tn-07"
+  },
+  {
+   "kind": "van",
+   "heading": "Máy in ra gì",
+   "html": "<p>Đọc chương trình rồi đoán xem máy in ra gì. Đoán xong hãy bấm Chạy để so.</p>"
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai32-doan-08",
+   "code": "# Đề 1: đếm nguyên âm trong một chuỗi\ndef dem_nguyen_am(chu):\n    dem = 0\n    for c in chu:\n        if c in \"aeiou\":\n            dem = dem + 1\n    return dem\n\nprint(dem_nguyen_am(\"python\"))\nprint(dem_nguyen_am(\"khong co\"))",
+   "expectOut": "1\n2\n",
+   "soDong": 2,
+   "stdin": null
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai32-doan-09",
+   "code": "# Đề 2: tìm số lớn nhất bằng vòng lặp while\nds = [7, 20, 4, 15]\ni = 0\nlon_nhat = 0\nwhile i < len(ds):\n    if ds[i] > lon_nhat:\n        lon_nhat = ds[i]\n    i = i + 1\nprint(\"Số lớn nhất là\", lon_nhat)\nprint(\"Máy có sẵn cho ra\", max(ds))",
+   "expectOut": "Số lớn nhất là 20\nMáy có sẵn cho ra 20\n",
+   "soDong": 2,
+   "stdin": null
+  },
+  {
+   "kind": "van",
+   "heading": "Điền vào chỗ trống",
+   "html": ""
+  },
+  {
+   "kind": "fill_blank",
+   "id": "bai32-dien-10",
+   "deBai": "Chọn từ trong ngân hàng điền vào ba câu sau.",
+   "bank": [
+    "break",
+    "math",
+    "return",
+    "elif",
+    "range",
+    "len"
+   ],
+   "items": [
+    "Từ để nhảy hẳn ra khỏi vòng lặp là {{1}}.",
+    "Hộp đồ có <code>sqrt</code> và <code>gcd</code> tên là {{2}}.",
+    "Từ để máy nhỏ đưa kết quả ra ngoài là {{3}}."
+   ],
+   "blanks": [
+    {
+     "accept": [
+      "break"
+     ]
+    },
+    {
+     "accept": [
+      "math"
+     ]
+    },
+    {
+     "accept": [
+      "return"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai32-dien-11",
+   "deBai": "Chặng 3. Bạn Na được 8 điểm, máy phải xếp loại khá.",
+   "bank": [
+    "break",
+    "math",
+    "return",
+    "elif",
+    "range",
+    "len"
+   ],
+   "template": "diem = 8\nif diem >= 9:\n    print(\"giỏi\")\n{{1}} diem >= 7:\n    print(\"khá\")\nelse:\n    print(\"cố thêm\")",
+   "blanks": [
+    {
+     "accept": [
+      "elif"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"giỏi\"",
+    "\"khá\"",
+    "\"cố thêm\""
+   ],
+   "expectOut": "khá\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai32-dien-12",
+   "deBai": "Chặng 4. Điền một ô để máy chạy bốn vòng, từ 1 tới 4.",
+   "bank": [
+    "break",
+    "math",
+    "return",
+    "elif",
+    "range",
+    "len"
+   ],
+   "template": "def binh_phuong(x):\n    return x * x\n\nfor i in {{1}}(1, 5):\n    print(i, binh_phuong(i))",
+   "blanks": [
+    {
+     "accept": [
+      "range"
+     ]
+    }
+   ],
+   "chuIn": [],
+   "expectOut": "1 1\n2 4\n3 9\n4 16\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai32-dien-13",
+   "deBai": "Chặng 5. Điền một ô để máy đếm chữ PYTHON dài mấy chữ cái.",
+   "bank": [
+    "break",
+    "math",
+    "return",
+    "elif",
+    "range",
+    "len"
+   ],
+   "template": "chu = \"PYTHON\"\nprint({{1}}(chu))\nprint(chu[::-1])",
+   "blanks": [
+    {
+     "accept": [
+      "len"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"PYTHON\""
+   ],
+   "expectOut": "6\nNOHTYP\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "free_code",
+   "id": "bai32-tuviet-14",
+   "deBai": "Đây là đề cuối cùng của quyển sách. In ra mọi số nguyên\ntố nhỏ hơn 50, rồi in xem có tất cả bao nhiêu số.",
+   "hoiTruoc": [
+    "Con dùng lại máy nhỏ nào đã viết ở Bài 29?",
+    "Con cho số chạy từ số mấy tới số mấy?",
+    "Con đếm bằng cách nào, và hộp đếm đặt ở đâu?"
+   ],
+   "checklist": [
+    "Con tự làm hết bài thi mà không cần ai nhắc.",
+    "Con tự chấm được bài của mình.",
+    "Con đi hết sáu chặng và viết được chương trình của riêng con."
+   ],
+   "hints": [
+    {
+     "hoi": "Bài 29 con đã viết máy nhỏ tên là gì?",
+     "dap": ""
+    },
+    {
+     "hoi": "Gọi máy nhỏ ấy ở trong vòng lặp thì viết thế nào?",
+     "dap": ""
+    },
+    {
+     "hoi": "Hộp đếm đặt trước hay sau vòng lặp?",
+     "dap": "trước"
+    }
+   ],
+   "loiHayMac": "<p>Cho số chạy từ 1 chứ không từ 2. Số 1 không\nphải số nguyên tố, nhưng máy nhỏ đã chặn sẵn nên kết quả vẫn ra đúng.</p>",
+   "loiGiai": "",
+   "goiY": "<p>Dùng lại máy nhỏ <code>la_so_nguyen_to</code> ở Bài 29.\nCho số chạy từ 2 tới 49. Số nào được máy nhỏ trả lời có thì in ra và cộng\nthêm 1 vào hộp đếm. Có 15 số nguyên tố nhỏ hơn 50.</p>"
+  },
+  {
+   "kind": "van",
+   "heading": "Con đã học được gì trong 32 bài",
+   "html": "<p>Đây là sáu chặng con đã đi qua. Chặng nào còn quên thì mở lại mà đọc.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai32-bando.svg",
+   "alt": "Hình trong sách. Chữ trong hình: Chặng 1 Chào máy tính bài 1 tới bài 2; Chặng 2 Cái hộp đựng số bài 3 tới bài 8; Chặng 3 Máy biết chọn bài 9 tới bài 14; Chặng 4 Máy biết lặp bài 15 tới bài 20; Chặng 5 Dãy số và while bài 21 tới bài 24; Chặng 6 Hàm, đếm và số nguyên tố bài 25 tới bài 32."
+  }
+ ]
+}

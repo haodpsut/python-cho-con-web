@@ -1,0 +1,306 @@
+{
+ "schemaVersion": "1.0",
+ "so": 17,
+ "ten": "Danh sách và cách duyệt",
+ "chang": 4,
+ "khaiNiemMoi": [],
+ "khoi": [
+  {
+   "kind": "muc_tieu",
+   "items": [
+    "Cất nhiều số vào một danh sách.",
+    "Lấy ra toa đầu, toa cuối, và đi qua từng toa.",
+    "Đọc nhiều số trên cùng một dòng con gõ vào."
+   ]
+  },
+  {
+   "kind": "guess_text",
+   "id": "bai17-guess-01",
+   "html": "<p>Bé Bi có bốn điểm toán, phải cất vào bốn cái biến khác nhau.</p>\n<p>Nếu có ba mươi điểm thì sao? Con đoán xem có cách nào gọn hơn không.</p>",
+   "reveal": "<p>Ba mươi cái biến thì đặt tên không xuể. Danh sách cho\nphép cất cả ba mươi số vào đúng một cái tên.</p>"
+  },
+  {
+   "kind": "van",
+   "heading": "Cùng học",
+   "html": "<p>Một <b>danh sách</b> là đoàn tàu. Các toa nằm trong ngoặc vuông.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai17-tau.svg",
+   "alt": "Hình trong sách. Chữ trong hình: đếm xuôi; đếm ngược; diem = [8, 9, 7, 10]."
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p>Toa đầu mang số <code>0</code>, nên <code>diem[0]</code> là toa đầu tiên.\nĐếm ngược từ đuôi thì toa cuối là <code>diem[-1]</code>, dấu trừ nghĩa là đếm ngược.\nCâu <code>for x in diem</code> đi qua từng toa một, từ đầu tới cuối.\n<code>len</code> đếm số toa, <code>sum</code> cộng hết, <code>max</code> và <code>min</code> tìm số lớn nhất\nvà số nhỏ nhất.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai17-bangchuyen.svg",
+   "alt": "Hình trong sách. Chữ trong hình: Chặng; 2 3 5; so = list(map(int, input().split()))."
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p>Câu <code>list(map(int, input().split()))</code> là một câu thần chú.\nCon nhớ cả câu thôi, chưa cần hiểu từng chữ.</p>"
+  },
+  {
+   "kind": "vidu",
+   "code": "# Danh sách là một đoàn tàu. Toa đầu mang số 0.\ndiem = [8, 9, 7, 10]\nprint(diem[0])\nprint(diem[-1])\n\n# Duyệt: đi qua từng toa một\nfor x in diem:\n    print(x, end=\" \")\nprint()\n\nprint(len(diem), sum(diem), max(diem), min(diem))",
+   "out": "8\n10\n8 9 7 10 \n4 34 10 7\n",
+   "stdin": null
+  },
+  {
+   "kind": "nhac",
+   "html": "<p>Tàu bốn toa mà con gọi <code>diem[4]</code> thì máy kêu <code>IndexError</code>.</p>\n<p>Toa cuối của tàu bốn toa là <code>diem[3]</code>, vì toa đầu đã mang số <code>0</code>.</p>"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Với <code>diem = [8, 9, 7, 10]</code> thì <code>diem[0]</code> là số nào?",
+   "options": [
+    "<code>8</code>",
+    "<code>9</code>",
+    "<code>10</code>",
+    "<code>0</code>"
+   ],
+   "answerIndex": 0,
+   "explanation": "Toa đầu tiên mang số <code>0</code>, và trong toa ấy đang chở số <code>8</code>.",
+   "id": "bai17-tn-02"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Cũng danh sách ấy, <code>diem[-1]</code> là số nào?",
+   "options": [
+    "<code>8</code>",
+    "<code>7</code>",
+    "<code>10</code>",
+    "Máy báo lỗi"
+   ],
+   "answerIndex": 2,
+   "explanation": "Dấu trừ nghĩa là đếm ngược từ đuôi tàu, nên đó là toa cuối cùng.",
+   "id": "bai17-tn-03"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>len(diem)</code> cho ra gì?",
+   "options": [
+    "Số lớn nhất",
+    "Tổng các số",
+    "Số toa của đoàn tàu",
+    "Toa đầu tiên"
+   ],
+   "answerIndex": 2,
+   "explanation": "<code>len</code> chỉ đếm xem có mấy toa, nó không nhìn vào bên trong toa.",
+   "id": "bai17-tn-04"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Tàu bốn toa mà gọi <code>diem[4]</code> thì sao?",
+   "options": [
+    "Cho ra toa cuối",
+    "Cho ra <code>0</code>",
+    "Máy kêu <code>IndexError</code>",
+    "Máy thêm một toa mới"
+   ],
+   "answerIndex": 2,
+   "explanation": "Bốn toa thì số toa chỉ chạy từ <code>0</code> tới <code>3</code>. Không có toa nào\nmang số <code>4</code> cả.",
+   "id": "bai17-tn-05"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Câu <code>for x in diem:</code> làm việc gì?",
+   "options": [
+    "In cả danh sách một lần",
+    "Đi qua từng toa, mỗi lượt một toa",
+    "Sắp xếp lại các toa",
+    "Đếm số toa"
+   ],
+   "answerIndex": 1,
+   "explanation": "Mỗi lượt, cái tên <code>x</code> mang giá trị của đúng một toa.",
+   "id": "bai17-tn-06"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Câu thần chú <code>list(map(int, input().split()))</code> dùng khi nào?",
+   "options": [
+    "Khi con muốn in nhiều dòng",
+    "Khi con gõ nhiều số trên cùng một dòng",
+    "Khi con muốn cộng hai số",
+    "Khi con muốn vẽ sao"
+   ],
+   "answerIndex": 1,
+   "explanation": "Nó cắt dòng chữ con gõ ra từng mảnh, đổi mỗi mảnh thành số, rồi xếp\nvào một đoàn tàu.",
+   "id": "bai17-tn-07"
+  },
+  {
+   "kind": "van",
+   "heading": "Máy in ra gì",
+   "html": "<p>Đọc chương trình rồi đoán xem máy in ra gì. Đoán xong hãy bấm Chạy để so.</p>"
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai17-doan-08",
+   "code": "ten = [\"Bi\", \"Na\", \"Mun\"]\nprint(ten[0])\nprint(ten[2])\nprint(ten[-1])\nprint(len(ten))",
+   "expectOut": "Bi\nMun\nMun\n3\n",
+   "soDong": 4,
+   "stdin": null
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai17-doan-09",
+   "code": "so = [3, 5, 2, 9]\nfor x in so:\n    print(x * 2)\nprint(sum(so))",
+   "expectOut": "6\n10\n4\n18\n19\n",
+   "soDong": 5,
+   "stdin": null
+  },
+  {
+   "kind": "van",
+   "heading": "Điền vào chỗ trống",
+   "html": ""
+  },
+  {
+   "kind": "fill_blank",
+   "id": "bai17-dien-10",
+   "deBai": "Chọn từ trong ngân hàng điền vào ba câu sau.",
+   "bank": [
+    "0",
+    "len",
+    "sum",
+    "-1"
+   ],
+   "items": [
+    "Toa đầu của danh sách mang số {{1}}.",
+    "Muốn biết đoàn tàu có mấy toa thì dùng {{2}}.",
+    "Muốn cộng hết các toa lại thì dùng {{3}}."
+   ],
+   "blanks": [
+    {
+     "accept": [
+      "0"
+     ]
+    },
+    {
+     "accept": [
+      "len"
+     ]
+    },
+    {
+     "accept": [
+      "sum"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai17-dien-11",
+   "deBai": "Điền một ô để máy in ra toa cuối cùng.",
+   "bank": [
+    "0",
+    "len",
+    "sum",
+    "-1"
+   ],
+   "template": "diem = [7, 8, 9]\nprint(diem[{{1}}])",
+   "blanks": [
+    {
+     "accept": [
+      "-1"
+     ]
+    }
+   ],
+   "chuIn": [],
+   "expectOut": "9\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai17-dien-12",
+   "deBai": "Điền hai ô để máy in số lớn nhất rồi tới số nhỏ nhất.",
+   "bank": [
+    "0",
+    "len",
+    "sum",
+    "-1"
+   ],
+   "template": "so = [4, 1, 6, 2]\nprint({{1}}(so))\nprint({{2}}(so))",
+   "blanks": [
+    {
+     "accept": [
+      "max"
+     ]
+    },
+    {
+     "accept": [
+      "min"
+     ]
+    }
+   ],
+   "chuIn": [],
+   "expectOut": "6\n1\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai17-dien-13",
+   "deBai": "Điền hai ô cho đủ câu thần chú. Con gõ vào ba số hai, ba và năm, rồi bấm phím Enter.",
+   "bank": [
+    "0",
+    "len",
+    "sum",
+    "-1"
+   ],
+   "template": "so = list(map({{1}}, input().{{2}}()))\nprint(sum(so))",
+   "blanks": [
+    {
+     "accept": [
+      "int"
+     ]
+    },
+    {
+     "accept": [
+      "split"
+     ]
+    }
+   ],
+   "chuIn": [],
+   "expectOut": "10\n",
+   "chayDuoc": true,
+   "stdin": "2 3 5\n"
+  },
+  {
+   "kind": "free_code",
+   "id": "bai17-tuviet-14",
+   "deBai": "Con gõ năm điểm thi trên một dòng. Chương trình in ra tổng\nđiểm, điểm cao nhất và điểm thấp nhất.",
+   "hoiTruoc": [
+    "Câu thần chú để đọc năm số viết thế nào?",
+    "Con cần mấy cái nút bấm có sẵn?",
+    "Toa đầu và toa cuối mang số mấy?"
+   ],
+   "checklist": [
+    "Con cất được nhiều số vào một danh sách.",
+    "Con lấy ra được toa đầu và toa cuối.",
+    "Con đọc được nhiều số trên cùng một dòng."
+   ],
+   "hints": [
+    {
+     "hoi": "Cốc đầu hàng con đánh số mấy?",
+     "dap": "số không"
+    },
+    {
+     "hoi": "Năm cốc thì cốc cuối mang số mấy?",
+     "dap": "số bốn"
+    },
+    {
+     "hoi": "Muốn biết cả hàng có mấy cốc thì dùng nút nào?",
+     "dap": ""
+    }
+   ],
+   "loiHayMac": "<p>Cháu đếm toa từ một nên gọi nhầm <code>diem[4]</code> cho\ntàu bốn toa. Dán giấy ghi số lên năm cái cốc, bắt đầu từ số không. Cháu nhìn\nmột lần là nhớ.</p>",
+   "loiGiai": "",
+   "goiY": "<p>Dòng đầu là câu thần chú ở Bài 4, chỉ đổi tên <code>so</code>\nthành <code>diem</code>. Rồi ba lệnh in: <code>print(sum(diem))</code>,\n<code>print(max(diem))</code> và <code>print(min(diem))</code>. Toa đầu mang số <code>0</code>, toa\ncuối mang số <code>4</code>.</p>"
+  }
+ ]
+}

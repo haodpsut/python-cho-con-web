@@ -1,0 +1,312 @@
+{
+ "schemaVersion": "1.0",
+ "so": 9,
+ "ten": "Lệnh if và phép chia lấy dư",
+ "chang": 3,
+ "khaiNiemMoi": [],
+ "khoi": [
+  {
+   "kind": "muc_tieu",
+   "items": [
+    "Bảo được máy chỉ làm một việc khi điều kiện đúng.",
+    "Viết đúng dấu hai chấm và chỗ thụt đầu dòng.",
+    "Biết xem một số là chẵn hay là lẻ."
+   ]
+  },
+  {
+   "kind": "guess_text",
+   "id": "bai09-guess-01",
+   "html": "<p>Bé Bi có 8 cái kẹo. Bi chia đều cho hai bạn.</p>\n<p>Con đoán xem có chia hết không? Còn thừa cái nào không?</p>",
+   "reveal": "<p>Chia hết. Mỗi bạn được 4 cái, không thừa cái nào.\n<code>8 % 2</code> cho 0.</p>"
+  },
+  {
+   "kind": "van",
+   "heading": "Cùng học",
+   "html": "<p>Lệnh <code>if</code> cho máy chọn: làm hay là không làm.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai09-ngaba.svg",
+   "alt": "Hình trong sách. Chữ trong hình: ?; máy hỏi so % 2 == 0 đúng không?; Đúng; Sai; print(\"Số chẵn\"); đi thẳng, máy bỏ qua dòng thụt vào."
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p>Sau câu hỏi phải có dấu hai chấm. Dòng việc của <code>if</code> phải thụt\nvào 4 dấu cách.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai09-khungthut.svg",
+   "alt": "Hình trong sách. Chữ trong hình: if so % 2 == 0:; print(\"Số chẵn\"); print(\"Chia hết cho hai\"); print(\"Hết bài\"); 4 dấu cách; Hai dòng thụt vào nằm trong khung. Máy chỉ làm chúng khi câu hỏi đúng.; Dòng này không thụt. Máy luôn luôn làm nó.."
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p>Hỏi hai thứ có bằng nhau không thì dùng hai dấu bằng <code>==</code>.\nKhác nhau thì dùng <code>!=</code>. Còn <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code> và <code>&lt;=</code>\nlà so sánh lớn bé. Số chia 2 mà dư 0 là số chẵn.</p>"
+  },
+  {
+   "kind": "vidu",
+   "code": "# Lệnh if: máy chỉ làm khi điều kiện đúng\ntuoi = 9\nif tuoi >= 6:\n    print(\"Bi đã đi học rồi.\")\n\nso = 8\nif so % 2 == 0:\n    print(\"Số\", so, \"là số chẵn.\")\nprint(\"Hết bài.\")",
+   "out": "Bi đã đi học rồi.\nSố 8 là số chẵn.\nHết bài.\n",
+   "stdin": null
+  },
+  {
+   "kind": "nhac",
+   "html": "<p>Ba lỗi hay gặp nhất của bài này.</p>\n<p>Một. Viết một dấu bằng thay vì hai dấu. Máy kêu\n<code>SyntaxError: invalid syntax</code>.</p>\n<p>Hai. Quên dấu hai chấm ở cuối dòng. Máy cũng kêu\n<code>SyntaxError: invalid syntax</code>.</p>\n<p>Ba. Quên thụt đầu dòng. Máy kêu\n<code>IndentationError: expected an indented block</code>.</p>"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Dấu để hỏi hai thứ có bằng nhau không là dấu nào?",
+   "options": [
+    "<code>=</code>",
+    "<code>==</code>",
+    "<code>!=</code>",
+    "<code>&gt;=</code>"
+   ],
+   "answerIndex": 1,
+   "explanation": "Một dấu bằng là bỏ giá trị vào biến. Hai dấu bằng mới là câu hỏi\nso sánh.",
+   "id": "bai09-tn-02"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Cuối dòng <code>if</code> phải có dấu gì?",
+   "options": [
+    "Dấu chấm",
+    "Dấu phẩy",
+    "Dấu hai chấm",
+    "Không cần dấu gì"
+   ],
+   "answerIndex": 2,
+   "explanation": "Dấu hai chấm báo cho máy biết khối việc bắt đầu từ dòng sau.",
+   "id": "bai09-tn-03"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Cho <code>so = 10</code>. Câu <code>so % 2 == 0</code> đúng hay sai?",
+   "options": [
+    "Sai",
+    "Đúng",
+    "Máy báo lỗi",
+    "Ra số 5"
+   ],
+   "answerIndex": 1,
+   "explanation": "10 chia 2 được 5 và dư 0. Dư đúng bằng 0 nên câu hỏi là đúng.",
+   "id": "bai09-tn-04"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Dòng việc nằm dưới <code>if</code> phải viết thế nào?",
+   "options": [
+    "Viết sát lề trái",
+    "Thụt vào 4 dấu cách",
+    "Viết chữ in hoa",
+    "Để trong dấu ngoặc"
+   ],
+   "answerIndex": 1,
+   "explanation": "Máy nhìn chỗ thụt vào để biết dòng nào là việc của <code>if</code>.",
+   "id": "bai09-tn-05"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Số nào sau đây là số lẻ?",
+   "options": [
+    "<code>8</code>",
+    "<code>20</code>",
+    "<code>15</code>",
+    "<code>100</code>"
+   ],
+   "answerIndex": 2,
+   "explanation": "15 chia 2 còn dư 1. Dư khác 0 nên 15 là số lẻ.",
+   "id": "bai09-tn-06"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Máy gặp <code>if 3 &gt; 5:</code> rồi dòng thụt vào <code>print(\"Chào\")</code>. Máy in ra gì?",
+   "options": [
+    "<code>Chào</code>",
+    "Máy báo lỗi",
+    "Máy không in gì cả",
+    "Máy in số <code>3</code>"
+   ],
+   "answerIndex": 2,
+   "explanation": "3 không lớn hơn 5 nên câu hỏi sai. Máy bỏ qua luôn dòng thụt vào.",
+   "id": "bai09-tn-07"
+  },
+  {
+   "kind": "van",
+   "heading": "Máy in ra gì",
+   "html": "<p>Đọc chương trình rồi đoán xem máy in ra gì. Đoán xong hãy bấm Chạy để so.</p>"
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai09-doan-08",
+   "code": "diem = 10\nif diem >= 8:\n    print(\"Giỏi quá!\")\nif diem >= 5:\n    print(\"Con qua rồi.\")\nif diem > 10:\n    print(\"Chỗ này máy không in.\")",
+   "expectOut": "Giỏi quá!\nCon qua rồi.\n",
+   "soDong": 2,
+   "stdin": null
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai09-doan-09",
+   "code": "so = 7\nif so % 2 == 0:\n    print(so, \"là số chẵn\")\nif so % 2 == 1:\n    print(so, \"là số lẻ\")\nprint(\"Xong\")",
+   "expectOut": "7 là số lẻ\nXong\n",
+   "soDong": 2,
+   "stdin": null
+  },
+  {
+   "kind": "van",
+   "heading": "Điền vào chỗ trống",
+   "html": ""
+  },
+  {
+   "kind": "fill_blank",
+   "id": "bai09-dien-10",
+   "deBai": "Chọn từ trong ngân hàng điền vào ba câu sau.",
+   "bank": [
+    "if",
+    "==",
+    ">=",
+    "hai chấm"
+   ],
+   "items": [
+    "Lệnh cho máy chọn làm hay không làm là {{1}}.",
+    "Dấu hỏi hai thứ có bằng nhau không là {{2}}.",
+    "Cuối dòng <code>if</code> phải có dấu {{3}}."
+   ],
+   "blanks": [
+    {
+     "accept": [
+      "if"
+     ]
+    },
+    {
+     "accept": [
+      "=="
+     ]
+    },
+    {
+     "accept": [
+      "hai chấm"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai09-dien-11",
+   "deBai": "Điền hai ô để máy báo số 6 là số chẵn.",
+   "bank": [
+    "if",
+    "==",
+    ">=",
+    "hai chấm"
+   ],
+   "template": "so = 6\n{{1}} so % 2 {{2}} 0:\n    print(\"Số chẵn\")",
+   "blanks": [
+    {
+     "accept": [
+      "if"
+     ]
+    },
+    {
+     "accept": [
+      "=="
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Số chẵn\""
+   ],
+   "expectOut": "Số chẵn\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai09-dien-12",
+   "deBai": "Điền một ô để máy chỉ in khi tuổi từ 6 trở lên.",
+   "bank": [
+    "if",
+    "==",
+    ">=",
+    "hai chấm"
+   ],
+   "template": "tuoi = 9\nif tuoi {{1}} 6:\n    print(\"Bi đi học lớp ba\")",
+   "blanks": [
+    {
+     "accept": [
+      ">="
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Bi đi học lớp ba\""
+   ],
+   "expectOut": "Bi đi học lớp ba\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai09-dien-13",
+   "deBai": "Điền hai ô để máy báo khi điểm chưa phải điểm cao nhất.",
+   "bank": [
+    "if",
+    "==",
+    ">=",
+    "hai chấm"
+   ],
+   "template": "diem = 7\nif diem {{1}} 10{{2}}\n    print(\"Chưa được điểm tối đa\")",
+   "blanks": [
+    {
+     "accept": [
+      "!="
+     ]
+    },
+    {
+     "accept": [
+      ":"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Chưa được điểm tối đa\""
+   ],
+   "expectOut": "Chưa được điểm tối đa\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "free_code",
+   "id": "bai09-tuviet-14",
+   "deBai": "Con bỏ một số vào biến <code>so</code>. Nếu số ấy chia hết cho 5\nthì máy in ra <code>Chia hết cho 5</code>.",
+   "hoiTruoc": [
+    "Con lấy phần dư bằng dấu gì?",
+    "Chia hết nghĩa là phần dư bằng mấy?",
+    "Dòng <code>print</code> phải thụt vào bao nhiêu dấu cách?"
+   ],
+   "checklist": [
+    "Con viết được một lệnh <code>if</code> có dấu hai chấm.",
+    "Con thụt đúng 4 dấu cách cho dòng việc.",
+    "Con biết số chẵn là số chia 2 dư 0."
+   ],
+   "hints": [
+    {
+     "hoi": "Chia 20 hột thành từng nhóm 5 hột thì còn thừa mấy hột?",
+     "dap": "không thừa"
+    },
+    {
+     "hoi": "Số hột thừa ấy viết bằng Python thế nào?",
+     "dap": "<code>20 % 5</code>"
+    },
+    {
+     "hoi": "Muốn hỏi nó có bằng 0 không thì dùng mấy dấu bằng?",
+     "dap": "hai dấu"
+    }
+   ],
+   "loiHayMac": "<p>Cháu gõ <code>if so = 0:</code> với một dấu bằng.\nCho cháu chạy thử để tự thấy dòng chữ đỏ, rồi sửa thành hai dấu bằng.\nLỗi thứ hai là thụt đầu dòng bằng phím Tab ở dòng này và bằng dấu cách ở\ndòng kia. Dặn cháu luôn dùng dấu cách.</p>",
+   "loiGiai": "",
+   "goiY": "<p>Ba dòng: <code>so = 20</code>, rồi <code>if so % 5 == 0:</code>,\nrồi dòng thụt vào <code>print(\"Chia hết cho 5\")</code>.</p>"
+  }
+ ]
+}

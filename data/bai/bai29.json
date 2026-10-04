@@ -1,0 +1,319 @@
+{
+ "schemaVersion": "1.0",
+ "so": 29,
+ "ten": "Số nguyên tố",
+ "chang": 6,
+ "khaiNiemMoi": [],
+ "khoi": [
+  {
+   "kind": "muc_tieu",
+   "items": [
+    "Biết số nguyên tố là số không xếp được thành hình chữ nhật.",
+    "Viết được chương trình xem một số có phải số nguyên tố không.",
+    "Biết mẹo dừng sớm để máy đỡ phải thử nhiều lần."
+   ]
+  },
+  {
+   "kind": "guess_text",
+   "id": "bai29-guess-01",
+   "html": "<p>Con lấy 12 hột đậu, xếp thành hình chữ nhật đầy đủ. Con xếp được mấy kiểu?</p>\n<p>Giờ lấy 7 hột và xếp lại. Con có xếp được kiểu nào ngoài một hàng không?</p>",
+   "reveal": "<p>12 hột xếp được 1 nhân 12, 2 nhân 6, 3 nhân 4, và\ncác hình lật lại, tức 3 kiểu khác nhau. 7 hột chỉ xếp được một hàng.</p>"
+  },
+  {
+   "kind": "van",
+   "heading": "Cùng học",
+   "html": "<p>Số nào chỉ xếp được một hàng thì gọi là <b>số nguyên tố</b>.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai29-xephot.svg",
+   "alt": "Hình trong sách. Chữ trong hình: 12 hột; xếp được 3 hàng 4 cột; xếp được 2 hàng 6 cột; 7 hột; chỉ xếp được một hàng, nên 7 là số nguyên tố."
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p>Thử chia hết từ 1 tới n thì lâu. Có mẹo dừng sớm: dừng ngay khi <code>i</code>\nnhân <code>i</code> vượt quá <code>n</code>.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai29-canhngan.svg",
+   "alt": "Hình trong sách. Chữ trong hình: 2 nhân 18; 4 nhân 9; 6 nhân 6."
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p>Máy nhỏ dưới đây trả lời <code>True</code> nghĩa là có, <code>False</code> nghĩa là không.</p>"
+  },
+  {
+   "kind": "vidu",
+   "code": "def la_so_nguyen_to(n):\n    if n < 2:\n        return False\n    i = 2\n    while i * i <= n:\n        if n % i == 0:\n            return False\n        i = i + 1\n    return True\n\nif la_so_nguyen_to(7):\n    print(\"7 là số nguyên tố\")\nif la_so_nguyen_to(12):\n    print(\"12 là số nguyên tố\")\nelse:\n    print(\"12 không phải số nguyên tố\")",
+   "out": "7 là số nguyên tố\n12 không phải số nguyên tố\n",
+   "stdin": null
+  },
+  {
+   "kind": "nhac",
+   "html": "<p>Số 1 <b>không</b> phải số nguyên tố. Một hột chỉ có đúng một cách xếp, và\ncách ấy vừa là một hàng vừa là một cột.</p>\n<p>Số 2 thì <b>là</b> số nguyên tố, dù nó chẵn. Nhiều bạn hay nhầm chỗ này.</p>"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Số nào dưới đây là số nguyên tố?",
+   "options": [
+    "9",
+    "15",
+    "13",
+    "21"
+   ],
+   "answerIndex": 2,
+   "explanation": "9 bằng 3 nhân 3, 15 bằng 3 nhân 5, 21 bằng 3 nhân 7. Chỉ có 13 là\nkhông xếp được thành hình chữ nhật nào.",
+   "id": "bai29-tn-02"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Số 1 có phải số nguyên tố không?",
+   "options": [
+    "Có, vì 1 chỉ chia hết cho 1",
+    "Không phải",
+    "Có, vì 1 là số nhỏ nhất",
+    "Lúc có lúc không"
+   ],
+   "answerIndex": 1,
+   "explanation": "Số nguyên tố phải có đúng hai ước khác nhau là 1 và chính nó. Số 1\nchỉ có một ước, nên nó không đủ.",
+   "id": "bai29-tn-03"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Muốn xem 25 có phải số nguyên tố không, máy cần thử tới số mấy?",
+   "options": [
+    "Tới 24",
+    "Tới 5, vì 5 nhân 5 bằng 25",
+    "Tới 12",
+    "Tới 25"
+   ],
+   "answerIndex": 1,
+   "explanation": "Mọi cách xếp 25 hột đều có một cạnh không dài hơn 5. Thử quá 5 là\nthử lại cái đã thử rồi.",
+   "id": "bai29-tn-04"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Dòng <code>while i * i &lt;= n:</code> nghĩa là gì?",
+   "options": [
+    "Lặp đúng n lần",
+    "Còn lặp khi <code>i</code> nhân <code>i</code> chưa vượt quá <code>n</code>",
+    "Lặp cho tới khi <code>i</code> bằng 0",
+    "Lặp mãi không dừng"
+   ],
+   "answerIndex": 1,
+   "explanation": "<code>while</code> lặp chừng nào điều kiện còn đúng. Ở đây điều kiện là\n<code>i</code> nhân <code>i</code> chưa vượt <code>n</code>.",
+   "id": "bai29-tn-05"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Số 2 là số gì?",
+   "options": [
+    "Không phải số nguyên tố vì nó chẵn",
+    "Là số nguyên tố, dù nó chẵn",
+    "Vừa nguyên tố vừa không",
+    "Chưa ai biết"
+   ],
+   "answerIndex": 1,
+   "explanation": "Hai hột chỉ xếp được một hàng. Chẵn hay lẻ không liên quan. 2 là số\nnguyên tố chẵn duy nhất.",
+   "id": "bai29-tn-06"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Máy nhỏ <code>la_so_nguyen_to</code> trả về <code>False</code> khi nào?",
+   "options": [
+    "Khi <code>n</code> là số chẵn",
+    "Khi tìm được một số chia hết <code>n</code>, hoặc khi <code>n</code> nhỏ hơn 2",
+    "Khi <code>n</code> lớn hơn 100",
+    "Khi <code>n</code> là số lẻ"
+   ],
+   "answerIndex": 1,
+   "explanation": "Trong máy nhỏ có hai chỗ viết <code>return False</code>. Một chỗ cho số nhỏ\nhơn 2, một chỗ cho lúc tìm được ước.",
+   "id": "bai29-tn-07"
+  },
+  {
+   "kind": "van",
+   "heading": "Máy in ra gì",
+   "html": "<p>Đọc chương trình rồi đoán xem máy in ra gì. Đoán xong hãy bấm Chạy để so.</p>"
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai29-doan-08",
+   "code": "# Xem mỗi số chia hết cho những số nào\nfor n in [12, 7]:\n    dem = 0\n    for i in range(1, n + 1):\n        if n % i == 0:\n            print(i, end=\" \")\n            dem = dem + 1\n    print()\n    print(\"Số\", n, \"chia hết cho\", dem, \"số\")",
+   "expectOut": "1 2 3 4 6 12 \nSố 12 chia hết cho 6 số\n1 7 \nSố 7 chia hết cho 2 số\n",
+   "soDong": 4,
+   "stdin": null
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai29-doan-09",
+   "code": "# Thử chia 15, dừng ngay khi tìm được ước\nn = 15\ni = 2\nwhile i * i <= n:\n    print(\"thử chia cho\", i)\n    if n % i == 0:\n        print(\"chia hết, dừng lại\")\n        break\n    i = i + 1",
+   "expectOut": "thử chia cho 2\nthử chia cho 3\nchia hết, dừng lại\n",
+   "soDong": 3,
+   "stdin": null
+  },
+  {
+   "kind": "van",
+   "heading": "Điền vào chỗ trống",
+   "html": ""
+  },
+  {
+   "kind": "fill_blank",
+   "id": "bai29-dien-10",
+   "deBai": "Chọn từ trong ngân hàng điền vào ba câu sau.",
+   "bank": [
+    "9",
+    "0",
+    "2",
+    "False",
+    "while",
+    "range"
+   ],
+   "items": [
+    "Số nhỏ nhất không phải số nguyên tố mà lại lẻ là {{1}}.",
+    "Số nguyên tố nhỏ nhất là {{2}}.",
+    "Từ để bảo máy lặp tới khi điều kiện sai là {{3}}."
+   ],
+   "blanks": [
+    {
+     "accept": [
+      "9"
+     ]
+    },
+    {
+     "accept": [
+      "2"
+     ]
+    },
+    {
+     "accept": [
+      "while"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai29-dien-11",
+   "deBai": "Điền một ô. Chia hết nghĩa là số dư bằng mấy?",
+   "bank": [
+    "9",
+    "0",
+    "2",
+    "False",
+    "while",
+    "range"
+   ],
+   "template": "n = 9\nif n % 3 == {{1}}:\n    print(\"9 chia hết cho 3\")\n    print(\"nên 9 không phải số nguyên tố\")",
+   "blanks": [
+    {
+     "accept": [
+      "0"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"9 chia hết cho 3\"",
+    "\"nên 9 không phải số nguyên tố\""
+   ],
+   "expectOut": "9 chia hết cho 3\nnên 9 không phải số nguyên tố\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai29-dien-12",
+   "deBai": "Điền hai ô cho máy nhỏ chạy đúng.",
+   "bank": [
+    "9",
+    "0",
+    "2",
+    "False",
+    "while",
+    "range"
+   ],
+   "template": "def la_so_nguyen_to(n):\n    if n < {{1}}:\n        return {{2}}\n    i = 2\n    while i * i <= n:\n        if n % i == 0:\n            return {{3}}\n        i = i + 1\n    return True\n\nprint(la_so_nguyen_to(13))",
+   "blanks": [
+    {
+     "accept": [
+      "2"
+     ]
+    },
+    {
+     "accept": [
+      "False"
+     ]
+    },
+    {
+     "accept": [
+      "False"
+     ]
+    }
+   ],
+   "chuIn": [],
+   "expectOut": "True\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai29-dien-13",
+   "deBai": "Điền một ô để máy chạy từ 2 tới 11.",
+   "bank": [
+    "9",
+    "0",
+    "2",
+    "False",
+    "while",
+    "range"
+   ],
+   "template": "for x in {{1}}(2, 12):\n    if x % 2 == 0:\n        print(x, \"chia hết cho 2\")",
+   "blanks": [
+    {
+     "accept": [
+      "range"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"chia hết cho 2\""
+   ],
+   "expectOut": "2 chia hết cho 2\n4 chia hết cho 2\n6 chia hết cho 2\n8 chia hết cho 2\n10 chia hết cho 2\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "free_code",
+   "id": "bai29-tuviet-14",
+   "deBai": "In ra tất cả số nguyên tố nhỏ hơn 30. Con dùng lại máy\nnhỏ <code>la_so_nguyen_to</code> ở trên.",
+   "hoiTruoc": [
+    "Con cho <code>x</code> chạy từ số mấy tới số mấy?",
+    "Mỗi lần chạy, con hỏi máy nhỏ câu gì?",
+    "Khi máy nhỏ trả lời có thì con làm gì?"
+   ],
+   "checklist": [
+    "Con xếp được hột và biết số nào là số nguyên tố.",
+    "Con viết được máy nhỏ <code>la_so_nguyen_to</code>.",
+    "Con giải thích được vì sao chỉ cần thử tới khi <code>i * i</code> vượt <code>n</code>."
+   ],
+   "hints": [
+    {
+     "hoi": "Xếp 15 hột thành hình chữ nhật xem được mấy kiểu?",
+     "dap": "3 nhân 5"
+    },
+    {
+     "hoi": "Vậy 15 có phải số nguyên tố không?",
+     "dap": "không"
+    },
+    {
+     "hoi": "Xếp 11 hột thử xem?",
+     "dap": "chỉ một hàng, nên 11 là số nguyên tố"
+    }
+   ],
+   "loiHayMac": "",
+   "loiGiai": "",
+   "goiY": "<p>Cho <code>x</code> chạy từ 2 tới 29, mỗi lần hỏi máy nhỏ, ai\ntrả lời có thì in ra.</p>"
+  }
+ ]
+}

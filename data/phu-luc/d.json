@@ -1,0 +1,27 @@
+{
+ "schemaVersion": "1.0",
+ "id": "d",
+ "ten": "Bảng một trăm ô để gạch sàng",
+ "khoi": [
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p>{changSau}</p>\n<p>Bài 30 bảo con gạch số bằng bút chì trước khi viết chương trình. Đây là bảng\nđể con gạch. Có hai bảng, gạch hỏng bảng một thì còn bảng hai.</p>\n<p>Cách gạch: khoanh tròn số 2, rồi gạch mọi bội của 2. Khoanh tròn số còn lại\nnhỏ nhất chưa gạch, rồi gạch mọi bội của nó. Làm tiếp tới khi hết.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-plD-bangtram.svg",
+   "alt": "Bảng một trăm ô, đánh số từ 1 đến 100, xếp mười hàng mười cột, để con gạch sàng bằng bút chì."
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p>{ Bảng thứ hai}</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-plD-bangtram.svg",
+   "alt": "Bảng một trăm ô, đánh số từ 1 đến 100, xếp mười hàng mười cột, để con gạch sàng bằng bút chì."
+  }
+ ]
+}

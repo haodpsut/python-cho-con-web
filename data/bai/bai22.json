@@ -1,0 +1,311 @@
+{
+ "schemaVersion": "1.0",
+ "so": 22,
+ "ten": "Mẹo tính tổng thật nhanh",
+ "chang": 5,
+ "khaiNiemMoi": [],
+ "khoi": [
+  {
+   "kind": "muc_tieu",
+   "items": [
+    "Biết mẹo ghép cặp đầu dãy với cuối dãy.",
+    "Viết được công thức tính tổng từ 1 tới n.",
+    "Thấy công thức và vòng lặp cho ra cùng một kết quả."
+   ]
+  },
+  {
+   "kind": "guess_text",
+   "id": "bai22-guess-01",
+   "html": "<p>Thầy giáo bắt cả lớp cộng 1 với 2 với 3, cộng tiếp mãi cho tới 100.</p>\n<p>Cậu bé Gauss nộp bài sau một phút. Con đoán xem cậu ấy làm cách nào?</p>",
+   "reveal": "<p>Gauss ghép 1 với 100, 2 với 99, 3 với 98, cứ thế.\nCặp nào cũng bằng 101, và có 50 cặp. Cậu chỉ phải làm một phép nhân.</p>"
+  },
+  {
+   "kind": "van",
+   "heading": "Cùng học",
+   "html": "<p>Gauss không cộng từ đầu tới cuối. Cậu ghép số đầu với số cuối thành từng cặp.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai22-ghepcap.svg",
+   "alt": "Hình trong sách. Chữ trong hình: ...; 50; 51; Đếm được 50 cung. Cung nào cũng 101.; Ghép đầu dãy với cuối dãy thì cặp nào cũng bằng nhau.."
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p>Cặp nào cũng bằng 101, và đếm được 50 cặp. Vậy tổng bằng 50 nhân 101.\nVới một số <code>n</code> bất kỳ, mẹo ấy viết thành <code>n * (n + 1) // 2</code>.\nVòng lặp cộng dồn vẫn chạy đúng, chỉ là nó phải cộng lâu hơn nhiều.</p>"
+  },
+  {
+   "kind": "vidu",
+   "code": "# Cách chậm: cộng dồn từng số một\ntong = 0\nfor i in range(1, 101):\n    tong = tong + i\nprint(\"Cộng dồn cho ra\", tong)\n\n# Cách nhanh: mẹo ghép cặp của Gauss\nn = 100\nnhanh = n * (n + 1) // 2\nprint(\"Công thức cho ra\", nhanh)",
+   "out": "Cộng dồn cho ra 5050\nCông thức cho ra 5050\n",
+   "stdin": null
+  },
+  {
+   "kind": "nhac",
+   "html": "<p>Phải có ngoặc quanh <code>n + 1</code>. Viết <code>n * n + 1 // 2</code> thì máy nhân trước,\ncộng sau, và cho ra một số khác hẳn.</p>\n<p>Dùng dấu chia <code>/</code> thay cho <code>//</code> thì máy in ra <code>5050.0</code> có đuôi lạ.\nCon nhớ dùng hai gạch chéo.</p>"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Ghép 1 với 100 được bao nhiêu?",
+   "options": [
+    "100",
+    "101",
+    "99",
+    "50"
+   ],
+   "answerIndex": 1,
+   "explanation": "1 cộng 100 bằng 101. Ghép tiếp 2 với 99 cũng được 101, nên cặp nào\ncũng bằng nhau.",
+   "id": "bai22-tn-02"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Từ 1 tới 100 ghép được bao nhiêu cặp?",
+   "options": [
+    "100",
+    "101",
+    "50",
+    "49"
+   ],
+   "answerIndex": 2,
+   "explanation": "Có 100 số, mỗi cặp dùng hết 2 số. Lấy 100 chia cho 2 được 50 cặp.",
+   "id": "bai22-tn-03"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Vậy tổng từ 1 tới 100 bằng bao nhiêu?",
+   "options": [
+    "101",
+    "1010",
+    "<code>5050</code>",
+    "550"
+   ],
+   "answerIndex": 2,
+   "explanation": "Lấy 50 cặp nhân với 101 mỗi cặp. Máy cũng cho ra đúng con số ấy khi\nchạy vòng lặp cộng dồn.",
+   "id": "bai22-tn-04"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Tổng từ 1 tới 10 bằng bao nhiêu?",
+   "options": [
+    "50",
+    "55",
+    "45",
+    "100"
+   ],
+   "answerIndex": 1,
+   "explanation": "Ghép 1 với 10, 2 với 9, 3 với 8, 4 với 7, 5 với 6. Được 5 cặp, mỗi\ncặp 11, nên tổng bằng 55.",
+   "id": "bai22-tn-05"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Công thức <code>n * (n + 1) // 2</code> làm thay việc gì?",
+   "options": [
+    "Làm thay lệnh <code>print</code>",
+    "Làm thay vòng lặp cộng dồn từ 1 tới <code>n</code>",
+    "Làm thay phép nhân",
+    "Không làm thay việc gì"
+   ],
+   "answerIndex": 1,
+   "explanation": "Vòng lặp phải cộng từng số một. Công thức cho ra cùng kết quả ấy chỉ\nbằng một phép nhân và một phép chia.",
+   "id": "bai22-tn-06"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Vì sao công thức phải chia cho 2?",
+   "options": [
+    "Vì 2 là số nhỏ nhất",
+    "Vì máy thích số chẵn",
+    "Vì mỗi cặp gom hai số, nên số cặp chỉ bằng nửa số lượng",
+    "Vì tổng luôn là số chẵn"
+   ],
+   "answerIndex": 2,
+   "explanation": "Có <code>n</code> số mà mỗi cặp dùng hết hai số. Vậy số cặp là <code>n</code> chia\ncho 2, và mỗi cặp bằng <code>n + 1</code>.",
+   "id": "bai22-tn-07"
+  },
+  {
+   "kind": "van",
+   "heading": "Máy in ra gì",
+   "html": "<p>Đọc chương trình rồi đoán xem máy in ra gì. Đoán xong hãy bấm Chạy để so.</p>"
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai22-doan-08",
+   "code": "# Thử mẹo với ba số n khác nhau\nfor n in [3, 5, 10]:\n    tong = n * (n + 1) // 2\n    print(\"Tổng từ 1 tới\", n, \"là\", tong)",
+   "expectOut": "Tổng từ 1 tới 3 là 6\nTổng từ 1 tới 5 là 15\nTổng từ 1 tới 10 là 55\n",
+   "soDong": 3,
+   "stdin": null
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai22-doan-09",
+   "code": "# Ghép cặp cho dãy 1 tới 10\nn = 10\nfor i in range(1, 6):\n    print(i, \"+\", n + 1 - i, \"=\", n + 1)\nprint(\"Có 5 cặp, mỗi cặp bằng 11\")\nprint(\"Tổng là\", 5 * 11)",
+   "expectOut": "1 + 10 = 11\n2 + 9 = 11\n3 + 8 = 11\n4 + 7 = 11\n5 + 6 = 11\nCó 5 cặp, mỗi cặp bằng 11\nTổng là 55\n",
+   "soDong": 7,
+   "stdin": null
+  },
+  {
+   "kind": "van",
+   "heading": "Điền vào chỗ trống",
+   "html": ""
+  },
+  {
+   "kind": "fill_blank",
+   "id": "bai22-dien-10",
+   "deBai": "Chọn từ trong ngân hàng điền vào ba câu sau.",
+   "bank": [
+    "Gauss",
+    "101",
+    "50",
+    "vòng lặp"
+   ],
+   "items": [
+    "Cậu bé tính nhanh tổng từ 1 tới 100 tên là {{1}}.",
+    "Ghép 1 với 100, rồi 2 với 99, cặp nào cũng bằng {{2}}.",
+    "Từ 1 tới 100 ghép được {{3}} cặp."
+   ],
+   "blanks": [
+    {
+     "accept": [
+      "Gauss"
+     ]
+    },
+    {
+     "accept": [
+      "101"
+     ]
+    },
+    {
+     "accept": [
+      "50"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai22-dien-11",
+   "deBai": "Điền hai ô cho máy tính tổng từ 1 tới 100 bằng công thức.",
+   "bank": [
+    "Gauss",
+    "101",
+    "50",
+    "vòng lặp"
+   ],
+   "template": "n = 100\ntong = n * (n + 1) {{1}} {{2}}\nprint(\"Tổng từ 1 tới 100 là\", tong)",
+   "blanks": [
+    {
+     "accept": [
+      "//"
+     ]
+    },
+    {
+     "accept": [
+      "2"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Tổng từ 1 tới 100 là\""
+   ],
+   "expectOut": "Tổng từ 1 tới 100 là 5050\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai22-dien-12",
+   "deBai": "Điền hai ô cho hai cách cùng ra một số.",
+   "bank": [
+    "Gauss",
+    "101",
+    "50",
+    "vòng lặp"
+   ],
+   "template": "tong = {{1}}\nfor i in range(1, {{2}}):\n    tong = tong + i\nn = 10\nprint(\"Cộng dồn:\", tong)\nprint(\"Công thức:\", n * (n + 1) // 2)",
+   "blanks": [
+    {
+     "accept": [
+      "0"
+     ]
+    },
+    {
+     "accept": [
+      "11"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Cộng dồn:\"",
+    "\"Công thức:\""
+   ],
+   "expectOut": "Cộng dồn: 55\nCông thức: 55\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai22-dien-13",
+   "deBai": "Điền hai ô cho máy đếm số cặp và giá trị mỗi cặp.",
+   "bank": [
+    "Gauss",
+    "101",
+    "50",
+    "vòng lặp"
+   ],
+   "template": "n = 100\nso_cap = n // {{1}}\nmoi_cap = n + {{2}}\nprint(\"Có\", so_cap, \"cặp\")\nprint(\"Mỗi cặp bằng\", moi_cap)\nprint(\"Tổng bằng\", so_cap * moi_cap)",
+   "blanks": [
+    {
+     "accept": [
+      "2"
+     ]
+    },
+    {
+     "accept": [
+      "1"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Có\"",
+    "\"cặp\"",
+    "\"Mỗi cặp bằng\"",
+    "\"Tổng bằng\""
+   ],
+   "expectOut": "Có 50 cặp\nMỗi cặp bằng 101\nTổng bằng 5050\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "free_code",
+   "id": "bai22-tuviet-14",
+   "deBai": "Tính tổng từ 1 tới 50 bằng cả hai cách. Cách một dùng vòng\nlặp cộng dồn, cách hai dùng công thức. In hai kết quả ra để so với nhau.",
+   "hoiTruoc": [
+    "Vòng lặp của con chạy từ số mấy tới số mấy?",
+    "Trong công thức, <code>n</code> bằng mấy?",
+    "Hai cách có ra cùng một số không?"
+   ],
+   "checklist": [
+    "Con giải thích được vì sao mỗi cặp đều bằng nhau.",
+    "Con viết được công thức tổng bằng Python.",
+    "Con kiểm lại công thức bằng vòng lặp cộng dồn."
+   ],
+   "hints": [
+    {
+     "hoi": "Lấy số đầu cộng số cuối được mấy?",
+     "dap": "11"
+    },
+    {
+     "hoi": "Lấy số thứ hai cộng số áp chót được mấy?",
+     "dap": "cũng 11"
+    },
+    {
+     "hoi": "Mười số thì ghép được mấy cặp?",
+     "dap": "5 cặp, nên tổng là 55"
+    }
+   ],
+   "loiHayMac": "<p>Quên cặp ngoặc quanh <code>n + 1</code>. Phép nhân chạy\ntrước phép cộng, nên <code>n * n + 1 // 2</code> cho ra một số rất khác.</p>",
+   "loiGiai": "",
+   "goiY": "<p>Vòng lặp chạy <code>range(1, 51)</code>. Trong công thức\n<code>n = 50</code>, nên <code>50 * 51 // 2</code>. Cả hai cách đều cho ra 1275.</p>"
+  }
+ ]
+}

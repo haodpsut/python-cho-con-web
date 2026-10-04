@@ -1,0 +1,315 @@
+{
+ "schemaVersion": "1.0",
+ "so": 1,
+ "ten": "Làm quen với Python và IDLE",
+ "chang": 1,
+ "khaiNiemMoi": [],
+ "khoi": [
+  {
+   "kind": "muc_tieu",
+   "items": [
+    "Mở được IDLE và gõ dòng lệnh đầu tiên của mình.",
+    "Lưu bài thành một tệp, rồi bấm F5 cho máy chạy.",
+    "Biết vì sao chữ cần in phải nằm giữa hai dấu nháy."
+   ]
+  },
+  {
+   "kind": "guess_text",
+   "id": "bai01-guess-01",
+   "html": "<p>Bé Bi gõ vào máy dòng <code>print(\"Chào con!\")</code> rồi bấm F5.</p>\n<p>Con đoán xem máy in ra gì? Máy có in luôn cả hai dấu nháy không?</p>",
+   "reveal": "<p>Máy in ra <code>Chào con!</code> và</p>"
+  },
+  {
+   "kind": "van",
+   "heading": "Cùng học",
+   "html": "<p>Chỗ con gõ gọi là IDLE. IDLE có hai cửa sổ, mỗi cửa sổ một việc.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai01-idle.svg",
+   "alt": "Hình trong sách. Chữ trong hình: bai01.py; print(\"Tên con là Bi.\") print(\"Con học lớp 3.\"); Cửa sổ File: chỗ con gõ; Shell; Tên con là Bi. Con học lớp 3.; Cửa sổ Shell: chỗ máy trả lời; F5; bấm F5 để chạy."
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p>Từ để sai máy in chữ là <code>print</code>. Chữ cần in đặt giữa hai dấu nháy kép.\nMáy đọc từ trên xuống, mỗi lệnh <code>print</code> in ra một dòng.\nLưu bài bằng <b>File</b>, rồi <b>Save</b>, đặt tên có đuôi <code>.py</code>.\nBấm <b>F5</b> cho máy chạy.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai01-luong.svg",
+   "alt": "Hình trong sách. Chữ trong hình: Con gõ print(\"Chào con!\"); Máy đọc từng dòng từ trên xuống; Máy nói Chào con!; cửa sổ File; bấm F5; cửa sổ Shell."
+  },
+  {
+   "kind": "vidu",
+   "code": "print(\"Chào con!\")\nprint(\"Con học lớp 3.\")",
+   "out": "Chào con!\nCon học lớp 3.\n",
+   "stdin": null
+  },
+  {
+   "kind": "nhac",
+   "html": "<p>Máy phân biệt chữ hoa và chữ thường. Viết <code>Print</code> thì máy kêu\n<code>NameError</code>. Quên dấu nháy đóng thì máy kêu <code>SyntaxError</code>.</p>"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Máy in ra dòng nào khi con chạy <code>print(\"Chào con!\")</code>?",
+   "options": [
+    "<code>\"Chào con!\"</code>",
+    "<code>Chào con!</code>",
+    "<code>print(\"Chào con!\")</code>",
+    "Máy không in gì cả"
+   ],
+   "answerIndex": 1,
+   "explanation": "Hai dấu nháy chỉ để nói cho máy biết chữ bắt đầu ở đâu và hết ở đâu.\nMáy không in chúng ra.",
+   "id": "bai01-tn-02"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Muốn máy in ra ba dòng chữ thì cần mấy lệnh <code>print</code>?",
+   "options": [
+    "Một lệnh",
+    "Hai lệnh",
+    "Ba lệnh",
+    "Không cần lệnh nào"
+   ],
+   "answerIndex": 2,
+   "explanation": "Một lệnh <code>print</code> in được đúng một dòng. Ba dòng thì ba lệnh.",
+   "id": "bai01-tn-03"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Tên tệp nào đúng để lưu bài Python?",
+   "options": [
+    "<code>bai01</code>",
+    "<code>bai01.txt</code>",
+    "<code>bai01.py</code>",
+    "<code>bai01.doc</code>"
+   ],
+   "answerIndex": 2,
+   "explanation": "Đuôi <code>.py</code> nói cho máy biết đây là bài viết bằng tiếng Python.\nĐuôi khác thì máy không chạy được.",
+   "id": "bai01-tn-04"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Con bấm phím nào để máy chạy bài?",
+   "options": [
+    "Phím cách",
+    "Phím F5",
+    "Phím Enter",
+    "Phím Esc"
+   ],
+   "answerIndex": 1,
+   "explanation": "Phím Enter chỉ xuống dòng trong cửa sổ gõ. F5 mới là lệnh chạy.",
+   "id": "bai01-tn-05"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Dòng nào dưới đây máy sẽ kêu lỗi?",
+   "options": [
+    "<code>print(\"Xin chào\")</code>",
+    "<code>print(\"Bé Bi\")</code>",
+    "<code>Print(\"Xin chào\")</code>",
+    "<code>print(\"lớp 3\")</code>"
+   ],
+   "answerIndex": 2,
+   "explanation": "Chữ P hoa. Máy chỉ biết từ <code>print</code> viết thường hết, nên nó kêu\n<code>NameError</code>.",
+   "id": "bai01-tn-06"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Dòng <code>print(\"Bé Na\")</code> còn thiếu gì để chạy được?",
+   "options": [
+    "Không thiếu gì, dòng này chạy được",
+    "Thiếu dấu chấm ở cuối",
+    "Thiếu đuôi <code>.py</code>",
+    "Thiếu phím F5"
+   ],
+   "answerIndex": 0,
+   "explanation": "Python không cần dấu chấm cuối dòng. Đuôi <code>.py</code> là của tệp, không\nphải của dòng lệnh. F5 là việc con bấm, không phải chữ con gõ.",
+   "id": "bai01-tn-07"
+  },
+  {
+   "kind": "van",
+   "heading": "Máy in ra gì",
+   "html": "<p>Đọc chương trình rồi đoán xem máy in ra gì. Đoán xong hãy bấm Chạy để so.</p>"
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai01-doan-08",
+   "code": "print(\"Lớp 3A\")\nprint(\"Bé Bi\")\nprint(\"Bé Na\")",
+   "expectOut": "Lớp 3A\nBé Bi\nBé Na\n",
+   "soDong": 3,
+   "stdin": null
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai01-doan-09",
+   "code": "print(\"1 + 2\")\nprint(\"Máy chỉ in, máy không tính\")",
+   "expectOut": "1 + 2\nMáy chỉ in, máy không tính\n",
+   "soDong": 2,
+   "stdin": null
+  },
+  {
+   "kind": "van",
+   "heading": "Điền vào chỗ trống",
+   "html": ""
+  },
+  {
+   "kind": "fill_blank",
+   "id": "bai01-dien-10",
+   "deBai": "Chọn từ trong ngân hàng điền vào ba câu sau.",
+   "bank": [
+    "print",
+    "F5",
+    ".py",
+    "Print"
+   ],
+   "items": [
+    "Từ để sai máy in chữ ra màn hình là {{1}}.",
+    "Tên tệp Python phải có đuôi {{2}}.",
+    "Muốn máy chạy bài thì con bấm phím {{3}}."
+   ],
+   "blanks": [
+    {
+     "accept": [
+      "print"
+     ]
+    },
+    {
+     "accept": [
+      ".py"
+     ]
+    },
+    {
+     "accept": [
+      "F5"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai01-dien-11",
+   "deBai": "Điền một ô cho máy in ra đúng dòng chữ bên dưới.",
+   "bank": [
+    "print",
+    "F5",
+    ".py",
+    "Print"
+   ],
+   "template": "{{1}}(\"Xin chào!\")",
+   "blanks": [
+    {
+     "accept": [
+      "print"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Xin chào!\""
+   ],
+   "expectOut": "Xin chào!\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai01-dien-12",
+   "deBai": "Điền hai ô. Mỗi dòng chữ cần một lệnh riêng.",
+   "bank": [
+    "print",
+    "F5",
+    ".py",
+    "Print"
+   ],
+   "template": "{{1}}(\"Con tên là Na.\")\n{{2}}(\"Con học lớp 3.\")",
+   "blanks": [
+    {
+     "accept": [
+      "print"
+     ]
+    },
+    {
+     "accept": [
+      "print"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Con tên là Na.\"",
+    "\"Con học lớp 3.\""
+   ],
+   "expectOut": "Con tên là Na.\nCon học lớp 3.\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai01-dien-13",
+   "deBai": "Điền ba ô để máy kể về con mèo Mun.",
+   "bank": [
+    "print",
+    "F5",
+    ".py",
+    "Print"
+   ],
+   "template": "{{1}}(\"Mun là con mèo.\")\n{{2}}(\"Mun hay ngủ.\")\n{{3}}(\"Mun thích cá.\")",
+   "blanks": [
+    {
+     "accept": [
+      "print"
+     ]
+    },
+    {
+     "accept": [
+      "print"
+     ]
+    },
+    {
+     "accept": [
+      "print"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Mun là con mèo.\"",
+    "\"Mun hay ngủ.\"",
+    "\"Mun thích cá.\""
+   ],
+   "expectOut": "Mun là con mèo.\nMun hay ngủ.\nMun thích cá.\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "free_code",
+   "id": "bai01-tuviet-14",
+   "deBai": "Hãy viết chương trình in ra tên con ở dòng một, và tên\ntrường con ở dòng hai.",
+   "hoiTruoc": [
+    "Con cần mấy lệnh <code>print</code>?",
+    "Mỗi lệnh in ra chữ gì?",
+    "Chữ cần in đặt ở đâu trong lệnh?"
+   ],
+   "checklist": [
+    "Con đã chạy được chương trình đầu tiên.",
+    "Con đã lưu bài thành tệp có đuôi <code>.py</code>.",
+    "Con đoán đúng kết quả trước khi chạy."
+   ],
+   "hints": [
+    {
+     "hoi": "Một lệnh <code>print</code> in ra được mấy dòng?",
+     "dap": "một dòng"
+    },
+    {
+     "hoi": "Vậy muốn hai dòng thì cần mấy lệnh?",
+     "dap": "hai"
+    },
+    {
+     "hoi": "Chữ con muốn in nằm ở đâu?",
+     "dap": "giữa hai dấu nháy"
+    }
+   ],
+   "loiHayMac": "<p>Gõ <code>Print</code> hoa chữ P. Quên một\ndấu nháy. Quên dấu ngoặc đóng. Cả ba lỗi đều làm máy in chữ đỏ, và cả ba\nđều không sao. Hãy để cháu tự đọc dòng chữ đỏ rồi đoán chỗ sai.</p>",
+   "loiGiai": "print(\"Con tên là Na.\")\nprint(\"Con học lớp 3.\")",
+   "goiY": "<p>Hai lệnh <code>print</code>, mỗi lệnh một dòng. Ví dụ:</p>"
+  }
+ ]
+}

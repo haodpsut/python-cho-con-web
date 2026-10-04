@@ -1,0 +1,315 @@
+{
+ "schemaVersion": "1.0",
+ "so": 26,
+ "ten": "Tự đặt tên cho một việc: def",
+ "chang": 6,
+ "khaiNiemMoi": [],
+ "khoi": [
+  {
+   "kind": "muc_tieu",
+   "items": [
+    "Đặt được tên cho một việc bằng từ def.",
+    "Đổ được một số vào máy nhỏ qua cái phễu.",
+    "Phân biệt được máy kêu to với máy nhả ra đồ dùng được."
+   ]
+  },
+  {
+   "kind": "guess_text",
+   "id": "bai26-guess-01",
+   "html": "<p>Bé Bi phải chào ba lần trong một chương trình. Bi gõ ba lệnh in giống hệt.</p>\n<p>Nếu đổi lời chào thì Bi phải sửa mấy chỗ? Có cách nào chỉ sửa một chỗ không?</p>",
+   "reveal": "<p>Bi phải sửa ba chỗ. Nếu gói lời chào vào một máy nhỏ\nthì chỉ sửa đúng một chỗ, là thân máy.</p>"
+  },
+  {
+   "kind": "van",
+   "heading": "Cùng học",
+   "html": "<p><code>def</code> là cách con đặt tên cho một việc. Gọi tên ấy một cái là máy làm.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai26-maycophieu.svg",
+   "alt": "Hình trong sách. Chữ trong hình: 5; con đổ số 5 vào; phễu: chỗ con đổ đồ vào. Trong Python gọi là tham số.; def gap_doi(n):; return n * 2; thân máy; 10; máng: đồ chảy ra cho con. Trong Python gọi là return.."
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p>Máy nhỏ có thể có một cái phễu để con đổ đồ vào. Đồ ấy gọi là tham số.\nMáy cũng có thể có một cái máng cho đồ chảy ra. Đó là <code>return</code>.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai26-haimay.svg",
+   "alt": "Hình trong sách. Chữ trong hình: Máy chỉ KÊU TO; def keu_to(n):; print(n * 3); 12; Máy NHẢ RA ĐỒ; def nha_ra(n):; return n * 3; Máy nhả ra số 12. Con cất vào hộp y rồi đem cộng, đem nhân tiếp.."
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p><code>print</code> là máy kêu to. Nghe xong là hết, con không cầm lại được gì.\n<code>return</code> là máy nhả ra đồ. Con cất vào hộp rồi đem dùng tiếp.\nMọi dòng trong thân máy đều phải thụt vào bốn dấu cách.</p>"
+  },
+  {
+   "kind": "vidu",
+   "code": "# Máy nhỏ không có phễu: gọi tên là nó làm\ndef chao():\n    print(\"Chào con!\")\n\n# Máy nhỏ có phễu và có máng cho đồ chảy ra\ndef gap_doi(n):\n    return n * 2\n\nchao()\nchao()\nso = gap_doi(21)\nprint(so)\nprint(gap_doi(5) + gap_doi(5))",
+   "out": "Chào con!\nChào con!\n42\n20\n",
+   "stdin": null
+  },
+  {
+   "kind": "nhac",
+   "html": "<p>Dòng <code>def</code> phải có dấu hai chấm ở cuối, và thân máy phải thụt vào.</p>\n<p>Gọi máy thì phải có hai dấu ngoặc. Viết <code>chao()</code> mới chạy, viết\n<code>chao</code> trơ trọi thì máy chẳng làm gì mà cũng chẳng báo lỗi.</p>"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Từ nào dùng để đặt tên cho một việc?",
+   "options": [
+    "<code>print</code>",
+    "<code>def</code>",
+    "<code>for</code>",
+    "<code>if</code>"
+   ],
+   "answerIndex": 1,
+   "explanation": "<code>def</code> mở đầu một máy nhỏ. Sau nó là tên máy, hai dấu ngoặc và\ndấu hai chấm.",
+   "id": "bai26-tn-02"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Máy nhỏ <code>def gap_doi(n): return n * 2</code>. Hỏi <code>gap_doi(21)</code>\ncho ra gì?",
+   "options": [
+    "<code>21</code>",
+    "<code>42</code>",
+    "<code>2</code>",
+    "Không ra gì cả"
+   ],
+   "answerIndex": 1,
+   "explanation": "Con đổ 21 vào phễu. Máy nhân đôi rồi nhả ra 42 qua cái máng\n<code>return</code>.",
+   "id": "bai26-tn-03"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Cái phễu của máy nhỏ, trong Python gọi là gì?",
+   "options": [
+    "Lời ghi chú",
+    "Chuỗi",
+    "Tham số",
+    "Vòng lặp"
+   ],
+   "answerIndex": 2,
+   "explanation": "Tham số là chỗ con đổ đồ vào. Bài này mỗi máy chỉ có đúng một cái\nphễu thôi.",
+   "id": "bai26-tn-04"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Máy dùng <code>print</code> khác máy dùng <code>return</code> chỗ nào?",
+   "options": [
+    "Không khác gì",
+    "Máy <code>print</code> chỉ kêu to, máy <code>return</code> nhả ra đồ dùng tiếp được",
+    "Máy <code>print</code> chạy nhanh hơn",
+    "Máy <code>return</code> không chạy được"
+   ],
+   "answerIndex": 1,
+   "explanation": "Tiếng kêu nghe xong là hết. Đồ nhả ra thì con cất vào hộp rồi đem\ncộng, đem nhân tiếp.",
+   "id": "bai26-tn-05"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Gọi máy nhỏ tên <code>chao</code> thì viết thế nào cho đúng?",
+   "options": [
+    "<code>chao</code>",
+    "<code>chao()</code>",
+    "<code>def chao</code>",
+    "<code>print chao</code>"
+   ],
+   "answerIndex": 1,
+   "explanation": "Thiếu hai dấu ngoặc thì máy không chạy. Tệ hơn nữa là máy cũng\nchẳng báo lỗi gì cho con biết.",
+   "id": "bai26-tn-06"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Thân của máy nhỏ phải viết thế nào?",
+   "options": [
+    "Viết sát lề trái",
+    "Thụt vào bốn dấu cách",
+    "Viết trên một dòng với <code>def</code>",
+    "Viết trong dấu nháy"
+   ],
+   "answerIndex": 1,
+   "explanation": "Thụt đầu dòng là cách con nói cho máy biết chỗ nào còn thuộc về\nthân máy, chỗ nào đã ra ngoài.",
+   "id": "bai26-tn-07"
+  },
+  {
+   "kind": "van",
+   "heading": "Máy in ra gì",
+   "html": "<p>Đọc chương trình rồi đoán xem máy in ra gì. Đoán xong hãy bấm Chạy để so.</p>"
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai26-doan-08",
+   "code": "def cho_keo(n):\n    return n + 10\n\nprint(cho_keo(5))\nprint(cho_keo(0))\nx = cho_keo(3)\nprint(x + x)",
+   "expectOut": "15\n10\n26\n",
+   "soDong": 3,
+   "stdin": null
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai26-doan-09",
+   "code": "def keu_to(n):\n    print(n * 3)\n\ndef nha_ra(n):\n    return n * 3\n\nkeu_to(4)\ny = nha_ra(4)\nprint(y + 1)",
+   "expectOut": "12\n13\n",
+   "soDong": 2,
+   "stdin": null
+  },
+  {
+   "kind": "van",
+   "heading": "Điền vào chỗ trống",
+   "html": ""
+  },
+  {
+   "kind": "fill_blank",
+   "id": "bai26-dien-10",
+   "deBai": "Chọn từ trong ngân hàng điền vào ba câu sau.",
+   "bank": [
+    "def",
+    "return",
+    "print",
+    "phễu"
+   ],
+   "items": [
+    "Từ để đặt tên cho một việc là {{1}}.",
+    "Chỗ con đổ đồ vào máy nhỏ gọi là cái {{2}}.",
+    "Từ để máy nhả ra đồ cho con dùng tiếp là {{3}}."
+   ],
+   "blanks": [
+    {
+     "accept": [
+      "def"
+     ]
+    },
+    {
+     "accept": [
+      "phễu"
+     ]
+    },
+    {
+     "accept": [
+      "return"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai26-dien-11",
+   "deBai": "Điền hai ô cho máy nhỏ chào hai lần.",
+   "bank": [
+    "def",
+    "return",
+    "print",
+    "phễu"
+   ],
+   "template": "{{1}} chao():\n    {{2}}(\"Xin chào các bạn!\")\n\nchao()\nchao()",
+   "blanks": [
+    {
+     "accept": [
+      "def"
+     ]
+    },
+    {
+     "accept": [
+      "print"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Xin chào các bạn!\""
+   ],
+   "expectOut": "Xin chào các bạn!\nXin chào các bạn!\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai26-dien-12",
+   "deBai": "Điền hai ô cho máy nhỏ nhả ra số gấp ba.",
+   "bank": [
+    "def",
+    "return",
+    "print",
+    "phễu"
+   ],
+   "template": "def gap_ba(n):\n    {{1}} {{2}} * 3\n\nprint(gap_ba(7))\nprint(gap_ba(10))",
+   "blanks": [
+    {
+     "accept": [
+      "return"
+     ]
+    },
+    {
+     "accept": [
+      "n"
+     ]
+    }
+   ],
+   "chuIn": [],
+   "expectOut": "21\n30\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai26-dien-13",
+   "deBai": "Máy nhỏ đã viết xong rồi. Điền hai ô để gọi máy với số 6, rồi in ra cái máy nhả về.",
+   "bank": [
+    "def",
+    "return",
+    "print",
+    "phễu"
+   ],
+   "template": "def dien_tich(canh):\n    return canh * canh\n\na = {{1}}\nprint(\"diện tích là\", {{2}})",
+   "blanks": [
+    {
+     "accept": [
+      "dien_tich(6)"
+     ]
+    },
+    {
+     "accept": [
+      "a"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"diện tích là\""
+   ],
+   "expectOut": "diện tích là 36\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "free_code",
+   "id": "bai26-tuviet-14",
+   "deBai": "Viết một máy nhỏ tên <code>chu_vi</code>. Đổ vào phễu độ dài cạnh\ncủa một hình vuông, máy nhả ra chu vi. Rồi in chu vi của hình vuông cạnh 7.",
+   "hoiTruoc": [
+    "Máy của con có mấy cái phễu?",
+    "Chu vi hình vuông tính bằng phép gì?",
+    "Dòng cuối dùng <code>print</code> hay <code>return</code>?"
+   ],
+   "checklist": [
+    "Con đặt được tên cho một việc bằng <code>def</code>.",
+    "Con đổ được một số vào phễu của máy nhỏ.",
+    "Con nói được máy kêu to khác máy nhả ra đồ chỗ nào."
+   ],
+   "hints": [
+    {
+     "hoi": "Con đổ gì vào phễu?",
+     "dap": "một số, đó là tham số"
+    },
+    {
+     "hoi": "Nước chảy ra chỗ nào?",
+     "dap": "cái máng, đó là <code>return</code>"
+    },
+    {
+     "hoi": "Nếu máy chỉ hét lên thì con hứng được gì vào ca?",
+     "dap": "không gì cả"
+    }
+   ],
+   "loiHayMac": "",
+   "loiGiai": "",
+   "goiY": "<p>Máy có một phễu. Chu vi hình vuông bằng cạnh nhân 4.\nThân máy viết <code>return canh * 4</code>, rồi ngoài máy viết\n<code>print(chu_vi(7))</code> và máy in ra 28.</p>"
+  }
+ ]
+}

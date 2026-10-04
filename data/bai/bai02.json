@@ -1,0 +1,307 @@
+{
+ "schemaVersion": "1.0",
+ "so": 2,
+ "ten": "In nhiều dòng cho đúng",
+ "chang": 1,
+ "khaiNiemMoi": [],
+ "khoi": [
+  {
+   "kind": "muc_tieu",
+   "items": [
+    "Biết máy đọc chương trình từ trên xuống, từng dòng một.",
+    "Dùng được dấu thăng để ghi chú cho mình.",
+    "In ra đúng từng chữ, đúng hoa thường."
+   ]
+  },
+  {
+   "kind": "guess_text",
+   "id": "bai02-guess-01",
+   "html": "<p>Bé Bi viết ba lệnh in ra <code>Ba</code>, rồi <code>Hai</code>, rồi <code>Một</code>.</p>\n<p>Con đoán xem máy in dòng nào trước? Máy có tự sắp xếp lại không?</p>",
+   "reveal": "<p>Máy in <code>Ba</code> trước, vì lệnh ấy ở dòng trên. Máy\nkhông bao giờ tự sắp xếp lại.</p>"
+  },
+  {
+   "kind": "van",
+   "heading": "Cùng học",
+   "html": "<p>Máy đọc chương trình từ trên xuống. Lệnh nào viết trước thì chạy trước.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai02-thutu.svg",
+   "alt": "Hình trong sách. Chữ trong hình: print(\"\"); máy đọc từ trên xuống; in ra."
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p>Dấu <code>#</code> mở đầu một lời ghi chú. Máy bỏ qua cả dòng đó.\nGhi chú để con nhớ mình đang làm gì, máy không đọc.\nNếu con đặt <code>#</code> trước một lệnh thì lệnh ấy cũng bị bỏ qua luôn.</p>"
+  },
+  {
+   "kind": "vidu",
+   "code": "# Dòng có dấu thăng là lời con ghi\nprint(\"Một\")\nprint(\"Hai\")\nprint(\"Ba\")",
+   "out": "Một\nHai\nBa\n",
+   "stdin": null
+  },
+  {
+   "kind": "nhac",
+   "html": "<p>Máy in ra đúng từng chữ con gõ. Thừa một dấu cách cũng thành khác.\n<code>print(\"Chào \")</code> in ra <code>Chào</code> kèm một dấu cách ở cuối.</p>\n<p>Thiếu dấu nháy đóng thì máy kêu <code>SyntaxError</code> và tô đỏ chỗ sai.</p>"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Máy chạy lệnh nào trước?",
+   "options": [
+    "Lệnh viết ở dòng trên",
+    "Lệnh viết ở dòng dưới",
+    "Lệnh ngắn hơn",
+    "Máy tự chọn ngẫu nhiên"
+   ],
+   "answerIndex": 0,
+   "explanation": "Máy đọc từ trên xuống như con đọc sách. Không có chuyện tự sắp xếp.",
+   "id": "bai02-tn-02"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Dấu <code>#</code> dùng để làm gì?",
+   "options": [
+    "Ghi chú cho người đọc, máy bỏ qua",
+    "In chữ ra màn hình",
+    "Báo cho máy biết đã hết bài",
+    "Làm chữ to lên"
+   ],
+   "answerIndex": 0,
+   "explanation": "Máy nhìn thấy dấu <code>#</code> là bỏ qua hết phần còn lại của dòng ấy.",
+   "id": "bai02-tn-03"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Dòng <code># print(\"Mun\")</code> sẽ làm gì?",
+   "options": [
+    "In ra <code>Mun</code>",
+    "In ra <code># print(\"Mun\")</code>",
+    "Không in gì cả",
+    "Báo lỗi"
+   ],
+   "answerIndex": 2,
+   "explanation": "Có dấu <code>#</code> đứng trước nên cả dòng thành lời ghi chú. Đây là mẹo\nđể tạm tắt một lệnh mà không phải xoá nó đi.",
+   "id": "bai02-tn-04"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Hai dòng <code>print(\"Chào\")</code> và <code>print(\"chào\")</code> in ra giống nhau không?",
+   "options": [
+    "Giống nhau",
+    "Khác nhau, một chữ C hoa một chữ c thường",
+    "Máy tự sửa thành giống nhau",
+    "Máy báo lỗi"
+   ],
+   "answerIndex": 1,
+   "explanation": "Máy in ra đúng từng chữ. Chữ hoa và chữ thường là hai chữ khác nhau.",
+   "id": "bai02-tn-05"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Muốn in ra một dòng trống ở giữa thì làm thế nào?",
+   "options": [
+    "Viết <code>print()</code> không có gì trong ngoặc",
+    "Viết <code>print(\" \")</code> với một dấu cách",
+    "Bấm Enter hai lần trong cửa sổ gõ",
+    "Không làm được"
+   ],
+   "answerIndex": 0,
+   "explanation": "<code>print()</code> rỗng vẫn xuống dòng, nên nó in ra một dòng trống.\nBấm Enter trong cửa sổ gõ chỉ làm giãn chương trình, không in gì.",
+   "id": "bai02-tn-06"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Chương trình có 5 lệnh <code>print</code>, trong đó 2 lệnh bị đặt dấu\n<code>#</code> ở đầu. Máy in ra mấy dòng?",
+   "options": [
+    "5 dòng",
+    "3 dòng",
+    "2 dòng",
+    "Máy báo lỗi"
+   ],
+   "answerIndex": 1,
+   "explanation": "Hai lệnh có dấu <code>#</code> thành ghi chú nên không chạy. Còn 3 lệnh\nchạy, mỗi lệnh in một dòng.",
+   "id": "bai02-tn-07"
+  },
+  {
+   "kind": "van",
+   "heading": "Máy in ra gì",
+   "html": "<p>Đọc chương trình rồi đoán xem máy in ra gì. Đoán xong hãy bấm Chạy để so.</p>"
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai02-doan-08",
+   "code": "print(\"Bé Bi\")\n# print(\"Bé Na\")\nprint(\"Mun\")",
+   "expectOut": "Bé Bi\nMun\n",
+   "soDong": 2,
+   "stdin": null
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai02-doan-09",
+   "code": "print(\"Ba\")\nprint(\"Hai\")\nprint(\"Một\")\nprint(\"Chạy!\")",
+   "expectOut": "Ba\nHai\nMột\nChạy!\n",
+   "soDong": 4,
+   "stdin": null
+  },
+  {
+   "kind": "van",
+   "heading": "Điền vào chỗ trống",
+   "html": ""
+  },
+  {
+   "kind": "fill_blank",
+   "id": "bai02-dien-10",
+   "deBai": "Chọn từ trong ngân hàng điền vào ba câu sau.",
+   "bank": [
+    "print",
+    "#",
+    "Sáng",
+    "Tối"
+   ],
+   "items": [
+    "Dấu dùng để ghi chú là {{1}}.",
+    "Từ để sai máy in chữ là {{2}}.",
+    "Lệnh đứng ở dòng trên thì chạy {{3}}."
+   ],
+   "blanks": [
+    {
+     "accept": [
+      "#"
+     ]
+    },
+    {
+     "accept": [
+      "print"
+     ]
+    },
+    {
+     "accept": [
+      "trước"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai02-dien-11",
+   "deBai": "Điền hai ô cho máy in ra đúng hai dòng bên dưới.",
+   "bank": [
+    "print",
+    "#",
+    "Sáng",
+    "Tối"
+   ],
+   "template": "{{1}}(\"Xin chào\")\n{{2}}(\"Tạm biệt\")",
+   "blanks": [
+    {
+     "accept": [
+      "print"
+     ]
+    },
+    {
+     "accept": [
+      "print"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Xin chào\"",
+    "\"Tạm biệt\""
+   ],
+   "expectOut": "Xin chào\nTạm biệt\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai02-dien-12",
+   "deBai": "Điền một ô để dòng đầu thành lời ghi chú.",
+   "bank": [
+    "print",
+    "#",
+    "Sáng",
+    "Tối"
+   ],
+   "template": "{{1}} Lời chào của Bi\nprint(\"Chào cô\")\nprint(\"Chào các bạn\")",
+   "blanks": [
+    {
+     "accept": [
+      "#"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Chào cô\"",
+    "\"Chào các bạn\""
+   ],
+   "expectOut": "Chào cô\nChào các bạn\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai02-dien-13",
+   "deBai": "Điền hai ô cho đúng thứ tự một ngày.",
+   "bank": [
+    "print",
+    "#",
+    "Sáng",
+    "Tối"
+   ],
+   "template": "print(\"Sáng\")\nprint(\"{{1}}\")\nprint(\"Chiều\")\nprint(\"{{2}}\")",
+   "blanks": [
+    {
+     "accept": [
+      "Trưa"
+     ]
+    },
+    {
+     "accept": [
+      "Tối"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Sáng\"",
+    "\"{{1}}\"",
+    "\"Chiều\"",
+    "\"{{2}}\""
+   ],
+   "expectOut": null,
+   "chayDuoc": false,
+   "stdin": null
+  },
+  {
+   "kind": "free_code",
+   "id": "bai02-tuviet-14",
+   "deBai": "Viết chương trình in ra bốn mùa trong năm, mỗi mùa một\ndòng, theo đúng thứ tự xuân hạ thu đông.",
+   "hoiTruoc": [
+    "Con cần mấy lệnh <code>print</code>?",
+    "Lệnh nào phải viết trước nhất?",
+    "Con có cần thêm ghi chú ở dòng đầu không?"
+   ],
+   "checklist": [
+    "Con biết máy đọc từ trên xuống.",
+    "Con dùng được dấu thăng để ghi chú.",
+    "Con đoán đúng kết quả trước khi chạy."
+   ],
+   "hints": [
+    {
+     "hoi": "Một năm có mấy mùa?",
+     "dap": "bốn"
+    },
+    {
+     "hoi": "Một lệnh <code>print</code> in mấy dòng?",
+     "dap": "một"
+    },
+    {
+     "hoi": "Vậy cần mấy lệnh?",
+     "dap": "bốn"
+    }
+   ],
+   "loiHayMac": "<p>Đặt dấu <code>#</code> ở giữa dòng thay vì đầu dòng.\nKhi ấy phần trước dấu <code>#</code> vẫn chạy. Cho cháu thử để tự thấy.</p>",
+   "loiGiai": "",
+   "goiY": "<p>Bốn lệnh <code>print</code>, viết theo đúng thứ tự xuân, hạ,\nthu, đông. Ghi chú ở dòng đầu thì có cũng được, không có cũng được.</p>"
+  }
+ ]
+}

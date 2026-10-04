@@ -1,0 +1,307 @@
+{
+ "schemaVersion": "1.0",
+ "so": 12,
+ "ten": "Toán tử and, or, not, và in",
+ "chang": 3,
+ "khaiNiemMoi": [],
+ "khoi": [
+  {
+   "kind": "muc_tieu",
+   "items": [
+    "Biết <code>and</code> là cả hai điều cùng đúng.",
+    "Biết <code>or</code> là chỉ cần một điều đúng.",
+    "Biết <code>not</code> lật ngược, còn <code>in</code> hỏi có nằm trong hay không."
+   ]
+  },
+  {
+   "kind": "guess_text",
+   "id": "bai12-guess-01",
+   "html": "<p>Bé Bi làm xong bài tập rồi. Nhưng ngoài trời đang mưa.</p>\n<p>Mẹ dặn: xong bài tập và trời không mưa thì mới được đi chơi.</p>\n<p>Con đoán xem Bi có được đi chơi không?</p>",
+   "reveal": "<p>Bi không được đi chơi. Bài tập xong rồi, nhưng\ntrời đang mưa. <code>and</code> đòi cả hai, thiếu một là không được.</p>"
+  },
+  {
+   "kind": "van",
+   "heading": "Cùng học",
+   "html": "<p>Có lúc máy phải xét hai điều một lúc. Python có bốn từ cho việc này.</p>\n<p><code>and</code> là <b>cả hai</b> cùng đúng thì mới đúng.\n<code>or</code> là <b>ít nhất một</b> điều đúng là đã đúng.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai12-congtac.svg",
+   "alt": "Hình trong sách. Chữ trong hình: and: hai công tắc nối tiếp; pin; A; B; đèn; Bật cả hai công tắc thì đèn mới sáng.; or: hai công tắc song song; Bật một trong hai công tắc là đèn đã sáng.."
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p><code>not</code> lật ngược lại: đúng thành sai, sai thành đúng.\n<code>in</code> hỏi một chữ <b>có nằm trong</b> một đoạn chữ hay không.</p>"
+  },
+  {
+   "kind": "vidu",
+   "code": "# Bốn từ mới: and, or, not, in\nbai_tap = \"xong\"\ntroi = \"nắng\"\n\nif bai_tap == \"xong\" and troi == \"nắng\":\n    print(\"Con được đi chơi.\")\n\nif bai_tap == \"xong\" or troi == \"nắng\":\n    print(\"Ít nhất một điều đúng.\")\n\nif not (troi == \"mưa\"):\n    print(\"Trời không mưa.\")\n\nten = \"Na\"\nif \"a\" in ten:\n    print(\"Tên Na có chữ a.\")",
+   "out": "Con được đi chơi.\nÍt nhất một điều đúng.\nTrời không mưa.\nTên Na có chữ a.\n",
+   "stdin": null
+  },
+  {
+   "kind": "nhac",
+   "html": "<p>Hai vế của <code>and</code> phải viết đủ, mỗi vế là một câu hỏi riêng.\nViết <code>if tuoi &gt;= 8 and &gt;= 120:</code> là thiếu vế bên phải. Máy kêu\n<code>SyntaxError: invalid syntax</code>.</p>\n<p>Bốn từ này đều viết chữ thường. Viết <code>AND</code> máy cũng kêu\n<code>SyntaxError</code>.</p>"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Bài tập đã xong, nhưng trời đang mưa. Máy xét\n<code>xong and khong mua</code> thì ra gì?",
+   "options": [
+    "Đúng",
+    "Sai",
+    "Lúc đúng lúc sai",
+    "Máy báo lỗi"
+   ],
+   "answerIndex": 1,
+   "explanation": "<code>and</code> đòi cả hai cùng đúng. Trời đang mưa nên vế thứ hai sai,\nthế là cả câu sai.",
+   "id": "bai12-tn-02"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Vẫn hai điều ấy, nhưng máy xét <code>xong or khong mua</code> thì ra gì?",
+   "options": [
+    "Đúng",
+    "Sai",
+    "Lúc đúng lúc sai",
+    "Máy báo lỗi"
+   ],
+   "answerIndex": 0,
+   "explanation": "<code>or</code> chỉ cần một điều đúng. Bài tập đã xong, thế là đủ cho cả\ncâu đúng.",
+   "id": "bai12-tn-03"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Hai công tắc nối tiếp nhau giống với từ nào?",
+   "options": [
+    "<code>and</code>",
+    "<code>or</code>",
+    "<code>not</code>",
+    "<code>in</code>"
+   ],
+   "answerIndex": 0,
+   "explanation": "Nối tiếp nghĩa là dòng điện phải qua cả hai. Tắt một cái là đèn\ntối, đúng như <code>and</code>.",
+   "id": "bai12-tn-04"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>tuoi = 9</code>. Máy xét <code>not (tuoi == 9)</code> thì ra gì?",
+   "options": [
+    "Đúng",
+    "Sai",
+    "<code>9</code>",
+    "Máy báo lỗi"
+   ],
+   "answerIndex": 1,
+   "explanation": "<code>tuoi == 9</code> là đúng. <code>not</code> lật ngược lại, nên cả câu thành\nsai.",
+   "id": "bai12-tn-05"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>ten = \"Mun\"</code>. Máy xét <code>\"a\" in ten</code> thì ra gì?",
+   "options": [
+    "Đúng",
+    "Sai",
+    "<code>Mun</code>",
+    "Máy báo lỗi"
+   ],
+   "answerIndex": 1,
+   "explanation": "Tên <code>Mun</code> chỉ có ba chữ cái là <code>M</code>, <code>u</code>, <code>n</code>. Không có\nchữ <code>a</code> nào trong đó.",
+   "id": "bai12-tn-06"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Câu nào dưới đây máy đọc được?",
+   "options": [
+    "<code>if tuoi &gt;= 8 AND cao &gt;= 120:</code>",
+    "<code>if tuoi &gt;= 8 and &gt;= 120:</code>",
+    "<code>if tuoi &gt;= 8 and cao &gt;= 120:</code>",
+    "<code>if tuoi &gt;= 8 &amp; cao &gt;= 120:</code>"
+   ],
+   "answerIndex": 2,
+   "explanation": "Từ phải viết chữ thường, và vế bên phải phải là một câu hỏi đủ, có\ncả tên biến lẫn số.",
+   "id": "bai12-tn-07"
+  },
+  {
+   "kind": "van",
+   "heading": "Máy in ra gì",
+   "html": "<p>Đọc chương trình rồi đoán xem máy in ra gì. Đoán xong hãy bấm Chạy để so.</p>"
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai12-doan-08",
+   "code": "tuoi = 9\ncao = 130\n\nif tuoi >= 8 and cao >= 120:\n    print(\"Con chơi được cầu trượt lớn.\")\n\nif tuoi >= 8 and cao >= 140:\n    print(\"Con chơi được đu quay cao.\")\n\nif tuoi >= 8 or cao >= 140:\n    print(\"Con vào được khu trò chơi.\")",
+   "expectOut": "Con chơi được cầu trượt lớn.\nCon vào được khu trò chơi.\n",
+   "soDong": 2,
+   "stdin": null
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai12-doan-09",
+   "code": "ten = \"Mun\"\nmau = \"đen\"\n\nif not (mau == \"trắng\"):\n    print(\"Mun không phải mèo trắng.\")\n\nif \"u\" in ten:\n    print(\"Tên Mun có chữ u.\")\n\nif \"a\" in ten:\n    print(\"Tên Mun có chữ a.\")\n\nprint(\"Hết rồi.\")",
+   "expectOut": "Mun không phải mèo trắng.\nTên Mun có chữ u.\nHết rồi.\n",
+   "soDong": 3,
+   "stdin": null
+  },
+  {
+   "kind": "van",
+   "heading": "Điền vào chỗ trống",
+   "html": ""
+  },
+  {
+   "kind": "fill_blank",
+   "id": "bai12-dien-10",
+   "deBai": "Chọn từ trong ngân hàng điền vào ba câu sau.",
+   "bank": [
+    "and",
+    "or",
+    "not",
+    "in"
+   ],
+   "items": [
+    "Muốn cả hai điều cùng đúng thì dùng {{1}}.",
+    "Chỉ cần một điều đúng là được thì dùng {{2}}.",
+    "Muốn lật ngược đúng thành sai thì dùng {{3}}."
+   ],
+   "blanks": [
+    {
+     "accept": [
+      "and"
+     ]
+    },
+    {
+     "accept": [
+      "or"
+     ]
+    },
+    {
+     "accept": [
+      "not"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai12-dien-11",
+   "deBai": "Điền một ô để máy chỉ cho đi chơi khi cả hai điều cùng đúng.",
+   "bank": [
+    "and",
+    "or",
+    "not",
+    "in"
+   ],
+   "template": "bai_tap = \"xong\"\ntroi = \"nắng\"\nif bai_tap == \"xong\" {{1}} troi == \"nắng\":\n    print(\"Con được đi chơi.\")",
+   "blanks": [
+    {
+     "accept": [
+      "and"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"xong\"",
+    "\"nắng\"",
+    "\"xong\"",
+    "\"nắng\"",
+    "\"Con được đi chơi.\""
+   ],
+   "expectOut": "Con được đi chơi.\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai12-dien-12",
+   "deBai": "Điền một ô để chỉ cần một điều đúng là đã đủ.",
+   "bank": [
+    "and",
+    "or",
+    "not",
+    "in"
+   ],
+   "template": "co_ao_mua = \"có\"\ntroi = \"mưa\"\nif co_ao_mua == \"có\" {{1}} troi == \"nắng\":\n    print(\"Con ra sân được.\")",
+   "blanks": [
+    {
+     "accept": [
+      "or"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"có\"",
+    "\"mưa\"",
+    "\"có\"",
+    "\"nắng\"",
+    "\"Con ra sân được.\""
+   ],
+   "expectOut": "Con ra sân được.\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai12-dien-13",
+   "deBai": "Điền hai ô để máy hỏi xem tên có chữ b hay không, rồi lật ngược câu trả lời.",
+   "bank": [
+    "and",
+    "or",
+    "not",
+    "in"
+   ],
+   "template": "ten = \"Na\"\nif {{1}} (\"b\" {{2}} ten):\n    print(\"Tên này không có chữ b.\")",
+   "blanks": [
+    {
+     "accept": [
+      "not"
+     ]
+    },
+    {
+     "accept": [
+      "in"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Na\"",
+    "\"b\"",
+    "\"Tên này không có chữ b.\""
+   ],
+   "expectOut": "Tên này không có chữ b.\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "free_code",
+   "id": "bai12-tuviet-14",
+   "deBai": "Viết chương trình xét xem con có được xem hoạt hình không.\nĐiều kiện là đã làm xong bài tập và đã dọn đồ chơi. Thiếu một điều là chưa\nđược xem.",
+   "hoiTruoc": [
+    "Con cần mấy biến để nhớ hai điều trên?",
+    "Ở đây dùng <code>and</code> hay dùng <code>or</code>?",
+    "Nếu một điều chưa xong thì máy phải in ra câu gì?"
+   ],
+   "checklist": [
+    "Con nói được <code>and</code> khác <code>or</code> chỗ nào.",
+    "Con biết <code>not</code> lật ngược câu trả lời.",
+    "Con dùng được <code>in</code> để tìm một chữ trong tên."
+   ],
+   "hints": [
+    {
+     "hoi": "Nối hai công tắc một hàng, tắt một cái thì đèn sáng không?",
+     "dap": "không"
+    },
+    {
+     "hoi": "Nối hai công tắc hai nhánh, bật một cái thì đèn sáng không?",
+     "dap": "có"
+    },
+    {
+     "hoi": "Vậy cái nào là <code>and</code>, cái nào là <code>or</code>?",
+     "dap": "nối tiếp là and"
+    }
+   ],
+   "loiHayMac": "<p>Cháu hay viết thiếu vế bên phải, kiểu\n<code>if tuoi &gt;= 8 and &gt;= 120:</code>. Máy kêu <code>SyntaxError</code>. Nhắc cháu rằng mỗi\nbên của <code>and</code> phải tự nó là một câu hỏi đủ.</p>",
+   "loiGiai": "",
+   "goiY": "<p>Hai biến, ví dụ <code>bai_tap</code> và <code>do_choi</code>. Dùng\n<code>and</code> vì mẹ đòi cả hai. Viết\n<code>if bai_tap == \"xong\" and do_choi == \"xong\":</code> rồi in lời cho xem, còn\n<code>else</code> thì in lời chưa được xem.</p>"
+  }
+ ]
+}

@@ -1,0 +1,309 @@
+{
+ "schemaVersion": "1.0",
+ "so": 30,
+ "ten": "Sàng số nguyên tố",
+ "chang": 6,
+ "khaiNiemMoi": [],
+ "khoi": [
+  {
+   "kind": "muc_tieu",
+   "items": [
+    "Chơi trò gạch số trên bảng 100 ô bằng bút chì.",
+    "Viết trò ấy thành chương trình bằng một bảng đánh dấu.",
+    "Đếm được số việc máy phải làm, rồi so hai cách với nhau."
+   ]
+  },
+  {
+   "kind": "guess_text",
+   "id": "bai30-guess-01",
+   "html": "<p>Bi và Na chơi gạch số. Na gạch hết bội của 2, rồi hết bội của 3.</p>\n<p>Na hỏi: bước sau có cần gạch bội của 4 không? Con trả lời giúp Na đi.</p>",
+   "reveal": "<p>Không cần gạch bội của 4. Mọi bội của 4 đều là bội\ncủa 2, Na đã gạch ở bước đầu rồi.</p>"
+  },
+  {
+   "kind": "van",
+   "heading": "Cùng học",
+   "html": "<p>Lấy bút chì ra trước đã. Cuối sách có sẵn bảng 100 ô ở Phụ lục D.</p>\n<p>Gạch số 1. Giữ số 2, gạch hết bội của 2. Giữ số 3, gạch hết bội của 3. Làm\ntiếp như vậy với số 5 rồi với số 7.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai30-bonbuoc.svg",
+   "alt": "Hình trong sách. Chữ trong hình: 10+1; Bước 1 gạch bội của 2; Bước 2 gạch bội của 3; Bước 3 gạch bội của 5; Bước 4 gạch bội của 7."
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p>Số nào sống sót chính là số nguyên tố. Trò này tên là <b>sàng</b>.</p>"
+  },
+  {
+   "kind": "vidu",
+   "code": "# Sàng: gạch bội của 2, rồi của 3, rồi của 5, rồi của 7.\nn = 100\ncon_lai = [True] * (n + 1)\ni = 2\nwhile i * i <= n:\n    if con_lai[i]:\n        boi = i + i\n        while boi <= n:\n            con_lai[boi] = False\n            boi = boi + i\n    i = i + 1\n\ndem = 0\nfor x in range(2, n + 1):\n    if con_lai[x]:\n        print(x, end=\" \")\n        dem = dem + 1\n        if dem % 10 == 0:\n            print()\nprint()\nprint(\"Còn lại\", dem, \"số.\")",
+   "out": "2 3 5 7 11 13 17 19 23 29 \n31 37 41 43 47 53 59 61 67 71 \n73 79 83 89 97 \nCòn lại 25 số.\n",
+   "stdin": null
+  },
+  {
+   "kind": "nhac",
+   "html": "<p>Đừng gạch chính số con đang xét. Gạch bội của 3 thì bắt đầu từ số 6, giữ\nlại số 3.</p>\n<p>Đừng gạch bội của 4, của 6, của 8. Những số ấy đều là bội của 2, con đã\ngạch rồi.</p>"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Trong trò gạch số, số 1 bị gạch hay được giữ lại?",
+   "options": [
+    "Giữ lại, vì 1 là số nhỏ nhất",
+    "Bị gạch, vì 1 không phải số nguyên tố",
+    "Giữ lại, vì 1 chia hết cho 1",
+    "Tuỳ con muốn"
+   ],
+   "answerIndex": 1,
+   "explanation": "Số 1 chỉ có một hột nên chỉ có một cách xếp. Bài 29 đã nói 1 không\nphải số nguyên tố.",
+   "id": "bai30-tn-02"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Khi gạch bội của 2, số nhỏ nhất bị gạch là số mấy?",
+   "options": [
+    "2",
+    "3",
+    "4",
+    "6"
+   ],
+   "answerIndex": 2,
+   "explanation": "Số 2 được giữ lại vì nó là số nguyên tố. Bội tiếp theo của 2 là 4,\nnên gạch từ 4 trở đi.",
+   "id": "bai30-tn-03"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Vì sao không cần gạch bội của 4?",
+   "options": [
+    "Vì 4 là số chẵn",
+    "Vì bội của 4 cũng là bội của 2, đã gạch rồi",
+    "Vì 4 lớn quá",
+    "Vì 4 là số nguyên tố"
+   ],
+   "answerIndex": 1,
+   "explanation": "Số 8, 12, 16 vừa là bội của 4 vừa là bội của 2. Gạch lại là làm\nkhông công.",
+   "id": "bai30-tn-04"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Với bảng 100 ô, vì sao gạch tới bội của 7 là dừng?",
+   "options": [
+    "Vì 7 là số may mắn",
+    "Vì gạch mỏi tay rồi",
+    "Vì 11 nhân 11 đã vượt quá 100",
+    "Vì sau 7 không còn số nguyên tố"
+   ],
+   "answerIndex": 2,
+   "explanation": "Số tiếp theo cần thử là 11. Mà 11 nhân 11 bằng 121, lớn hơn 100, nên\nkhông còn gì để gạch.",
+   "id": "bai30-tn-05"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Bảng đánh dấu trong chương trình dùng để làm gì?",
+   "options": [
+    "Để đếm số ô",
+    "Để nhớ ô nào đã bị gạch, ô nào còn",
+    "Để sắp xếp các số",
+    "Để in bảng ra giấy"
+   ],
+   "answerIndex": 1,
+   "explanation": "Mỗi ô giữ một câu trả lời có hoặc không. <code>False</code> là đã gạch,\n<code>True</code> là còn trên bảng.",
+   "id": "bai30-tn-06"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Nhìn hai khung kết quả ở Bài 3 và Bài 4 phần điền chỗ trống. Cách\nnào làm ít việc hơn?",
+   "options": [
+    "Cách cũ",
+    "Cách sàng",
+    "Hai cách bằng nhau",
+    "Không đếm được"
+   ],
+   "answerIndex": 1,
+   "explanation": "Hai chương trình tự đếm rồi tự in ra. Con so hai con số trong hai\nkhung là thấy ngay.",
+   "id": "bai30-tn-07"
+  },
+  {
+   "kind": "van",
+   "heading": "Máy in ra gì",
+   "html": "<p>Đọc chương trình rồi đoán xem máy in ra gì. Đoán xong hãy bấm Chạy để so.</p>"
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai30-doan-08",
+   "code": "# Gạch bội của 2 trong bảng 20 ô.\ncon_lai = [True] * 21\nboi = 4\nwhile boi <= 20:\n    con_lai[boi] = False\n    boi = boi + 2\nfor x in range(2, 21):\n    if con_lai[x]:\n        print(x, end=\" \")\nprint()",
+   "expectOut": "2 3 5 7 9 11 13 15 17 19 \n",
+   "soDong": 1,
+   "stdin": null
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai30-doan-09",
+   "code": "con_lai = [True] * 11\ncon_lai[1] = False\ncon_lai[4] = False\ncon_lai[6] = False\ndem = 0\nfor x in range(1, 11):\n    if con_lai[x]:\n        dem = dem + 1\nprint(dem)\nprint(con_lai[4])\nprint(con_lai[5])",
+   "expectOut": "7\nFalse\nTrue\n",
+   "soDong": 3,
+   "stdin": null
+  },
+  {
+   "kind": "van",
+   "heading": "Điền vào chỗ trống",
+   "html": ""
+  },
+  {
+   "kind": "fill_blank",
+   "id": "bai30-dien-10",
+   "deBai": "Chọn từ trong ngân hàng điền vào ba câu sau.",
+   "bank": [
+    "2",
+    "4",
+    "7",
+    "9"
+   ],
+   "items": [
+    "Bước đầu con gạch hết bội của {{1}}, trừ chính số 2.",
+    "Số nhỏ nhất bị gạch ở bước đầu là {{2}}.",
+    "Bước cuối cần gạch trên bảng 100 ô là bội của {{3}}."
+   ],
+   "blanks": [
+    {
+     "accept": [
+      "2"
+     ]
+    },
+    {
+     "accept": [
+      "4"
+     ]
+    },
+    {
+     "accept": [
+      "7"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai30-dien-11",
+   "deBai": "Điền hai ô cho bảng đánh dấu nhỏ chạy đúng.",
+   "bank": [
+    "2",
+    "4",
+    "7",
+    "9"
+   ],
+   "template": "bang = [True] * 11\nbang[1] = {{1}}\nfor x in {{2}}(1, 11):\n    if bang[x]:\n        print(x, end=\" \")\nprint()",
+   "blanks": [
+    {
+     "accept": [
+      "False"
+     ]
+    },
+    {
+     "accept": [
+      "range"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\" \""
+   ],
+   "expectOut": "2 3 4 5 6 7 8 9 10 \n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai30-dien-12",
+   "deBai": "Cách cũ: thử chia từng số. Điền hai ô rồi xem máy làm mấy việc.",
+   "bank": [
+    "2",
+    "4",
+    "7",
+    "9"
+   ],
+   "template": "# Cách cũ: thử chia từng số một.\nn = 100\nviec = 0\nfor x in range(2, n + 1):\n    i = 2\n    {{1}} i * i <= x:\n        viec = viec + 1\n        if x % i == 0:\n            {{2}}\n        i = i + 1\nprint(\"Cách cũ làm\", viec, \"việc.\")",
+   "blanks": [
+    {
+     "accept": [
+      "while"
+     ]
+    },
+    {
+     "accept": [
+      "break"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Cách cũ làm\"",
+    "\"việc.\""
+   ],
+   "expectOut": "Cách cũ làm 236 việc.\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai30-dien-13",
+   "deBai": "Cách sàng: gạch bội. Điền hai ô rồi so con số với Bài 3.",
+   "bank": [
+    "2",
+    "4",
+    "7",
+    "9"
+   ],
+   "template": "# Cách sàng: mỗi lần gạch một ô là một việc.\nn = 100\ncon_lai = [True] * (n + 1)\nviec = 0\ni = 2\nwhile i * i <= n:\n    if con_lai[i]:\n        boi = i + i\n        while boi <= n:\n            con_lai[boi] = {{1}}\n            viec = viec + 1\n            boi = {{2}}\n    i = i + 1\nprint(\"Cách sàng làm\", viec, \"việc.\")",
+   "blanks": [
+    {
+     "accept": [
+      "False"
+     ]
+    },
+    {
+     "accept": [
+      "boi + i"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Cách sàng làm\"",
+    "\"việc.\""
+   ],
+   "expectOut": "Cách sàng làm 113 việc.\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "free_code",
+   "id": "bai30-tuviet-14",
+   "deBai": "Dùng cách sàng để in ra mọi số nguyên tố nhỏ hơn 50. Con\ngạch bằng bút chì trên giấy trước, rồi mới gõ máy.",
+   "hoiTruoc": [
+    "Bảng đánh dấu của con có bao nhiêu ô?",
+    "Con cần gạch bội của những số nào?",
+    "Gạch xong thì con in những ô nào ra?"
+   ],
+   "checklist": [
+    "Con gạch xong bảng 100 ô bằng bút chì và còn lại đúng các số nguyên tố.",
+    "Con viết được chương trình sàng bằng một bảng đánh dấu.",
+    "Con đọc được hai con số và nói được cách nào làm ít việc hơn."
+   ],
+   "hints": [
+    {
+     "hoi": "Gạch hết bội của 2 đi. Số 2 có bị gạch không?",
+     "dap": "không"
+    },
+    {
+     "hoi": "Số nhỏ nhất chưa bị gạch sau số 2 là số mấy?",
+     "dap": "3, nên gạch bội của 3"
+    },
+    {
+     "hoi": "Khi nào thì con biết là gạch xong?",
+     "dap": "khi số cần thử nhân với chính nó đã vượt quá 100"
+    }
+   ],
+   "loiHayMac": "<p>Cháu gạch luôn cả số đang xét. Gạch bội của\n3 mà xoá mất số 3. Bảo cháu đọc lại dòng <code>boi = i + i</code> và hỏi: dòng này\nbắt đầu từ số mấy?</p>",
+   "loiGiai": "",
+   "goiY": "<p>Bảng cần 51 ô, đánh số từ 0 tới 50. Chỉ cần gạch bội\ncủa 2, của 3, của 5, vì 7 nhân 7 đã bằng 49 và 11 nhân 11 vượt quá 50.</p>"
+  }
+ ]
+}

@@ -1,0 +1,324 @@
+{
+ "schemaVersion": "1.0",
+ "so": 23,
+ "ten": "Vòng lặp while",
+ "chang": 5,
+ "khaiNiemMoi": [],
+ "khoi": [
+  {
+   "kind": "muc_tieu",
+   "items": [
+    "Biết <code>while</code> lặp đi lặp lại tới khi điều kiện sai.",
+    "Viết được chương trình đếm ngược và cộng các chữ số.",
+    "Biết thế nào là vòng lặp vô hạn và cách bấm cho máy dừng."
+   ]
+  },
+  {
+   "kind": "guess_text",
+   "id": "bai23-guess-01",
+   "html": "<p>Mẹ bảo bé Bi: con cứ múc nước vào xô tới khi xô đầy thì thôi.</p>\n<p>Con đoán xem Bi múc mấy gáo? Vì sao chưa ai biết trước được?</p>",
+   "reveal": "<p>Chưa ai biết trước mấy gáo, vì còn tuỳ xô to hay\nnhỏ và gáo đầy tới đâu. Việc kiểu đó phải dùng <code>while</code>, không dùng\n<code>for</code> được.</p>"
+  },
+  {
+   "kind": "van",
+   "heading": "Cùng học",
+   "html": "<p>Lệnh <code>while</code> bảo máy lặp đi lặp lại chừng nào điều kiện còn đúng.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai23-vongquay.svg",
+   "alt": "Hình trong sách. Chữ trong hình: n = 5; n lớn hơn 0?; in n rồi bớt n đi 1; ra khỏi vòng; quay lại; Vòng này có lối ra. Tới lúc nào đó câu hỏi trả lời sai.; quay mãi không ra; Vòng này không có lối ra. Con phải bấm Ctrl và C để dừng máy.."
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p>Máy hỏi câu điều kiện trước mỗi lượt. Trả lời đúng thì nó chạy thân vòng\nmột lượt nữa, trả lời sai thì nó đi ra.\nThân vòng phải có dòng đẩy điều kiện tiến dần tới chỗ sai, nếu không máy\nquay mãi.</p>"
+  },
+  {
+   "kind": "vidu",
+   "code": "# Đếm ngược rồi hô to\nn = 5\nwhile n > 0:\n    print(n)\n    n = n - 1\nprint(\"Bắt đầu!\")",
+   "out": "5\n4\n3\n2\n1\nBắt đầu!\n",
+   "stdin": null
+  },
+  {
+   "kind": "nhac",
+   "html": "<p>Thiếu dòng <code>n = n - 1</code> thì <code>n</code> đứng mãi ở 5. Điều kiện không bao giờ\nsai, nên máy in số 5 không dứt. Đó là <b>vòng lặp vô hạn</b>.</p>\n<p>Gặp cảnh ấy, con bấm giữ phím <code>Ctrl</code> rồi bấm phím <code>C</code>. Máy dừng lại\nvà kêu <code>KeyboardInterrupt</code>.</p>"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>while</code> lặp tới lúc nào thì thôi?",
+   "options": [
+    "Lặp đúng mười lượt",
+    "Lặp tới khi điều kiện trở nên sai",
+    "Lặp tới khi hết số",
+    "Lặp mãi mãi"
+   ],
+   "answerIndex": 1,
+   "explanation": "Trước mỗi lượt máy hỏi lại câu điều kiện. Hễ câu trả lời là sai thì\nnó bỏ vòng và đi tiếp xuống dưới.",
+   "id": "bai23-tn-02"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Chương trình đếm ngược với <code>while n &gt; 0</code> in ra số nhỏ nhất là mấy?",
+   "options": [
+    "0",
+    "1",
+    "5",
+    "Không in số nào"
+   ],
+   "answerIndex": 1,
+   "explanation": "Khi <code>n</code> còn bằng 1 thì điều kiện vẫn đúng nên máy in 1. Sau đó\n<code>n</code> thành 0, điều kiện sai, máy đi ra ngay.",
+   "id": "bai23-tn-03"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Quên dòng bớt <code>n</code> đi 1 thì chuyện gì xảy ra?",
+   "options": [
+    "Máy báo lỗi ngay",
+    "Máy bỏ qua vòng lặp",
+    "Máy lặp mãi không dừng",
+    "Máy chỉ chạy một lượt"
+   ],
+   "answerIndex": 2,
+   "explanation": "Không có dòng ấy thì <code>n</code> không đổi, điều kiện mãi mãi đúng. Đó\nchính là vòng lặp vô hạn.",
+   "id": "bai23-tn-04"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Máy đang lặp vô hạn thì con làm gì?",
+   "options": [
+    "Chờ nó tự dừng",
+    "Rút điện",
+    "Bấm giữ <code>Ctrl</code> rồi bấm <code>C</code>",
+    "Gõ thêm một dòng nữa"
+   ],
+   "answerIndex": 2,
+   "explanation": "Hai phím ấy bảo máy dừng chương trình đang chạy. Máy kêu\n<code>KeyboardInterrupt</code> rồi trả lại quyền cho con.",
+   "id": "bai23-tn-05"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>n % 10</code> cho ra cái gì của số <code>n</code>?",
+   "options": [
+    "Số chữ số",
+    "Chữ số cuối cùng",
+    "Chữ số đầu tiên",
+    "Số đó chia cho 10"
+   ],
+   "answerIndex": 1,
+   "explanation": "Chia 497 cho 10 thì dư 7, mà 7 đúng là chữ số cuối. Còn\n<code>n // 10</code> thì cắt bỏ chữ số cuối ấy đi.",
+   "id": "bai23-tn-06"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>for</code> và <code>while</code> khác nhau chỗ nào?",
+   "options": [
+    "Hai cái y hệt nhau",
+    "<code>for</code> lặp số lượt biết trước, <code>while</code> lặp tới khi điều kiện sai",
+    "<code>while</code> chạy nhanh hơn",
+    "<code>for</code> không lặp được"
+   ],
+   "answerIndex": 1,
+   "explanation": "Đếm từ 1 tới 10 thì dùng <code>for</code> gọn hơn. Múc nước tới khi xô đầy\nthì phải dùng <code>while</code>, vì chưa ai biết trước mấy gáo.",
+   "id": "bai23-tn-07"
+  },
+  {
+   "kind": "van",
+   "heading": "Máy in ra gì",
+   "html": "<p>Đọc chương trình rồi đoán xem máy in ra gì. Đoán xong hãy bấm Chạy để so.</p>"
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai23-doan-08",
+   "code": "# Cộng các chữ số của 497\nn = 497\ntong = 0\nwhile n > 0:\n    tong = tong + n % 10\n    n = n // 10\nprint(\"Tổng các chữ số là\", tong)",
+   "expectOut": "Tổng các chữ số là 20\n",
+   "soDong": 1,
+   "stdin": null
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai23-doan-09",
+   "code": "# Gấp đôi mãi tới khi vượt quá 100\nso = 1\ndem = 0\nwhile so < 100:\n    print(so, end=\" \")\n    so = so * 2\n    dem = dem + 1\nprint()\nprint(\"Gấp đôi\", dem, \"lần thì vượt 100\")",
+   "expectOut": "1 2 4 8 16 32 64 \nGấp đôi 7 lần thì vượt 100\n",
+   "soDong": 2,
+   "stdin": null
+  },
+  {
+   "kind": "van",
+   "heading": "Điền vào chỗ trống",
+   "html": ""
+  },
+  {
+   "kind": "fill_blank",
+   "id": "bai23-dien-10",
+   "deBai": "Chọn từ trong ngân hàng điền vào ba câu sau.",
+   "bank": [
+    "while",
+    "sai",
+    "vô hạn",
+    "for"
+   ],
+   "items": [
+    "Từ bảo máy lặp tới khi điều kiện không còn đúng là {{1}}.",
+    "Vòng lặp đi ra ngay lúc điều kiện trở nên {{2}}.",
+    "Vòng lặp không bao giờ dừng gọi là vòng lặp {{3}}."
+   ],
+   "blanks": [
+    {
+     "accept": [
+      "while"
+     ]
+    },
+    {
+     "accept": [
+      "sai"
+     ]
+    },
+    {
+     "accept": [
+      "vô hạn"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai23-dien-11",
+   "deBai": "Điền hai ô để máy đếm ngược rồi hô một tiếng.",
+   "bank": [
+    "while",
+    "sai",
+    "vô hạn",
+    "for"
+   ],
+   "template": "n = 3\n{{1}} n > {{2}}:\n    print(n)\n    n = n - 1\nprint(\"Hết!\")",
+   "blanks": [
+    {
+     "accept": [
+      "while"
+     ]
+    },
+    {
+     "accept": [
+      "0"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Hết!\""
+   ],
+   "expectOut": "3\n2\n1\nHết!\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai23-dien-12",
+   "deBai": "Điền hai ô để máy đếm xem một số có mấy chữ số.",
+   "bank": [
+    "while",
+    "sai",
+    "vô hạn",
+    "for"
+   ],
+   "template": "n = 507\ndem = 0\nwhile n > 0:\n    n = n // {{1}}\n    dem = dem + {{2}}\nprint(\"Số đó có\", dem, \"chữ số\")",
+   "blanks": [
+    {
+     "accept": [
+      "10"
+     ]
+    },
+    {
+     "accept": [
+      "1"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Số đó có\"",
+    "\"chữ số\""
+   ],
+   "expectOut": "Số đó có 3 chữ số\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai23-dien-13",
+   "deBai": "Điền hai ô để máy đếm số lần chia đôi.",
+   "bank": [
+    "while",
+    "sai",
+    "vô hạn",
+    "for"
+   ],
+   "template": "n = 40\ndem = 0\nwhile n > 1:\n    n = n // {{1}}\n    dem = dem + 1\nprint(\"Chia đôi\", {{2}}, \"lần thì còn 1\")",
+   "blanks": [
+    {
+     "accept": [
+      "2"
+     ]
+    },
+    {
+     "accept": [
+      "dem"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Chia đôi\"",
+    "\"lần thì còn 1\""
+   ],
+   "expectOut": "Chia đôi 5 lần thì còn 1\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "free_code",
+   "id": "bai23-tuviet-14",
+   "deBai": "Dùng <code>while</code> đếm ngược từ 10 về 1. Mỗi số in một dòng.\nĐếm xong thì in thêm dòng chữ Phóng.",
+   "hoiTruoc": [
+    "Lúc đầu <code>n</code> bằng mấy?",
+    "Điều kiện trong dòng <code>while</code> con viết thế nào?",
+    "Dòng nào làm <code>n</code> nhỏ dần đi?"
+   ],
+   "checklist": [
+    "Con viết được một vòng <code>while</code> chạy đúng.",
+    "Con biết vì sao có vòng lặp không bao giờ dừng.",
+    "Con cắt được hai băng giấy và tìm ra mẩu vừa khít."
+   ],
+   "hints": [
+    {
+     "hoi": "Con đọc tới số mấy thì ngừng?",
+     "dap": "số 1"
+    },
+    {
+     "hoi": "Vậy còn đọc tiếp khi số đang là mấy?",
+     "dap": "khi còn lớn hơn 0"
+    },
+    {
+     "hoi": "Mỗi lần đọc xong, con số ấy thay đổi thế nào?",
+     "dap": "bớt đi 1"
+    }
+   ],
+   "loiHayMac": "<p>Quên dòng làm <code>n</code> nhỏ dần. Máy in một số mãi\nkhông ngừng. Bảo cháu bấm giữ <code>Ctrl</code> rồi bấm <code>C</code> cho máy dừng, rồi\ncùng tìm xem thiếu dòng nào.</p>",
+   "loiGiai": "",
+   "goiY": "<p>Đặt <code>n = 10</code>, viết <code>while n &gt; 0:</code>, trong thân\nvòng in <code>n</code> rồi viết <code>n = n - 1</code>. Sau vòng lặp mới in dòng chữ cuối.\nMáy in mười dòng số rồi tới dòng chữ.</p>"
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p><b>Bài thưởng. Hai băng giấy.</b> Con cắt một băng giấy dài 24 ô và một\nbăng dài 18 ô. Đặt băng ngắn lên băng dài rồi cắt bỏ phần chồng lên nhau.\nLấy mẩu thừa đo lại băng kia. Cứ thế tới khi vừa khít.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai23-banggiay.svg",
+   "alt": "Hình trong sách. Chữ trong hình: Bước 1. Hai băng giấy; 24 ô; 18 ô; Bước 2. Đặt băng ngắn lên băng dài, cắt chỗ thừa; thừa 6 ô; Bước 3. Lấy mẩu 6 ô đo băng 18 ô; 6 ô; đặt vừa 3 lần; Bước 4. Mẩu vừa khít cả hai băng; Mẩu 6 ô đo vừa khít băng 24 ô và cả băng 18 ô.."
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p>Mẩu cuối cùng dài mấy ô? Con làm bằng kéo và giấy trước đã.\nLàm xong rồi mới mở đáp án, xem máy làm việc ấy ra sao.</p>"
+  }
+ ]
+}

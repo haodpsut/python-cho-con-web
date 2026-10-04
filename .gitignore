@@ -1,0 +1,9 @@
+# thu muc tam cua cac cong, sinh lai duoc
+tools/.kiem-hinh/
+tools/.chrome-kiem/
+tools/.chrome-tt/
+tools/.chrome-dbg/
+tools/.build/
+
+.DS_Store
+*.log

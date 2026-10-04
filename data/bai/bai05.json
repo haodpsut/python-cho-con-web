@@ -1,0 +1,306 @@
+{
+ "schemaVersion": "1.0",
+ "so": 5,
+ "ten": "Chuỗi: ghép chữ và nhân chữ",
+ "chang": 2,
+ "khaiNiemMoi": [],
+ "khoi": [
+  {
+   "kind": "muc_tieu",
+   "items": [
+    "Biết một đoạn chữ trong dấu nháy gọi là chuỗi.",
+    "Ghép được hai đoạn chữ lại bằng dấu cộng.",
+    "Chép lại một đoạn chữ nhiều lần bằng dấu sao."
+   ]
+  },
+  {
+   "kind": "guess_text",
+   "id": "bai05-guess-01",
+   "html": "<p>Bé Bi viết <code>print(\"Mun\" + \"mèo\")</code>.</p>\n<p>Con đoán xem máy in ra gì? Giữa hai chữ có dấu cách không?</p>",
+   "reveal": "<p>Máy in ra <code>Munmèo</code>, dính liền, không có dấu cách.</p>"
+  },
+  {
+   "kind": "van",
+   "heading": "Cùng học",
+   "html": "<p>Chữ nằm trong dấu nháy gọi là <b>chuỗi</b>. Chuỗi ghép và nhân được.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai05-noichuoi.svg",
+   "alt": "Hình trong sách. Chữ trong hình: \"Đỗ\"; +; \" \"; \"Bi\"; $$; \"Đỗ Bi\"; dấu cộng ghép các mảnh chữ lại thành một; \"ha\"; *; 3; \"hahaha\"; dấu sao chép lại mảnh chữ nhiều lần."
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p>Dấu <code>+</code> giữa hai chuỗi là <b>ghép</b>, không phải cộng.\nMáy ghép sát vào nhau, không tự thêm dấu cách. Muốn có dấu cách thì con\nphải ghép thêm một chuỗi chỉ gồm một dấu cách.\nDấu <code>*</code> giữa một chuỗi và một số là <b>chép lại</b> chừng ấy lần.</p>"
+  },
+  {
+   "kind": "vidu",
+   "code": "ho = \"Đỗ\"\nten = \"Bi\"\nprint(ho + \" \" + ten)\nprint(\"=\" * 20)\nprint(\"ha\" * 3)",
+   "out": "Đỗ Bi\n====================\nhahaha\n",
+   "stdin": null
+  },
+  {
+   "kind": "nhac",
+   "html": "<p>Không cộng chuỗi với số được. <code>\"Bi\" + 3</code> làm máy kêu <code>TypeError</code>.\nMuốn chép ba lần thì viết <code>\"Bi\" * 3</code>, dùng dấu sao chứ không dùng dấu cộng.</p>"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>\"Mun\" + \"mèo\"</code> cho ra gì?",
+   "options": [
+    "<code>Mun mèo</code>",
+    "<code>Munmèo</code>",
+    "<code>Mun + mèo</code>",
+    "Máy báo lỗi"
+   ],
+   "answerIndex": 1,
+   "explanation": "Máy ghép sát vào nhau. Nó không tự thêm dấu cách, vì con không bảo\nnó thêm.",
+   "id": "bai05-tn-02"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Muốn có dấu cách giữa hai chữ thì làm thế nào?",
+   "options": [
+    "Viết <code>\"Mun\" ++ \"mèo\"</code>",
+    "Ghép thêm một chuỗi dấu cách: <code>\"Mun\" + \" \" + \"mèo\"</code>",
+    "Máy tự thêm",
+    "Không làm được"
+   ],
+   "answerIndex": 1,
+   "explanation": "Dấu cách cũng là một chữ, nên nó cũng phải nằm trong dấu nháy và\nđược ghép vào như mọi chữ khác.",
+   "id": "bai05-tn-03"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>\"ab\" * 3</code> cho ra gì?",
+   "options": [
+    "<code>ab3</code>",
+    "<code>ababab</code>",
+    "<code>ab ab ab</code>",
+    "<code>6</code>"
+   ],
+   "answerIndex": 1,
+   "explanation": "Dấu sao chép lại nguyên cả chuỗi 3 lần, dán sát nhau, không chen\ndấu cách vào.",
+   "id": "bai05-tn-04"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>\"-\" * 10</code> dùng để làm gì cho đẹp?",
+   "options": [
+    "In ra số 10",
+    "Vẽ một đường kẻ ngang dài 10 dấu gạch",
+    "Trừ đi 10",
+    "Báo lỗi"
+   ],
+   "answerIndex": 1,
+   "explanation": "Đây là mẹo rất hay dùng để kẻ đường ngăn giữa các phần cho dễ nhìn.",
+   "id": "bai05-tn-05"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>\"Bi\" + 3</code> thì sao?",
+   "options": [
+    "Cho ra <code>Bi3</code>",
+    "Cho ra <code>BiBiBi</code>",
+    "Máy kêu <code>TypeError</code>",
+    "Cho ra <code>3Bi</code>"
+   ],
+   "answerIndex": 2,
+   "explanation": "Chữ và số là hai thứ khác loại. Máy không biết ghép chữ với số kiểu\ngì nên nó dừng lại và báo lỗi.",
+   "id": "bai05-tn-06"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>\"x\" * 2 + \"y\" * 3</code> cho ra gì?",
+   "options": [
+    "<code>xyxyxy</code>",
+    "<code>xxyyy</code>",
+    "<code>xxyyyxxyyy</code>",
+    "<code>x2y3</code>"
+   ],
+   "answerIndex": 1,
+   "explanation": "Máy làm phép nhân trước, được <code>xx</code> và <code>yyy</code>, rồi mới ghép hai\ncái lại.",
+   "id": "bai05-tn-07"
+  },
+  {
+   "kind": "van",
+   "heading": "Máy in ra gì",
+   "html": "<p>Đọc chương trình rồi đoán xem máy in ra gì. Đoán xong hãy bấm Chạy để so.</p>"
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai05-doan-08",
+   "code": "a = \"Mun\"\nb = \"mèo\"\nprint(a + b)\nprint(a + \" \" + b)",
+   "expectOut": "Munmèo\nMun mèo\n",
+   "soDong": 2,
+   "stdin": null
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai05-doan-09",
+   "code": "print(\"-\" * 10)\nprint(\"Bi\" * 2)\nprint(\"x\" * 5 + \"y\" * 3)",
+   "expectOut": "----------\nBiBi\nxxxxxyyy\n",
+   "soDong": 3,
+   "stdin": null
+  },
+  {
+   "kind": "van",
+   "heading": "Điền vào chỗ trống",
+   "html": ""
+  },
+  {
+   "kind": "fill_blank",
+   "id": "bai05-dien-10",
+   "deBai": "Chọn từ trong ngân hàng điền vào ba câu sau.",
+   "bank": [
+    "+",
+    "*",
+    "7",
+    "nháy"
+   ],
+   "items": [
+    "Dấu để ghép hai đoạn chữ là {{1}}.",
+    "Dấu để chép lại một đoạn chữ nhiều lần là {{2}}.",
+    "Chữ muốn in phải nằm trong dấu {{3}}."
+   ],
+   "blanks": [
+    {
+     "accept": [
+      "+"
+     ]
+    },
+    {
+     "accept": [
+      "*"
+     ]
+    },
+    {
+     "accept": [
+      "nháy"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai05-dien-11",
+   "deBai": "Điền hai ô cho máy in ra đúng dòng chữ bên dưới.",
+   "bank": [
+    "+",
+    "*",
+    "7",
+    "nháy"
+   ],
+   "template": "print(\"Bé\" {{1}} \" \" {{2}} \"Bi\")",
+   "blanks": [
+    {
+     "accept": [
+      "+"
+     ]
+    },
+    {
+     "accept": [
+      "+"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Bé\"",
+    "\" \"",
+    "\"Bi\""
+   ],
+   "expectOut": "Bé Bi\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai05-dien-12",
+   "deBai": "Điền một ô để máy vẽ một hàng bảy ngôi sao.",
+   "bank": [
+    "+",
+    "*",
+    "7",
+    "nháy"
+   ],
+   "template": "print(\"*\" * {{1}})",
+   "blanks": [
+    {
+     "accept": [
+      "7"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"*\""
+   ],
+   "expectOut": "*******\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai05-dien-13",
+   "deBai": "Điền hai ô cho máy in đầy đủ họ tên bạn Na.",
+   "bank": [
+    "+",
+    "*",
+    "7",
+    "nháy"
+   ],
+   "template": "ho = \"Phạm\"\nten = \"Na\"\nprint(ho {{1}} \" \" {{2}} ten)",
+   "blanks": [
+    {
+     "accept": [
+      "+"
+     ]
+    },
+    {
+     "accept": [
+      "+"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Phạm\"",
+    "\"Na\"",
+    "\" \""
+   ],
+   "expectOut": "Phạm Na\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "free_code",
+   "id": "bai05-tuviet-14",
+   "deBai": "Viết chương trình vẽ một cái khung đơn giản: một hàng 20\ndấu bằng, rồi dòng chữ tên con, rồi lại một hàng 20 dấu bằng.",
+   "hoiTruoc": [
+    "Con cần mấy lệnh <code>print</code>?",
+    "Hàng 20 dấu bằng viết thế nào cho ngắn?",
+    "Hai hàng kẻ có giống hệt nhau không?"
+   ],
+   "checklist": [
+    "Con ghép được hai đoạn chữ lại.",
+    "Con chép lại được một đoạn chữ nhiều lần.",
+    "Con đoán đúng kết quả trước khi chạy."
+   ],
+   "hints": [
+    {
+     "hoi": "Dán hai mảnh sát nhau thì đọc ra chữ gì?",
+     "dap": "dính liền"
+    },
+    {
+     "hoi": "Muốn có khoảng trống thì phải chen thêm cái gì?",
+     "dap": "một mảnh trắng"
+    },
+    {
+     "hoi": "Mảnh trắng ấy trong Python viết thế nào?",
+     "dap": "<code>\" \"</code>"
+    }
+   ],
+   "loiHayMac": "",
+   "loiGiai": "",
+   "goiY": "<p>Ba lệnh: <code>print(\"=\" * 20)</code>, rồi\n<code>print(\"Bi\")</code>, rồi lại <code>print(\"=\" * 20)</code>. Hai hàng kẻ giống hệt nhau.</p>"
+  }
+ ]
+}

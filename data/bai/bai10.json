@@ -1,0 +1,310 @@
+{
+ "schemaVersion": "1.0",
+ "so": 10,
+ "ten": "Lệnh if ... else",
+ "chang": 3,
+ "khaiNiemMoi": [],
+ "khoi": [
+  {
+   "kind": "muc_tieu",
+   "items": [
+    "Biết bảo máy làm việc khác khi câu hỏi sai.",
+    "Hiểu mỗi lần chạy máy chỉ đi đúng một nhánh.",
+    "Viết được chương trình trả lời chẵn hay lẻ."
+   ]
+  },
+  {
+   "kind": "guess_text",
+   "id": "bai10-guess-01",
+   "html": "<p>Mẹ dặn bé Bi: trời mưa thì ở nhà, trời nắng thì ra sân.</p>\n<p>Con đoán xem có khi nào Bi vừa ở nhà vừa ra sân không?</p>",
+   "reveal": "<p>Không bao giờ. Trời mưa thì ở nhà, không mưa thì ra\nsân. Hai việc ấy không xảy ra cùng lúc.</p>"
+  },
+  {
+   "kind": "van",
+   "heading": "Cùng học",
+   "html": "<p>Bài trước, câu hỏi sai thì máy không làm gì cả. Nay ta thêm <code>else</code>.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai10-haidich.svg",
+   "alt": "Hình trong sách. Chữ trong hình: ?; máy hỏi tuoi >= 6 đúng không?; Đúng; Sai; print(\"Đi học\"); print(\"Ở nhà\"); Hai lối đều có đích. Mỗi lần chạy máy chỉ đi một lối.."
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p>Chữ <code>else</code> nghĩa là ngược lại. Máy chạy nhánh <code>else</code> khi câu hỏi sai.\nDòng <code>else</code> viết sát lề, thẳng hàng với <code>if</code>. Nó cũng có dấu hai chấm,\nnhưng nó không có câu hỏi nào cả.\nMỗi lần chạy máy đi đúng một nhánh. Không bao giờ đi cả hai.</p>"
+  },
+  {
+   "kind": "vidu",
+   "code": "# Lệnh else: mỗi lần chạy đúng một trong hai nhánh\ntuoi = 5\nif tuoi >= 6:\n    print(\"Bi đi học lớp một được rồi.\")\nelse:\n    print(\"Bi còn nhỏ quá.\")\n\nso = 7\nif so % 2 == 0:\n    print(so, \"là số chẵn\")\nelse:\n    print(so, \"là số lẻ\")",
+   "out": "Bi còn nhỏ quá.\n7 là số lẻ\n",
+   "stdin": null
+  },
+  {
+   "kind": "nhac",
+   "html": "<p>Ba lỗi hay gặp với <code>else</code>.</p>\n<p>Một. Quên dấu hai chấm sau <code>else</code>. Máy kêu\n<code>SyntaxError: invalid syntax</code>.</p>\n<p>Hai. Viết thêm câu hỏi vào sau <code>else</code>. Nhánh ấy không có câu hỏi.</p>\n<p>Ba. Thụt <code>else</code> vào trong. Nó phải thẳng hàng với <code>if</code> của nó.</p>"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Máy chạy nhánh <code>else</code> khi nào?",
+   "options": [
+    "Khi câu hỏi đúng",
+    "Khi câu hỏi sai",
+    "Lúc nào cũng chạy",
+    "Không bao giờ chạy"
+   ],
+   "answerIndex": 1,
+   "explanation": "Nhánh <code>else</code> là nhánh dành cho trường hợp còn lại, tức là khi câu\nhỏi sai.",
+   "id": "bai10-tn-02"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Một lần chạy thì máy in ra mấy nhánh?",
+   "options": [
+    "Cả hai nhánh",
+    "Đúng một nhánh",
+    "Không nhánh nào",
+    "Tuỳ máy chọn"
+   ],
+   "answerIndex": 1,
+   "explanation": "Hai nhánh là hai lối rẽ của cùng một ngã ba. Đi lối này thì không đi\nlối kia.",
+   "id": "bai10-tn-03"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Dòng <code>else</code> phải viết ở đâu?",
+   "options": [
+    "Thụt vào 4 dấu cách",
+    "Sát lề, thẳng hàng với <code>if</code>",
+    "Thụt vào 8 dấu cách",
+    "Ở cuối chương trình"
+   ],
+   "answerIndex": 1,
+   "explanation": "Máy nhìn chỗ thụt vào để ghép <code>else</code> với đúng cái <code>if</code> của nó.",
+   "id": "bai10-tn-04"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Viết <code>else diem &gt; 5:</code> thì sao?",
+   "options": [
+    "Máy chạy bình thường",
+    "Máy kêu <code>SyntaxError</code>",
+    "Máy in ra số 5",
+    "Máy bỏ qua dòng ấy"
+   ],
+   "answerIndex": 1,
+   "explanation": "Sau <code>else</code> không được có câu hỏi. Chỉ có đúng một dấu hai chấm.",
+   "id": "bai10-tn-05"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Cho <code>so = 9</code>. Chương trình hỏi <code>so % 2 == 0</code>, nếu không thì in\n<code>Lẻ</code>. Máy in gì?",
+   "options": [
+    "<code>Chẵn</code>",
+    "<code>Lẻ</code>",
+    "Cả hai dòng",
+    "Không in gì"
+   ],
+   "answerIndex": 1,
+   "explanation": "9 chia 2 còn dư 1 nên câu hỏi sai. Máy rẽ sang nhánh <code>else</code>.",
+   "id": "bai10-tn-06"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Nhánh nào không cần câu hỏi?",
+   "options": [
+    "Nhánh <code>if</code>",
+    "Nhánh <code>else</code>",
+    "Cả hai nhánh",
+    "Không nhánh nào"
+   ],
+   "answerIndex": 1,
+   "explanation": "Nhánh <code>else</code> ôm hết mọi trường hợp còn lại nên không phải hỏi gì\nthêm.",
+   "id": "bai10-tn-07"
+  },
+  {
+   "kind": "van",
+   "heading": "Máy in ra gì",
+   "html": "<p>Đọc chương trình rồi đoán xem máy in ra gì. Đoán xong hãy bấm Chạy để so.</p>"
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai10-doan-08",
+   "code": "diem = 9\nif diem >= 8:\n    print(\"Giỏi\")\nelse:\n    print(\"Khá\")\nprint(\"Hết\")",
+   "expectOut": "Giỏi\nHết\n",
+   "soDong": 2,
+   "stdin": null
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai10-doan-09",
+   "code": "keo = 10\nban = 4\nif keo % ban == 0:\n    print(\"Chia đều được\")\nelse:\n    print(\"Còn thừa\", keo % ban, \"cái\")",
+   "expectOut": "Còn thừa 2 cái\n",
+   "soDong": 1,
+   "stdin": null
+  },
+  {
+   "kind": "van",
+   "heading": "Điền vào chỗ trống",
+   "html": ""
+  },
+  {
+   "kind": "fill_blank",
+   "id": "bai10-dien-10",
+   "deBai": "Chọn từ trong ngân hàng điền vào ba câu sau.",
+   "bank": [
+    "else",
+    "if",
+    "một",
+    "hai chấm"
+   ],
+   "items": [
+    "Nhánh máy chạy khi câu hỏi sai là nhánh {{1}}.",
+    "Cuối dòng <code>else</code> cũng phải có dấu {{2}}.",
+    "Mỗi lần chạy, máy đi đúng {{3}} nhánh."
+   ],
+   "blanks": [
+    {
+     "accept": [
+      "else"
+     ]
+    },
+    {
+     "accept": [
+      "hai chấm"
+     ]
+    },
+    {
+     "accept": [
+      "một"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai10-dien-11",
+   "deBai": "Điền hai ô để bé 4 tuổi chưa phải đi học.",
+   "bank": [
+    "else",
+    "if",
+    "một",
+    "hai chấm"
+   ],
+   "template": "tuoi = 4\nif tuoi {{1}} 6:\n    print(\"Đi học\")\n{{2}}:\n    print(\"Ở nhà\")",
+   "blanks": [
+    {
+     "accept": [
+      ">="
+     ]
+    },
+    {
+     "accept": [
+      "else"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Đi học\"",
+    "\"Ở nhà\""
+   ],
+   "expectOut": "Ở nhà\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai10-dien-12",
+   "deBai": "Điền hai ô để máy trả lời số 12 là chẵn hay lẻ.",
+   "bank": [
+    "else",
+    "if",
+    "một",
+    "hai chấm"
+   ],
+   "template": "so = 12\nif so % 2 == {{1}}:\n    print(\"Chẵn\")\n{{2}}:\n    print(\"Lẻ\")",
+   "blanks": [
+    {
+     "accept": [
+      "0"
+     ]
+    },
+    {
+     "accept": [
+      "else"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Chẵn\"",
+    "\"Lẻ\""
+   ],
+   "expectOut": "Chẵn\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai10-dien-13",
+   "deBai": "Điền hai ô để máy in ra số lớn hơn trong hai số.",
+   "bank": [
+    "else",
+    "if",
+    "một",
+    "hai chấm"
+   ],
+   "template": "a = 15\nb = 20\nif a {{1}} b:\n    print(\"Số lớn hơn là\", a)\n{{2}}:\n    print(\"Số lớn hơn là\", b)",
+   "blanks": [
+    {
+     "accept": [
+      ">"
+     ]
+    },
+    {
+     "accept": [
+      "else"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Số lớn hơn là\"",
+    "\"Số lớn hơn là\""
+   ],
+   "expectOut": "Số lớn hơn là 20\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "free_code",
+   "id": "bai10-tuviet-14",
+   "deBai": "Con bỏ tuổi của con vào biến <code>tuoi</code>. Nếu từ 10 tuổi trở\nlên thì máy in <code>Lớn rồi</code>. Còn không thì máy in <code>Vẫn còn bé</code>.",
+   "hoiTruoc": [
+    "Câu hỏi của con viết thế nào?",
+    "Chữ <code>else</code> đứng ở cột thứ mấy?",
+    "Chạy một lần thì máy in ra mấy dòng?"
+   ],
+   "checklist": [
+    "Con viết được một nhánh <code>else</code> thẳng hàng với <code>if</code>.",
+    "Con biết mỗi lần chạy chỉ có một nhánh được in ra.",
+    "Con đoán đúng nhánh nào chạy trước khi bấm nút."
+   ],
+   "hints": [
+    {
+     "hoi": "Đồng xu rơi xuống thì có mấy mặt ngửa lên?",
+     "dap": "một mặt"
+    },
+    {
+     "hoi": "Có khi nào cả hai mặt cùng ngửa lên không?",
+     "dap": "không"
+    },
+    {
+     "hoi": "Vậy chương trình in ra mấy dòng?",
+     "dap": "một dòng"
+    }
+   ],
+   "loiHayMac": "<p>Cháu thụt chữ <code>else</code> vào cho thẳng với dòng\n<code>print</code> ở trên. Chỉ ra cho cháu thấy <code>if</code> và <code>else</code> là hai anh em,\nphải đứng cùng một cột. Lỗi thứ hai là viết thêm câu hỏi sau <code>else</code>.</p>",
+   "loiGiai": "",
+   "goiY": "<p>Bốn dòng. <code>tuoi = 9</code>, rồi <code>if tuoi &gt;= 10:</code>,\nrồi dòng thụt vào <code>print(\"Lớn rồi\")</code>, rồi <code>else:</code> sát lề và dòng thụt\nvào <code>print(\"Vẫn còn bé\")</code>. Máy in ra đúng một dòng.</p>"
+  }
+ ]
+}

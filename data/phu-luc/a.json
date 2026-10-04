@@ -1,0 +1,100 @@
+{
+ "schemaVersion": "1.0",
+ "id": "a",
+ "ten": "Từ điển lỗi: máy đang nói gì",
+ "khoi": [
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p>{changMot}</p>\n<p>Khi con gõ sai, máy in ra mấy dòng chữ đỏ. Chữ đỏ <b>không phải lời mắng</b>.\nĐó là máy đang chỉ cho con chỗ sai.</p>\n<p>Đọc chữ đỏ theo đúng ba bước:</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-plA-docloi.svg",
+   "alt": "Hình trong sách. Chữ trong hình: 1. tệp nào, dòng mấy; 2. tên lỗi, tra ở bảng dưới; 3. dấu mũi nhọn chỉ đúng chỗ máy thấy lạ."
+  },
+  {
+   "kind": "van",
+   "heading": "Mười hai câu máy hay nói",
+   "html": "<ol>\n<li><code>SyntaxError: unterminated string literal</code><br>\n        <b>Nghĩa là</b> con mở dấu nháy mà quên đóng.\n        <b>Sửa</b> bằng cách đếm lại, phải có đủ hai dấu nháy.</li>\n<li><code>SyntaxError: '(' was never closed</code><br>\n        <b>Nghĩa là</b> con mở ngoặc mà quên đóng.\n        <b>Sửa</b> bằng cách thêm dấu <code>)</code> ở cuối.</li>\n<li><code>SyntaxError: expected ':'</code><br>\n        <b>Nghĩa là</b> con quên dấu hai chấm sau <code>if</code>, <code>else</code>,\n        <code>for</code> hoặc <code>while</code>.</li>\n<li><code>IndentationError: expected an indented block</code><br>\n        <b>Nghĩa là</b> sau dấu hai chấm con quên thụt đầu dòng.\n        <b>Sửa</b> bằng cách bấm Tab ở đầu dòng tiếp theo.</li>\n<li><code>IndentationError: unexpected indent</code><br>\n        <b>Nghĩa là</b> con thụt đầu dòng ở chỗ không cần.\n        <b>Sửa</b> bằng cách xoá khoảng trắng thừa ở đầu dòng.</li>\n<li><code>NameError: name 'Print' is not defined</code><br>\n        <b>Nghĩa là</b> con gõ một cái tên máy không biết, thường là viết\n        hoa nhầm. <b>Sửa</b> bằng cách viết <code>print</code> thường hết.</li>\n<li><code>NameError: name 'so_keo' is not defined</code><br>\n        <b>Nghĩa là</b> con gọi một cái hộp chưa bỏ gì vào.\n        <b>Sửa</b> bằng cách bỏ giá trị vào hộp trước khi dùng.</li>\n<li><code>TypeError: can only concatenate str to str</code><br>\n        <b>Nghĩa là</b> con cộng chữ với số. <b>Sửa</b> bằng cách đổi số\n        thành chữ với <code>str(...)</code>, hoặc ngăn chúng bằng dấu phẩy trong\n        <code>print</code>.</li>\n<li><code>ValueError: invalid literal for int()</code><br>\n        <b>Nghĩa là</b> con bảo máy đổi một thứ không phải số thành số.\n        <b>Sửa</b> bằng cách gõ đúng một con số khi máy hỏi.</li>\n<li><code>IndexError: list index out of range</code><br>\n        <b>Nghĩa là</b> con gọi một toa tàu không có. Tàu 4 toa thì toa cuối\n        là số 3, vì đếm từ 0.</li>\n<li><code>ZeroDivisionError: division by zero</code><br>\n        <b>Nghĩa là</b> con chia cho 0. Không chia kẹo cho 0 bạn được.</li>\n<li><code>KeyboardInterrupt</code><br>\n        <b>Nghĩa là</b> con vừa bấm Ctrl và C để dừng máy. Đây không phải\n        lỗi, mà là con chủ động dừng một vòng lặp chạy mãi.</li>\n</ol>"
+  },
+  {
+   "kind": "nhac",
+   "html": "<p>Máy luôn nói <b>số dòng</b> đang sai. Nhưng đôi khi chỗ sai thật nằm ở\n<b>dòng ngay trên</b>. Ví dụ quên dấu ngoặc đóng ở dòng 5 thì máy báo dòng 6.\nKhi tra không thấy gì sai, con hãy nhìn lên dòng phía trên.</p>"
+  }
+ ],
+ "muc": [
+  {
+   "khop": "SyntaxError",
+   "mau": "SyntaxError: unterminated string literal",
+   "nghiaLa": "con mở dấu nháy mà quên đóng.",
+   "sua": "bằng cách đếm lại, phải có đủ hai dấu nháy."
+  },
+  {
+   "khop": "SyntaxError",
+   "mau": "SyntaxError: '(' was never closed",
+   "nghiaLa": "con mở ngoặc mà quên đóng.",
+   "sua": "bằng cách thêm dấu ) ở cuối."
+  },
+  {
+   "khop": "SyntaxError",
+   "mau": "SyntaxError: expected ':'",
+   "nghiaLa": "con quên dấu hai chấm sau if, else, for hoặc while.",
+   "sua": ""
+  },
+  {
+   "khop": "IndentationError",
+   "mau": "IndentationError: expected an indented block",
+   "nghiaLa": "sau dấu hai chấm con quên thụt đầu dòng.",
+   "sua": "bằng cách bấm Tab ở đầu dòng tiếp theo."
+  },
+  {
+   "khop": "IndentationError",
+   "mau": "IndentationError: unexpected indent",
+   "nghiaLa": "con thụt đầu dòng ở chỗ không cần.",
+   "sua": "bằng cách xoá khoảng trắng thừa ở đầu dòng."
+  },
+  {
+   "khop": "NameError",
+   "mau": "NameError: name 'Print' is not defined",
+   "nghiaLa": "con gõ một cái tên máy không biết, thường là viết hoa nhầm.",
+   "sua": "bằng cách viết print thường hết."
+  },
+  {
+   "khop": "NameError",
+   "mau": "NameError: name 'so_keo' is not defined",
+   "nghiaLa": "con gọi một cái hộp chưa bỏ gì vào.",
+   "sua": "bằng cách bỏ giá trị vào hộp trước khi dùng."
+  },
+  {
+   "khop": "TypeError",
+   "mau": "TypeError: can only concatenate str to str",
+   "nghiaLa": "con cộng chữ với số.",
+   "sua": "bằng cách đổi số thành chữ với str(...), hoặc ngăn chúng bằng dấu phẩy trong print."
+  },
+  {
+   "khop": "ValueError",
+   "mau": "ValueError: invalid literal for int()",
+   "nghiaLa": "con bảo máy đổi một thứ không phải số thành số.",
+   "sua": "bằng cách gõ đúng một con số khi máy hỏi."
+  },
+  {
+   "khop": "IndexError",
+   "mau": "IndexError: list index out of range",
+   "nghiaLa": "con gọi một toa tàu không có. Tàu 4 toa thì toa cuối là số 3, vì đếm từ 0.",
+   "sua": ""
+  },
+  {
+   "khop": "ZeroDivisionError",
+   "mau": "ZeroDivisionError: division by zero",
+   "nghiaLa": "con chia cho 0. Không chia kẹo cho 0 bạn được.",
+   "sua": ""
+  },
+  {
+   "khop": "KeyboardInterrupt",
+   "mau": "KeyboardInterrupt",
+   "nghiaLa": "con vừa bấm Ctrl và C để dừng máy. Đây không phải lỗi, mà là con chủ động dừng một vòng lặp chạy mãi.",
+   "sua": ""
+  }
+ ]
+}

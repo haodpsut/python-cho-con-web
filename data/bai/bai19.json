@@ -1,0 +1,313 @@
+{
+ "schemaVersion": "1.0",
+ "so": 19,
+ "ten": "Sửa bài: đọc lời máy báo",
+ "chang": 4,
+ "khaiNiemMoi": [],
+ "khoi": [
+  {
+   "kind": "muc_tieu",
+   "items": [
+    "Hết sợ mấy dòng chữ đỏ máy in ra.",
+    "Tìm được số dòng và tên lỗi trong dòng chữ đỏ ấy.",
+    "Biết sáu lỗi hay gặp nhất, và sửa được từng lỗi."
+   ]
+  },
+  {
+   "kind": "guess_text",
+   "id": "bai19-guess-01",
+   "html": "<p>Bé Bi gõ <code>print(tuoi)</code> mà chưa đặt <code>tuoi</code> bằng gì cả.</p>\n<p>Máy in ra một dòng chữ đỏ. Con đoán xem máy mách bé điều gì?</p>",
+   "reveal": "<p>Máy kêu <code>NameError: name 'tuoi' is not defined</code>.\nNghĩa là máy chưa biết cái tên <code>tuoi</code>, vì chưa ai đặt giá trị cho nó.</p>"
+  },
+  {
+   "kind": "van",
+   "heading": "Cùng học",
+   "html": "<p>Gặp việc không làm được, máy in ra mấy dòng chữ đỏ rồi dừng. Chữ đỏ ấy không\nmắng con. Nó mách con hỏng ở dòng nào và hỏng vì cái gì.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai19-dongloi.svg",
+   "alt": "Hình trong sách. Chữ trong hình: Traceback (most recent call last); File \"bai19.py\",; line 3; , in <module>; print(\"Tuổi của bé là\", tuoi); NameError; : name 'tuoi' is not defined; Số dòng máy vấp phải; Mở tệp ra, đếm tới dòng ấy.; Tên lỗi; Tra tên này trong bảng sáu lỗi ở trang sau.; Đọc dòng cuối cùng trước. Dòng ấy nói máy hỏng vì cái gì.."
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p>Con đọc theo hai bước. Bước một, tìm số dòng rồi mở tệp đếm tới dòng ấy.\nBước hai, đọc tên lỗi ở dòng cuối cùng rồi tra bảng dưới đây.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai19-sauloi.svg",
+   "alt": "Hình trong sách. Chữ trong hình: Máy kêu tên gì; Nghĩa là; Con sửa thế nào; SyntaxError; Con viết sai phép đặt câu; Tìm dấu hai chấm hay dấu ngoặc còn thiếu; IndentationError; Thụt đầu dòng chưa đều; Các dòng cùng một nhóm phải thụt vào bằng nhau; NameError; Máy chưa biết cái tên ấy; Xem lại chính tả, hay đặt giá trị cho biến trước; TypeError; Con trộn chữ với số."
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p>Chương trình sau lúc đầu kêu <code>NameError</code>. Sửa xong thì nó chạy ngon lành.</p>"
+  },
+  {
+   "kind": "vidu",
+   "code": "# Chương trình này đã được sửa xong nên chạy ngon lành\ntuoi = 8\nprint(\"Bé Bi\", tuoi, \"tuổi\")\nprint(\"Sang năm bé Bi\", tuoi + 1, \"tuổi\")",
+   "out": "Bé Bi 8 tuổi\nSang năm bé Bi 9 tuổi\n",
+   "stdin": null
+  },
+  {
+   "kind": "nhac",
+   "html": "<p>Sau dấu hai chấm, dòng tiếp theo phải thụt vào. Quên thụt là máy kêu ngay:\n<code>IndentationError: expected an indented block</code>. Lại có một lỗi máy không\nbao giờ kêu, đó là tính sai. Máy vẫn chạy, chỉ là ra số sai. Chỗ ấy con phải\ntự dò bằng tay.</p>"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Thấy chữ đỏ, con đọc dòng nào trước?",
+   "options": [
+    "Dòng đầu tiên",
+    "Dòng ở giữa",
+    "Dòng cuối cùng, vì nó ghi tên lỗi",
+    "Không đọc dòng nào cả"
+   ],
+   "answerIndex": 2,
+   "explanation": "Dòng cuối ghi tên lỗi. Biết tên lỗi là biết phải sửa kiểu gì.",
+   "id": "bai19-tn-02"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Viết <code>if diem &gt;= 8</code> rồi xuống dòng luôn thì máy kêu gì?",
+   "options": [
+    "<code>SyntaxError</code>, vì thiếu dấu hai chấm",
+    "<code>NameError</code>",
+    "<code>IndexError</code>",
+    "Máy không kêu gì"
+   ],
+   "answerIndex": 0,
+   "explanation": "Cuối dòng <code>if</code> phải có dấu hai chấm. Thêm dấu ấy vào là xong.",
+   "id": "bai19-tn-03"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Dòng ngay sau dấu hai chấm mà không thụt vào thì máy kêu gì?",
+   "options": [
+    "<code>TypeError</code>",
+    "<code>IndentationError</code>",
+    "<code>ValueError</code>",
+    "<code>SyntaxError</code>"
+   ],
+   "answerIndex": 1,
+   "explanation": "Thụt dòng ấy vào bốn dấu cách là máy chạy được ngay.",
+   "id": "bai19-tn-04"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>print(tuoi)</code> mà chưa đặt <code>tuoi</code> bao giờ thì máy kêu gì?",
+   "options": [
+    "<code>TypeError</code>",
+    "<code>IndexError</code>",
+    "<code>NameError</code>",
+    "<code>ValueError</code>"
+   ],
+   "answerIndex": 2,
+   "explanation": "Máy chưa biết cái tên ấy. Con đặt <code>tuoi = 8</code> ở phía trên là xong.",
+   "id": "bai19-tn-05"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>int(\"tám\")</code> thì máy kêu gì?",
+   "options": [
+    "<code>NameError</code>",
+    "<code>TypeError</code>",
+    "<code>ValueError</code>",
+    "Cho ra số <code>8</code>"
+   ],
+   "answerIndex": 2,
+   "explanation": "<code>int</code> chỉ đổi được chuỗi toàn chữ số. Con phải viết <code>int(\"8\")</code>.",
+   "id": "bai19-tn-06"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Có <code>ds = [3, 6, 9]</code>. Viết <code>ds[3]</code> thì máy kêu gì?",
+   "options": [
+    "<code>NameError</code>",
+    "<code>IndexError</code>",
+    "<code>SyntaxError</code>",
+    "Cho ra số <code>9</code>"
+   ],
+   "answerIndex": 1,
+   "explanation": "Toa đánh số 0, 1, 2 nên toa cuối là <code>ds[2]</code>, không có toa số 3.",
+   "id": "bai19-tn-07"
+  },
+  {
+   "kind": "van",
+   "heading": "Máy in ra gì",
+   "html": "<p>Đọc chương trình rồi đoán xem máy in ra gì. Đoán xong hãy bấm Chạy để so.</p>"
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai19-doan-08",
+   "code": "so = \"12\"\nprint(so + so)\nprint(int(so) + int(so))",
+   "expectOut": "1212\n24\n",
+   "soDong": 2,
+   "stdin": null
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai19-doan-09",
+   "code": "ds = [3, 6, 9]\nprint(len(ds))\nprint(ds[0], ds[2])\nprint(ds[len(ds) - 1])",
+   "expectOut": "3\n3 9\n9\n",
+   "soDong": 3,
+   "stdin": null
+  },
+  {
+   "kind": "van",
+   "heading": "Điền vào chỗ trống",
+   "html": ""
+  },
+  {
+   "kind": "fill_blank",
+   "id": "bai19-dien-10",
+   "deBai": "Chọn từ trong ngân hàng điền vào ba câu sau.",
+   "bank": [
+    "SyntaxError",
+    "NameError",
+    "TypeError",
+    "IndexError"
+   ],
+   "items": [
+    "Thiếu dấu hai chấm cuối dòng <code>if</code> thì máy kêu {{1}}.",
+    "Dùng một cái tên chưa đặt bao giờ thì máy kêu {{2}}.",
+    "Lấy chữ cộng với số thì máy kêu {{3}}."
+   ],
+   "blanks": [
+    {
+     "accept": [
+      "SyntaxError"
+     ]
+    },
+    {
+     "accept": [
+      "NameError"
+     ]
+    },
+    {
+     "accept": [
+      "TypeError"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai19-dien-11",
+   "deBai": "Chương trình này đang kêu SyntaxError. Điền một ô cho nó chạy được.",
+   "bank": [
+    "SyntaxError",
+    "NameError",
+    "TypeError",
+    "IndexError"
+   ],
+   "template": "diem = 9\nif diem >= 8{{1}}\n    print(\"Giỏi lắm con\")\nprint(\"Hết bài\")",
+   "blanks": [
+    {
+     "accept": [
+      ":"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Giỏi lắm con\"",
+    "\"Hết bài\""
+   ],
+   "expectOut": "Giỏi lắm con\nHết bài\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai19-dien-12",
+   "deBai": "Chương trình này đang kêu NameError. Điền hai ô cho đúng tên biến đã đặt ở dòng đầu.",
+   "bank": [
+    "SyntaxError",
+    "NameError",
+    "TypeError",
+    "IndexError"
+   ],
+   "template": "ten_ban = \"Na\"\nprint(\"Chào bạn\", {{1}})\nprint(\"Tên bạn có\", len({{2}}), \"chữ cái\")",
+   "blanks": [
+    {
+     "accept": [
+      "ten_ban"
+     ]
+    },
+    {
+     "accept": [
+      "ten_ban"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Na\"",
+    "\"Chào bạn\"",
+    "\"Tên bạn có\"",
+    "\"chữ cái\""
+   ],
+   "expectOut": "Chào bạn Na\nTên bạn có 2 chữ cái\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai19-dien-13",
+   "deBai": "Chương trình này đang kêu TypeError. Điền một ô để đổi chuỗi thành số trước khi cộng.",
+   "bank": [
+    "SyntaxError",
+    "NameError",
+    "TypeError",
+    "IndexError"
+   ],
+   "template": "so_keo = \"7\"\ntong = {{1}}(so_keo) + 5\nprint(\"Bé Bi có\", tong, \"cái kẹo\")",
+   "blanks": [
+    {
+     "accept": [
+      "int"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"7\"",
+    "\"Bé Bi có\"",
+    "\"cái kẹo\""
+   ],
+   "expectOut": "Bé Bi có 12 cái kẹo\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "free_code",
+   "id": "bai19-tuviet-14",
+   "deBai": "Con gõ hai dòng này vào máy rồi chạy thử: <code>tuoi = \"9\"</code>\nrồi <code>print(\"Sang năm\", tuoi + 1)</code>. Máy sẽ kêu một lỗi. Con đọc tên lỗi,\nrồi sửa cho máy in ra <code>Sang năm 10</code>.",
+   "hoiTruoc": [
+    "Máy kêu tên lỗi gì, và ở dòng số mấy?",
+    "Trong dòng ấy, cái nào là chữ và cái nào là số?",
+    "Con bọc cái gì vào trong <code>int</code> thì hết lỗi?"
+   ],
+   "checklist": [
+    "Con tìm được số dòng trong lời máy báo.",
+    "Con đọc được tên lỗi ở dòng cuối cùng.",
+    "Con sửa được một lỗi mà không cần ai mách."
+   ],
+   "hints": [
+    {
+     "hoi": "Trong câu máy nói, chỗ nào là một con số?",
+     "dap": "đó là số dòng"
+    },
+    {
+     "hoi": "Chữ dài viết liền nhau ở cuối là gì?",
+     "dap": "tên lỗi"
+    },
+    {
+     "hoi": "Mở tệp ra, đếm tới dòng ấy, con thấy gì lạ?",
+     "dap": "chữ cộng với số"
+    }
+   ],
+   "loiHayMac": "<p>Thấy chữ đỏ là đóng cửa sổ ngay, không đọc. Hãy\nngồi cạnh cháu và cùng đọc to lời máy báo vài lần đầu. Đọc quen rồi cháu sẽ\nthấy máy nói rất ít chữ, và lần nào cũng nói đúng một kiểu.</p>",
+   "loiGiai": "",
+   "goiY": "<p>Máy kêu <code>TypeError</code> ở dòng thứ hai, vì <code>tuoi</code> là\nchữ còn <code>1</code> là số. Sửa thành <code>print(\"Sang năm\", int(tuoi) + 1)</code>.</p>"
+  }
+ ]
+}

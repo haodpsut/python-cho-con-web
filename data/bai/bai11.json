@@ -1,0 +1,323 @@
+{
+ "schemaVersion": "1.0",
+ "so": 11,
+ "ten": "Lệnh if ... elif",
+ "chang": 3,
+ "khaiNiemMoi": [],
+ "khoi": [
+  {
+   "kind": "muc_tieu",
+   "items": [
+    "Biết cho máy chọn giữa nhiều hơn hai trường hợp.",
+    "Hiểu máy xét các nhánh lần lượt từ trên xuống.",
+    "Biết vì sao thứ tự các nhánh rất quan trọng."
+   ]
+  },
+  {
+   "kind": "guess_text",
+   "id": "bai11-guess-01",
+   "html": "<p>Cô giáo xếp loại: 10 điểm là Xuất sắc, 9 điểm là Giỏi, 8 điểm là Khá.</p>\n<p>Bạn Na được 9 điểm. Con đoán xem cô ghi cho Na loại gì?</p>",
+   "reveal": "<p>Cô ghi loại Giỏi. Nhánh 10 điểm sai, nhánh 9 điểm\nđúng, cô dừng ở đó.</p>"
+  },
+  {
+   "kind": "van",
+   "heading": "Cùng học",
+   "html": "<p>Có nhiều hơn hai trường hợp thì ta dùng <code>elif</code>.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai11-cauthang.svg",
+   "alt": "Hình trong sách. Chữ trong hình: if diem == 10: 0.5cmprint(\"Xuất sắc\"); elif diem == 9: 0.5cmprint(\"Giỏi\"); elif diem == 8: 0.5cmprint(\"Khá\"); else: 0.5cmprint(\"Cố lên nhé\"); sai; Bậc này đúng. Máy in ra Giỏi rồi dừng hẳn.; Hai bậc dưới máy không thèm xét nữa.; Máy bước từ bậc trên cùng xuống. Bậc đầu tiên đúng thì dừng.."
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p>Chữ <code>elif</code> là hai chữ <code>else</code> và <code>if</code> ghép lại.\nMáy xét từ trên xuống. Gặp nhánh đúng đầu tiên thì máy làm rồi dừng hẳn.\nCác nhánh dưới máy không thèm xét nữa. Nhánh <code>else</code> ở cuối là nhánh vét.\nMột chuỗi nhánh có một <code>if</code>, nhiều <code>elif</code>, và nhiều nhất một <code>else</code>.</p>"
+  },
+  {
+   "kind": "vidu",
+   "code": "# elif: máy xét từ trên xuống, dừng ở nhánh đúng\ndiem = 9\nif diem == 10:\n    print(\"Xuất sắc\")\nelif diem == 9:\n    print(\"Giỏi\")\nelif diem == 8:\n    print(\"Khá\")\nelse:\n    print(\"Cố lên nhé\")\n\nso = 15\nif so > 20:\n    print(\"Lớn hơn hai mươi\")\nelif so > 10:\n    print(\"Lớn hơn mười\")\nelif so > 5:\n    print(\"Lớn hơn năm\")",
+   "out": "Giỏi\nLớn hơn mười\n",
+   "stdin": null
+  },
+  {
+   "kind": "nhac",
+   "html": "<p>Ba lỗi hay gặp với <code>elif</code>.</p>\n<p>Một. Quên dấu hai chấm cuối dòng. Máy kêu\n<code>SyntaxError: invalid syntax</code>.</p>\n<p>Hai. Viết <code>elif</code> mà bên trên không có <code>if</code> nào. Máy cũng kêu\n<code>SyntaxError: invalid syntax</code>.</p>\n<p>Ba. Đặt nhánh rộng lên trên. Nhánh hẹp ở dưới sẽ không bao giờ chạy tới.</p>"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Chữ <code>elif</code> dùng để làm gì?",
+   "options": [
+    "Kết thúc chương trình",
+    "Thêm một câu hỏi nữa cho máy xét",
+    "Lặp lại một việc",
+    "In chữ ra màn hình"
+   ],
+   "answerIndex": 1,
+   "explanation": "<code>elif</code> là chỗ cho trường hợp thứ ba, thứ tư, và nhiều nữa.",
+   "id": "bai11-tn-02"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Máy xét các nhánh theo thứ tự nào?",
+   "options": [
+    "Từ dưới lên",
+    "Từ trên xuống",
+    "Nhánh nào ngắn thì xét trước",
+    "Máy chọn bừa một nhánh"
+   ],
+   "answerIndex": 1,
+   "explanation": "Giống như đi cầu thang, máy bước từ bậc trên cùng xuống dần.",
+   "id": "bai11-tn-03"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Gặp nhánh đúng đầu tiên thì máy làm gì?",
+   "options": [
+    "Xét tiếp các nhánh ở dưới",
+    "Làm nhánh ấy rồi dừng hẳn",
+    "Làm hết mọi nhánh",
+    "Báo lỗi"
+   ],
+   "answerIndex": 1,
+   "explanation": "Máy chỉ chạy một nhánh thôi. Tìm được rồi thì nó nhảy qua phần còn\nlại.",
+   "id": "bai11-tn-04"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Bảng xếp loại: 10 là Xuất sắc, 9 là Giỏi, 8 là Khá. Na được 9\nđiểm. Máy in gì?",
+   "options": [
+    "<code>Xuất sắc</code>",
+    "<code>Giỏi</code>",
+    "<code>Khá</code>",
+    "Máy không in gì"
+   ],
+   "answerIndex": 1,
+   "explanation": "Nhánh đầu hỏi có bằng 10 không, sai. Nhánh thứ hai hỏi có bằng 9\nkhông, đúng.",
+   "id": "bai11-tn-05"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Một chuỗi nhánh có nhiều nhất mấy nhánh <code>else</code>?",
+   "options": [
+    "Không nhánh nào",
+    "Một nhánh",
+    "Hai nhánh",
+    "Bao nhiêu cũng được"
+   ],
+   "answerIndex": 1,
+   "explanation": "<code>else</code> là nhánh vét hết phần còn lại nên chỉ cần đúng một cái.",
+   "id": "bai11-tn-06"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Máy xét <code>if diem &gt;= 7:</code> trước, rồi mới tới <code>elif diem &gt;= 9:</code>.\nBạn được 10 điểm. Máy chạy nhánh nào?",
+   "options": [
+    "Nhánh đầu tiên",
+    "Nhánh thứ hai",
+    "Cả hai nhánh",
+    "Không nhánh nào"
+   ],
+   "answerIndex": 0,
+   "explanation": "Nhánh rộng đặt trên nên nó hứng hết. Nhánh hẹp ở dưới không bao giờ\nchạy tới.",
+   "id": "bai11-tn-07"
+  },
+  {
+   "kind": "van",
+   "heading": "Máy in ra gì",
+   "html": "<p>Đọc chương trình rồi đoán xem máy in ra gì. Đoán xong hãy bấm Chạy để so.</p>"
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai11-doan-08",
+   "code": "diem = 8\nif diem == 10:\n    print(\"Xuất sắc\")\nelif diem == 9:\n    print(\"Giỏi\")\nelif diem == 8:\n    print(\"Khá\")\nelse:\n    print(\"Cố lên nhé\")\nprint(\"Xong rồi\")",
+   "expectOut": "Khá\nXong rồi\n",
+   "soDong": 2,
+   "stdin": null
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai11-doan-09",
+   "code": "so = 100\nif so > 500:\n    print(\"Rất lớn\")\nelif so > 50:\n    print(\"Lớn\")\nelif so > 5:\n    print(\"Nhỏ\")\nelse:\n    print(\"Rất nhỏ\")",
+   "expectOut": "Lớn\n",
+   "soDong": 1,
+   "stdin": null
+  },
+  {
+   "kind": "van",
+   "heading": "Điền vào chỗ trống",
+   "html": ""
+  },
+  {
+   "kind": "fill_blank",
+   "id": "bai11-dien-10",
+   "deBai": "Chọn từ trong ngân hàng điền vào ba câu sau.",
+   "bank": [
+    "elif",
+    "else",
+    "if",
+    "trên xuống"
+   ],
+   "items": [
+    "Lệnh để thêm một câu hỏi nữa là {{1}}.",
+    "Nhánh cuối cùng, không có câu hỏi, là {{2}}.",
+    "Máy xét các nhánh theo thứ tự từ {{3}}."
+   ],
+   "blanks": [
+    {
+     "accept": [
+      "elif"
+     ]
+    },
+    {
+     "accept": [
+      "else"
+     ]
+    },
+    {
+     "accept": [
+      "trên xuống"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai11-dien-11",
+   "deBai": "Điền hai ô để bạn được 10 điểm nhận đúng lời khen cao nhất.",
+   "bank": [
+    "elif",
+    "else",
+    "if",
+    "trên xuống"
+   ],
+   "template": "diem = 10\nif diem {{1}} 10:\n    print(\"Xuất sắc\")\n{{2}} diem {{3}} 9:\n    print(\"Giỏi\")",
+   "blanks": [
+    {
+     "accept": [
+      "=="
+     ]
+    },
+    {
+     "accept": [
+      "elif"
+     ]
+    },
+    {
+     "accept": [
+      "=="
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Xuất sắc\"",
+    "\"Giỏi\""
+   ],
+   "expectOut": "Xuất sắc\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai11-dien-12",
+   "deBai": "Điền hai ô để máy xếp bé 8 tuổi vào đúng cấp học.",
+   "bank": [
+    "elif",
+    "else",
+    "if",
+    "trên xuống"
+   ],
+   "template": "tuoi = 8\nif tuoi >= 11:\n    print(\"Cấp hai\")\n{{1}} tuoi >= 6:\n    print(\"Cấp một\")\n{{2}}:\n    print(\"Mẫu giáo\")",
+   "blanks": [
+    {
+     "accept": [
+      "elif"
+     ]
+    },
+    {
+     "accept": [
+      "else"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Cấp hai\"",
+    "\"Cấp một\"",
+    "\"Mẫu giáo\""
+   ],
+   "expectOut": "Cấp một\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai11-dien-13",
+   "deBai": "Điền hai ô để máy đọc tên của số đang nằm trong biến.",
+   "bank": [
+    "elif",
+    "else",
+    "if",
+    "trên xuống"
+   ],
+   "template": "so = 3\nif so == 1:\n    print(\"Một\")\n{{1}} so == 2:\n    print(\"Hai\")\n{{2}} so == {{3}}:\n    print(\"Ba\")\nelse:\n    print(\"Nhiều\")",
+   "blanks": [
+    {
+     "accept": [
+      "elif"
+     ]
+    },
+    {
+     "accept": [
+      "elif"
+     ]
+    },
+    {
+     "accept": [
+      "3"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Một\"",
+    "\"Hai\"",
+    "\"Ba\"",
+    "\"Nhiều\""
+   ],
+   "expectOut": "Ba\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "free_code",
+   "id": "bai11-tuviet-14",
+   "deBai": "Con bỏ số bông hoa hái được vào biến <code>hoa</code>. Từ 10 bông\ntrở lên thì máy in <code>Rất nhiều</code>. Từ 5 bông trở lên thì máy in <code>Nhiều</code>.\nCòn lại thì máy in <code>Ít</code>.",
+   "hoiTruoc": [
+    "Con cần mấy nhánh tất cả?",
+    "Nhánh nào phải đặt lên trên cùng?",
+    "Nhánh cuối cùng có câu hỏi không?"
+   ],
+   "checklist": [
+    "Con viết được một chuỗi <code>if</code>, <code>elif</code> và <code>else</code>.",
+    "Con biết máy dừng ngay ở nhánh đúng đầu tiên.",
+    "Con xếp nhánh hẹp lên trên, nhánh rộng xuống dưới."
+   ],
+   "hints": [
+    {
+     "hoi": "Con đi cầu thang thì bước vào bậc nào trước?",
+     "dap": "bậc trên cùng"
+    },
+    {
+     "hoi": "Thấy bậc vừa chân rồi thì con còn bước xuống nữa không?",
+     "dap": "không"
+    },
+    {
+     "hoi": "Vậy bậc hỏi số lớn nên đặt ở trên hay ở dưới?",
+     "dap": "ở trên"
+    }
+   ],
+   "loiHayMac": "<p>Cháu xếp sai thứ tự, để nhánh số nhỏ lên trên.\nChương trình vẫn chạy, không báo lỗi gì, nhưng kết quả sai với mọi số lớn.\nCho cháu thử với 12 bông hoa để tự thấy. Lỗi thứ hai là viết <code>elif</code> mà\nquên mất dòng <code>if</code> ở trên nó.</p>",
+   "loiGiai": "",
+   "goiY": "<p>Ba nhánh. <code>if hoa &gt;= 10:</code> in <code>Rất nhiều</code>, rồi\n<code>elif hoa &gt;= 5:</code> in <code>Nhiều</code>, rồi <code>else:</code> in <code>Ít</code>. Nhánh 10 phải\nđứng trên nhánh 5, nếu không thì 12 bông cũng chỉ ra <code>Nhiều</code>.</p>"
+  }
+ ]
+}

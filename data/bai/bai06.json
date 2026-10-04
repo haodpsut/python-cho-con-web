@@ -1,0 +1,310 @@
+{
+ "schemaVersion": "1.0",
+ "so": 6,
+ "ten": "Nhập dữ liệu và ba loại dữ liệu",
+ "chang": 2,
+ "khaiNiemMoi": [],
+ "khoi": [
+  {
+   "kind": "muc_tieu",
+   "items": [
+    "Biết bảo máy dừng lại chờ con gõ câu trả lời.",
+    "Biết thứ con gõ vào luôn là chữ, muốn tính thì phải đổi.",
+    "Biết chèn tên biến vào giữa một câu chữ cho gọn."
+   ]
+  },
+  {
+   "kind": "guess_text",
+   "id": "bai06-guess-01",
+   "html": "<p>Bé Bi viết <code>tuoi = input()</code> rồi gõ số 8 và bấm Enter.</p>\n<p>Sau đó bé viết <code>print(tuoi + 1)</code>. Con đoán xem máy in ra 9, hay máy báo lỗi?</p>",
+   "reveal": "<p>Máy báo lỗi <code>TypeError</code>. Vì <code>tuoi</code> đang là chữ.\nMuốn ra 9 thì phải viết <code>tuoi = int(input())</code>.</p>"
+  },
+  {
+   "kind": "van",
+   "heading": "Cùng học",
+   "html": "<p>Lệnh <code>input()</code> làm máy dừng lại chờ. Con gõ rồi bấm Enter.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai06-banphim.svg",
+   "alt": "Hình trong sách. Chữ trong hình: con gõ rồi bấm Enter; luôn là chữ; \"Bi\"; ten; ten = input(); \"8\"; chữ tám, không tính được; int(); 8; số tám, cộng trừ được."
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p>Thứ con gõ vào <b>luôn là chữ</b>, kể cả khi con gõ số.\nMuốn tính thì bọc thêm <code>int(...)</code> để đổi chữ ấy thành số.\nLệnh <code>type(x)</code> cho con xem <code>x</code> đang thuộc loại nào.\nMáy gọi chữ là <code>str</code>, gọi số đếm được là <code>int</code>.\nLoại thứ ba là <code>float</code>, số có dấu phẩy, lớp 5 con học kỹ.\nChữ <code>f</code> đặt trước dấu nháy cho con chèn tên biến vào giữa câu.</p>"
+  },
+  {
+   "kind": "vidu",
+   "code": "# Máy hỏi, con gõ, máy chào lại\nprint(\"Con tên là gì?\")\nten = input()\nprint(\"Con có mấy cái kẹo?\")\nso_keo = int(input())\nprint(f\"Chào {ten}!\")\nprint(f\"Con có {so_keo} cái kẹo.\")\nprint(f\"Thêm 2 cái nữa là {so_keo + 2} cái.\")",
+   "out": "Con tên là gì?\nCon có mấy cái kẹo?\nChào Bi!\nCon có 5 cái kẹo.\nThêm 2 cái nữa là 7 cái.\n",
+   "stdin": "Bi\n5\n"
+  },
+  {
+   "kind": "nhac",
+   "html": "<p>Quên <code>int(...)</code> là hỏng. Gõ số 8 rồi viết <code>tuoi + 1</code> thì máy kêu\n<code>TypeError</code>, vì <code>tuoi</code> đang là chữ chứ chưa phải số.</p>\n<p>Khung <b>Máy in ra</b> chỉ ghi chữ của máy. Chữ con gõ không nằm trong khung.</p>"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Lệnh <code>input()</code> cho ra thứ thuộc loại nào?",
+   "options": [
+    "Luôn là số",
+    "Luôn là chữ",
+    "Lúc là chữ, lúc là số",
+    "Không cho ra gì cả"
+   ],
+   "answerIndex": 1,
+   "explanation": "Máy nhận mọi phím con bấm như những chữ cái. Nó không tự biết con\nđang định gõ số hay gõ tên.",
+   "id": "bai06-tn-02"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Gõ số 5 vào <code>a = input()</code> rồi viết <code>a + 1</code> thì sao?",
+   "options": [
+    "Ra 6",
+    "Ra 51",
+    "Máy kêu <code>TypeError</code>",
+    "Ra 15"
+   ],
+   "answerIndex": 2,
+   "explanation": "<code>a</code> đang là chữ, còn 1 là số. Máy không biết cộng chữ với số nên\nnó dừng lại và báo lỗi.",
+   "id": "bai06-tn-03"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Muốn đổi chữ thành số đếm được thì bọc bằng gì?",
+   "options": [
+    "<code>print(...)</code>",
+    "<code>int(...)</code>",
+    "<code>type(...)</code>",
+    "Không cần bọc gì"
+   ],
+   "answerIndex": 1,
+   "explanation": "<code>int</code> là tên máy đặt cho số đếm được. Bọc chữ vào trong nó thì\nchữ hoá thành số.",
+   "id": "bai06-tn-04"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>type(\"7\")</code> in ra gì?",
+   "options": [
+    "<code>&lt;class 'int'&gt;</code>",
+    "<code>&lt;class 'str'&gt;</code>",
+    "<code>7</code>",
+    "<code>&lt;class 'float'&gt;</code>"
+   ],
+   "answerIndex": 1,
+   "explanation": "Số 7 này nằm trong dấu nháy nên nó là chữ. Máy gọi loại chữ là\n<code>str</code>.",
+   "id": "bai06-tn-05"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Có <code>ten = \"Na\"</code>. Vậy <code>print(f\"Chào {ten}\")</code> in ra gì?",
+   "options": [
+    "<code>Chào {ten}</code>",
+    "<code>Chào Na</code>",
+    "<code>Chào f</code>",
+    "Máy báo lỗi"
+   ],
+   "answerIndex": 1,
+   "explanation": "Chữ <code>f</code> báo cho máy biết phải thay chỗ trong ngoặc nhọn bằng giá\ntrị của biến.",
+   "id": "bai06-tn-06"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Khi máy chạy tới <code>input()</code> thì chuyện gì xảy ra?",
+   "options": [
+    "Máy in ra một dòng trống",
+    "Máy bỏ qua dòng ấy",
+    "Máy dừng lại chờ con gõ và bấm Enter",
+    "Máy chạy nhanh hơn"
+   ],
+   "answerIndex": 2,
+   "explanation": "Đây là lúc máy hỏi con. Chưa bấm Enter thì máy còn đứng im chờ.",
+   "id": "bai06-tn-07"
+  },
+  {
+   "kind": "van",
+   "heading": "Máy in ra gì",
+   "html": "<p>Đọc chương trình rồi đoán xem máy in ra gì. Đoán xong hãy bấm Chạy để so.</p>"
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai06-doan-08",
+   "code": "# Con gõ 7 rồi bấm Enter\nprint(\"Gõ một số rồi bấm Enter:\")\na = input()\nprint(type(a))\nb = int(a)\nprint(type(b))\nprint(b + 10)",
+   "expectOut": "Gõ một số rồi bấm Enter:\n<class 'str'>\n<class 'int'>\n17\n",
+   "soDong": 4,
+   "stdin": "7\n"
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai06-doan-09",
+   "code": "# Con gõ Na, rồi gõ 9\nprint(\"Tên bạn là gì?\")\nten = input()\nprint(\"Bạn mấy tuổi?\")\ntuoi = int(input())\nprint(f\"Bạn {ten} năm nay {tuoi} tuổi.\")\nprint(f\"Sang năm bạn {tuoi + 1} tuổi.\")",
+   "expectOut": "Tên bạn là gì?\nBạn mấy tuổi?\nBạn Na năm nay 9 tuổi.\nSang năm bạn 10 tuổi.\n",
+   "soDong": 4,
+   "stdin": "Na\n9\n"
+  },
+  {
+   "kind": "van",
+   "heading": "Điền vào chỗ trống",
+   "html": ""
+  },
+  {
+   "kind": "fill_blank",
+   "id": "bai06-dien-10",
+   "deBai": "Chọn từ trong ngân hàng điền vào ba câu sau.",
+   "bank": [
+    "input",
+    "int",
+    "type",
+    "f"
+   ],
+   "items": [
+    "Lệnh làm máy dừng lại chờ con gõ là {{1}}.",
+    "Lệnh đổi một chuỗi chữ số thành số là {{2}}.",
+    "Lệnh cho con xem một thứ thuộc loại nào là {{3}}."
+   ],
+   "blanks": [
+    {
+     "accept": [
+      "input"
+     ]
+    },
+    {
+     "accept": [
+      "int"
+     ]
+    },
+    {
+     "accept": [
+      "type"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai06-dien-11",
+   "deBai": "Điền ba ô. Con gõ Bi rồi gõ số 8.",
+   "bank": [
+    "input",
+    "int",
+    "type",
+    "f"
+   ],
+   "template": "print(\"Con tên là gì?\")\nten = {{1}}()\nprint(\"Con mấy tuổi?\")\ntuoi = {{2}}({{3}}())\nprint(f\"Chào {ten}, con {tuoi} tuổi.\")",
+   "blanks": [
+    {
+     "accept": [
+      "input"
+     ]
+    },
+    {
+     "accept": [
+      "int"
+     ]
+    },
+    {
+     "accept": [
+      "input"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Con tên là gì?\"",
+    "\"Con mấy tuổi?\"",
+    "\"Chào {ten}, con {tuoi} tuổi.\""
+   ],
+   "expectOut": "Con tên là gì?\nCon mấy tuổi?\nChào Bi, con 8 tuổi.\n",
+   "chayDuoc": true,
+   "stdin": "Bi\n8\n"
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai06-dien-12",
+   "deBai": "Điền một ô cho máy chèn được tên môn học vào câu.",
+   "bank": [
+    "input",
+    "int",
+    "type",
+    "f"
+   ],
+   "template": "print(\"Con thích môn gì?\")\nmon = input()\nprint({{1}}\"Con thích môn {mon}.\")",
+   "blanks": [
+    {
+     "accept": [
+      "f"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Con thích môn gì?\"",
+    "\"Con thích môn {mon}.\""
+   ],
+   "expectOut": "Con thích môn gì?\nCon thích môn Toán.\n",
+   "chayDuoc": true,
+   "stdin": "Toán\n"
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai06-dien-13",
+   "deBai": "Điền hai ô. Con gõ số 6 rồi bấm Enter.",
+   "bank": [
+    "input",
+    "int",
+    "type",
+    "f"
+   ],
+   "template": "print(\"Gõ một số:\")\na = input()\nprint({{1}}(a))\nprint({{2}}(a) + 1)",
+   "blanks": [
+    {
+     "accept": [
+      "type"
+     ]
+    },
+    {
+     "accept": [
+      "int"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Gõ một số:\""
+   ],
+   "expectOut": "Gõ một số:\n<class 'str'>\n7\n",
+   "chayDuoc": true,
+   "stdin": "6\n"
+  },
+  {
+   "kind": "free_code",
+   "id": "bai06-tuviet-14",
+   "deBai": "Viết chương trình hỏi tên con, rồi hỏi con có mấy viên bi.\nMáy chào con bằng tên, rồi nói nếu có gấp đôi thì được mấy viên.",
+   "hoiTruoc": [
+    "Con cần mấy lệnh <code>input</code>?",
+    "Chỗ nào phải bọc thêm <code>int</code>, chỗ nào thì không?",
+    "Gấp đôi nghĩa là nhân với mấy?"
+   ],
+   "checklist": [
+    "Con bảo được máy dừng lại chờ con gõ.",
+    "Con đổi được chữ con gõ thành số để tính.",
+    "Con chèn được tên biến vào giữa một câu chữ."
+   ],
+   "hints": [
+    {
+     "hoi": "Tờ giấy này là số 8 hay là hình vẽ của số 8?",
+     "dap": "hình vẽ"
+    },
+    {
+     "hoi": "Muốn cộng thì con cần số thật hay cần hình vẽ?",
+     "dap": "số thật"
+    },
+    {
+     "hoi": "Cái gì biến hình vẽ thành số thật?",
+     "dap": "<code>int</code>"
+    }
+   ],
+   "loiHayMac": "<p>Bọc <code>int</code> nhầm chỗ, thành <code>int(input)</code> hoặc\n<code>int()input()</code>. Nhắc cháu đọc từ trong ra: <code>input()</code> chạy trước, lấy\nđược chữ, rồi <code>int</code> mới bọc lấy chữ ấy.</p>",
+   "loiGiai": "print(\"Con tên là gì?\")\nprint(\"Con có mấy viên bi?\")\nprint(f\"Chào {ten}, gấp đôi là {bi * 2} viên.\")",
+   "goiY": "<p>Hai lệnh <code>input</code>. Chỉ số bi mới cần bọc <code>int</code>,\ncòn tên thì không. Gấp đôi là nhân với 2.</p>"
+  }
+ ]
+}

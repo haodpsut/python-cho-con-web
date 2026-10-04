@@ -1,0 +1,314 @@
+{
+ "schemaVersion": "1.0",
+ "so": 14,
+ "ten": "Ngày thử sức lần một",
+ "chang": 3,
+ "khaiNiemMoi": [],
+ "khoi": [
+  {
+   "kind": "muc_tieu",
+   "items": [
+    "Tự làm được một đề từ đầu tới cuối, không ai nhắc.",
+    "Làm ra giấy trước, rồi mới gõ vào máy.",
+    "Tự chấm bài bằng khung <b>Máy in ra</b> in sẵn bên cạnh."
+   ]
+  },
+  {
+   "kind": "guess_text",
+   "id": "bai14-guess-01",
+   "html": "<p>Hôm nay không có bài mới. Hôm nay là ngày thử sức.</p>\n<p>Có sáu đề. Đề một dễ nhất, đề sáu khó nhất.</p>\n<p>Con đoán xem con làm được mấy đề?</p>",
+   "reveal": "<p>Không có đáp số đúng sai ở đây. Cứ ghi lại con số\ncháu đoán, rồi cuối buổi đối chiếu với số đề cháu làm được.</p>"
+  },
+  {
+   "kind": "van",
+   "heading": "Cùng học",
+   "html": "<p>Hôm nay con không học từ mới. Hôm nay con thử sức.</p>\n<p>Sáu đề, dễ trước khó sau. Con làm một mình, bố không nhắc.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai14-bonbuoc.svg",
+   "alt": "Hình trong sách. Chữ trong hình: Đọc kỹ đềtrong sách; Làm ra giấybằng bút chì; Gõ vào máyrồi chạy thử; So với khungMáy in ra; 1; 2; 3; 4; Giống nhau là con làm đúng. Khác nhau thì đọc lại đề một lần nữa.."
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p>Nhà mình không có máy chấm bài. Con tự chấm lấy.</p>\n<p>Đây là một đề mẫu bố làm sẵn, cho con xem cách trình bày.</p>"
+  },
+  {
+   "kind": "vidu",
+   "code": "# Đề mẫu đã làm sẵn: chia kẹo rồi xem có đều không.\nso_keo = 27\nso_ban = 4\nmoi_ban = so_keo // so_ban\ncon_thua = so_keo % so_ban\nprint(\"Mỗi bạn được\", moi_ban, \"cái.\")\nprint(\"Còn thừa\", con_thua, \"cái.\")\nif con_thua == 0:\n    print(\"Chia đều hết.\")\nelse:\n    print(\"Chưa chia đều hết.\")",
+   "out": "Mỗi bạn được 6 cái.\nCòn thừa 3 cái.\nChưa chia đều hết.\n",
+   "stdin": null
+  },
+  {
+   "kind": "nhac",
+   "html": "<p>Thi thì hay vội. Vội nhất là quên dấu hai chấm ở cuối dòng <code>if</code>. Máy kêu\n<code>SyntaxError</code> và chỉ mũi tên vào đúng chỗ thiếu.</p>\n<p>Lỗi vội thứ hai là quên thụt đầu dòng. Máy kêu <code>IndentationError</code>.\nĐọc tên lỗi trước, rồi mới nhìn số dòng.</p>"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>print(\"Bi\" * 3)</code> in ra gì?",
+   "options": [
+    "<code>Bi3</code>",
+    "<code>BiBiBi</code>",
+    "<code>Bi Bi Bi</code>",
+    "Máy báo lỗi"
+   ],
+   "answerIndex": 1,
+   "explanation": "Dấu sao chép lại nguyên cả chuỗi ba lần, dán sát nhau, không chen\ndấu cách.",
+   "id": "bai14-tn-02"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>27 // 4</code> và <code>27 % 4</code> cho ra hai số nào?",
+   "options": [
+    "<code>7</code> và <code>1</code>",
+    "<code>6</code> và <code>3</code>",
+    "<code>6</code> và <code>1</code>",
+    "<code>7</code> và <code>3</code>"
+   ],
+   "answerIndex": 1,
+   "explanation": "Chia 27 cái kẹo cho 4 bạn thì mỗi bạn được 6 cái, còn thừa 3 cái.",
+   "id": "bai14-tn-03"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>len(\"Mun\")</code> cho ra gì?",
+   "options": [
+    "<code>Mun</code>",
+    "<code>3</code>",
+    "<code>4</code>",
+    "Máy báo lỗi"
+   ],
+   "answerIndex": 1,
+   "explanation": "<code>len</code> đếm số chữ cái trong chuỗi. Tên <code>Mun</code> có ba chữ cái.",
+   "id": "bai14-tn-04"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Chương trình có <code>if</code>, rồi hai <code>elif</code>, rồi <code>else</code>. Một lần\nchạy thì in ra mấy dòng?",
+   "options": [
+    "Không dòng nào",
+    "Đúng một dòng",
+    "Hai dòng",
+    "Bốn dòng"
+   ],
+   "answerIndex": 1,
+   "explanation": "Cả dây ấy là một bậc thang. Máy rơi xuống đúng một bậc rồi đi tiếp,\nnên chỉ một nhánh chạy.",
+   "id": "bai14-tn-05"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>so = 18</code>. Máy xét <code>so % 2 == 0 and so % 3 == 0</code> ra gì?",
+   "options": [
+    "Đúng",
+    "Sai",
+    "<code>18</code>",
+    "Máy báo lỗi"
+   ],
+   "answerIndex": 0,
+   "explanation": "18 chia 2 dư 0, và 18 chia 3 cũng dư 0. Hai vế cùng đúng nên\n<code>and</code> cho đúng.",
+   "id": "bai14-tn-06"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>ten = \"Na\"</code>. Máy xét <code>not (\"b\" in ten)</code> ra gì?",
+   "options": [
+    "Đúng",
+    "Sai",
+    "<code>Na</code>",
+    "Máy báo lỗi"
+   ],
+   "answerIndex": 0,
+   "explanation": "Trong <code>Na</code> không có chữ <code>b</code>, nên vế trong ngoặc sai.\n<code>not</code> lật nó thành đúng.",
+   "id": "bai14-tn-07"
+  },
+  {
+   "kind": "van",
+   "heading": "Máy in ra gì",
+   "html": "<p>Đọc chương trình rồi đoán xem máy in ra gì. Đoán xong hãy bấm Chạy để so.</p>"
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai14-doan-08",
+   "code": "diem = 8\nmon = \"Toán\"\nprint(\"Môn\", mon)\n\nif diem >= 9:\n    print(\"Giỏi\")\nelif diem >= 7:\n    print(\"Khá\")\nelse:\n    print(\"Cần cố thêm\")\n\nprint(\"Hết đề một.\")",
+   "expectOut": "Môn Toán\nKhá\nHết đề một.\n",
+   "soDong": 3,
+   "stdin": null
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai14-doan-09",
+   "code": "ten = \"Mun\"\nprint(ten * 2)\nprint(len(ten))\n\nif \"M\" in ten and len(ten) == 3:\n    print(\"Đúng tên con mèo.\")\n\nprint(\"=\" * 10)",
+   "expectOut": "MunMun\n3\nĐúng tên con mèo.\n==========\n",
+   "soDong": 4,
+   "stdin": null
+  },
+  {
+   "kind": "van",
+   "heading": "Điền vào chỗ trống",
+   "html": ""
+  },
+  {
+   "kind": "fill_blank",
+   "id": "bai14-dien-10",
+   "deBai": "Chọn từ trong ngân hàng điền vào ba câu sau.",
+   "bank": [
+    "else",
+    "and",
+    "or",
+    "in"
+   ],
+   "items": [
+    "Nhánh chạy khi mọi điều kiện ở trên đều sai là {{1}}.",
+    "Muốn cả hai điều cùng đúng thì nối bằng {{2}}.",
+    "Hỏi một chữ có nằm trong tên hay không thì dùng {{3}}."
+   ],
+   "blanks": [
+    {
+     "accept": [
+      "else"
+     ]
+    },
+    {
+     "accept": [
+      "and"
+     ]
+    },
+    {
+     "accept": [
+      "in"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai14-dien-11",
+   "deBai": "",
+   "bank": [
+    "else",
+    "and",
+    "or",
+    "in"
+   ],
+   "template": "tuoi = 9\nif tuoi {{1}} 10:\n    print(\"Con là anh lớn rồi.\")\n{{2}}:\n    print(\"Con còn nhỏ.\")",
+   "blanks": [
+    {
+     "accept": [
+      ">="
+     ]
+    },
+    {
+     "accept": [
+      "else"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Con là anh lớn rồi.\"",
+    "\"Con còn nhỏ.\""
+   ],
+   "expectOut": "Con còn nhỏ.\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai14-dien-12",
+   "deBai": "",
+   "bank": [
+    "else",
+    "and",
+    "or",
+    "in"
+   ],
+   "template": "so = 18\nif so {{1}} 2 == 0 {{2}} so % 3 == 0:\n    print(\"Chia hết cho cả 2 và 3.\")\nelse:\n    print(\"Không chia hết cho cả hai.\")",
+   "blanks": [
+    {
+     "accept": [
+      "%"
+     ]
+    },
+    {
+     "accept": [
+      "and"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Chia hết cho cả 2 và 3.\"",
+    "\"Không chia hết cho cả hai.\""
+   ],
+   "expectOut": "Chia hết cho cả 2 và 3.\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai14-dien-13",
+   "deBai": "",
+   "bank": [
+    "else",
+    "and",
+    "or",
+    "in"
+   ],
+   "template": "ten = \"Na\"\ntuoi = 8\nprint(\"Bạn\", ten, \"năm nay\", tuoi, \"tuổi.\")\nif \"a\" {{1}} ten {{2}} tuoi >= 10:\n    print(\"Câu này đúng.\")",
+   "blanks": [
+    {
+     "accept": [
+      "in"
+     ]
+    },
+    {
+     "accept": [
+      "or"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Na\"",
+    "\"Bạn\"",
+    "\"năm nay\"",
+    "\"tuổi.\"",
+    "\"a\"",
+    "\"Câu này đúng.\""
+   ],
+   "expectOut": "Bạn Na năm nay 8 tuổi.\nCâu này đúng.\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "free_code",
+   "id": "bai14-tuviet-14",
+   "deBai": "",
+   "hoiTruoc": [
+    "Lấy chữ số hàng chục bằng phép gì?",
+    "Lấy chữ số hàng đơn vị bằng phép gì?",
+    "Làm sao biết một số là số chẵn?"
+   ],
+   "checklist": [
+    "Con làm ra giấy trước khi gõ máy.",
+    "Con tự chấm được bài của mình.",
+    "Con làm được ít nhất bốn đề trong sáu đề."
+   ],
+   "hints": [
+    {
+     "hoi": "Che chữ số bên phải đi thì còn đọc ra số mấy?",
+     "dap": "4"
+    },
+    {
+     "hoi": "Phép nào trong Python làm đúng việc che ấy?",
+     "dap": "<code>// 10</code>"
+    },
+    {
+     "hoi": "Còn muốn giữ lại đúng chữ số bên phải thì dùng phép nào?",
+     "dap": "<code>% 10</code>"
+    }
+   ],
+   "loiHayMac": "<p>Cháu hay nhầm <code>//</code> với <code>%</code>. Mẹo nhớ: hai\ngạch là chia cho mỗi bạn, một dấu thăng là phần còn thừa lại. Cho cháu thử\ncả hai trên cùng một số để tự thấy.</p>",
+   "loiGiai": "",
+   "goiY": "<p>Lấy hàng chục bằng <code>so // 10</code>, lấy hàng đơn vị\nbằng <code>so % 10</code>. Cộng hai số ấy lại thành <code>tong</code>. Rồi xét\n<code>if tong % 2 == 0:</code> thì in chẵn, <code>else</code> thì in lẻ. Với\n<code>so = 47</code> thì tổng là 11, là số lẻ.</p>"
+  }
+ ]
+}

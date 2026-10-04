@@ -1,0 +1,295 @@
+{
+ "schemaVersion": "1.0",
+ "so": 3,
+ "ten": "Tính toán và biến",
+ "chang": 2,
+ "khaiNiemMoi": [],
+ "khoi": [
+  {
+   "kind": "muc_tieu",
+   "items": [
+    "Biết biến là cái hộp có dán tên để cất một con số.",
+    "Đặt được tên hộp cho dễ hiểu.",
+    "Cộng, trừ, nhân được các số trong hộp."
+   ]
+  },
+  {
+   "kind": "guess_text",
+   "id": "bai03-guess-01",
+   "html": "<p>Bé Bi viết <code>so_keo = 18</code> rồi viết tiếp <code>so_keo = 24</code>.</p>\n<p>Con đoán xem lúc này trong hộp <code>so_keo</code> còn mấy cái kẹo? Còn số 18 không?</p>",
+   "reveal": "<p>Trong hộp còn 24. Số 18 mất rồi, hộp chỉ chứa được\nmột số.</p>"
+  },
+  {
+   "kind": "van",
+   "heading": "Cùng học",
+   "html": "<p>Biến là một cái hộp có dán tên. Con cất một con số vào hộp rồi gọi tên hộp.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai03-hopbien.svg",
+   "alt": "Hình trong sách. Chữ trong hình: 18; so_keo; bỏ vào; so_keo = 18; 24; so_keo = so_keo + 6; giá trị cũ bị thay."
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p>Dấu <code>=</code> nghĩa là <b>bỏ vào hộp</b>, không phải là bằng nhau trong Toán.\nBỏ số mới vào thì số cũ mất đi. Hộp chỉ chứa được một số.\nTên hộp đặt bằng chữ thường, không dấu, nối nhau bằng gạch dưới.\nBa phép tính con dùng hôm nay là cộng <code>+</code>, trừ <code>-</code>, nhân <code>*</code>.</p>"
+  },
+  {
+   "kind": "vidu",
+   "code": "so_keo = 18\nprint(so_keo)\nso_keo = so_keo + 6\nprint(so_keo)\ntong = 4 * 5\nprint(tong)",
+   "out": "18\n24\n20\n",
+   "stdin": null
+  },
+  {
+   "kind": "nhac",
+   "html": "<p>Tên hộp không được bắt đầu bằng chữ số, không được có dấu cách, và không\nđược có dấu tiếng Việt. Viết <code>so keo</code> hay <code>số_kẹo</code> là máy kêu lỗi.</p>\n<p>Gọi tên một hộp chưa bỏ gì vào thì máy kêu <code>NameError</code>.</p>"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Sau hai dòng <code>a = 5</code> rồi <code>a = 9</code>, hộp <code>a</code> chứa số mấy?",
+   "options": [
+    "5",
+    "9",
+    "14",
+    "Cả 5 và 9"
+   ],
+   "answerIndex": 1,
+   "explanation": "Hộp chỉ chứa được một số. Bỏ 9 vào thì 5 bị đẩy ra ngoài.",
+   "id": "bai03-tn-02"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Tên hộp nào dưới đây máy chấp nhận?",
+   "options": [
+    "<code>2bạn</code>",
+    "<code>so keo</code>",
+    "<code>so_keo</code>",
+    "<code>số_kẹo</code>"
+   ],
+   "answerIndex": 2,
+   "explanation": "Không được bắt đầu bằng chữ số, không được có dấu cách, không được\ncó dấu tiếng Việt. Chỉ <code>so_keo</code> thoả cả ba.",
+   "id": "bai03-tn-03"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Dấu <code>=</code> trong <code>a = 5</code> nghĩa là gì?",
+   "options": [
+    "<code>a</code> bằng 5 như trong Toán",
+    "Bỏ số 5 vào hộp tên <code>a</code>",
+    "Hỏi xem <code>a</code> có bằng 5 không",
+    "In số 5 ra màn hình"
+   ],
+   "answerIndex": 1,
+   "explanation": "Trong Python dấu <code>=</code> là lệnh bỏ vào hộp. Muốn hỏi bằng nhau\nkhông thì dùng hai dấu, con sẽ học ở Bài 9.",
+   "id": "bai03-tn-04"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Sau <code>a = 4</code> rồi <code>a = a + 3</code>, hộp <code>a</code> chứa số mấy?",
+   "options": [
+    "4",
+    "3",
+    "7",
+    "43"
+   ],
+   "answerIndex": 2,
+   "explanation": "Máy tính vế phải trước: <code>4 + 3</code> bằng 7. Rồi mới bỏ 7 vào hộp.",
+   "id": "bai03-tn-05"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Dòng <code>print(so_bi)</code> in ra cái gì?",
+   "options": [
+    "Chữ <code>so_bi</code>",
+    "Con số đang nằm trong hộp <code>so_bi</code>",
+    "Máy báo lỗi",
+    "Một dòng trống"
+   ],
+   "answerIndex": 1,
+   "explanation": "Không có dấu nháy nên máy hiểu đó là tên hộp, và nó in ra thứ\ntrong hộp. Có dấu nháy thì máy mới in ra chữ.",
+   "id": "bai03-tn-06"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Hộp <code>tong</code> chứa <code>3 * 7</code>. Máy cất số mấy vào hộp?",
+   "options": [
+    "Phép tính <code>3 * 7</code>",
+    "21",
+    "37",
+    "10"
+   ],
+   "answerIndex": 1,
+   "explanation": "Máy tính xong rồi mới cất. Trong hộp luôn là một con số, không bao\ngiờ là một phép tính còn dở.",
+   "id": "bai03-tn-07"
+  },
+  {
+   "kind": "van",
+   "heading": "Máy in ra gì",
+   "html": "<p>Đọc chương trình rồi đoán xem máy in ra gì. Đoán xong hãy bấm Chạy để so.</p>"
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai03-doan-08",
+   "code": "a = 7\nb = 3\nprint(a + b)\nprint(a - b)\nprint(a * b)",
+   "expectOut": "10\n4\n21\n",
+   "soDong": 3,
+   "stdin": null
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai03-doan-09",
+   "code": "x = 5\nx = x + x\nprint(x)\ny = x * 2\nprint(y)",
+   "expectOut": "10\n20\n",
+   "soDong": 2,
+   "stdin": null
+  },
+  {
+   "kind": "van",
+   "heading": "Điền vào chỗ trống",
+   "html": ""
+  },
+  {
+   "kind": "fill_blank",
+   "id": "bai03-dien-10",
+   "deBai": "Chọn từ trong ngân hàng điền vào ba câu sau.",
+   "bank": [
+    "so_bi",
+    "*",
+    "+",
+    "2",
+    "print"
+   ],
+   "items": [
+    "Dấu để nhân hai số là {{1}}.",
+    "Dấu để cộng hai số là {{2}}.",
+    "Từ để in thứ trong hộp ra màn hình là {{3}}."
+   ],
+   "blanks": [
+    {
+     "accept": [
+      "*"
+     ]
+    },
+    {
+     "accept": [
+      "+"
+     ]
+    },
+    {
+     "accept": [
+      "print"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai03-dien-11",
+   "deBai": "Điền một ô cho máy in ra số bi của Bi.",
+   "bank": [
+    "so_bi",
+    "*",
+    "+",
+    "2",
+    "print"
+   ],
+   "template": "{{1}} = 24\nprint(so_bi)",
+   "blanks": [
+    {
+     "accept": [
+      "so_bi"
+     ]
+    }
+   ],
+   "chuIn": [],
+   "expectOut": "24\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai03-dien-12",
+   "deBai": "Điền một ô. Sáu hàng, mỗi hàng bảy cái bánh.",
+   "bank": [
+    "so_bi",
+    "*",
+    "+",
+    "2",
+    "print"
+   ],
+   "template": "a = 6\nb = 7\nprint(a {{1}} b)",
+   "blanks": [
+    {
+     "accept": [
+      "*"
+     ]
+    }
+   ],
+   "chuIn": [],
+   "expectOut": "42\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai03-dien-13",
+   "deBai": "Điền hai ô. Bi được 8 điểm, cô cho thêm 2 điểm thưởng.",
+   "bank": [
+    "so_bi",
+    "*",
+    "+",
+    "2",
+    "print"
+   ],
+   "template": "diem = 8\ndiem = diem {{1}} {{2}}\nprint(diem)",
+   "blanks": [
+    {
+     "accept": [
+      "+"
+     ]
+    },
+    {
+     "accept": [
+      "2"
+     ]
+    }
+   ],
+   "chuIn": [],
+   "expectOut": "10\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "free_code",
+   "id": "bai03-tuviet-14",
+   "deBai": "Bi có 24 viên bi. Bi cho Na 9 viên. Hãy viết chương\ntrình cất số bi còn lại vào một cái hộp rồi in ra.",
+   "hoiTruoc": [
+    "Con cần mấy cái hộp?",
+    "Con đặt tên hộp là gì cho dễ hiểu?",
+    "Cho đi thì dùng phép cộng hay phép trừ?"
+   ],
+   "checklist": [
+    "Con biết biến là cái hộp có dán tên.",
+    "Con đặt được tên hộp đúng luật.",
+    "Con đoán đúng kết quả trước khi chạy."
+   ],
+   "hints": [
+    {
+     "hoi": "Cho Na 9 viên thì con bớt đi hay thêm vào?",
+     "dap": "bớt đi"
+    },
+    {
+     "hoi": "Bớt đi thì dùng dấu gì?",
+     "dap": "dấu trừ"
+    },
+    {
+     "hoi": "Còn lại bao nhiêu? Cháu đếm thật rồi so với kết quả máy in.",
+     "dap": ""
+    }
+   ],
+   "loiHayMac": "<p>Viết <code>print(\"so_bi\")</code> có dấu nháy, nên máy\nin ra chữ <code>so_bi</code> chứ không in ra số 24. Cho cháu thử cả hai cách rồi\ntự so.</p>",
+   "loiGiai": "",
+   "goiY": "<p>Một hộp là đủ, ví dụ <code>con_lai = 24 - 9</code> rồi\n<code>print(con_lai)</code>. Hai hộp cũng được nếu cháu muốn đặt riêng số ban đầu.</p>"
+  }
+ ]
+}

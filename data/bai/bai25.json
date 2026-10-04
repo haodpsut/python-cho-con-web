@@ -1,0 +1,307 @@
+{
+ "schemaVersion": "1.0",
+ "so": 25,
+ "ten": "Những nút bấm có sẵn",
+ "chang": 6,
+ "khaiNiemMoi": [],
+ "khoi": [
+  {
+   "kind": "muc_tieu",
+   "items": [
+    "Biết Python có sẵn nhiều nút bấm làm hộ con.",
+    "Dùng được các nút đếm số và nút khoảng cách.",
+    "Mượn được hộp đồ nghề tên math để lấy thêm nút."
+   ]
+  },
+  {
+   "kind": "guess_text",
+   "id": "bai25-guess-01",
+   "html": "<p>Bạn Na có bốn quả cam, bé Bi có mười quả. Hai bạn hơn kém nhau mấy quả?</p>\n<p>Con trừ xuôi hay trừ ngược thì đáp số có khác nhau không?</p>",
+   "reveal": "<p>Hai bạn hơn kém nhau 6 quả. Trừ xuôi hay trừ ngược\nđều ra 6, vì khoảng cách không có chiều.</p>"
+  },
+  {
+   "kind": "van",
+   "heading": "Cùng học",
+   "html": "<p>Python có sẵn nhiều nút bấm. Con bấm là nó làm, khỏi phải tự viết.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai25-bangnut.svg",
+   "alt": "Hình trong sách. Chữ trong hình: Bảng nút bấm có sẵn của Python; Ba nút trong khung đỏ nằm trong hộp math.; Muốn bấm thì viết import math ở dòng đầu.."
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p><code>min</code> lấy số nhỏ nhất, <code>max</code> lấy số lớn nhất, <code>sum</code> cộng hết lại.\n<code>abs</code> cho khoảng cách hai số. Trừ xuôi hay trừ ngược đều ra như nhau.\nVài nút nữa cất trong hộp đồ nghề tên <code>math</code>.\nMuốn mở hộp thì viết <code>import math</code> ở dòng đầu chương trình.\n<code>math.sqrt(36)</code> cho cạnh của hình vuông 36 ô, là 6.\n<code>math.gcd(12, 18)</code> cho số lớn nhất chia hết cả 12 và 18.\n<code>math.lcm(4, 6)</code> cho số nhỏ nhất mà cả 4 và 6 đều chia hết nó.\n<code>round</code> làm tròn, bỏ cái đuôi lẻ đi cho gọn.</p>"
+  },
+  {
+   "kind": "vidu",
+   "code": "# Những nút bấm có sẵn của Python\ndiem = [7, 9, 8, 10]\nprint(min(diem), max(diem), sum(diem))\nprint(abs(5 - 8))\n\n# Mượn thêm hộp đồ nghề tên là math\nimport math\n\nprint(math.gcd(12, 18))\nprint(math.lcm(4, 6))\nprint(round(math.sqrt(36)))",
+   "out": "7 10 34\n3\n6\n12\n6\n",
+   "stdin": null
+  },
+  {
+   "kind": "nhac",
+   "html": "<p>Nút trong hộp <code>math</code> phải gọi kèm tên hộp. Viết <code>sqrt(36)</code> trơ trọi\nthì máy kêu <code>NameError</code>.</p>\n<p>Phải viết đủ <code>math.sqrt(36)</code>, và nhớ dòng <code>import math</code> ở đầu.</p>"
+  },
+  {
+   "kind": "la",
+   "html": "<p>Nút <code>math.sqrt</code> hay trả về số có đuôi lẻ. Có lúc máy còn viết\n<code>0.30000000000000004</code> thay cho <code>0.3</code>.</p>\n<p>Con đừng lo, cũng đừng hỏi vì sao, chuyện ấy để dành lớp lớn. Chỉ cần nhớ\nmột điều: số có đuôi sau dấu chấm thì đừng so sánh bằng dấu bằng.</p>"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>abs(5 - 8)</code> cho ra gì?",
+   "options": [
+    "<code>13</code>",
+    "<code>3</code>",
+    "<code>5</code>",
+    "Máy báo lỗi"
+   ],
+   "answerIndex": 1,
+   "explanation": "<code>abs</code> cho khoảng cách giữa hai số. Khoảng cách từ 5 tới 8 là 3,\ndù con trừ theo chiều nào.",
+   "id": "bai25-tn-02"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Với <code>diem = [7, 9, 8, 10]</code> thì <code>sum(diem)</code> cho ra gì?",
+   "options": [
+    "<code>4</code>",
+    "<code>10</code>",
+    "<code>34</code>",
+    "<code>7</code>"
+   ],
+   "answerIndex": 2,
+   "explanation": "<code>sum</code> cộng hết các số trong danh sách. 7 cộng 9 cộng 8 cộng 10\nbằng 34.",
+   "id": "bai25-tn-03"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Muốn dùng <code>math.sqrt</code> thì phải viết thêm dòng nào?",
+   "options": [
+    "<code>print math</code>",
+    "<code>import math</code>",
+    "<code>math</code>",
+    "Không cần viết gì"
+   ],
+   "answerIndex": 1,
+   "explanation": "<code>sqrt</code> nằm trong hộp đồ nghề <code>math</code>. Chưa mở hộp thì chưa bấm\nđược nút trong hộp.",
+   "id": "bai25-tn-04"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>round(math.sqrt(49))</code> cho ra gì?",
+   "options": [
+    "<code>49</code>",
+    "<code>7</code>",
+    "<code>14</code>",
+    "<code>24</code>"
+   ],
+   "answerIndex": 1,
+   "explanation": "Hình vuông 49 ô có cạnh dài 7 ô. Nút làm tròn bỏ nốt cái đuôi lẻ\ncho gọn mắt.",
+   "id": "bai25-tn-05"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>math.gcd(12, 18)</code> cho ra gì?",
+   "options": [
+    "<code>36</code>",
+    "<code>3</code>",
+    "<code>6</code>",
+    "<code>2</code>"
+   ],
+   "answerIndex": 2,
+   "explanation": "Đây là số lớn nhất chia hết cả 12 và 18. Số 6 chia hết cả hai, còn\nsố lớn hơn thì không.",
+   "id": "bai25-tn-06"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>math.lcm(4, 6)</code> cho ra gì?",
+   "options": [
+    "<code>2</code>",
+    "<code>10</code>",
+    "<code>12</code>",
+    "<code>24</code>"
+   ],
+   "answerIndex": 2,
+   "explanation": "Đây là số nhỏ nhất mà cả 4 và 6 đều chia hết nó. Số 12 đạt, còn 24\ntuy cũng được nhưng lớn hơn.",
+   "id": "bai25-tn-07"
+  },
+  {
+   "kind": "van",
+   "heading": "Máy in ra gì",
+   "html": "<p>Đọc chương trình rồi đoán xem máy in ra gì. Đoán xong hãy bấm Chạy để so.</p>"
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai25-doan-08",
+   "code": "so = [12, 5, 30, 7]\nprint(sum(so))\nprint(max(so) - min(so))\nprint(abs(min(so) - max(so)))",
+   "expectOut": "54\n25\n25\n",
+   "soDong": 3,
+   "stdin": null
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai25-doan-09",
+   "code": "import math\n\nprint(math.gcd(24, 36))\nprint(math.lcm(3, 5))\nprint(round(math.sqrt(81)))\nprint(abs(10 - 4), abs(4 - 10))",
+   "expectOut": "12\n15\n9\n6 6\n",
+   "soDong": 4,
+   "stdin": null
+  },
+  {
+   "kind": "van",
+   "heading": "Điền vào chỗ trống",
+   "html": ""
+  },
+  {
+   "kind": "fill_blank",
+   "id": "bai25-dien-10",
+   "deBai": "Chọn từ trong ngân hàng điền vào ba câu sau.",
+   "bank": [
+    "sum",
+    "abs",
+    "import",
+    "round"
+   ],
+   "items": [
+    "Nút cộng hết các số trong danh sách là {{1}}.",
+    "Nút cho khoảng cách giữa hai số là {{2}}.",
+    "Muốn mượn hộp đồ nghề <code>math</code> thì viết {{3}}."
+   ],
+   "blanks": [
+    {
+     "accept": [
+      "sum"
+     ]
+    },
+    {
+     "accept": [
+      "abs"
+     ]
+    },
+    {
+     "accept": [
+      "import"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai25-dien-11",
+   "deBai": "Điền hai ô để máy in điểm thấp nhất rồi điểm cao nhất.",
+   "bank": [
+    "sum",
+    "abs",
+    "import",
+    "round"
+   ],
+   "template": "diem = [8, 6, 10, 7]\nprint({{1}}(diem))\nprint({{2}}(diem))",
+   "blanks": [
+    {
+     "accept": [
+      "min"
+     ]
+    },
+    {
+     "accept": [
+      "max"
+     ]
+    }
+   ],
+   "chuIn": [],
+   "expectOut": "6\n10\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai25-dien-12",
+   "deBai": "Điền hai ô để mở hộp đồ nghề và bấm đúng nút.",
+   "bank": [
+    "sum",
+    "abs",
+    "import",
+    "round"
+   ],
+   "template": "{{1}} math\n\nprint(math.{{2}}(18, 24))\nprint(math.lcm(6, 8))",
+   "blanks": [
+    {
+     "accept": [
+      "import"
+     ]
+    },
+    {
+     "accept": [
+      "gcd"
+     ]
+    }
+   ],
+   "chuIn": [],
+   "expectOut": "6\n24\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai25-dien-13",
+   "deBai": "Điền hai ô để tìm cạnh của hình vuông 49 ô.",
+   "bank": [
+    "sum",
+    "abs",
+    "import",
+    "round"
+   ],
+   "template": "import math\n\ncanh = {{1}}(math.{{2}}(49))\nprint(\"hình vuông 49 ô có cạnh\", canh)",
+   "blanks": [
+    {
+     "accept": [
+      "round"
+     ]
+    },
+    {
+     "accept": [
+      "sqrt"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"hình vuông 49 ô có cạnh\""
+   ],
+   "expectOut": "hình vuông 49 ô có cạnh 7\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "free_code",
+   "id": "bai25-tuviet-14",
+   "deBai": "Bốn bạn hái được 12, 7, 20 và 9 quả. In ra số quả nhiều\nnhất, số quả ít nhất, tổng số quả, và khoảng cách giữa người nhiều nhất\nvới người ít nhất.",
+   "hoiTruoc": [
+    "Con cất bốn số ấy vào đâu cho gọn?",
+    "Nút nào cho số lớn nhất, nút nào cho tổng?",
+    "Khoảng cách hai người thì bấm nút nào?"
+   ],
+   "checklist": [
+    "Con bấm được các nút đếm số có sẵn.",
+    "Con mượn được hộp đồ nghề <code>math</code>.",
+    "Con biết khoảng cách hai số không đổi khi trừ ngược lại."
+   ],
+   "hints": [
+    {
+     "hoi": "Muốn tìm tờ to nhất con làm gì?",
+     "dap": "lật hết lên rồi so"
+    },
+    {
+     "hoi": "Máy làm hộ việc ấy bằng nút nào?",
+     "dap": "nút <code>max</code>"
+    },
+    {
+     "hoi": "Muốn cộng cả bốn tờ thì bấm nút nào?",
+     "dap": "nút <code>sum</code>"
+    }
+   ],
+   "loiHayMac": "",
+   "loiGiai": "",
+   "goiY": "<p>Cất bốn số vào một danh sách <code>qua</code>, rồi in\n<code>max(qua)</code>, <code>min(qua)</code>, <code>sum(qua)</code> và <code>abs(max(qua) - min(qua))</code>.\nKết quả là 20, 7, 48 và 13.</p>"
+  }
+ ]
+}

@@ -1,0 +1,291 @@
+{
+ "schemaVersion": "1.0",
+ "so": 4,
+ "ten": "Chia kẹo: lấy phần và lấy dư",
+ "chang": 2,
+ "khaiNiemMoi": [],
+ "khoi": [
+  {
+   "kind": "muc_tieu",
+   "items": [
+    "Chia được một đống kẹo cho các bạn, mỗi bạn bằng nhau.",
+    "Biết đếm số kẹo còn thừa sau khi chia.",
+    "In được nhiều thứ trên cùng một dòng."
+   ]
+  },
+  {
+   "kind": "guess_text",
+   "id": "bai04-guess-01",
+   "html": "<p>Bé Bi có 18 cái kẹo, chia đều cho 5 bạn.</p>\n<p>Con đoán xem mỗi bạn được mấy cái? Có còn thừa cái nào không?</p>",
+   "reveal": "<p>Mỗi bạn được 3 cái, còn thừa 3 cái.</p>"
+  },
+  {
+   "kind": "van",
+   "heading": "Cùng học",
+   "html": "<p>Chia kẹo cho các bạn thì có hai con số: mỗi bạn được mấy, và còn thừa mấy.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai04-chiakeo.svg",
+   "alt": "Hình trong sách. Chữ trong hình: bạn +1; 18; cái kẹo; còn thừa 3 cái, không chia đều thêm được nữa."
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p>Hai gạch chéo <code>//</code> cho biết <b>mỗi bạn được mấy cái</b>.\nDấu phần trăm <code>%</code> cho biết <b>còn thừa mấy cái</b>.\nMuốn in nhiều thứ trên một dòng thì ngăn chúng bằng dấu phẩy.\nMáy tự đặt một dấu cách giữa hai thứ.</p>"
+  },
+  {
+   "kind": "vidu",
+   "code": "so_keo = 18\nso_ban = 5\nmoi_ban = so_keo // so_ban\ncon_thua = so_keo % so_ban\nprint(\"Mỗi bạn được\", moi_ban, \"cái\")\nprint(\"Còn thừa\", con_thua, \"cái\")",
+   "out": "Mỗi bạn được 3 cái\nCòn thừa 3 cái\n",
+   "stdin": null
+  },
+  {
+   "kind": "nhac",
+   "html": "<p>Đừng nhầm <code>%</code> với phần trăm trong Toán. Trong Python nó là\n<b>số còn thừa</b>, không liên quan gì tới phần trăm.</p>\n<p>Chia cho 0 thì máy kêu <code>ZeroDivisionError</code>. Không chia cho 0 được, vì\nkhông chia kẹo cho 0 bạn được.</p>"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>17 // 5</code> cho kết quả bao nhiêu?",
+   "options": [
+    "2",
+    "3",
+    "4",
+    "85"
+   ],
+   "answerIndex": 1,
+   "explanation": "Chia 17 cái kẹo cho 5 bạn thì mỗi bạn được 3 cái, vì 5 nhân 3 là 15,\ncòn 2 cái nữa thì không đủ chia thêm một vòng.",
+   "id": "bai04-tn-02"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>17 % 5</code> cho kết quả bao nhiêu?",
+   "options": [
+    "3",
+    "2",
+    "5",
+    "12"
+   ],
+   "answerIndex": 1,
+   "explanation": "Chia xong mỗi bạn 3 cái thì hết 15 cái, còn thừa 2 cái.",
+   "id": "bai04-tn-03"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>20 % 4</code> cho kết quả bao nhiêu?",
+   "options": [
+    "0",
+    "5",
+    "4",
+    "1"
+   ],
+   "answerIndex": 0,
+   "explanation": "20 chia hết cho 4 nên không thừa cái nào. Số thừa bằng 0 chính là\ndấu hiệu <b>chia hết</b>, con sẽ dùng nhiều ở Bài 9.",
+   "id": "bai04-tn-04"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Dòng <code>print(\"Bi có\", 18, \"cái\")</code> in ra gì?",
+   "options": [
+    "<code>Bi có18cái</code>",
+    "<code>Bi có 18 cái</code>",
+    "<code>Bi có, 18, cái</code>",
+    "<code>\"Bi có\" 18 \"cái\"</code>"
+   ],
+   "answerIndex": 1,
+   "explanation": "Dấu phẩy ngăn các thứ cần in, và máy tự thêm một dấu cách giữa\nchúng. Dấu phẩy không được in ra.",
+   "id": "bai04-tn-05"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Một tuần có 7 ngày. 20 ngày là mấy tuần và thừa mấy ngày?",
+   "options": [
+    "3 tuần thừa 1 ngày",
+    "2 tuần thừa 6 ngày",
+    "2 tuần thừa 4 ngày",
+    "7 tuần thừa 2 ngày"
+   ],
+   "answerIndex": 1,
+   "explanation": "<code>20 // 7</code> cho 2, <code>20 % 7</code> cho 6. Hai tuần là 14 ngày, còn\nlại 6 ngày.",
+   "id": "bai04-tn-06"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Muốn biết số <code>n</code> có chia hết cho 3 không, con nhìn vào đâu?",
+   "options": [
+    "<code>n // 3</code>",
+    "<code>n % 3</code>, nếu bằng 0 thì chia hết",
+    "<code>n * 3</code>",
+    "<code>n + 3</code>"
+   ],
+   "answerIndex": 1,
+   "explanation": "Chia hết nghĩa là không thừa gì cả. Số thừa là <code>%</code>, nên nhìn\n<code>n % 3</code> có bằng 0 không.",
+   "id": "bai04-tn-07"
+  },
+  {
+   "kind": "van",
+   "heading": "Máy in ra gì",
+   "html": "<p>Đọc chương trình rồi đoán xem máy in ra gì. Đoán xong hãy bấm Chạy để so.</p>"
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai04-doan-08",
+   "code": "print(17 // 5)\nprint(17 % 5)\nprint(20 // 4)\nprint(20 % 4)",
+   "expectOut": "3\n2\n5\n0\n",
+   "soDong": 4,
+   "stdin": null
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai04-doan-09",
+   "code": "n = 357\ntram = n // 100\nchuc = n // 10 % 10\ndon_vi = n % 10\nprint(tram, chuc, don_vi)",
+   "expectOut": "3 5 7\n",
+   "soDong": 1,
+   "stdin": null
+  },
+  {
+   "kind": "van",
+   "heading": "Điền vào chỗ trống",
+   "html": ""
+  },
+  {
+   "kind": "fill_blank",
+   "id": "bai04-dien-10",
+   "deBai": "Chọn từ trong ngân hàng điền vào ba câu sau.",
+   "bank": [
+    "//",
+    "%",
+    "0",
+    "phẩy"
+   ],
+   "items": [
+    "Dấu cho biết mỗi bạn được mấy cái là {{1}}.",
+    "Dấu cho biết còn thừa mấy cái là {{2}}.",
+    "Chia hết thì số thừa bằng {{3}}."
+   ],
+   "blanks": [
+    {
+     "accept": [
+      "//"
+     ]
+    },
+    {
+     "accept": [
+      "%"
+     ]
+    },
+    {
+     "accept": [
+      "0"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai04-dien-11",
+   "deBai": "Điền một ô. 18 cái kẹo chia cho 5 bạn, mỗi bạn được mấy?",
+   "bank": [
+    "//",
+    "%",
+    "0",
+    "phẩy"
+   ],
+   "template": "so_keo = 18\nprint(so_keo {{1}} 5)",
+   "blanks": [
+    {
+     "accept": [
+      "//"
+     ]
+    }
+   ],
+   "chuIn": [],
+   "expectOut": "3\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai04-dien-12",
+   "deBai": "Điền một ô. Chia xong thì còn thừa mấy cái?",
+   "bank": [
+    "//",
+    "%",
+    "0",
+    "phẩy"
+   ],
+   "template": "so_keo = 18\nprint(so_keo {{1}} 5)",
+   "blanks": [
+    {
+     "accept": [
+      "%"
+     ]
+    }
+   ],
+   "chuIn": [],
+   "expectOut": "3\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai04-dien-13",
+   "deBai": "Điền hai ô. Đổi 200 giây ra phút và giây còn lại.",
+   "bank": [
+    "//",
+    "%",
+    "0",
+    "phẩy"
+   ],
+   "template": "giay = 200\nphut = giay {{1}} 60\ncon_lai = giay {{2}} 60\nprint(phut, con_lai)",
+   "blanks": [
+    {
+     "accept": [
+      "//"
+     ]
+    },
+    {
+     "accept": [
+      "%"
+     ]
+    }
+   ],
+   "chuIn": [],
+   "expectOut": "3 20\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "free_code",
+   "id": "bai04-tuviet-14",
+   "deBai": "Lớp có 32 bạn, xếp hàng mỗi hàng 6 bạn. Viết chương\ntrình in ra xếp được mấy hàng đầy và còn thừa mấy bạn.",
+   "hoiTruoc": [
+    "Số hàng đầy dùng dấu gì?",
+    "Số bạn thừa dùng dấu gì?",
+    "Con in hai số đó trên một dòng hay hai dòng?"
+   ],
+   "checklist": [
+    "Con chia được kẹo và biết còn thừa mấy cái.",
+    "Con in được nhiều thứ trên một dòng.",
+    "Con đoán đúng kết quả trước khi chạy."
+   ],
+   "hints": [
+    {
+     "hoi": "Chia cho 5 bạn, mỗi bạn một hạt một lượt, chia được mấy lượt?",
+     "dap": "3"
+    },
+    {
+     "hoi": "Chia xong còn lại mấy hạt?",
+     "dap": "3"
+    },
+    {
+     "hoi": "Hai con số ấy chính là <code>//</code> và <code>%</code>.",
+     "dap": ""
+    }
+   ],
+   "loiHayMac": "",
+   "loiGiai": "",
+   "goiY": "<p><code>32 // 6</code> cho 5 hàng đầy, <code>32 % 6</code> cho 2 bạn\nthừa. In một dòng hay hai dòng đều đúng.</p>"
+  }
+ ]
+}

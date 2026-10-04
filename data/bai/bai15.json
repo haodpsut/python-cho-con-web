@@ -1,0 +1,301 @@
+{
+ "schemaVersion": "1.0",
+ "so": 15,
+ "ten": "Vòng lặp for và range",
+ "chang": 4,
+ "khaiNiemMoi": [],
+ "khoi": [
+  {
+   "kind": "muc_tieu",
+   "items": [
+    "Bảo máy làm đi làm lại một việc bằng <code>for</code>.",
+    "Biết <code>range(1, 5)</code> không lấy số cuối.",
+    "Vẽ được một hàng dấu sao nằm ngang."
+   ]
+  },
+  {
+   "kind": "guess_text",
+   "id": "bai15-guess-01",
+   "html": "<p>Bé Bi muốn in chữ <code>xin chào</code> ba lần.</p>\n<p>Bạn ấy gõ ba lệnh <code>print</code> giống hệt nhau. Con thấy có mỏi tay không?</p>",
+   "reveal": "<p>Ba lệnh giống hệt nhau thì mỏi tay. Mười lần thì mỏi\nhơn nữa. Vòng lặp sinh ra để con khỏi chép tay.</p>"
+  },
+  {
+   "kind": "van",
+   "heading": "Cùng học",
+   "html": "<p>Bảo máy làm lại nhiều lần thì dùng <code>for</code>.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai15-range.svg",
+   "alt": "Hình trong sách. Chữ trong hình: range(1, 5); 5; không lấy; máy chỉ lấy bốn số này."
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p><code>range(5)</code> cho năm số <code>0 1 2 3 4</code>. Nó bắt đầu từ <code>0</code>.\n<code>range(1, 5)</code> cho <code>1 2 3 4</code>. Số cuối <code>5</code> không được lấy.\nDòng bên trong vòng lặp phải thụt vào bốn dấu cách.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai15-vongtron.svg",
+   "alt": "Hình trong sách. Chữ trong hình: làm việcbên trong; i = 0; i = 1; i = 2; lượt đầu; lượt hai; lượt ba, rồi dừng; range(3)."
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p>In xong một lệnh là máy xuống dòng. Thêm <code>end=\"\"</code> thì nó đứng yên.\nNhờ vậy con vẽ được một hàng sao nằm ngang.</p>"
+  },
+  {
+   "kind": "vidu",
+   "code": "# Bảo máy làm đi làm lại một việc\nfor i in range(3):\n    print(\"Bi vỗ tay\")\n\n# range(1, 5) cho 1, 2, 3, 4. Không lấy số 5.\nfor i in range(1, 5):\n    print(i)\n\n# end=\"\" là in xong đứng yên, không xuống dòng\nfor i in range(5):\n    print(\"*\", end=\"\")\nprint()",
+   "out": "Bi vỗ tay\nBi vỗ tay\nBi vỗ tay\n1\n2\n3\n4\n*****\n",
+   "stdin": null
+  },
+  {
+   "kind": "nhac",
+   "html": "<p>Quên dấu hai chấm cuối dòng <code>for</code> thì máy kêu <code>SyntaxError</code>.</p>\n<p>Quên thụt vào thì máy kêu <code>IndentationError</code>. Nó mách con ngay dòng sau.</p>"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>range(4)</code> cho ra những số nào?",
+   "options": [
+    "<code>1 2 3 4</code>",
+    "<code>0 1 2 3</code>",
+    "<code>0 1 2 3 4</code>",
+    "<code>4</code>"
+   ],
+   "answerIndex": 1,
+   "explanation": "Chỉ có một số trong ngoặc thì máy đếm từ <code>0</code>. Nó đếm đủ bốn số\nrồi dừng, nên số cuối là <code>3</code>.",
+   "id": "bai15-tn-02"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>range(1, 5)</code> cho ra những số nào?",
+   "options": [
+    "<code>1 2 3 4 5</code>",
+    "<code>1 2 3 4</code>",
+    "<code>0 1 2 3 4</code>",
+    "<code>1 5</code>"
+   ],
+   "answerIndex": 1,
+   "explanation": "Số đầu được lấy, số cuối thì không. Máy dừng ngay trước <code>5</code>.",
+   "id": "bai15-tn-03"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Vòng <code>for i in range(3):</code> chạy mấy lượt?",
+   "options": [
+    "Một lượt",
+    "Hai lượt",
+    "Ba lượt",
+    "Bốn lượt"
+   ],
+   "answerIndex": 2,
+   "explanation": "<code>range(3)</code> cho ba số, nên thân vòng lặp chạy đúng ba lượt.",
+   "id": "bai15-tn-04"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>print(\"*\", end=\"\")</code> khác <code>print(\"*\")</code> ở chỗ nào?",
+   "options": [
+    "In ra hai dấu sao",
+    "In xong không xuống dòng",
+    "In ra chữ <code>end</code>",
+    "Báo lỗi"
+   ],
+   "answerIndex": 1,
+   "explanation": "<code>end=\"\"</code> bảo máy đừng xuống dòng. Dấu sao sau sẽ nằm sát ngay bên\ncạnh dấu sao trước.",
+   "id": "bai15-tn-05"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Dòng nào bên trong vòng lặp cũng phải làm gì?",
+   "options": [
+    "Có dấu chấm cuối dòng",
+    "Viết hoa chữ đầu",
+    "Thụt vào bốn dấu cách",
+    "Nằm trong dấu nháy"
+   ],
+   "answerIndex": 2,
+   "explanation": "Thụt vào là cách con nói cho máy biết dòng ấy thuộc về vòng lặp.",
+   "id": "bai15-tn-06"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>range(2, 6)</code> cho mấy số?",
+   "options": [
+    "Ba số",
+    "Bốn số",
+    "Năm số",
+    "Sáu số"
+   ],
+   "answerIndex": 1,
+   "explanation": "Đó là <code>2 3 4 5</code>. Lấy từ <code>2</code> tới ngay trước <code>6</code>, vị chi bốn\nsố.",
+   "id": "bai15-tn-07"
+  },
+  {
+   "kind": "van",
+   "heading": "Máy in ra gì",
+   "html": "<p>Đọc chương trình rồi đoán xem máy in ra gì. Đoán xong hãy bấm Chạy để so.</p>"
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai15-doan-08",
+   "code": "for i in range(2):\n    print(\"Na nhảy dây\")\n\nfor i in range(3, 6):\n    print(i)",
+   "expectOut": "Na nhảy dây\nNa nhảy dây\n3\n4\n5\n",
+   "soDong": 5,
+   "stdin": null
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai15-doan-09",
+   "code": "for i in range(1, 4):\n    print(i, \"ngôi sao\")\n\nfor i in range(6):\n    print(\"*\", end=\"\")\nprint()",
+   "expectOut": "1 ngôi sao\n2 ngôi sao\n3 ngôi sao\n******\n",
+   "soDong": 4,
+   "stdin": null
+  },
+  {
+   "kind": "van",
+   "heading": "Điền vào chỗ trống",
+   "html": ""
+  },
+  {
+   "kind": "fill_blank",
+   "id": "bai15-dien-10",
+   "deBai": "Chọn từ trong ngân hàng điền vào ba câu sau.",
+   "bank": [
+    "for",
+    "range",
+    "end",
+    "thụt vào"
+   ],
+   "items": [
+    "Lệnh bảo máy làm lại nhiều lần là {{1}}.",
+    "Dãy số cho vòng lặp do {{2}} làm ra.",
+    "Dòng bên trong vòng lặp phải {{3}}."
+   ],
+   "blanks": [
+    {
+     "accept": [
+      "for"
+     ]
+    },
+    {
+     "accept": [
+      "range"
+     ]
+    },
+    {
+     "accept": [
+      "thụt vào"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai15-dien-11",
+   "deBai": "Điền một ô để mèo Mun kêu đúng ba lần.",
+   "bank": [
+    "for",
+    "range",
+    "end",
+    "thụt vào"
+   ],
+   "template": "for i in range({{1}}):\n    print(\"Mun kêu meo\")",
+   "blanks": [
+    {
+     "accept": [
+      "3"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Mun kêu meo\""
+   ],
+   "expectOut": "Mun kêu meo\nMun kêu meo\nMun kêu meo\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai15-dien-12",
+   "deBai": "Điền một ô để máy in bốn số, từ một tới bốn.",
+   "bank": [
+    "for",
+    "range",
+    "end",
+    "thụt vào"
+   ],
+   "template": "for i in range(1, {{1}}):\n    print(i)",
+   "blanks": [
+    {
+     "accept": [
+      "5"
+     ]
+    }
+   ],
+   "chuIn": [],
+   "expectOut": "1\n2\n3\n4\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai15-dien-13",
+   "deBai": "Điền một ô để bảy dấu sao nằm chung một hàng.",
+   "bank": [
+    "for",
+    "range",
+    "end",
+    "thụt vào"
+   ],
+   "template": "for i in range(7):\n    print(\"*\", {{1}}=\"\")\nprint()",
+   "blanks": [
+    {
+     "accept": [
+      "end"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"*\"",
+    "\"\""
+   ],
+   "expectOut": "*******\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "free_code",
+   "id": "bai15-tuviet-14",
+   "deBai": "Viết chương trình in mười số, từ một tới mười, mỗi số một\ndòng. Rồi vẽ thêm một hàng mười dấu sao nằm ngang.",
+   "hoiTruoc": [
+    "Con viết <code>range</code> với hai số nào?",
+    "Dòng in số phải thụt vào mấy dấu cách?",
+    "Hàng sao cần thêm cái gì để khỏi xuống dòng?"
+   ],
+   "checklist": [
+    "Con bảo được máy làm lại một việc nhiều lần.",
+    "Con biết <code>range</code> không lấy số cuối.",
+    "Con vẽ được một hàng sao nằm ngang."
+   ],
+   "hints": [
+    {
+     "hoi": "Con muốn in số lớn nhất là mấy?",
+     "dap": "mười"
+    },
+    {
+     "hoi": "Máy dừng trước số cuối, vậy số cuối con viết là mấy?",
+     "dap": "mười một"
+    },
+    {
+     "hoi": "Thử gõ <code>range(1, 10)</code> xem thiếu số nào?",
+     "dap": "thiếu số mười"
+    }
+   ],
+   "loiHayMac": "<p>Cháu viết <code>range(1, 10)</code> rồi tưởng có số mười.\nCho cháu đếm bằng ngón tay trên màn hình. Thiếu đúng một số, nhớ rất lâu.</p>",
+   "loiGiai": "",
+   "goiY": "<p>Dùng <code>for i in range(1, 11):</code> rồi <code>print(i)</code>\nthụt vào. Sau đó <code>for i in range(10):</code> rồi <code>print(\"*\", end=\"\")</code> thụt\nvào, cuối cùng một lệnh <code>print()</code> trống.</p>"
+  }
+ ]
+}

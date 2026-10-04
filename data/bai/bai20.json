@@ -1,0 +1,316 @@
+{
+ "schemaVersion": "1.0",
+ "so": 20,
+ "ten": "Vòng lặp lồng nhau, break và continue",
+ "chang": 4,
+ "khaiNiemMoi": [],
+ "khoi": [
+  {
+   "kind": "muc_tieu",
+   "items": [
+    "Đặt được một vòng lặp vào trong một vòng lặp khác.",
+    "Bỏ chạy khỏi vòng bằng <code>break</code>, bỏ qua một lượt bằng <code>continue</code>.",
+    "Vẽ được tam giác sao và in được bảng cửu chương."
+   ]
+  },
+  {
+   "kind": "guess_text",
+   "id": "bai20-guess-01",
+   "html": "<p>Bé Bi muốn vẽ 5 dòng sao. Dòng thứ nhất 1 sao, dòng thứ năm 5 sao.</p>\n<p>Con đoán xem bé cần mấy vòng lặp mới vẽ nổi?</p>",
+   "reveal": "<p>Bé cần hai vòng lặp. Vòng ngoài chạy 5 lượt cho 5\ndòng, vòng trong in số sao của dòng ấy.</p>"
+  },
+  {
+   "kind": "van",
+   "heading": "Cùng học",
+   "html": "<p>Một vòng lặp nằm trong một vòng lặp khác gọi là vòng lồng. Vòng ngoài lo số\ndòng. Vòng trong lo số ký tự trên một dòng.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai20-luoi.svg",
+   "alt": "Hình trong sách. Chữ trong hình: vòng trong; vòng ngoài; bắt đầu; hết một hàng."
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p><code>break</code> là bỏ chạy hẳn khỏi vòng, không làm nốt các lượt sau.\n<code>continue</code> là bỏ qua đúng lượt này, rồi vòng vẫn chạy tiếp lượt sau.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai20-tamgiac.svg",
+   "alt": "Hình trong sách. Chữ trong hình: dòng thứ; máy in ra; số sao; 1; *; 2; **; 3; ***; 4; ****; 5; *****; vòng ngoài."
+  },
+  {
+   "kind": "vidu",
+   "code": "# Vòng ngoài đếm dòng, vòng trong đếm sao trên một dòng\nfor dong in range(1, 6):\n    for sao in range(dong):\n        print(\"*\", end=\"\")\n    print()",
+   "out": "*\n**\n***\n****\n*****\n",
+   "stdin": null
+  },
+  {
+   "kind": "nhac",
+   "html": "<p><code>break</code> và <code>continue</code> chỉ ăn thua với vòng gần nó nhất. Trong vòng\nlồng, <code>break</code> ở vòng trong không làm vòng ngoài dừng. Đặt chúng ra ngoài\nmọi vòng lặp thì máy kêu <code>SyntaxError: 'break' outside loop</code>.</p>"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>break</code> làm gì?",
+   "options": [
+    "Bỏ qua một lượt rồi chạy tiếp",
+    "Bỏ chạy hẳn khỏi vòng lặp",
+    "Quay lại từ đầu vòng",
+    "Dừng cả chương trình"
+   ],
+   "answerIndex": 1,
+   "explanation": "Gặp <code>break</code> là máy ra khỏi vòng ngay, các lượt còn lại bỏ hết.",
+   "id": "bai20-tn-02"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>continue</code> làm gì?",
+   "options": [
+    "Bỏ chạy hẳn khỏi vòng",
+    "Bỏ qua lượt này rồi chạy lượt sau",
+    "Chạy vòng thêm một lần nữa",
+    "Không làm gì cả"
+   ],
+   "answerIndex": 1,
+   "explanation": "Máy bỏ nốt phần còn lại của lượt này, rồi nhảy sang lượt kế tiếp.",
+   "id": "bai20-tn-03"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Trong vòng lồng, vòng ngoài lo chuyện gì?",
+   "options": [
+    "Số ký tự trên một dòng",
+    "Số dòng",
+    "Màu của chữ",
+    "Tốc độ của máy"
+   ],
+   "answerIndex": 1,
+   "explanation": "Mỗi lượt của vòng ngoài là một dòng mới, nên nó quyết định số dòng.",
+   "id": "bai20-tn-04"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Tam giác sao 5 dòng thì dòng thứ ba có mấy sao?",
+   "options": [
+    "<code>1</code>",
+    "<code>2</code>",
+    "<code>3</code>",
+    "<code>5</code>"
+   ],
+   "answerIndex": 2,
+   "explanation": "Dòng thứ mấy thì in bấy nhiêu sao, nên dòng thứ ba có 3 sao.",
+   "id": "bai20-tn-05"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>for a in range(2, 6)</code> chạy mấy lượt?",
+   "options": [
+    "<code>3</code>",
+    "<code>4</code>",
+    "<code>5</code>",
+    "<code>6</code>"
+   ],
+   "answerIndex": 1,
+   "explanation": "<code>range</code> lấy <code>2 3 4 5</code> rồi bỏ số cuối, nên được 4 lượt.",
+   "id": "bai20-tn-06"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Lưới 5 hàng, mỗi hàng 5 ô. Máy đi qua tất cả mấy ô?",
+   "options": [
+    "<code>10</code>",
+    "<code>15</code>",
+    "<code>20</code>",
+    "<code>25</code>"
+   ],
+   "answerIndex": 3,
+   "explanation": "Mỗi hàng 5 ô, có 5 hàng, nên tất cả là 5 nhân 5 bằng 25 ô.",
+   "id": "bai20-tn-07"
+  },
+  {
+   "kind": "van",
+   "heading": "Máy in ra gì",
+   "html": "<p>Đọc chương trình rồi đoán xem máy in ra gì. Đoán xong hãy bấm Chạy để so.</p>"
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai20-doan-08",
+   "code": "for i in range(1, 11):\n    if i == 4:\n        print(\"Dừng lại ở\", i)\n        break\n    print(\"Đang đếm\", i)",
+   "expectOut": "Đang đếm 1\nĐang đếm 2\nĐang đếm 3\nDừng lại ở 4\n",
+   "soDong": 4,
+   "stdin": null
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai20-doan-09",
+   "code": "for i in range(1, 8):\n    if i % 2 == 0:\n        continue\n    print(i, \"là số lẻ\")\nprint(\"Xong rồi\")",
+   "expectOut": "1 là số lẻ\n3 là số lẻ\n5 là số lẻ\n7 là số lẻ\nXong rồi\n",
+   "soDong": 5,
+   "stdin": null
+  },
+  {
+   "kind": "van",
+   "heading": "Điền vào chỗ trống",
+   "html": ""
+  },
+  {
+   "kind": "fill_blank",
+   "id": "bai20-dien-10",
+   "deBai": "Chọn từ trong ngân hàng điền vào ba câu sau.",
+   "bank": [
+    "break",
+    "continue",
+    "vòng ngoài",
+    "vòng trong"
+   ],
+   "items": [
+    "Muốn bỏ chạy hẳn khỏi vòng lặp thì dùng {{1}}.",
+    "Muốn bỏ qua đúng một lượt thì dùng {{2}}.",
+    "Vòng lo số dòng là {{3}}."
+   ],
+   "blanks": [
+    {
+     "accept": [
+      "break"
+     ]
+    },
+    {
+     "accept": [
+      "continue"
+     ]
+    },
+    {
+     "accept": [
+      "vòng ngoài"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai20-dien-11",
+   "deBai": "Điền hai ô để máy vẽ lưới 5 hàng, mỗi hàng 5 chữ o.",
+   "bank": [
+    "break",
+    "continue",
+    "vòng ngoài",
+    "vòng trong"
+   ],
+   "template": "for hang in {{1}}:\n    for cot in {{2}}:\n        print(\"o\", {{3}}=\"\")\n    print()",
+   "blanks": [
+    {
+     "accept": [
+      "range(1, 6)"
+     ]
+    },
+    {
+     "accept": [
+      "range(1, 6)"
+     ]
+    },
+    {
+     "accept": [
+      "end"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"o\"",
+    "\"\""
+   ],
+   "expectOut": "ooooo\nooooo\nooooo\nooooo\nooooo\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai20-dien-12",
+   "deBai": "Điền một ô để máy dừng ngay khi gặp số chia hết cho 7.",
+   "bank": [
+    "break",
+    "continue",
+    "vòng ngoài",
+    "vòng trong"
+   ],
+   "template": "so = [4, 9, 14, 20, 21]\nfor s in so:\n    if s % 7 == 0:\n        print(\"Số đầu tiên chia hết cho 7 là\", s)\n        {{1}}",
+   "blanks": [
+    {
+     "accept": [
+      "break"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Số đầu tiên chia hết cho 7 là\""
+   ],
+   "expectOut": "Số đầu tiên chia hết cho 7 là 14\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai20-dien-13",
+   "deBai": "Điền hai ô để máy in bảng nhân 2, 3, 4 và 5.",
+   "bank": [
+    "break",
+    "continue",
+    "vòng ngoài",
+    "vòng trong"
+   ],
+   "template": "for a in {{1}}:\n    print(\"Bảng nhân\", a, end=\":\")\n    for b in range(1, 6):\n        print(\"\", {{2}}, end=\"\")\n    print()",
+   "blanks": [
+    {
+     "accept": [
+      "range(2, 6)"
+     ]
+    },
+    {
+     "accept": [
+      "a * b"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Bảng nhân\"",
+    "\":\"",
+    "\"\"",
+    "\"\""
+   ],
+   "expectOut": "Bảng nhân 2: 2 4 6 8 10\nBảng nhân 3: 3 6 9 12 15\nBảng nhân 4: 4 8 12 16 20\nBảng nhân 5: 5 10 15 20 25\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "free_code",
+   "id": "bai20-tuviet-14",
+   "deBai": "Con vẽ một tam giác sao có 6 dòng. Nhưng dòng thứ ba thì bỏ\nqua, không vẽ gì cả. Con dùng <code>continue</code> để bỏ qua dòng ấy.",
+   "hoiTruoc": [
+    "Vòng nào lo số dòng, vòng nào lo số sao?",
+    "Con đặt <code>continue</code> ở vòng ngoài hay vòng trong?",
+    "Nếu dùng <code>break</code> thay cho <code>continue</code> thì khác gì?"
+   ],
+   "checklist": [
+    "Con đặt được một vòng lặp vào trong vòng lặp khác.",
+    "Con nói được <code>break</code> khác <code>continue</code> chỗ nào.",
+    "Con vẽ được tam giác sao bằng hai vòng lặp."
+   ],
+   "hints": [
+    {
+     "hoi": "Con tô xong một hàng rồi mới làm gì?",
+     "dap": "xuống hàng dưới"
+    },
+    {
+     "hoi": "Việc xuống hàng là của vòng nào?",
+     "dap": "vòng ngoài"
+    },
+    {
+     "hoi": "Muốn bỏ trắng một hàng thì bỏ ở lúc nào?",
+     "dap": "ngay đầu lượt ấy"
+    }
+   ],
+   "loiHayMac": "<p>Quên <code>print()</code> ở cuối vòng ngoài, nên cả tam\ngiác dính thành một hàng dài. Cho cháu bỏ dòng ấy đi rồi chạy thử, cháu sẽ\nnhớ rất lâu.</p>",
+   "loiGiai": "",
+   "goiY": "<p>Năm dòng: <code>for dong in range(1, 7):</code>, rồi\n<code>if dong == 3:</code> và <code>continue</code>, rồi <code>for sao in range(dong):</code> với\nthân là <code>print(\"*\", end=\"\")</code>, cuối cùng <code>print()</code>. Máy in ra 5 dòng\nsao, thiếu đúng dòng thứ ba.</p>"
+  }
+ ]
+}

@@ -1,0 +1,30 @@
+\usepackage{fontspec}
+\setmainfont{Noto Sans}
+\setmonofont{Noto Sans Mono}[Scale=0.92]
+\usepackage{xcolor}
+\definecolor{muc}{HTML}{1B2430}\definecolor{xamnhat}{HTML}{F4F5F7}
+\definecolor{xamvua}{HTML}{C9CED6}\definecolor{xamchu}{HTML}{6B7280}
+\definecolor{mauTuMay}{HTML}{7C3AED}\definecolor{mauChuIn}{HTML}{C62828}
+\definecolor{mauGhiChu}{HTML}{15803D}
+\definecolor{changMot}{HTML}{0E7490}\definecolor{changHai}{HTML}{B45309}
+\definecolor{changBa}{HTML}{7C3AED}\definecolor{changBon}{HTML}{15803D}
+\definecolor{changNam}{HTML}{BE185D}\definecolor{changSau}{HTML}{1D4ED8}
+\definecolor{nenNhac}{HTML}{FEF3C7}\definecolor{vienNhac}{HTML}{D97706}
+\definecolor{nenDo}{HTML}{E0F2FE}\definecolor{vienDo}{HTML}{0284C7}
+\definecolor{nenHoc}{HTML}{ECFDF5}\definecolor{vienHoc}{HTML}{059669}
+\definecolor{nenLa}{HTML}{F5F3FF}\definecolor{vienLa}{HTML}{7C3AED}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc,shapes,shapes.geometric,patterns,decorations.pathreplacing,decorations.markings,fit,backgrounds,matrix,chains,shadows.blur}
+\newcommand{\ma}[1]{{\ttfamily #1}}
+\newcommand{\tenbe}{Bi}
+\newcommand{\tumay}[1]{{\ttfamily\color{mauTuMay}\textbf{#1}}}
+\newcommand{\chuin}[1]{{\ttfamily\color{mauChuIn}#1}}
+\newcommand{\ghichu}[1]{{\ttfamily\color{mauGhiChu}\itshape #1}}
+\def\buocvat{0.55}
+\def\buocovuong{0.42}
+\tikzset{
+  vatdem/.style={circle, draw=#1, line width=0.8pt, fill=#1!22,
+                 minimum size=4.4mm, inner sep=0pt},
+  ovuongdem/.style={draw=#1, line width=0.6pt, fill=#1!14,
+                    minimum size=3.4mm, inner sep=0pt}}

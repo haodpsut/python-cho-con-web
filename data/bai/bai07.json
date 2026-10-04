@@ -1,0 +1,304 @@
+{
+ "schemaVersion": "1.0",
+ "so": 7,
+ "ten": "Đổi chữ thành số, số thành chữ",
+ "chang": 2,
+ "khaiNiemMoi": [],
+ "khoi": [
+  {
+   "kind": "muc_tieu",
+   "items": [
+    "Hiểu vì sao cộng hai chuỗi chữ số lại ra chữ dính liền.",
+    "Đổi được chữ sang số và đổi số sang chữ.",
+    "Đếm được một số có mấy chữ số."
+   ]
+  },
+  {
+   "kind": "guess_text",
+   "id": "bai07-guess-01",
+   "html": "<p>Bé Bi viết <code>print(\"3\" + \"5\")</code>. Bạn Na đoán ra 8.</p>\n<p>Con đoán xem bạn Na đúng hay sai? Vì sao?</p>",
+   "reveal": "<p>Bạn Na sai. Máy in ra <code>35</code>. Hai thứ trong dấu\nnháy đều là chữ, nên dấu cộng ở đây là ghép chứ không phải cộng.</p>"
+  },
+  {
+   "kind": "van",
+   "heading": "Cùng học",
+   "html": "<p>Chữ và số là hai loại khác nhau, dù trông giống hệt nhau.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai07-can.svg",
+   "alt": "Hình trong sách. Chữ trong hình: \"472\"; 472; bên chữ; bên số; cộng vào thì dính liền; cộng vào thì ra tổng; int(\"472\"); str(472)."
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p>Dấu <code>+</code> giữa hai chữ là ghép, nên <code>\"3\" + \"5\"</code> ra <code>35</code>.\nDấu <code>+</code> giữa hai số là cộng, nên <code>3 + 5</code> ra <code>8</code>.\nLệnh <code>int(...)</code> đưa một chuỗi chữ số sang bên số.\nLệnh <code>str(...)</code> đưa một số sang bên chữ, để ghép vào câu.\nLệnh <code>len(...)</code> đếm xem một chuỗi có mấy chữ.\nVậy <code>len(str(n))</code> cho biết số <code>n</code> có mấy chữ số.</p>"
+  },
+  {
+   "kind": "vidu",
+   "code": "# Chữ cộng chữ thì dính liền, số cộng số mới ra tổng\na = \"3\"\nb = \"5\"\nprint(a + b)\nprint(int(a) + int(b))\nn = 472\nprint(f\"Số {n} có {len(str(n))} chữ số.\")",
+   "out": "35\n8\nSố 472 có 3 chữ số.\n",
+   "stdin": null
+  },
+  {
+   "kind": "nhac",
+   "html": "<p>Không ghép thẳng số vào chữ được. <code>\"Con \" + 9</code> làm máy kêu\n<code>TypeError</code>. Phải bọc lại thành <code>\"Con \" + str(9)</code>.</p>\n<p>Nhớ thứ tự trong <code>len(str(n))</code>: đổi số thành chữ trước, rồi mới đếm.</p>"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>\"3\" + \"5\"</code> cho ra gì?",
+   "options": [
+    "<code>8</code>",
+    "<code>35</code>",
+    "<code>3 5</code>",
+    "Máy báo lỗi"
+   ],
+   "answerIndex": 1,
+   "explanation": "Hai bên dấu cộng đều nằm trong dấu nháy nên đều là chữ. Dấu cộng\ngiữa hai chữ là ghép, không phải cộng.",
+   "id": "bai07-tn-02"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>int(\"3\") + int(\"5\")</code> cho ra gì?",
+   "options": [
+    "<code>35</code>",
+    "<code>8</code>",
+    "<code>\"8\"</code>",
+    "Máy báo lỗi"
+   ],
+   "answerIndex": 1,
+   "explanation": "<code>int</code> đưa cả hai sang bên số trước. Hai số cộng với nhau thì ra\ntổng đúng như con học ở lớp.",
+   "id": "bai07-tn-03"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>str(4) + str(2)</code> cho ra gì?",
+   "options": [
+    "<code>6</code>",
+    "<code>42</code>",
+    "<code>24</code>",
+    "<code>4 2</code>"
+   ],
+   "answerIndex": 1,
+   "explanation": "<code>str</code> đưa cả hai sang bên chữ. Hai chữ ghép lại thì dính liền\ntheo đúng thứ tự con viết.",
+   "id": "bai07-tn-04"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>len(str(835))</code> cho ra gì?",
+   "options": [
+    "<code>835</code>",
+    "<code>16</code>",
+    "<code>3</code>",
+    "<code>8</code>"
+   ],
+   "answerIndex": 2,
+   "explanation": "Đổi 835 thành chữ được ba chữ số. Đếm ba chữ ấy thì ra 3.",
+   "id": "bai07-tn-05"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>\"Con \" + 9</code> thì sao?",
+   "options": [
+    "Ra <code>Con 9</code>",
+    "Ra <code>Con9</code>",
+    "Máy kêu <code>TypeError</code>",
+    "Ra <code>9</code>"
+   ],
+   "answerIndex": 2,
+   "explanation": "Một bên là chữ, một bên là số. Máy không ghép hai loại khác nhau,\nnên phải bọc <code>str(9)</code> cho cùng loại.",
+   "id": "bai07-tn-06"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Số nào có 4 chữ số?",
+   "options": [
+    "<code>99</code>",
+    "<code>472</code>",
+    "<code>1000</code>",
+    "<code>8</code>"
+   ],
+   "answerIndex": 2,
+   "explanation": "Viết 1000 ra giấy rồi đếm: một, không, không, không. Đúng bốn chữ số.",
+   "id": "bai07-tn-07"
+  },
+  {
+   "kind": "van",
+   "heading": "Máy in ra gì",
+   "html": "<p>Đọc chương trình rồi đoán xem máy in ra gì. Đoán xong hãy bấm Chạy để so.</p>"
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai07-doan-08",
+   "code": "print(\"4\" + \"2\")\nprint(int(\"4\") + int(\"2\"))\nprint(str(4) + str(2))\nprint(4 + 2)",
+   "expectOut": "42\n6\n42\n6\n",
+   "soDong": 4,
+   "stdin": null
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai07-doan-09",
+   "code": "tuoi = 9\nprint(\"Con \" + str(tuoi) + \" tuổi.\")\nprint(f\"Con {tuoi} tuổi.\")\nn = 1000\nprint(len(str(n)))",
+   "expectOut": "Con 9 tuổi.\nCon 9 tuổi.\n4\n",
+   "soDong": 3,
+   "stdin": null
+  },
+  {
+   "kind": "van",
+   "heading": "Điền vào chỗ trống",
+   "html": ""
+  },
+  {
+   "kind": "fill_blank",
+   "id": "bai07-dien-10",
+   "deBai": "Chọn từ trong ngân hàng điền vào ba câu sau.",
+   "bank": [
+    "int",
+    "str",
+    "len",
+    "ghép"
+   ],
+   "items": [
+    "Lệnh đưa một chuỗi chữ số sang bên số là {{1}}.",
+    "Lệnh đưa một số sang bên chữ là {{2}}.",
+    "Lệnh đếm xem một chuỗi có mấy chữ là {{3}}."
+   ],
+   "blanks": [
+    {
+     "accept": [
+      "int"
+     ]
+    },
+    {
+     "accept": [
+      "str"
+     ]
+    },
+    {
+     "accept": [
+      "len"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai07-dien-11",
+   "deBai": "Điền hai ô cho máy cộng được hai chuỗi chữ số.",
+   "bank": [
+    "int",
+    "str",
+    "len",
+    "ghép"
+   ],
+   "template": "a = \"6\"\nb = \"7\"\nprint({{1}}(a) + {{2}}(b))",
+   "blanks": [
+    {
+     "accept": [
+      "int"
+     ]
+    },
+    {
+     "accept": [
+      "int"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"6\"",
+    "\"7\""
+   ],
+   "expectOut": "13\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai07-dien-12",
+   "deBai": "Điền một ô cho máy ghép được số điểm vào câu chữ.",
+   "bank": [
+    "int",
+    "str",
+    "len",
+    "ghép"
+   ],
+   "template": "diem = 10\nprint(\"Con được \" + {{1}}(diem) + \" điểm.\")",
+   "blanks": [
+    {
+     "accept": [
+      "str"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Con được \"",
+    "\" điểm.\""
+   ],
+   "expectOut": "Con được 10 điểm.\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai07-dien-13",
+   "deBai": "Điền hai ô cho máy đếm được số chữ số.",
+   "bank": [
+    "int",
+    "str",
+    "len",
+    "ghép"
+   ],
+   "template": "n = 835\nso_chu_so = {{1}}({{2}}(n))\nprint(f\"Số {n} có {so_chu_so} chữ số.\")",
+   "blanks": [
+    {
+     "accept": [
+      "len"
+     ]
+    },
+    {
+     "accept": [
+      "str"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Số {n} có {so_chu_so} chữ số.\""
+   ],
+   "expectOut": "Số 835 có 3 chữ số.\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "free_code",
+   "id": "bai07-tuviet-14",
+   "deBai": "Cho số 927. Viết chương trình in ra một câu nói rõ số ấy\ncó mấy chữ số, rồi in tiếp số ấy ghép thêm chữ số 0 vào đuôi.",
+   "hoiTruoc": [
+    "Muốn đếm chữ số thì phải đổi số sang loại gì trước?",
+    "Ghép thêm số 0 vào đuôi là phép ghép chữ hay phép cộng số?",
+    "Kết quả ghép ấy là chữ hay là số?"
+   ],
+   "checklist": [
+    "Con nói được vì sao hai chuỗi chữ số cộng lại thì dính liền.",
+    "Con đổi được chữ sang số và số sang chữ.",
+    "Con đếm được một số có mấy chữ số."
+   ],
+   "hints": [
+    {
+     "hoi": "Dán hai mảnh sát nhau thì mắt con đọc ra số gì?",
+     "dap": "35"
+    },
+    {
+     "hoi": "Vậy dán giấy có giống cộng không?",
+     "dap": "không giống"
+    },
+    {
+     "hoi": "Muốn thật sự cộng thì phải bỏ giấy đi, lấy cái gì?",
+     "dap": "số thật"
+    }
+   ],
+   "loiHayMac": "<p>Viết <code>str(len(n))</code> thay vì <code>len(str(n))</code>.\nThứ tự ngược thì máy kêu <code>TypeError</code>, vì không đếm chữ của một số được.\nNhắc cháu đọc từ trong ngoặc ra ngoài.</p>",
+   "loiGiai": "n = 927\nprint(f\"Số {n} có {len(str(n))} chữ số.\")\nprint(str(n) + \"0\")",
+   "goiY": "<p>Phải đổi sang chữ trước thì mới đếm được. Ghép thêm\nsố 0 vào đuôi là phép ghép chữ, nên kết quả là chữ.</p>"
+  }
+ ]
+}

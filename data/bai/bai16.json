@@ -1,0 +1,296 @@
+{
+ "schemaVersion": "1.0",
+ "so": 16,
+ "ten": "Luyện vòng lặp for",
+ "chang": 4,
+ "khaiNiemMoi": [],
+ "khoi": [
+  {
+   "kind": "muc_tieu",
+   "items": [
+    "Cho máy đếm cách quãng bằng bước nhảy.",
+    "Cho máy đếm lùi như đi xuống cầu thang.",
+    "Gom dần nhiều số lại thành một tổng."
+   ]
+  },
+  {
+   "kind": "guess_text",
+   "id": "bai16-guess-01",
+   "html": "<p>Bạn Na đứng ở bậc thang thứ năm. Bạn ấy đi xuống từng bậc một.</p>\n<p>Con đoán xem bạn ấy đọc to những số nào trên đường xuống?</p>",
+   "reveal": "<p>Bạn Na đọc năm, bốn, ba, hai, một. Xuống tới đất thì\nhết, bạn ấy không đọc số không.</p>"
+  },
+  {
+   "kind": "van",
+   "heading": "Cùng học",
+   "html": "<p><code>range</code> nhận thêm số thứ ba. Số ấy gọi là <b>bước nhảy</b>.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai16-cauthang.svg",
+   "alt": "Hình trong sách. Chữ trong hình: range(1, 6); đi lên, mỗi bước thêm 1; range(5, 0, -1); đi xuống, mỗi bước lùi 1."
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p><code>range(0, 10, 2)</code> đếm <code>0 2 4 6 8</code>. Mỗi lần nó nhảy qua hai số.\nBước nhảy viết là <code>-1</code> thì máy đi lùi, như con đi xuống cầu thang.\nDấu trừ ở đây chỉ có nghĩa là lùi lại, con chưa cần hiểu gì thêm.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai16-binh.svg",
+   "alt": "Hình trong sách. Chữ trong hình: thêm; tổng; mỗi vòng đổ thêm một số vào bình."
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p>Một <b>biến cộng dồn</b> giống cái bình. Mỗi vòng con đổ thêm một số.\nNhớ đặt <code>tong = 0</code> trước vòng lặp, cho bình rỗng lúc đầu.</p>"
+  },
+  {
+   "kind": "vidu",
+   "code": "# Số thứ ba là bước nhảy: cứ nhảy 2 một lần\nfor i in range(0, 10, 2):\n    print(i, end=\" \")\nprint()\n\n# Bước nhảy -1 là lùi một bậc, như xuống cầu thang\nfor i in range(5, 0, -1):\n    print(i, end=\" \")\nprint()\n\n# Biến cộng dồn: gom từng số vào một cái bình\ntong = 0\nfor i in range(1, 6):\n    tong = tong + i\nprint(\"Tổng là\", tong)",
+   "out": "0 2 4 6 8 \n5 4 3 2 1 \nTổng là 15\n",
+   "stdin": null
+  },
+  {
+   "kind": "nhac",
+   "html": "<p>Quên đặt <code>tong = 0</code> trước vòng lặp thì máy kêu <code>NameError</code>.</p>\n<p>Viết <code>range(5, 0)</code> mà quên bước nhảy lùi thì máy không in gì cả.</p>"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>range(0, 10, 2)</code> cho ra những số nào?",
+   "options": [
+    "<code>0 1 2 3 4</code>",
+    "<code>0 2 4 6 8</code>",
+    "<code>2 4 6 8 10</code>",
+    "<code>0 2 4 6 8 10</code>"
+   ],
+   "answerIndex": 1,
+   "explanation": "Bắt đầu ở <code>0</code>, mỗi lần thêm hai, và dừng trước <code>10</code>.",
+   "id": "bai16-tn-02"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Số thứ ba trong <code>range</code> gọi là gì?",
+   "options": [
+    "Số đầu",
+    "Số cuối",
+    "Bước nhảy",
+    "Tổng"
+   ],
+   "answerIndex": 2,
+   "explanation": "Nó cho biết mỗi lượt máy nhảy xa bao nhiêu.",
+   "id": "bai16-tn-03"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "<code>range(5, 0, -1)</code> cho ra những số nào?",
+   "options": [
+    "<code>5 4 3 2 1 0</code>",
+    "<code>5 4 3 2 1</code>",
+    "<code>0 1 2 3 4 5</code>",
+    "<code>1 2 3 4 5</code>"
+   ],
+   "answerIndex": 1,
+   "explanation": "Máy đi lùi từ <code>5</code> và dừng ngay trước <code>0</code>. Số cuối không bao\ngiờ được lấy, dù đi lên hay đi xuống.",
+   "id": "bai16-tn-04"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Dòng <code>tong = tong + i</code> làm việc gì?",
+   "options": [
+    "Xoá tổng cũ đi",
+    "Đổ thêm <code>i</code> vào tổng đang có",
+    "Chia tổng cho <code>i</code>",
+    "In tổng ra màn hình"
+   ],
+   "answerIndex": 1,
+   "explanation": "Máy lấy tổng cũ cộng với <code>i</code>, rồi cất kết quả lại vào chính biến\n<code>tong</code>.",
+   "id": "bai16-tn-05"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Quên dòng <code>tong = 0</code> ở trên thì sao?",
+   "options": [
+    "Tổng bằng <code>0</code>",
+    "Máy tự đặt giúp",
+    "Máy kêu <code>NameError</code>",
+    "Máy chạy chậm"
+   ],
+   "answerIndex": 2,
+   "explanation": "Máy chưa biết cái bình tên <code>tong</code> nằm ở đâu nên nó không cộng\nvào đâu được.",
+   "id": "bai16-tn-06"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Tổng của <code>1 2 3 4</code> là bao nhiêu?",
+   "options": [
+    "<code>9</code>",
+    "<code>10</code>",
+    "<code>11</code>",
+    "<code>24</code>"
+   ],
+   "answerIndex": 1,
+   "explanation": "Con cộng dần: một, rồi ba, rồi sáu, rồi mười.",
+   "id": "bai16-tn-07"
+  },
+  {
+   "kind": "van",
+   "heading": "Máy in ra gì",
+   "html": "<p>Đọc chương trình rồi đoán xem máy in ra gì. Đoán xong hãy bấm Chạy để so.</p>"
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai16-doan-08",
+   "code": "for i in range(2, 11, 2):\n    print(i, end=\" \")\nprint()\n\nfor i in range(3, 0, -1):\n    print(i)",
+   "expectOut": "2 4 6 8 10 \n3\n2\n1\n",
+   "soDong": 4,
+   "stdin": null
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai16-doan-09",
+   "code": "tong = 0\nfor i in range(1, 5):\n    tong = tong + i\n    print(tong)",
+   "expectOut": "1\n3\n6\n10\n",
+   "soDong": 4,
+   "stdin": null
+  },
+  {
+   "kind": "van",
+   "heading": "Điền vào chỗ trống",
+   "html": ""
+  },
+  {
+   "kind": "fill_blank",
+   "id": "bai16-dien-10",
+   "deBai": "Chọn từ trong ngân hàng điền vào ba câu sau.",
+   "bank": [
+    "bước nhảy",
+    "lùi",
+    "cộng dồn",
+    "10"
+   ],
+   "items": [
+    "Số thứ ba trong <code>range</code> gọi là {{1}}.",
+    "Bước nhảy có dấu trừ thì máy đếm {{2}}.",
+    "Biến gom dần từng số lại gọi là biến {{3}}."
+   ],
+   "blanks": [
+    {
+     "accept": [
+      "bước nhảy"
+     ]
+    },
+    {
+     "accept": [
+      "lùi"
+     ]
+    },
+    {
+     "accept": [
+      "cộng dồn"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai16-dien-11",
+   "deBai": "Điền một ô để máy in các số chẵn nhỏ hơn mười.",
+   "bank": [
+    "bước nhảy",
+    "lùi",
+    "cộng dồn",
+    "10"
+   ],
+   "template": "for i in range(0, {{1}}, 2):\n    print(i)",
+   "blanks": [
+    {
+     "accept": [
+      "10"
+     ]
+    }
+   ],
+   "chuIn": [],
+   "expectOut": "0\n2\n4\n6\n8\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai16-dien-12",
+   "deBai": "Điền một ô để máy đếm lùi từ năm về một.",
+   "bank": [
+    "bước nhảy",
+    "lùi",
+    "cộng dồn",
+    "10"
+   ],
+   "template": "for i in range(5, 0, {{1}}):\n    print(i)",
+   "blanks": [
+    {
+     "accept": [
+      "-1"
+     ]
+    }
+   ],
+   "chuIn": [],
+   "expectOut": "5\n4\n3\n2\n1\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai16-dien-13",
+   "deBai": "Điền một ô để cái bình gom đủ bốn số đầu tiên.",
+   "bank": [
+    "bước nhảy",
+    "lùi",
+    "cộng dồn",
+    "10"
+   ],
+   "template": "tong = 0\nfor i in range(1, 5):\n    tong = tong {{1}} i\nprint(tong)",
+   "blanks": [
+    {
+     "accept": [
+      "+"
+     ]
+    }
+   ],
+   "chuIn": [],
+   "expectOut": "10\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "free_code",
+   "id": "bai16-tuviet-14",
+   "deBai": "Viết chương trình đếm lùi từ mười về một, mỗi số một dòng.\nRồi in tổng của mười số ấy.",
+   "hoiTruoc": [
+    "Con viết <code>range</code> với ba số nào?",
+    "Cái bình tên gì, và đặt bằng mấy lúc đầu?",
+    "Lệnh in tổng nằm trong vòng lặp hay ngoài?"
+   ],
+   "checklist": [
+    "Con cho máy đếm cách quãng được.",
+    "Con cho máy đếm lùi được.",
+    "Con gom được nhiều số lại thành một tổng."
+   ],
+   "hints": [
+    {
+     "hoi": "Con bắt đầu ở bậc nào, dừng ở bậc nào?",
+     "dap": ""
+    },
+    {
+     "hoi": "Mỗi bước con lên hay xuống mấy bậc?",
+     "dap": ""
+    },
+    {
+     "hoi": "Nếu đặt lệnh in tổng vào trong vòng thì máy in mấy dòng?",
+     "dap": ""
+    }
+   ],
+   "loiHayMac": "<p>Cháu đặt <code>tong = 0</code> ngay trong vòng lặp. Bình\nbị đổ sạch mỗi lượt, nên kết quả chỉ còn số cuối. Cho cháu in thử\n<code>tong</code> từng vòng để tự thấy.</p>",
+   "loiGiai": "",
+   "goiY": "<p>Dùng <code>for i in range(10, 0, -1):</code> rồi\n<code>print(i)</code>. Đặt <code>tong = 0</code> ở trên, trong vòng thêm\n<code>tong = tong + i</code>, và <code>print(tong)</code> nằm ngoài vòng lặp.</p>"
+  }
+ ]
+}

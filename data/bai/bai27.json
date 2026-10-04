@@ -1,0 +1,307 @@
+{
+ "schemaVersion": "1.0",
+ "so": 27,
+ "ten": "Đếm cho nhanh",
+ "chang": 6,
+ "khaiNiemMoi": [],
+ "khoi": [
+  {
+   "kind": "muc_tieu",
+   "items": [
+    "Đếm số chia hết cho <code>a</code> từ 1 tới <code>n</code> chỉ bằng một phép chia.",
+    "Đếm được trong một đoạn, ví dụ từ 10 tới 30.",
+    "Biết vì sao có số bị đếm hai lần và phải trừ đi."
+   ]
+  },
+  {
+   "kind": "guess_text",
+   "id": "bai27-guess-01",
+   "html": "<p>Bi hỏi Na: từ 1 tới 30 có mấy số chia hết cho 3?</p>\n<p>Na đếm từng số, mất cả phút. Bi làm một phép chia là xong. Con đoán\nxem Bi đã chia số nào cho số nào?</p>",
+   "reveal": "<p>Bi lấy 30 chia cho 3, được 10. Na đếm tay cũng\nra 10, chỉ là lâu hơn.</p>"
+  },
+  {
+   "kind": "van",
+   "heading": "Cùng học",
+   "html": "<p>Từ 1 tới <code>n</code> có bao nhiêu số chia hết cho <code>a</code>? Con lấy <code>n // a</code>.</p>\n<p>Đếm trong đoạn từ <code>x</code> tới <code>y</code> thì lấy <code>y // a</code>, rồi trừ đi\n<code>(x - 1) // a</code>.</p>"
+  },
+  {
+   "kind": "hinh",
+   "src": "assets/hinh/hinh-bai27-thuoc.svg",
+   "alt": "Hình trong sách. Chữ trong hình: bội của 3; bội của 5; cả hai."
+  },
+  {
+   "kind": "van",
+   "heading": "",
+   "html": "<p>Số vừa chia hết cho 3 vừa chia hết cho 5 bị đếm hai lần. Phải trừ đi một lần.</p>"
+  },
+  {
+   "kind": "vidu",
+   "code": "# Từ 1 tới 30 có bao nhiêu số chia hết cho 3?\nn = 30\na = 3\n\n# Cách nhanh: lấy n chia lấy phần cho a.\nprint(\"Cách nhanh cho:\", n // a)\n\n# Cách chậm: đếm từng số một.\ndem = 0\nfor x in range(1, n + 1):\n    if x % a == 0:\n        dem = dem + 1\nprint(\"Đếm từng số cho:\", dem)",
+   "out": "Cách nhanh cho: 10\nĐếm từng số cho: 10\n",
+   "stdin": null
+  },
+  {
+   "kind": "nhac",
+   "html": "<p>Nhiều bạn trừ nhầm. Đếm từ <code>x</code> tới <code>y</code> thì phải trừ <code>(x - 1) // a</code>,\nchứ không phải <code>x // a</code>.</p>\n<p>Thử với <code>x</code> bằng 10 và <code>a</code> bằng 5. Trừ <code>10 // 5</code> là bỏ mất số 10,\nmà số 10 vẫn nằm trong đoạn.</p>"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Từ 1 tới 50 có mấy số chia hết cho 6?",
+   "options": [
+    "6",
+    "8",
+    "9",
+    "10"
+   ],
+   "answerIndex": 1,
+   "explanation": "Lấy <code>50 // 6</code> được 8. Đó là các số 6, 12, 18, 24, 30, 36, 42, 48.",
+   "id": "bai27-tn-02"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Phép tính nào đếm số chia hết cho 4 từ 1 tới 100?",
+   "options": [
+    "<code>100 % 4</code>",
+    "<code>100 // 4</code>",
+    "<code>100 * 4</code>",
+    "<code>4 // 100</code>"
+   ],
+   "answerIndex": 1,
+   "explanation": "Dấu <code>//</code> lấy phần nguyên của phép chia. Dấu <code>%</code> chỉ cho số dư,\nkhông cho số lượng.",
+   "id": "bai27-tn-03"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Từ 11 tới 40 có mấy số chia hết cho 5?",
+   "options": [
+    "8",
+    "5",
+    "6",
+    "7"
+   ],
+   "answerIndex": 2,
+   "explanation": "Lấy <code>40 // 5</code> được 8, rồi trừ <code>10 // 5</code> được 2. Còn lại 6 số,\ntừ 15 tới 40.",
+   "id": "bai27-tn-04"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Đếm số chia hết cho 3 rồi cộng với số chia hết cho 5. Vì sao phải\ntrừ bớt?",
+   "options": [
+    "Vì phép cộng sai",
+    "Vì số như 15 đã bị đếm hai lần",
+    "Vì số 3 nhỏ hơn số 5",
+    "Vì máy đếm chậm"
+   ],
+   "answerIndex": 1,
+   "explanation": "Số 15 nằm trong cả hai lần đếm. Nhìn hình thước kẻ, vạch 15 vừa xanh\nvừa đỏ.",
+   "id": "bai27-tn-05"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Số vừa chia hết cho 3 vừa chia hết cho 5 là bội của số nào?",
+   "options": [
+    "8",
+    "30",
+    "15",
+    "5"
+   ],
+   "answerIndex": 2,
+   "explanation": "Số nhỏ nhất vừa chia hết cho 3 vừa chia hết cho 5 là 15. Các số sau\nnó là 30, 45, 60.",
+   "id": "bai27-tn-06"
+  },
+  {
+   "kind": "single_choice",
+   "stem": "Đếm bằng vòng lặp và đếm bằng phép chia cho kết quả ra sao?",
+   "options": [
+    "Vòng lặp cho số lớn hơn",
+    "Phép chia cho số lớn hơn",
+    "Hai cách cho cùng một số",
+    "Lúc giống lúc khác"
+   ],
+   "answerIndex": 2,
+   "explanation": "Hai cách chỉ khác ở chỗ nhanh hay chậm. Ví dụ đầu bài in ra hai con\nsố bằng nhau.",
+   "id": "bai27-tn-07"
+  },
+  {
+   "kind": "van",
+   "heading": "Máy in ra gì",
+   "html": "<p>Đọc chương trình rồi đoán xem máy in ra gì. Đoán xong hãy bấm Chạy để so.</p>"
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai27-doan-08",
+   "code": "# Từ 10 tới 30 có mấy số chia hết cho 4?\ny = 30\nx = 10\nprint(y // 4)\nprint((x - 1) // 4)\nprint(y // 4 - (x - 1) // 4)",
+   "expectOut": "7\n2\n5\n",
+   "soDong": 3,
+   "stdin": null
+  },
+  {
+   "kind": "predict_output",
+   "id": "bai27-doan-09",
+   "code": "# Từ 1 tới 30, đếm số chia hết cho 3 hoặc cho 5.\nn = 30\nba = n // 3\nnam = n // 5\nca_hai = n // 15\nprint(ba, nam, ca_hai)\nprint(ba + nam - ca_hai)",
+   "expectOut": "10 6 2\n14\n",
+   "soDong": 2,
+   "stdin": null
+  },
+  {
+   "kind": "van",
+   "heading": "Điền vào chỗ trống",
+   "html": ""
+  },
+  {
+   "kind": "fill_blank",
+   "id": "bai27-dien-10",
+   "deBai": "Chọn từ trong ngân hàng điền vào ba câu sau.",
+   "bank": [
+    "//",
+    "%",
+    "10",
+    "15"
+   ],
+   "items": [
+    "Phép lấy phần nguyên của phép chia viết là {{1}}.",
+    "Từ 1 tới 30 có {{2}} số chia hết cho 3.",
+    "Số nhỏ nhất vừa chia hết cho 3 vừa chia hết cho 5 là {{3}}."
+   ],
+   "blanks": [
+    {
+     "accept": [
+      "//"
+     ]
+    },
+    {
+     "accept": [
+      "10"
+     ]
+    },
+    {
+     "accept": [
+      "15"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai27-dien-11",
+   "deBai": "Điền hai ô để máy đếm giúp con.",
+   "bank": [
+    "//",
+    "%",
+    "10",
+    "15"
+   ],
+   "template": "n = 100\nprint(\"Từ 1 tới 100, số chia hết cho 7:\")\nprint({{1}} {{2}} 7)",
+   "blanks": [
+    {
+     "accept": [
+      "n"
+     ]
+    },
+    {
+     "accept": [
+      "//"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Từ 1 tới 100, số chia hết cho 7:\""
+   ],
+   "expectOut": "Từ 1 tới 100, số chia hết cho 7:\n14\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai27-dien-12",
+   "deBai": "Điền hai ô để đếm trong đoạn từ 20 tới 60.",
+   "bank": [
+    "//",
+    "%",
+    "10",
+    "15"
+   ],
+   "template": "y = 60\nx = 20\nprint(\"Từ 20 tới 60, số chia hết cho 6:\")\nprint(y // 6 - ({{1}} - {{2}}) // 6)",
+   "blanks": [
+    {
+     "accept": [
+      "x"
+     ]
+    },
+    {
+     "accept": [
+      "1"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Từ 20 tới 60, số chia hết cho 6:\""
+   ],
+   "expectOut": "Từ 20 tới 60, số chia hết cho 6:\n7\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "code_fill",
+   "id": "bai27-dien-13",
+   "deBai": "Điền hai ô cho phần trừ bớt chạy đúng.",
+   "bank": [
+    "//",
+    "%",
+    "10",
+    "15"
+   ],
+   "template": "n = 30\nba = n // 3\nnam = n // {{1}}\nca_hai = n // {{2}}\nprint(\"Số chia hết cho ba hoặc cho năm:\")\nprint(ba + nam - ca_hai)",
+   "blanks": [
+    {
+     "accept": [
+      "5"
+     ]
+    },
+    {
+     "accept": [
+      "15"
+     ]
+    }
+   ],
+   "chuIn": [
+    "\"Số chia hết cho ba hoặc cho năm:\""
+   ],
+   "expectOut": "Số chia hết cho ba hoặc cho năm:\n14\n",
+   "chayDuoc": true,
+   "stdin": null
+  },
+  {
+   "kind": "free_code",
+   "id": "bai27-tuviet-14",
+   "deBai": "Đếm xem từ 1 tới 100 có bao nhiêu số chia hết cho 3 hoặc\nchia hết cho 5. Con chỉ được dùng phép chia, không được dùng vòng lặp.",
+   "hoiTruoc": [
+    "Con đếm số chia hết cho 3 bằng phép tính nào?",
+    "Con đếm số chia hết cho 5 bằng phép tính nào?",
+    "Số nào bị đếm hai lần, và con trừ đi bao nhiêu?"
+   ],
+   "checklist": [
+    "Con đếm được số chia hết cho một số bằng <code>n // a</code>.",
+    "Con đếm được trong một đoạn từ <code>x</code> tới <code>y</code>.",
+    "Con biết số nào bị đếm hai lần và trừ đi đúng một lần."
+   ],
+   "hints": [
+    {
+     "hoi": "Con khoanh tròn số chia hết cho 3, đếm được mấy số?",
+     "dap": "10"
+    },
+    {
+     "hoi": "Con gạch chân số chia hết cho 5, đếm được mấy số?",
+     "dap": "6"
+    },
+    {
+     "hoi": "Số nào vừa có khoanh vừa có gạch?",
+     "dap": "15 và 30, nên phải trừ 2"
+    }
+   ],
+   "loiHayMac": "<p>Cháu hay viết <code>x // a</code> thay vì\n<code>(x - 1) // a</code>. Hỏi lại: đoạn từ 10 tới 30 có kể số 10 không? Có. Vậy\nphải bỏ từ số 9 trở xuống, chứ không bỏ từ số 10 trở xuống.</p>",
+   "loiGiai": "",
+   "goiY": "<p>Lấy <code>100 // 3</code> được 33, lấy <code>100 // 5</code> được 20,\nlấy <code>100 // 15</code> được 6. Đáp số là 33 cộng 20 rồi trừ 6, bằng 47.</p>"
+  }
+ ]
+}
