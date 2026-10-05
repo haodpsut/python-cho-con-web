@@ -1,6 +1,8 @@
 # Trạng thái: site Python cho con
 
-Chốt **04/10/2026**. Đọc tệp này trước khi làm tiếp.
+Chốt **05/10/2026**. Đọc tệp này trước khi làm tiếp.
+
+Đang chạy thật tại **https://python-cho-con-web.vercel.app**, kho `haodpsut/python-cho-con-web`.
 
 ## Đã xong
 
@@ -25,7 +27,8 @@ Chốt **04/10/2026**. Đọc tệp này trước khi làm tiếp.
 | `tools/validate.mjs` | lược đồ, id, em dash, thẻ HTML, `expectOut` khớp từng byte với `.out` | 8 ca | 726 khối, 1 cảnh báo |
 | `tools/kiem-hinh.mjs` | 45 SVG so với bản PDF gốc, **đo trên ảnh render** | 4 ca tiêm lỗi | **45/45** |
 | `tools/kiem-chay.mjs` | 191 chương trình trong **Chrome thật** khớp `.out` | 6 ca tiêm lỗi | **191/191** |
-| `tools/kiem-tuong-tac.mjs` | lái thật qua 6 loại bài tập, kiểm chấm và giải thích | mỗi loại có cả ca đúng và ca sai | **39/39** |
+| `tools/kiem-web.mjs` | quét **cả 32 bài + 4 phụ lục trong một phiên duyệt**: dấu vết LaTeX sót, khối rỗng, hình hỏng, đếm khối | | **sạch** |
+| `tools/kiem-tuong-tac.mjs` | lái thật qua 6 loại bài tập, chấm, giải thích, **khổ điện thoại 390px và 360px** | mỗi loại có cả ca đúng và ca sai | **49/49** |
 
 Hiệu chuẩn ngưỡng cổng hình, đo ngày 04/10:
 
@@ -44,6 +47,30 @@ hay một màu nhạt. Phần ấy phải nhìn tận mắt.
 | 45 hình SVG | 4,1 MB thô, **709 KB sau gzip**, trung bình 15 KB mỗi hình |
 | Dữ liệu `data/` | 412 KB |
 | 191 chương trình chạy trong Chrome | 6,5 giây |
+
+## Năm lỗi QA vòng hai bắt được (05/10)
+
+Site đã lên Vercel rồi mới QA lại, và vẫn ra năm lỗi thật, bốn trong số đó người dùng
+nhìn thấy ngay trên trang:
+
+1. **Ô điền phình to đè lên phần sau.** Ô rộng tối thiểu 86px nên ô một ký tự như `+`
+   che mất phần còn lại của dòng code. Nay ô rộng **đúng bằng độ dài đáp án**, giống hệt
+   cách sách giấy vẽ ô trống. Chính Hảo phát hiện ở bài 3.
+2. **Khối code bị đóng khung từng dòng**, vì `<code>` trong `<pre>` ăn theo kiểu code
+   nội tuyến.
+3. **`{changSau}` lọt vào văn bản phụ lục**: `\mophuluc` có ba đối số mà bộ bóc chỉ bỏ hai.
+4. **Phụ lục D còn `{ Bảng thứ hai}`** nguyên dấu ngoặc sau khi gỡ macro trình bày.
+5. **Phụ lục B lặp dòng tiêu đề bảng**, vì `longtable` khai tiêu đề hai lần.
+
+Và **hai lần bộ đo của chính tôi hỏng**, suýt báo sai:
+
+- Cổng báo hai hình cuối trang "không tải được", thật ra do `loading="lazy"` không kích
+  hoạt khi chạy không giao diện. Nay nạp thẳng từng tệp ảnh.
+- Một bản sửa bỏ ngoặc kiểu chung chung đã **cắt mất nội dung thật**, biến
+  `\textbf{không}` thành "ông". Ngoặc trong LaTeX là đối số macro, không bỏ bừa được.
+
+Một chỗ **là lỗi của sách giấy, không phải của web**: hình bài 3 có chữ
+`so_keo = so_keo + 6` đè lên nhãn `so_keo`. Đã đối chiếu với bản PDF gốc, lỗi có sẵn ở đó.
 
 ## Sáu chỗ đã vấp
 
@@ -65,6 +92,8 @@ Thêm một chỗ nữa: **cổng tương tác treo 5 phút mà không báo gì*
 
 - `tools/prerender.mjs` **chưa viết**. Hiện mỗi đường dẫn đều trả `index.html` nên Google chỉ
   thấy một trang. Cần sinh 32 trang tĩnh có `<title>`, OG, JSON-LD riêng, cộng `sitemap.xml`.
+- **Hình bài 3 chữ đè nhau**, lỗi nằm ở nguồn sách `python-cho-con`. Sửa thì phải sửa ở
+  kho sách rồi dựng lại, chưa làm.
 - **Chưa dựng lại từ bản sạch.** Clone ra thư mục mới rồi chạy lại cả `boc.mjs` lẫn `hinh.mjs`
   và bốn cổng. Chưa làm bước này thì chưa gọi là xong.
 - Chưa nạp font Noto tự chứa, đang mượn font hệ thống.
