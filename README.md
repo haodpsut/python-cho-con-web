@@ -27,14 +27,14 @@ node tools/boc.mjs      # LaTeX -> data/*.json, in độ phủ, gãy nếu chưa
 node tools/hinh.mjs     # TikZ   -> assets/hinh/*.svg
 ```
 
-## Bốn cổng
+## Tám cổng
 
 ```bash
-node tools/validate.mjs      --tu-kiem
-node tools/kiem-hinh.mjs     --tu-kiem
-node tools/kiem-chay.mjs     --tu-kiem
-node tools/kiem-tuong-tac.mjs
+node tools/kiem-het.mjs --tu-kiem    # tất cả, khoảng 70 giây
 ```
+
+Cờ `--tu-kiem` bật các ca **tiêm lỗi**. Cổng xanh mà không có ca tiêm lỗi thì
+không chứng minh được gì.
 
 Xem `CLAUDE.md` để biết từng cổng kiểm gì, và `CHUAN-QIF-PY.md` để biết lược đồ
 dữ liệu.

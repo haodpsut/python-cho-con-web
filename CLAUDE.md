@@ -24,7 +24,10 @@ node tools/boc.mjs          # -> data/manifest.json + data/bai/*.json
 # Dung lai 45 hinh tu TikZ. Can lualatex va pdftocairo.
 node tools/hinh.mjs         # -> assets/hinh/*.svg
 
-# Bay cong. Chay het truoc moi lan commit cham vao data/ hay js/.
+# Chay CA TAM CONG bang mot lenh, khoang 70 giay ke ca ca tiem loi.
+node tools/kiem-het.mjs --tu-kiem
+
+# Hoac chay rieng tung cai:
 node tools/validate.mjs      --tu-kiem   # luoc do, em dash, so .out hai nguon
 node tools/kiem-sach.mjs     --tu-kiem   # so chu tren web voi SAU TEP PDF quyen chau
 node tools/kiem-hinh.mjs     --tu-kiem   # 45 hinh vs ban PDF goc, do tren anh
