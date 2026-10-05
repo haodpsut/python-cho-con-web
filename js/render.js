@@ -1,3 +1,5 @@
+import { toMa } from "./to-ma.js";
+
 // render.js - so dang ky khoi: kind -> ham tra ve chuoi HTML.
 // Ham render phai THUAN: khong cham DOM, khong goi fetch. app.js noi su kien.
 
@@ -11,7 +13,7 @@ const KY = ["A", "B", "C", "D", "E", "F"];
 // Khoi code chi de doc, kem nut Chay neu co.
 function khoiCode(ma, { nutChay = false, id = "" } = {}) {
   return `<div class="code-khoi">
-  <pre><code>${esc(ma)}</code></pre>
+  <pre><code>${toMa(ma)}</code></pre>
   ${nutChay ? `<div class="code-thanh">
     <button class="nut nho" data-chay="${esc(id)}">▶ Chạy thử</button>
     <span class="ghi-chu" data-chay-tt="${esc(id)}"></span>
@@ -138,7 +140,7 @@ function oTrong(html, blanks) {
 function oTrongCode(tpl, blanks) {
   return String(tpl).split(/(\{\{\d+\}\})/).map((p) => {
     const m = /^\{\{(\d+)\}\}$/.exec(p);
-    return m ? oNhap(+m[1], blanks) : esc(p);
+    return m ? oNhap(+m[1], blanks) : toMa(p);
   }).join("");
 }
 

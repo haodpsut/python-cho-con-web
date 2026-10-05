@@ -137,7 +137,7 @@ await di("/");
 {
   const the = $$(".the-bai").length;
   if (the !== 36) E("trang chu", "co " + the + " the, phai 32 bai + 4 phu luc");
-  for (let i=1;i<=6;i++) if (!document.body.innerText.includes("Chặng " + i + ".")) E("trang chu","thieu chang " + i);
+  for (let i=1;i<=6;i++) if (!document.body.textContent.includes("Chặng " + i + ".")) E("trang chu","thieu chang " + i);
   for (const [re, ten] of VET) { const m = re.exec(chuTrang()); if (m) E("trang chu", ten); }
 }
 

@@ -63,10 +63,7 @@ async function trangChu() {
 
   ${mf.chang.map((c) => `
     <section class="chang-khoi">
-      <div class="chang-dau">
-        <span class="chang-cham" style="background:${esc(c.mau)}"></span>
-        <h2 style="margin:0;color:${esc(c.mau)}">Chặng ${c.id}. ${esc(c.ten)}</h2>
-      </div>
+      <h2 class="chang-dau" style="color:${esc(c.mau)};border-left-color:${esc(c.mau)}">Chặng ${c.id}. ${esc(c.ten)}</h2>
       <div class="luoi-bai">
         ${c.bai.map((n) => {
           const b = mf.bai.find((x) => x.so === n);

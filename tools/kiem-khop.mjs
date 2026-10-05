@@ -122,7 +122,10 @@ for (let n = 1; n <= 32; n++) {
       if (!bt) { E(t, k.id + ": khong thay khoi tren trang"); continue; }
       const maTren = $("pre code", bt).textContent;
       if (chuan(maTren) !== chuan(k.code)) E(t, k.id + ": ma in tren trang khac du lieu");
-      const nhan = bt.innerText.match(/Con đoán máy in ra (\d+) dòng/);
+      // textContent chu KHONG phai innerText: innerText tra ve chu DA QUA
+      // text-transform, nen khi CSS doi nhan thanh CHU HOA thi bieu thuc nay
+      // khong khop nua va cong mu di ma van bao xanh. Da dinh dung bay nay.
+      const nhan = bt.textContent.match(/Con đoán máy in ra (\d+) dòng/i);
       if (!nhan) { E(t, k.id + ": khong thay dong ghi so dong"); continue; }
       const r = await chay(maTren, k.stdin);
       dem.doan++;

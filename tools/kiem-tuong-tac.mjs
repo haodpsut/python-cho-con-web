@@ -271,6 +271,24 @@ try {
        parseFloat(st.borderTopWidth) === 0, st.borderTopWidth);
   }
 
+  await L(">>> muc 15b");
+  // ----- 15b. khoi code nhieu dong phai CAO tuong xung voi so dong
+  // CSS co the don ca khoi thanh mot dong ma DOM van du dau xuong dong, nen
+  // khong cong nao khac bat duoc. Phai do chieu cao that.
+  {
+    await moBai(30);
+    let xau = 0, soKiem = 0;
+    for (const pre of $$(".code-khoi pre")) {
+      const dong = pre.textContent.replace(/\n+$/, "").split("\n").length;
+      if (dong < 3) continue;
+      soKiem++;
+      const caoMotDong = parseFloat(getComputedStyle(pre).lineHeight) || 24;
+      if (pre.clientHeight < caoMotDong * dong * 0.8) xau++;
+    }
+    ok("khoi code nhieu dong khong bi don thanh mot dong",
+       soKiem > 0 && xau === 0, "kiem " + soKiem + " khoi, " + xau + " khoi bi don");
+  }
+
   await L(">>> muc 16");
   // --------------- 16. o dien phai HEP theo do dai dap an
   {
