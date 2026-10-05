@@ -497,11 +497,6 @@ async function ve() {
 }
 
 // ---------------------------------------------------------------- khoi dong
-$("#doi-theme").addEventListener("click", () => {
-  const t = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
-  S.datTheme(t);
-});
-
 C.khiDoiTrangThai((t) => {
   const o = $("#tt-python");
   if (!o) return;

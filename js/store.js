@@ -1,7 +1,6 @@
 // store.js - tien do hoc nam HOAN TOAN tren may chau. Khong gui di dau.
 // Khong co tai khoan, khong co may chu, khong co theo doi.
 const KEY = "pythoncon.progress.v1";
-const KEY_THEME = "pythoncon.theme";
 
 function doc() {
   try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch { return {}; }
@@ -58,13 +57,4 @@ export function xoaBai(dsId) {
   const s = trangThai();
   for (const i of dsId) delete s.viec[i];
   ghi(s);
-}
-
-// ---------------------------------------------------------------- giao dien
-export function layTheme() {
-  try { return localStorage.getItem(KEY_THEME); } catch { return null; }
-}
-export function datTheme(t) {
-  try { localStorage.setItem(KEY_THEME, t); } catch { /* bo qua */ }
-  document.documentElement.dataset.theme = t;
 }

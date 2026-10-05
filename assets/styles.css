@@ -23,7 +23,6 @@
   --nenSai:  #FEF2F2; --vienSai:  #DC2626;
 
   --chang: var(--c1);
-  --chang-nhat: color-mix(in srgb, var(--chang) 8%, var(--nen));
   --chang-vien: color-mix(in srgb, var(--chang) 28%, var(--xamvua));
   --r: 14px;
   --bong: 0 1px 2px rgba(16, 24, 40, .04), 0 4px 14px rgba(16, 24, 40, .05);
@@ -33,26 +32,9 @@
   --mono: "Noto Sans Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
-:root[data-theme="dark"] {
-  --muc: #E8EBF0;
-  --nen: #141821;
-  --nen2: #1B2029;
-  --xamnhat: #1E242F;
-  --xamvua: #3A4250;
-  --xamchu: #9AA4B2;
-  --tumay: #C4B5FD;
-  --chuin: #FCA5A5;
-  --ghichu: #86EFAC;
-  --nenNhac: #3A2F10; --vienNhac: #D97706;
-  --nenDo:   #0E2A3C; --vienDo:   #38BDF8;
-  --nenHoc:  #0F2A20; --vienHoc:  #34D399;
-  --nenLa:   #241C3C; --vienLa:   #A78BFA;
-  --nenDung: #0F2A20; --vienDung: #34D399;
-  --nenSai:  #331517; --vienSai:  #F87171;
-  --bong: 0 1px 2px rgba(0,0,0,.3), 0 4px 14px rgba(0,0,0,.35);
-  --bong-cao: 0 2px 6px rgba(0,0,0,.35), 0 12px 32px rgba(0,0,0,.45);
-}
-
+/* Chi mot che do SANG. Hao chot 05/10: bo han nen toi cho don gian,
+   vi hinh trong sach la net ve mau toi tren nen trang, dat len nen toi
+   thi phai giu the trang rieng, nhin khong lien mach. */
 * { box-sizing: border-box; }
 
 html { -webkit-text-size-adjust: 100%; }
@@ -183,6 +165,8 @@ code {
   font-family: var(--mono); font-size: 15.5px; line-height: 1.7;
   white-space: pre;
 }
+/* Khoi code CO O DIEN thi noi dong ra, de o co cho tho ma khong cham dong tren. */
+.code-khoi pre:has(.o-dien) { line-height: 2.1; }
 /* <code> trong khoi code KHONG duoc an theo kieu code noi tuyen: no la the
    bao ca khoi nhieu dong, nen vien va nen se ve lai tren TUNG DONG, trong
    nhu moi dong bi dong khung. */
@@ -291,16 +275,27 @@ textarea.soan {
   min-height: 150px; white-space: pre; overflow-wrap: normal; overflow-x: auto;
   tab-size: 4;
 }
-/* Be rong do render.js dat theo do dai dap an, giong sach giay.
-   Khong dat min-width o day, neu khong o mot ky tu se phinh ra de len phan sau. */
-.o-dien {
+/* O dien.
+   Be rong do render.js dat theo do dai dap an, giong sach giay. Khong dat
+   min-width o day, neu khong o mot ky tu se phinh ra de len phan sau.
+   CHIEU CAO phai NAM GON trong dong chu. Truoc day o cao 27px trong khi dong
+   code chi cao 26px, nen hai dong lien nhau co o thi hai o CHONG LEN NHAU.
+   Vi the: line-height sat, dem mong, vien 1.5px, va can giua theo dong. */
+/* ⛔ Phai viet "input.o-dien" chu khong phai ".o-dien". Luat
+   input[type="text"] o tren co do uu tien 0-1-1, cao hon class 0-1-0, nen no
+   THANG va ap dem 8px voi co chu 18px vao day. O cao 58px trong khi dong chu
+   chi cao 38px, va hai dong lien nhau thi hai o de len nhau. */
+input.o-dien {
   display: inline-block; max-width: 100%;
-  font-family: var(--mono); font-size: 15px; padding: 2px 6px; margin: 0 2px;
-  border-width: 2px; border-color: var(--chang); border-radius: 6px;
-  background: var(--nen); vertical-align: baseline;
+  font-family: var(--mono); font-size: 15px; line-height: 1.25;
+  padding: 1px 5px; margin: 0 2px;
+  border: 1.5px solid var(--chang); border-radius: 6px;
+  background: var(--nen); color: var(--muc);
+  vertical-align: middle;
 }
-.o-dien.dung { border-color: var(--vienDung); background: var(--nenDung); }
-.o-dien.sai  { border-color: var(--vienSai);  background: var(--nenSai); }
+input.o-dien:focus { outline: 2px solid var(--chang); outline-offset: 1px; }
+input.o-dien.dung { border-color: var(--vienDung); background: var(--nenDung); }
+input.o-dien.sai  { border-color: var(--vienSai);  background: var(--nenSai); }
 
 /* ngan hang tu */
 .bank { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
@@ -310,7 +305,12 @@ textarea.soan {
   border-radius: 8px; padding: 5px 11px; cursor: pointer;
 }
 .bank .tu:hover { border-color: var(--chang); }
-.bank-ten { font-size: 14px; color: var(--xamchu); font-weight: 700; }
+.bank-ten {
+  font-size: 12.5px; color: var(--xamchu); font-weight: 800;
+  text-transform: uppercase; letter-spacing: .07em; margin-bottom: 2px;
+}
+/* Cau van co o dien cung can thoang hon dong thuong. */
+.bt ol li:has(.o-dien), .bt ul li:has(.o-dien) { line-height: 2.1; margin: 4px 0; }
 
 /* bang so ket qua doan */
 .so-dong { width: 100%; border-collapse: collapse; margin: 10px 0; font-family: var(--mono); font-size: 15px; }

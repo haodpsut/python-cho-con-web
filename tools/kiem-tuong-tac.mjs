@@ -289,6 +289,46 @@ try {
        soKiem > 0 && xau === 0, "kiem " + soKiem + " khoi, " + xau + " khoi bi don");
   }
 
+  await L(">>> muc 15c");
+  // ----- 15c. O DIEN khong duoc chong len nhau, va phai nam gon trong dong
+  // Day la loi Hao nhin thay: o cao hon dong nen hai dong lien nhau thi hai
+  // o de len nhau. Do bang hinh chu nhat that, tren nhieu bai co nhieu o.
+  {
+    let chong = 0, caoQua = 0, soO = 0, toQua = 0, viDu = "";
+    for (const n of [3, 9, 15, 19, 20, 26, 30]) {
+      await moBai(n);
+      const o = $$("input.o-dien");
+      soO += o.length;
+      const r = o.map(x => ({ x, r: x.getBoundingClientRect() }));
+      for (const { x, r: a } of r) {
+        const me = x.closest("pre") || x.closest("li") || x.parentElement;
+        const lh = parseFloat(getComputedStyle(me).lineHeight) || 0;
+        if (lh && a.height > lh + 0.5) { caoQua++; if (!viDu) viDu = "bai " + n + " o cao " + Math.round(a.height) + " > dong " + Math.round(lh); }
+        if (a.width > 200) { toQua++; if (!viDu) viDu = "bai " + n + " o rong " + Math.round(a.width); }
+      }
+      for (let i = 0; i < r.length; i++) for (let j = i + 1; j < r.length; j++) {
+        const a = r[i].r, b = r[j].r;
+        if (a.left < b.right - 0.5 && b.left < a.right - 0.5 &&
+            a.top < b.bottom - 0.5 && b.top < a.bottom - 0.5) {
+          chong++; if (!viDu) viDu = "bai " + n + ": hai o chong nhau";
+        }
+      }
+    }
+    ok("o dien: khong o nao chong len o nao", chong === 0, viDu + " (" + chong + " cap chong, tren " + soO + " o)");
+    ok("o dien: khong o nao cao hon dong chu", caoQua === 0, viDu + " (" + caoQua + " o)");
+    ok("o dien: khong o nao rong qua 200px", toQua === 0, viDu + " (" + toQua + " o)");
+  }
+
+  await L(">>> muc 15d");
+  // ----- 15d. Chi con MOT che do sang
+  {
+    ok("khong con nut doi nen toi", !document.getElementById("doi-theme"));
+    ok("khong con thuoc tinh data-theme", !document.documentElement.hasAttribute("data-theme"));
+    const nen = getComputedStyle(document.body).backgroundColor;
+    const m = /rgb\((\d+), (\d+), (\d+)\)/.exec(nen);
+    ok("nen trang van la nen SANG", m && (+m[1] + +m[2] + +m[3]) / 3 > 200, nen);
+  }
+
   await L(">>> muc 16");
   // --------------- 16. o dien phai HEP theo do dai dap an
   {
