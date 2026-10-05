@@ -1,6 +1,6 @@
 # Trạng thái: site Python cho con
 
-Chốt **05/10/2026**. Đọc tệp này trước khi làm tiếp.
+Chốt **05/10/2026**, QA vòng ba. Đọc tệp này trước khi làm tiếp.
 
 Đang chạy thật tại **https://python-cho-con-web.vercel.app**, kho `haodpsut/python-cho-con-web`.
 
@@ -27,6 +27,8 @@ Chốt **05/10/2026**. Đọc tệp này trước khi làm tiếp.
 | `tools/validate.mjs` | lược đồ, id, em dash, thẻ HTML, `expectOut` khớp từng byte với `.out` | 8 ca | 726 khối, 1 cảnh báo |
 | `tools/kiem-hinh.mjs` | 45 SVG so với bản PDF gốc, **đo trên ảnh render** | 4 ca tiêm lỗi | **45/45** |
 | `tools/kiem-chay.mjs` | 191 chương trình trong **Chrome thật** khớp `.out` | 6 ca tiêm lỗi | **191/191** |
+| `tools/kiem-sach.mjs` | so chữ trên web với **sáu tệp PDF quyển cháu**, nguồn độc lập không qua bộ bóc | 3 ca | **190/190** câu hỏi khớp nguyên văn |
+| `tools/kiem-khop.mjs` | hình có **đúng bài đúng thứ tự** không, và ô kết quả có khớp **mã in trên chính trang ấy** không | 4 ca tiêm lỗi | 43 hình, 191 lần chạy |
 | `tools/kiem-web.mjs` | quét **cả 32 bài + 4 phụ lục trong một phiên duyệt**: dấu vết LaTeX sót, khối rỗng, hình hỏng, đếm khối | | **sạch** |
 | `tools/kiem-tuong-tac.mjs` | lái thật qua 6 loại bài tập, chấm, giải thích, **khổ điện thoại 390px và 360px** | mỗi loại có cả ca đúng và ca sai | **49/49** |
 
@@ -47,6 +49,32 @@ hay một màu nhạt. Phần ấy phải nhìn tận mắt.
 | 45 hình SVG | 4,1 MB thô, **709 KB sau gzip**, trung bình 15 KB mỗi hình |
 | Dữ liệu `data/` | 412 KB |
 | 191 chương trình chạy trong Chrome | 6,5 giây |
+
+## QA vòng ba (05/10): hình và ô kết quả
+
+Hảo yêu cầu verify lại toàn bộ hình và các ô hiển thị kết quả. Hai câu hỏi mà
+**năm cổng trước đều không hỏi**, nay có cổng riêng:
+
+1. **Hình hiện ở bài N có đúng là hình sách đặt ở bài N, và đúng thứ tự không.**
+   Cổng hình cũ chỉ kiểm "ảnh này giống bản PDF của chính nó", không kiểm
+   "ảnh này có đúng chỗ không". `kiem-khop.mjs` đối chiếu thứ tự hình trên trang
+   với thứ tự `\input{hinh/...}` trong tệp `.tex`. **43/43 đúng bài đúng thứ tự.**
+
+2. **Ô "Máy phải in ra đúng thế này" có đúng bằng cái mà mã in trên chính trang
+   ấy chạy ra không.** Cổng chạy thử cũ đối chiếu JSON với tệp `.out`; cổng mới
+   lấy mã **từ DOM**, ghép đáp án vào, chạy Python thật, rồi so với **chữ hiển thị
+   trên màn hình**. Khác nhau ở chỗ nó bắt được lỗi ở khâu hiển thị.
+   **32 ví dụ + 64 bài đoán + 95 ô kết quả, tất cả khớp.**
+
+Thêm `kiem-sach.mjs`: đối chiếu chữ trên web với **sáu tệp PDF quyển cháu**.
+Đây là nguồn thứ hai **thật sự độc lập**, vì PDF do LaTeX dựng chứ không qua bộ
+bóc của tôi. Mọi cổng khác đều đọc từ cùng một bộ bóc, nên bộ bóc hiểu sai một
+macro thì cả loạt cùng sai mà không cái nào biết. **190/192 câu hỏi tìm thấy
+nguyên văn trong sách in**, 2 câu còn lại quá ngắn nên không so được.
+
+Vòng này **không ra lỗi nội dung nào**. Nhưng bộ đo của tôi lại hỏng một lần
+nữa: `kiem-sach.mjs` báo nhầm 90 lỗi vì tôi gỡ thẻ HTML khỏi cả chữ lấy từ PDF,
+mà trong sách có `<class 'int'>` trông y hệt một thẻ nên bị nuốt mất.
 
 ## Năm lỗi QA vòng hai bắt được (05/10)
 

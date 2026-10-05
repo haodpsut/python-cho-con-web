@@ -24,11 +24,14 @@ node tools/boc.mjs          # -> data/manifest.json + data/bai/*.json
 # Dung lai 45 hinh tu TikZ. Can lualatex va pdftocairo.
 node tools/hinh.mjs         # -> assets/hinh/*.svg
 
-# Bon cong. Chay het truoc moi lan commit cham vao data/ hay js/.
+# Bay cong. Chay het truoc moi lan commit cham vao data/ hay js/.
 node tools/validate.mjs      --tu-kiem   # luoc do, em dash, so .out hai nguon
+node tools/kiem-sach.mjs     --tu-kiem   # so chu tren web voi SAU TEP PDF quyen chau
 node tools/kiem-hinh.mjs     --tu-kiem   # 45 hinh vs ban PDF goc, do tren anh
 node tools/kiem-chay.mjs     --tu-kiem   # 191 chuong trinh trong Chrome that
-node tools/kiem-tuong-tac.mjs            # lai that qua tung loai bai tap
+node tools/kiem-khop.mjs     --tu-kiem   # hinh dung bai, o ket qua khop ma TREN TRANG
+node tools/kiem-web.mjs                  # quet ca 32 bai + 4 phu luc, dau vet LaTeX sot
+node tools/kiem-tuong-tac.mjs            # lai that qua tung loai bai tap + kho dien thoai
 ```
 
 `--tu-kiem` bật các ca **tiêm lỗi**. Cổng xanh mà không có ca tiêm lỗi thì
@@ -82,7 +85,14 @@ thiếu ba thứ làm nên tính tương tác: 192 dòng `\visao`, đáp án 264
 5. **Bài 2 có một khối điền cố ý không chạy** (xếp thứ tự Sáng/Trưa/Chiều/Tối)
    nên thiếu `\khoiketqua`. Đánh số khối điền theo thứ tự, đừng theo
    `\khoiketqua`. Vì vậy 96 khối điền nhưng chỉ 95 có tệp `.py`.
-6. **Không so ảnh ở kích thước thật giữa hai bộ render khác nhau.** pdftocairo
+6. **`kiem-sach.mjs` khong duoc go the HTML khoi chu lay tu PDF.** Trong sach
+   co `<class 'int'>`, trong y het mot the HTML nen bi nuot mat, lam cong bao
+   nham 90 lan. Chu tu PDF la van ban thuan, chu tu `data/` moi la HTML.
+   Hai ben phai co hai ham chuan hoa rieng.
+7. **Khong so anh o kich thuoc that giua hai bo render khac nhau.** pdftocairo
    và Chrome khử răng cưa khác nhau, và đặt khung bao khác nhau. Phải cắt về
    khung chứa mực, thu nhỏ, rồi dò dịch chuyển. Xem phần hiệu chuẩn ngưỡng
    ghi trong `tools/kiem-hinh.mjs`.
+8. **`loading="lazy"` khong kich hoat khi Chrome chay khong giao dien.** Cuon
+   trang cung khong an thua. Cong nao can kiem anh thi phai nap thang tep,
+   dung dua vao `img.complete`.
